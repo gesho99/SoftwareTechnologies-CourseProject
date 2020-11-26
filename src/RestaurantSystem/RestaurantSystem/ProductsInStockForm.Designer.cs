@@ -42,7 +42,9 @@
             // 
             // Наличност
             // 
+            this.Наличност.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Наличност.FormattingEnabled = true;
+            this.Наличност.ItemHeight = 15;
             this.Наличност.Location = new System.Drawing.Point(39, 53);
             this.Наличност.Name = "Наличност";
             this.Наличност.Size = new System.Drawing.Size(486, 199);
@@ -90,32 +92,36 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(66, 464);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.Size = new System.Drawing.Size(95, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Име на продукт:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(224, 464);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 13);
+            this.label4.Size = new System.Drawing.Size(123, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Налично количество:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(415, 464);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(82, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Цена за брой:";
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(210, 539);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 23);
@@ -139,7 +145,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Наличност);
             this.Name = "ProductsInStockForm";
-            this.Text = "ProductsInStockForm";
+            this.Text = "Складова наличност на продукти";
             this.ResumeLayout(false);
             this.PerformLayout();
 
