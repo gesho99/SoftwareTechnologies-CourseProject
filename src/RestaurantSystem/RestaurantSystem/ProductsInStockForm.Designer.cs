@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Наличност = new System.Windows.Forms.ListBox();
+            this.ItemsInStock = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.productName = new System.Windows.Forms.TextBox();
+            this.productQuantity = new System.Windows.Forms.TextBox();
+            this.productPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.deliveryPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Наличност
+            // ItemsInStock
             // 
-            this.Наличност.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Наличност.FormattingEnabled = true;
-            this.Наличност.ItemHeight = 15;
-            this.Наличност.Location = new System.Drawing.Point(39, 53);
-            this.Наличност.Name = "Наличност";
-            this.Наличност.Size = new System.Drawing.Size(486, 199);
-            this.Наличност.TabIndex = 0;
+            this.ItemsInStock.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ItemsInStock.FormattingEnabled = true;
+            this.ItemsInStock.ItemHeight = 15;
+            this.ItemsInStock.Location = new System.Drawing.Point(39, 53);
+            this.ItemsInStock.Name = "ItemsInStock";
+            this.ItemsInStock.Size = new System.Drawing.Size(486, 199);
+            this.ItemsInStock.TabIndex = 0;
             // 
             // label2
             // 
@@ -75,26 +76,26 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Добавяне на продукт в наличност";
             // 
-            // textBox1
+            // productName
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 483);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 4;
+            this.productName.Location = new System.Drawing.Point(39, 483);
+            this.productName.Name = "productName";
+            this.productName.Size = new System.Drawing.Size(141, 20);
+            this.productName.TabIndex = 4;
             // 
-            // textBox2
+            // productQuantity
             // 
-            this.textBox2.Location = new System.Drawing.Point(210, 483);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 5;
+            this.productQuantity.Location = new System.Drawing.Point(210, 483);
+            this.productQuantity.Name = "productQuantity";
+            this.productQuantity.Size = new System.Drawing.Size(145, 20);
+            this.productQuantity.TabIndex = 5;
             // 
-            // textBox3
+            // productPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(390, 483);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 20);
-            this.textBox3.TabIndex = 6;
+            this.productPrice.Location = new System.Drawing.Point(390, 483);
+            this.productPrice.Name = "productPrice";
+            this.productPrice.Size = new System.Drawing.Size(135, 20);
+            this.productPrice.TabIndex = 6;
             // 
             // label3
             // 
@@ -135,13 +136,14 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Добави продукт";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox4
+            // deliveryPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(210, 534);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 20);
-            this.textBox4.TabIndex = 11;
+            this.deliveryPrice.Location = new System.Drawing.Point(210, 534);
+            this.deliveryPrice.Name = "deliveryPrice";
+            this.deliveryPrice.Size = new System.Drawing.Size(145, 20);
+            this.deliveryPrice.TabIndex = 11;
             // 
             // label6
             // 
@@ -206,28 +208,38 @@
             this.button2.Text = "Редактирай продукт";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(12, 623);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 18;
+            // 
             // ProductsInStockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 632);
+            this.ClientSize = new System.Drawing.Size(565, 656);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.deliveryPrice);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.productPrice);
+            this.Controls.Add(this.productQuantity);
+            this.Controls.Add(this.productName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Наличност);
+            this.Controls.Add(this.ItemsInStock);
             this.Name = "ProductsInStockForm";
             this.Text = "Складова наличност на продукти";
             this.ResumeLayout(false);
@@ -237,22 +249,23 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox Наличност;
+        private System.Windows.Forms.ListBox ItemsInStock;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox productName;
+        private System.Windows.Forms.TextBox productQuantity;
+        private System.Windows.Forms.TextBox productPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox deliveryPrice;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label11;
     }
 }
