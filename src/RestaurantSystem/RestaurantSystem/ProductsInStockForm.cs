@@ -12,64 +12,114 @@ namespace RestaurantSystem
 {
     public partial class ProductsInStockForm : Form
     {
+
         public ProductsInStockForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private bool productValidation()
         {
             try
             {
                 label11.Visible = false;
                 label11.Text = "";
-                List<string> existingProducts = new List<string>();
                 int quantity = int.Parse(productQuantity.Text);
-                int prPrice = int.Parse(productPrice.Text);
-                int dlPrice = int.Parse(deliveryPrice.Text);
+                double prPrice = double.Parse(productPrice.Text);
+                double dlPrice = double.Parse(deliveryPrice.Text);
                 string prName = productName.Text;
 
                 if (quantity <= 0)
                 {
                     label11.Visible = true;
                     label11.Text = "Моля въведете количество по-голямо от нула.";
+                    return false;
                 }
-                else if(prPrice < 0)
+                else if (prPrice < 0)
                 {
                     label11.Visible = true;
                     label11.Text = "Моля въведете цена на продукта по - голяма или равна на нула.";
+                    return false;
                 }
-                else if(dlPrice < 0)
+                else if (dlPrice < 0)
                 {
                     label11.Visible = true;
                     label11.Text = "Моля въведете доставна цена по - голяма или равна на нула.";
+                    return false;
                 }
-                else if(prName == "")
+                else if (prName == "")
                 {
                     label11.Visible = true;
                     label11.Text = "Моля въведете името на продукта.";
-                }
-                else if (existingProducts.Contains(prName))
-                {
-                    label11.Visible = true;
-                    label11.Text = "Този продукт вече е добавен. Ако искате да го редактирате моля натиснете бутона редактирай.";
+                    return false;
                 }
                 else
                 {
-                    existingProducts.Add(prName);
-                    ItemsInStock.Items.Add(productName.Text + " " + quantity + "бр. " + prPrice + "лв/бр " + dlPrice + "лв/д");
+                    return true;
                 }
             }
             catch (FormatException)
             {
                 label11.Visible = true;
                 label11.Text = "Моля въведете валидни данни.";
+                return false;
             }
             catch (OverflowException)
             {
                 label11.Visible = true;
                 label11.Text = "Моля въведете валидни данни.";
+                return false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (productValidation() == true)
+            {
+                int quantity = int.Parse(productQuantity.Text);
+                double prPrice = double.Parse(productPrice.Text);
+                double dlPrice = double.Parse(deliveryPrice.Text);
+                string prName = productName.Text;
+
+                if (ItemsInStock.Items.Contains(prName))
+                {
+                    label11.Visible = true;
+                    label11.Text = "Този продукт вече е добавен. Ако искате да го редактирате моля натиснете бутона редактирай.";
+                }
+                else
+                {
+                    ItemsInStock.Items.Add(productName.Text);
+                    Parameters.Items.Add(quantity + " " + prPrice + " " + dlPrice );
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (productValidation() == true)
+            {
+                int quantity = int.Parse(productQuantity.Text);
+                double prPrice = double.Parse(productPrice.Text);
+                double dlPrice = double.Parse(deliveryPrice.Text);
+                string prName = productName.Text;
+
+                if (!ItemsInStock.Items.Contains(prName))
+                {
+                    label11.Visible = true;
+                    label11.Text = "Продуктът, който се опитвате да редактирате, не съществува.";
+                }
+                else
+                {
+                    String parameters = Parameters.Items[ItemsInStock.Items.IndexOf(prName)].ToString();
+                    String[] splittedParameters = parameters.Split(' ');
+                    splittedParameters[0] = quantity.ToString();
+                    splittedParameters[1] = prPrice.ToString();
+                    splittedParameters[2] = dlPrice.ToString();
+                    Parameters.Items[ItemsInStock.Items.IndexOf(prName)] = splittedParameters[0] + " " + splittedParameters[1] + " " + splittedParameters[2];
+                }
+            }
+
         }
     }
 }
+

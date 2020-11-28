@@ -46,6 +46,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.Parameters = new System.Windows.Forms.ListBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ItemsInStock
@@ -53,9 +56,9 @@
             this.ItemsInStock.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ItemsInStock.FormattingEnabled = true;
             this.ItemsInStock.ItemHeight = 15;
-            this.ItemsInStock.Location = new System.Drawing.Point(39, 53);
+            this.ItemsInStock.Location = new System.Drawing.Point(54, 75);
             this.ItemsInStock.Name = "ItemsInStock";
-            this.ItemsInStock.Size = new System.Drawing.Size(486, 199);
+            this.ItemsInStock.Size = new System.Drawing.Size(234, 199);
             this.ItemsInStock.TabIndex = 0;
             // 
             // label2
@@ -207,6 +210,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Редактирай продукт";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label11
             // 
@@ -217,11 +221,42 @@
             this.label11.Size = new System.Drawing.Size(0, 13);
             this.label11.TabIndex = 18;
             // 
+            // Parameters
+            // 
+            this.Parameters.FormattingEnabled = true;
+            this.Parameters.Location = new System.Drawing.Point(279, 75);
+            this.Parameters.Name = "Parameters";
+            this.Parameters.Size = new System.Drawing.Size(243, 199);
+            this.Parameters.TabIndex = 19;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(60, 59);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 15);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Продукт:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(280, 59);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(242, 15);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Количество/цена за брой/цена за доставка:";
+            // 
             // ProductsInStockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 656);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.Parameters);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label10);
@@ -267,5 +302,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox Parameters;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
