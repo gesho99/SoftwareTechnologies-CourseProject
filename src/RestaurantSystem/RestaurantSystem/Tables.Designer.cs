@@ -70,7 +70,7 @@
             this.groupBox1.Size = new System.Drawing.Size(290, 369);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Selected Table";
+            this.groupBox1.Text = "Избрана маса";
             // 
             // groupBox3
             // 
@@ -83,7 +83,7 @@
             this.groupBox3.Size = new System.Drawing.Size(278, 158);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Add item";
+            this.groupBox3.Text = "Добавяне на продукт";
             // 
             // addItem
             // 
@@ -91,8 +91,9 @@
             this.addItem.Name = "addItem";
             this.addItem.Size = new System.Drawing.Size(111, 37);
             this.addItem.TabIndex = 3;
-            this.addItem.Text = "Add item";
+            this.addItem.Text = "Добави продукт";
             this.addItem.UseVisualStyleBackColor = true;
+            this.addItem.Click += new System.EventHandler(this.addItem_Click);
             // 
             // textBox2
             // 
@@ -100,7 +101,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(105, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Quantity";
+            this.textBox2.Text = "Количество";
             // 
             // item
             // 
@@ -144,9 +145,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(95, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 24);
+            this.label1.Size = new System.Drawing.Size(139, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Selected table:";
+            this.label1.Text = "Избрана маса:";
             // 
             // groupBox2
             // 
@@ -169,7 +170,7 @@
             this.groupBox2.Size = new System.Drawing.Size(297, 369);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tables";
+            this.groupBox2.Text = "Маси";
             // 
             // addTable
             // 
@@ -177,7 +178,7 @@
             this.addTable.Name = "addTable";
             this.addTable.Size = new System.Drawing.Size(111, 37);
             this.addTable.TabIndex = 10;
-            this.addTable.Text = "Add new table";
+            this.addTable.Text = "Добави маса";
             this.addTable.UseVisualStyleBackColor = true;
             // 
             // button10
@@ -186,7 +187,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(111, 37);
             this.button10.TabIndex = 9;
-            this.button10.Text = "Table 10";
+            this.button10.Text = "Маса 10";
             this.button10.UseVisualStyleBackColor = true;
             // 
             // button9
@@ -195,7 +196,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(111, 37);
             this.button9.TabIndex = 8;
-            this.button9.Text = "Table 9";
+            this.button9.Text = "Маса 9";
             this.button9.UseVisualStyleBackColor = true;
             // 
             // button8
@@ -204,7 +205,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(111, 37);
             this.button8.TabIndex = 7;
-            this.button8.Text = "Table 8";
+            this.button8.Text = "Маса 8";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
@@ -213,7 +214,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 37);
             this.button7.TabIndex = 6;
-            this.button7.Text = "Table 7";
+            this.button7.Text = "Маса 7";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
@@ -222,7 +223,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 37);
             this.button6.TabIndex = 5;
-            this.button6.Text = "Table 6";
+            this.button6.Text = "Маса 6";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -231,7 +232,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(111, 37);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Table 5";
+            this.button5.Text = "Маса 5";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -240,7 +241,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 37);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Table 4";
+            this.button4.Text = "Маса 4";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -249,7 +250,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 37);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Table 3";
+            this.button3.Text = "Маса 3";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -264,7 +265,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 37);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Table 2";
+            this.button2.Text = "Маса 2";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -274,7 +275,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 37);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Table 1";
+            this.button1.Text = "Маса 1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // backTb
@@ -283,7 +284,7 @@
             this.backTb.Name = "backTb";
             this.backTb.Size = new System.Drawing.Size(111, 37);
             this.backTb.TabIndex = 11;
-            this.backTb.Text = "Back";
+            this.backTb.Text = "Назад";
             this.backTb.UseVisualStyleBackColor = true;
             // 
             // Tables
@@ -296,7 +297,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tables";
-            this.Text = "Tables";
+            this.Text = "Маси";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

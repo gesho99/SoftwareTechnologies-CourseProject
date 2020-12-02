@@ -16,5 +16,10 @@ namespace RestaurantSystem
         {
             InitializeComponent();
         }
+
+        private void addItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
