@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace RestaurantSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ProductsInStockForm());
+
+            var db = new RestaurantDbContext();
+
+            db.Database.CreateIfNotExists();
+
         }
     }
 }
