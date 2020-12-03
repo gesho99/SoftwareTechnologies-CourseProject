@@ -277,6 +277,7 @@
             this.Controls.Add(this.ItemsInStock);
             this.Name = "ProductsInStockForm";
             this.Text = "Складова наличност на продукти";
+            this.Load += new System.EventHandler(this.ProductsInStockForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

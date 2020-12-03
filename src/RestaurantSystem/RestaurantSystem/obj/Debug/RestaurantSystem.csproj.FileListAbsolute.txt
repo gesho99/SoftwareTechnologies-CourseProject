@@ -19,3 +19,6 @@ C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\sr
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Employees.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csproj.CopyComplete
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Deliveries.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Menu.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.InitialCreate.resources

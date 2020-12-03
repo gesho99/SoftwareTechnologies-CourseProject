@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RestaurantSystem.Controllers;
+using RestaurantSystem.Data;
+using RestaurantSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,16 @@ namespace RestaurantSystem
 {
     public partial class ProductsInStockForm : Form
     {
-
-        public ProductsInStockForm()
+        Controller controller;
+        public ProductsInStockForm(Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
+            ICollection<Product> products = controller.LoadProducts();
+            foreach(Product pr in products){
+                ItemsInStock.Items.Add(pr.Name);
+                Parameters.Items.Add(pr.Quantity + " " + pr.Price + " " + pr.DeliveryPrice);
+            }
         }
 
         private bool productValidation()
@@ -88,6 +97,7 @@ namespace RestaurantSystem
                 }
                 else
                 {
+                    controller.AddProduct(prName, quantity, prPrice, dlPrice);
                     ItemsInStock.Items.Add(productName.Text);
                     Parameters.Items.Add(quantity + " " + prPrice + " " + dlPrice );
                 }
@@ -118,6 +128,11 @@ namespace RestaurantSystem
                     Parameters.Items[ItemsInStock.Items.IndexOf(prName)] = splittedParameters[0] + " " + splittedParameters[1] + " " + splittedParameters[2];
                 }
             }
+
+        }
+
+        private void ProductsInStockForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -68,8 +68,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
+    <Compile Include="Migrations\202012031851268_InitialCreate.cs" />
+    <Compile Include="Migrations\202012031851268_InitialCreate.designer.cs">
+      <DependentUpon>202012031851268_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202012031851268_InitialCreate.resx">
+      <DependentUpon>202012031851268_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>
     </EmbeddedResource>

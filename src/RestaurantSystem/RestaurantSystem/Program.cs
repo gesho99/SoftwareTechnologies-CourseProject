@@ -1,4 +1,5 @@
-﻿using RestaurantSystem.Data;
+﻿using RestaurantSystem.Controllers;
+using RestaurantSystem.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace RestaurantSystem
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -15,14 +16,12 @@ namespace RestaurantSystem
         [STAThread]
         static void Main()
         {
+            Controller controller = new Controller();
+            controller.CreateDB();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductsInStockForm());
-
-            var db = new RestaurantDbContext();
-
-            db.Database.CreateIfNotExists();
-
+            Application.Run(new ProductsInStockForm(controller));
         }
     }
 }
