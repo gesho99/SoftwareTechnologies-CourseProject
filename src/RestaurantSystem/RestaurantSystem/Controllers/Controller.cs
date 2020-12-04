@@ -36,5 +36,19 @@ namespace RestaurantSystem.Controllers
                 .ToArray();
         }
 
+        public void EditProduct(string name, int quantity, double price, double dlprice)
+        {
+            Product product = db.Products.SingleOrDefault(p => p.Name == name);
+            if(product != null)
+            {
+                product.Name = name;
+                product.Quantity = quantity;
+                product.Price = price;
+                product.DeliveryPrice = dlprice;
+
+                db.SaveChanges();
+            }
+        }
+
     }
 }

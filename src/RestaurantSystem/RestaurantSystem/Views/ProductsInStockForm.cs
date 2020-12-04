@@ -20,8 +20,16 @@ namespace RestaurantSystem
         {
             this.controller = controller;
             InitializeComponent();
+            LoadProducts();
+        }
+
+        public void LoadProducts()
+        {
+            ItemsInStock.Items.Clear();
+            Parameters.Items.Clear();
             ICollection<Product> products = controller.LoadProducts();
-            foreach(Product pr in products){
+            foreach (Product pr in products)
+            {
                 ItemsInStock.Items.Add(pr.Name);
                 Parameters.Items.Add(pr.Quantity + " " + pr.Price + " " + pr.DeliveryPrice);
             }
@@ -119,13 +127,9 @@ namespace RestaurantSystem
                     label11.Text = "Продуктът, който се опитвате да редактирате, не съществува.";
                 }
                 else
-                {
-                    String parameters = Parameters.Items[ItemsInStock.Items.IndexOf(prName)].ToString();
-                    String[] splittedParameters = parameters.Split(' ');
-                    splittedParameters[0] = quantity.ToString();
-                    splittedParameters[1] = prPrice.ToString();
-                    splittedParameters[2] = dlPrice.ToString();
-                    Parameters.Items[ItemsInStock.Items.IndexOf(prName)] = splittedParameters[0] + " " + splittedParameters[1] + " " + splittedParameters[2];
+                { 
+                    controller.EditProduct(prName, quantity, prPrice, dlPrice);
+                    LoadProducts();
                 }
             }
 
