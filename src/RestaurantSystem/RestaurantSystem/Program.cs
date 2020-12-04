@@ -1,7 +1,9 @@
 ﻿using RestaurantSystem.Controllers;
 using RestaurantSystem.Data;
+using RestaurantSystem.Migrations;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +20,8 @@ namespace RestaurantSystem
         {
             Controller controller = new Controller();
             controller.CreateDB();
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

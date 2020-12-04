@@ -1,4 +1,5 @@
-﻿using RestaurantSystem.Models;
+﻿using RestaurantSystem.Data.Models;
+using RestaurantSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,7 +16,12 @@ namespace RestaurantSystem.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder
+                .Entity<User>()
+                .HasRequired<Role>(r => r.Role)
+                .WithMany(u => u.Users)
+                .HasForeignKey(r => r.RoleId)
+                .WillCascadeOnDelete(false);
         }
     }
 }
