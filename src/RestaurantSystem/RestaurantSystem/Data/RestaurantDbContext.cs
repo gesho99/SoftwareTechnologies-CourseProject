@@ -13,6 +13,16 @@ namespace RestaurantSystem.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Employer> Employers { get; set; }
+
+        public DbSet<Expenses> Expenses { get; set; }
+
+        public DbSet<EmployerReport> EmployerReports { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
 namespace RestaurantSystem.Data.Models
 {
-    public class EmployerReport
+    public class Expenses
     {
-
+        
         public int Id { get; set; }
 
-        public int EmployerId { get; set; }
-
-        public Employer Employer { get; set; }
+        [Required]
+        [MaxLength(15)]
+        public string Name { get; set; }
 
         [Required]
-        public double Bill { get; set; }
+        public double Value { get; set; }
 
         [Required]
-        public DateTime ReportDate { get; set; }
+        public DateTime ExpenseDate { get; set; }
 
     }
 }

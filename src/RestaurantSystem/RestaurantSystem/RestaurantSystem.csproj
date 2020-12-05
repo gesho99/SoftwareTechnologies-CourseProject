@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Data\Models\Expenses.cs" />
     <Compile Include="Data\Models\Employer.cs" />
     <Compile Include="Data\Models\EmployerReport.cs" />
     <Compile Include="Data\Models\Role.cs" />
@@ -86,6 +87,10 @@
     <Compile Include="Migrations\202012051530236_EmployerReportMigration.cs" />
     <Compile Include="Migrations\202012051530236_EmployerReportMigration.designer.cs">
       <DependentUpon>202012051530236_EmployerReportMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012051543569_ExpensesMigration.cs" />
+    <Compile Include="Migrations\202012051543569_ExpensesMigration.designer.cs">
+      <DependentUpon>202012051543569_ExpensesMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
@@ -140,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012051530236_EmployerReportMigration.resx">
       <DependentUpon>202012051530236_EmployerReportMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012051543569_ExpensesMigration.resx">
+      <DependentUpon>202012051543569_ExpensesMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>
