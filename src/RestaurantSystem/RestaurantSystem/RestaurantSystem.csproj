@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Data\Models\Delivery.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
     <Compile Include="Data\Models\Employer.cs" />
     <Compile Include="Data\Models\EmployerReport.cs" />
@@ -100,6 +101,10 @@
     <Compile Include="Migrations\202012051621281_DishProductsMigration.cs" />
     <Compile Include="Migrations\202012051621281_DishProductsMigration.designer.cs">
       <DependentUpon>202012051621281_DishProductsMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012051633428_DeliveryAndProductsDeliveriesMigration.cs" />
+    <Compile Include="Migrations\202012051633428_DeliveryAndProductsDeliveriesMigration.designer.cs">
+      <DependentUpon>202012051633428_DeliveryAndProductsDeliveriesMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
@@ -163,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012051621281_DishProductsMigration.resx">
       <DependentUpon>202012051621281_DishProductsMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012051633428_DeliveryAndProductsDeliveriesMigration.resx">
+      <DependentUpon>202012051633428_DeliveryAndProductsDeliveriesMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>
