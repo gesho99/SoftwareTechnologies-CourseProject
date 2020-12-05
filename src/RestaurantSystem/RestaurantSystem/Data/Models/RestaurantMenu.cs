@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RestaurantSystem.Data.Models
 {
-    public class RestaurantMenu
+    public class Dish
     {
 
         public int Id { get; set; }

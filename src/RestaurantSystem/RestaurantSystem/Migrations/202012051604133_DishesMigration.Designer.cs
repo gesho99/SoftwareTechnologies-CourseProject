@@ -7,13 +7,13 @@ namespace RestaurantSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class RestaurantMenuMigration : IMigrationMetadata
+    public sealed partial class DishesMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RestaurantMenuMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DishesMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012051552064_RestaurantMenuMigration"; }
+            get { return "202012051604133_DishesMigration"; }
         }
         
         string IMigrationMetadata.Source
