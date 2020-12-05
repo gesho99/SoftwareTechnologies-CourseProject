@@ -27,6 +27,8 @@ namespace RestaurantSystem.Data
 
         public DbSet<Delivery> Deliveries { get; set; }
 
+        public DbSet<Table> Tables { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
