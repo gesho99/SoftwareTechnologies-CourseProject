@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace RestaurantSystem.Data.Models
 
         [Required]
         public double DishWeight { get; set; }
+
+        public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantSystem.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace RestaurantSystem.Models
 
         [Required]
         public double DeliveryPrice { get; set; }
+
+        public ICollection<Dish> Dishes { get; set; } = new HashSet<Dish>();
 
     }
 }

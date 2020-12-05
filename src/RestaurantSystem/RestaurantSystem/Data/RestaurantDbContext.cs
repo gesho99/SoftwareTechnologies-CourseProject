@@ -30,18 +30,17 @@ namespace RestaurantSystem.Data
         {
             modelBuilder
                 .Entity<User>()
-                .HasRequired<Role>(r => r.Role)
-                .WithMany(u => u.Users)
-                .HasForeignKey(r => r.RoleId)
+                .HasRequired<Role>(u => u.Role)
+                .WithMany(r => r.Users)
+                .HasForeignKey(u => u.RoleId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder
                 .Entity<EmployerReport>()
-                .HasRequired<Employer>(emp => emp.Employer)
-                .WithMany(rep => rep.Reports)
-                .HasForeignKey(emp => emp.EmployerId)
+                .HasRequired<Employer>(emprep => emprep.Employer)
+                .WithMany(emp => emp.Reports)
+                .HasForeignKey(emprep => emprep.EmployerId)
                 .WillCascadeOnDelete(false);
-
         }
     }
 }

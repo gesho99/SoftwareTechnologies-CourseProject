@@ -69,11 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Data\Models\DishProducts.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
     <Compile Include="Data\Models\Employer.cs" />
     <Compile Include="Data\Models\EmployerReport.cs" />
-    <Compile Include="Data\Models\RestaurantMenu.cs" />
+    <Compile Include="Data\Models\Dish.cs" />
     <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
@@ -97,6 +96,10 @@
     <Compile Include="Migrations\202012051604133_DishesMigration.cs" />
     <Compile Include="Migrations\202012051604133_DishesMigration.designer.cs">
       <DependentUpon>202012051604133_DishesMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012051621281_DishProductsMigration.cs" />
+    <Compile Include="Migrations\202012051621281_DishProductsMigration.designer.cs">
+      <DependentUpon>202012051621281_DishProductsMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
@@ -157,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012051604133_DishesMigration.resx">
       <DependentUpon>202012051604133_DishesMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012051621281_DishProductsMigration.resx">
+      <DependentUpon>202012051621281_DishProductsMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>
