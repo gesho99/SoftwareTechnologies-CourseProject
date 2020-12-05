@@ -22,5 +22,7 @@ namespace RestaurantSystem.Data.Models
         [Required]
         public int Salary { get; set; }
 
+        public ICollection<EmployerReport> Reports { get; set; }
+
     }
 }

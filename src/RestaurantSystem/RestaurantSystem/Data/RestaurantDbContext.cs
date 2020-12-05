@@ -22,6 +22,14 @@ namespace RestaurantSystem.Data
                 .WithMany(u => u.Users)
                 .HasForeignKey(r => r.RoleId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<EmployerReport>()
+                .HasRequired<Employer>(emp => emp.Employer)
+                .WithMany(rep => rep.Reports)
+                .HasForeignKey(emp => emp.EmployerId)
+                .WillCascadeOnDelete(false);
+
         }
     }
 }
