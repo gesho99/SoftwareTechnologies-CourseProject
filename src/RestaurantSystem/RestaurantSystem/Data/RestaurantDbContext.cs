@@ -30,6 +30,8 @@ namespace RestaurantSystem.Data
         public DbSet<Table> Tables { get; set; }
 
 
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

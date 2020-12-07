@@ -46,10 +46,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.products = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.deleteMenuItem = new System.Windows.Forms.Button();
             this.editMenuItem = new System.Windows.Forms.Button();
             this.addMenuItem = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -236,13 +236,23 @@
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(24, 287);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(259, 13);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Моля въведете продуктите в ястието с интервал.";
+            // 
             // deleteMenuItem
             // 
             this.deleteMenuItem.Location = new System.Drawing.Point(205, 206);
             this.deleteMenuItem.Name = "deleteMenuItem";
             this.deleteMenuItem.Size = new System.Drawing.Size(141, 39);
             this.deleteMenuItem.TabIndex = 43;
-            this.deleteMenuItem.Text = "Изтрий продукт";
+            this.deleteMenuItem.Text = "Изтрий ястие";
             this.deleteMenuItem.UseVisualStyleBackColor = true;
             // 
             // editMenuItem
@@ -251,8 +261,9 @@
             this.editMenuItem.Name = "editMenuItem";
             this.editMenuItem.Size = new System.Drawing.Size(141, 39);
             this.editMenuItem.TabIndex = 42;
-            this.editMenuItem.Text = "Редактирай продукт";
+            this.editMenuItem.Text = "Редактирай ястие";
             this.editMenuItem.UseVisualStyleBackColor = true;
+            this.editMenuItem.Click += new System.EventHandler(this.editMenuItem_Click);
             // 
             // addMenuItem
             // 
@@ -260,18 +271,9 @@
             this.addMenuItem.Name = "addMenuItem";
             this.addMenuItem.Size = new System.Drawing.Size(141, 39);
             this.addMenuItem.TabIndex = 41;
-            this.addMenuItem.Text = "Добави нов продукт";
+            this.addMenuItem.Text = "Добави ново ястие";
             this.addMenuItem.UseVisualStyleBackColor = true;
             this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(24, 287);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 44;
             // 
             // Menu
             // 

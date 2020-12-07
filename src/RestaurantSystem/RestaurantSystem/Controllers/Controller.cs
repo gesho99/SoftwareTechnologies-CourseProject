@@ -83,5 +83,21 @@ namespace RestaurantSystem.Controllers
                 .ToArray();
         }
 
+        public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        {
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
+            if(dish != null)
+            {
+                dish.DishName = dName;
+                dish.DishPrice = dPrice;
+                dish.DishWeight = dWeight;
+                dish.Products = productsInDish;
+
+                db.Dishes.Add(dish);
+
+                db.SaveChanges();
+            }
+        } 
+
     }
 }

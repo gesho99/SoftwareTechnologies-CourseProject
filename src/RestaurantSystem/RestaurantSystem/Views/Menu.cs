@@ -42,8 +42,6 @@ namespace RestaurantSystem
         {
             try
             {
-                label6.Visible = false;
-                label6.Text = "";
                 String productNamesInDish = products.Text;
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
@@ -51,19 +49,16 @@ namespace RestaurantSystem
 
                 if (dWeight <= 0)
                 {
-                    label6.Visible = true;
                     label6.Text = "Моля въведете тегло по - голямо от нула";
                     return false;
                 }
                 else if (dPrice <= 0)
                 {
-                    label6.Visible = true;
                     label6.Text = "Моля въведете цена на ястие по - голяма от нула";
                     return false;
                 }
                 else if (dName.Length < 3 || productNamesInDish.Length < 3)
                 {
-                    label6.Visible = true;
                     label6.Text = "Моля въведете валидно име на ястие / продукти в ястието";
                     return false;
                 }
@@ -74,13 +69,11 @@ namespace RestaurantSystem
             }
             catch (FormatException)
             {
-                label6.Visible = true;
                 label6.Text = "Моля въведете валидни данни.";
                 return false;
             }
             catch (OverflowException)
             {
-                label6.Visible = true;
                 label6.Text = "Моля въведете валидни данни.";
                 return false;
             }
@@ -106,7 +99,6 @@ namespace RestaurantSystem
                     }
                     else
                     {
-                        label6.Visible = true;
                         label6.Text = "Въведеният продукт " + productName + " не е наличен.";
                         return;
                     }
@@ -122,6 +114,50 @@ namespace RestaurantSystem
                     product.Dishes.Add(controller.SelectDishByName(dName));
                 }
             }
+        }
+
+        private void editMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (productValidation() == true)
+            {
+
+                ICollection<Product> productsInDish = new HashSet<Product>();
+                ICollection<Dish> dishesInproducts = new HashSet<Dish>();
+                String[] productNamesInDish = products.Text.Split(' ');
+                double dPrice = double.Parse(itemPrice.Text);
+                double dWeight = double.Parse(itemWeight.Text);
+                string dName = itemName.Text;       
+
+                if (!menuItems.Items.Contains(dName))
+                {
+                    label6.Text = "Ястието, което се опитвате да редактирате, не съществува.";
+                }
+                else
+                {
+                    foreach (String productName in productNamesInDish)
+                    {
+                        Product product = controller.SelectProductByName(productName);
+                        if (product != null)
+                        {
+                            Dish dish = controller.SelectDishByName(dName);
+                            if (!dish.Products.Contains(product))
+                            {
+                                productsInDish.Add(product);
+                                dishesInproducts.Add(dish);
+                            }
+                        }
+                        else
+                        {
+                            label6.Text = "Въведеният продукт " + productName + " не е наличен.";
+                            return;
+                        }
+                    }
+                    controller.EditDish(dName, dPrice, dWeight, productsInDish);
+                }
+
+            }
+
         }
 
         private void Menu_Load(object sender, EventArgs e)
