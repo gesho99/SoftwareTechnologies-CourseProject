@@ -93,8 +93,6 @@ namespace RestaurantSystem.Controllers
                 dish.DishWeight = dWeight;
                 dish.Products = productsInDish;
 
-                db.Dishes.Add(dish);
-
                 db.SaveChanges();
             }
         } 
