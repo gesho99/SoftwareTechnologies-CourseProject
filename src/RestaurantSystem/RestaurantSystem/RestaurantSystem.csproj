@@ -79,6 +79,7 @@
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
+    <Compile Include="HashSetToString.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.designer.cs">
       <DependentUpon>202012031851268_InitialCreate.cs</DependentUpon>

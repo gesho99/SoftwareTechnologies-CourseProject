@@ -25,7 +25,7 @@ namespace RestaurantSystem
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductsInStockForm(controller));
+            Application.Run(new Menu(controller));
         }
     }
 }

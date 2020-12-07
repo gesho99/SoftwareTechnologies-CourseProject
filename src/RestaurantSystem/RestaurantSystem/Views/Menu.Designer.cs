@@ -38,17 +38,18 @@
             this.itemName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.itemWeight = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.itemPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.products = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.addMenuItem = new System.Windows.Forms.Button();
-            this.editMenuItem = new System.Windows.Forms.Button();
             this.deleteMenuItem = new System.Windows.Forms.Button();
+            this.editMenuItem = new System.Windows.Forms.Button();
+            this.addMenuItem = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -83,9 +84,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(155, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 13);
+            this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Име/цена/компоненти/тегло:";
+            this.label2.Text = "Цена/продукти/тегло:";
             // 
             // groupBox1
             // 
@@ -104,7 +105,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(35, 21);
+            this.label7.Location = new System.Drawing.Point(45, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 16);
             this.label7.TabIndex = 16;
@@ -114,11 +115,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(45, 22);
+            this.label3.Location = new System.Drawing.Point(54, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Име на продукт:";
+            this.label3.Text = "Име на ястие:";
             // 
             // itemName
             // 
@@ -146,21 +147,21 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 13);
             this.label12.TabIndex = 27;
-            this.label12.Text = "Тегло на продукт:";
+            this.label12.Text = "Тегло на ястието:";
             // 
-            // textBox4
+            // itemWeight
             // 
-            this.textBox4.Location = new System.Drawing.Point(24, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(141, 20);
-            this.textBox4.TabIndex = 26;
+            this.itemWeight.Location = new System.Drawing.Point(24, 225);
+            this.itemWeight.Name = "itemWeight";
+            this.itemWeight.Size = new System.Drawing.Size(141, 20);
+            this.itemWeight.TabIndex = 26;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(36, 79);
+            this.label13.Location = new System.Drawing.Point(45, 79);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(13, 16);
             this.label13.TabIndex = 31;
@@ -170,11 +171,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(45, 79);
+            this.label14.Location = new System.Drawing.Point(54, 79);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 13);
+            this.label14.Size = new System.Drawing.Size(83, 13);
             this.label14.TabIndex = 30;
-            this.label14.Text = "Цена на продукт:";
+            this.label14.Text = "Цена на ястие:";
             // 
             // itemPrice
             // 
@@ -200,31 +201,32 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(35, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 13);
+            this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 33;
-            this.label5.Text = "Компоненти в продукт:";
+            this.label5.Text = "Продукти в ястието:";
             // 
-            // textBox1
+            // products
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 164);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 32;
+            this.products.Location = new System.Drawing.Point(24, 164);
+            this.products.Name = "products";
+            this.products.Size = new System.Drawing.Size(141, 20);
+            this.products.TabIndex = 32;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.deleteMenuItem);
             this.groupBox2.Controls.Add(this.editMenuItem);
             this.groupBox2.Controls.Add(this.addMenuItem);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.products);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.itemPrice);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.itemWeight);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.itemName);
@@ -233,6 +235,24 @@
             this.groupBox2.Size = new System.Drawing.Size(365, 327);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
+            // 
+            // deleteMenuItem
+            // 
+            this.deleteMenuItem.Location = new System.Drawing.Point(205, 206);
+            this.deleteMenuItem.Name = "deleteMenuItem";
+            this.deleteMenuItem.Size = new System.Drawing.Size(141, 39);
+            this.deleteMenuItem.TabIndex = 43;
+            this.deleteMenuItem.Text = "Изтрий продукт";
+            this.deleteMenuItem.UseVisualStyleBackColor = true;
+            // 
+            // editMenuItem
+            // 
+            this.editMenuItem.Location = new System.Drawing.Point(205, 120);
+            this.editMenuItem.Name = "editMenuItem";
+            this.editMenuItem.Size = new System.Drawing.Size(141, 39);
+            this.editMenuItem.TabIndex = 42;
+            this.editMenuItem.Text = "Редактирай продукт";
+            this.editMenuItem.UseVisualStyleBackColor = true;
             // 
             // addMenuItem
             // 
@@ -244,23 +264,14 @@
             this.addMenuItem.UseVisualStyleBackColor = true;
             this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
             // 
-            // editMenuItem
+            // label6
             // 
-            this.editMenuItem.Location = new System.Drawing.Point(205, 120);
-            this.editMenuItem.Name = "editMenuItem";
-            this.editMenuItem.Size = new System.Drawing.Size(141, 39);
-            this.editMenuItem.TabIndex = 42;
-            this.editMenuItem.Text = "Редактирай продукт";
-            this.editMenuItem.UseVisualStyleBackColor = true;
-            // 
-            // deleteMenuItem
-            // 
-            this.deleteMenuItem.Location = new System.Drawing.Point(205, 206);
-            this.deleteMenuItem.Name = "deleteMenuItem";
-            this.deleteMenuItem.Size = new System.Drawing.Size(141, 39);
-            this.deleteMenuItem.TabIndex = 43;
-            this.deleteMenuItem.Text = "Изтрий продукт";
-            this.deleteMenuItem.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(24, 287);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.TabIndex = 44;
             // 
             // Menu
             // 
@@ -271,6 +282,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Menu";
             this.Text = "Меню";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -291,16 +303,17 @@
         private System.Windows.Forms.TextBox itemName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox itemWeight;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox itemPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox products;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button deleteMenuItem;
         private System.Windows.Forms.Button editMenuItem;
         private System.Windows.Forms.Button addMenuItem;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using RestaurantSystem.Data;
+using RestaurantSystem.Data.Models;
 using RestaurantSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,38 @@ namespace RestaurantSystem.Controllers
 
                 db.SaveChanges();
             }
+        }
+
+        public Product SelectProductByName(string name)
+        {
+            Product product = db.Products.SingleOrDefault(p => p.Name == name);
+            return product;
+        }
+
+        public void AddDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        {
+            db.Dishes.Add(new Dish
+            {
+                DishName = dName,
+                DishPrice = dPrice,
+                DishWeight = dWeight,
+                Products = productsInDish
+            });
+
+            db.SaveChanges();
+        }
+
+        public Dish SelectDishByName(string name)
+        {
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == name);
+            return dish;
+        }
+
+        public ICollection<Dish> LoadDishes()
+        {
+            return db.Dishes
+                .Select(d => d)
+                .ToArray();
         }
 
     }
