@@ -91,11 +91,31 @@ namespace RestaurantSystem.Controllers
                 dish.DishName = dName;
                 dish.DishPrice = dPrice;
                 dish.DishWeight = dWeight;
-                dish.Products = productsInDish;
+                
+                foreach(Product product in dish.Products)
+                {
+                    product.Dishes.Remove(dish);
+                }
+                
+                dish.Products = null;
 
                 db.SaveChanges();
+
+                AddProductsToDish(dish, productsInDish);
             }
-        } 
+        }
+
+        public void AddProductsToDish(Dish dish, ICollection<Product> productsInDish)
+        {
+
+            dish.Products = productsInDish;
+            foreach(Product product in dish.Products){
+                product.Dishes.Add(dish);
+            }
+
+            db.SaveChanges();
+
+        }
 
     }
 }

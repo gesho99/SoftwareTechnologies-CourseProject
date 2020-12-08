@@ -141,11 +141,8 @@ namespace RestaurantSystem
                         if (product != null)
                         {
                             Dish dish = controller.SelectDishByName(dName);
-                            if (!dish.Products.Contains(product))
-                            {
-                                productsInDish.Add(product);
-                                dishesInproducts.Add(dish);
-                            }
+                            productsInDish.Add(product);
+                            dishesInproducts.Add(dish);
                         }
                         else
                         {
