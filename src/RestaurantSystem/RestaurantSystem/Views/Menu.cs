@@ -107,12 +107,6 @@ namespace RestaurantSystem
                 controller.AddDish(dName, dPrice, dWeight, productsInDish);
                 menuItems.Items.Add(dName);
                 menuItemsParameters.Items.Add(dPrice + " " + productNamesInDish.ToString() + " " + dWeight);
-
-                foreach (String productName in productNamesInDish)
-                {
-                    Product product = controller.SelectProductByName(productName);
-                    product.Dishes.Add(controller.SelectDishByName(dName));
-                }
             }
         }
 

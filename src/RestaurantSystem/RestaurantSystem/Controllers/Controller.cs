@@ -59,13 +59,20 @@ namespace RestaurantSystem.Controllers
 
         public void AddDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
         {
-            db.Dishes.Add(new Dish
+            Dish dish = new Dish
             {
                 DishName = dName,
                 DishPrice = dPrice,
                 DishWeight = dWeight,
                 Products = productsInDish
-            });
+            };
+            
+            db.Dishes.Add(dish);
+
+            foreach(Product product in productsInDish)
+            {
+                product.Dishes.Add(dish);
+            }
 
             db.SaveChanges();
         }
@@ -100,7 +107,7 @@ namespace RestaurantSystem.Controllers
 
                 db.SaveChanges();
 
-                //AddProductsToDish(dish, productsInDish);
+                AddProductsToDish(dish, productsInDish);
             }
         }
 
@@ -122,7 +129,6 @@ namespace RestaurantSystem.Controllers
             db.Dishes.Remove(dish);
 
             db.SaveChanges();
-
         }
 
     }
