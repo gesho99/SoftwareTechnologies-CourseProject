@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
+    <Compile Include="Data\Models\DishProducts2.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
     <Compile Include="Data\Models\Employer.cs" />
     <Compile Include="Data\Models\EmployerReport.cs" />

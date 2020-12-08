@@ -88,7 +88,6 @@ namespace RestaurantSystem.Controllers
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
             if(dish != null)
             {
-                dish.DishName = dName;
                 dish.DishPrice = dPrice;
                 dish.DishWeight = dWeight;
                 
@@ -101,7 +100,7 @@ namespace RestaurantSystem.Controllers
 
                 db.SaveChanges();
 
-                AddProductsToDish(dish, productsInDish);
+                //AddProductsToDish(dish, productsInDish);
             }
         }
 
@@ -112,6 +111,15 @@ namespace RestaurantSystem.Controllers
             foreach(Product product in dish.Products){
                 product.Dishes.Add(dish);
             }
+
+            db.SaveChanges();
+        }
+
+        public void RemoveDish(string dName)
+        {
+
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
+            db.Dishes.Remove(dish);
 
             db.SaveChanges();
 

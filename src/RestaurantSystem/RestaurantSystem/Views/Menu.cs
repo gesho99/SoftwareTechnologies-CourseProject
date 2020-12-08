@@ -123,7 +123,6 @@ namespace RestaurantSystem
             {
 
                 ICollection<Product> productsInDish = new HashSet<Product>();
-                ICollection<Dish> dishesInproducts = new HashSet<Dish>();
                 String[] productNamesInDish = products.Text.Split(' ');
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
@@ -140,9 +139,7 @@ namespace RestaurantSystem
                         Product product = controller.SelectProductByName(productName);
                         if (product != null)
                         {
-                            Dish dish = controller.SelectDishByName(dName);
                             productsInDish.Add(product);
-                            dishesInproducts.Add(dish);
                         }
                         else
                         {
@@ -160,6 +157,12 @@ namespace RestaurantSystem
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteMenuItem_Click(object sender, EventArgs e)
+        {
+            string dName = itemName.Text;
+            controller.RemoveDish(dName);
         }
     }
 }

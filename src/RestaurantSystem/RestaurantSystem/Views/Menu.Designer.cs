@@ -254,6 +254,7 @@
             this.deleteMenuItem.TabIndex = 43;
             this.deleteMenuItem.Text = "Изтрий ястие";
             this.deleteMenuItem.UseVisualStyleBackColor = true;
+            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
             // 
             // editMenuItem
             // 
