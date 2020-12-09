@@ -122,13 +122,20 @@ namespace RestaurantSystem.Controllers
             db.SaveChanges();
         }
 
-        public void RemoveDish(string dName)
+        public bool RemoveDish(string dName)
         {
 
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
-            db.Dishes.Remove(dish);
-
-            db.SaveChanges();
+            if (dish != null)
+            {
+                db.Dishes.Remove(dish);
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

@@ -156,7 +156,22 @@ namespace RestaurantSystem
         private void deleteMenuItem_Click(object sender, EventArgs e)
         {
             string dName = itemName.Text;
-            controller.RemoveDish(dName);
+
+            if (dName.Length < 3)
+            {
+               label6.Text = "Моля въведете валидно име на ястие";
+            }
+            else
+            {
+                if (!controller.RemoveDish(dName))
+                {
+                    label6.Text = "Въведеното ястие " + dName + " не съществува.";
+                }
+                else
+                {
+                    LoadDishes();
+                }
+            }
         }
     }
 }
