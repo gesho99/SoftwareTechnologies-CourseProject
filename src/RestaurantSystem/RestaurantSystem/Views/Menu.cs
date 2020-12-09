@@ -105,8 +105,7 @@ namespace RestaurantSystem
                 }
 
                 controller.AddDish(dName, dPrice, dWeight, productsInDish);
-                menuItems.Items.Add(dName);
-                menuItemsParameters.Items.Add(dPrice + " " + productNamesInDish.ToString() + " " + dWeight);
+                LoadDishes();
             }
         }
 
@@ -142,6 +141,7 @@ namespace RestaurantSystem
                         }
                     }
                     controller.EditDish(dName, dPrice, dWeight, productsInDish);
+                    LoadDishes();
                 }
 
             }
