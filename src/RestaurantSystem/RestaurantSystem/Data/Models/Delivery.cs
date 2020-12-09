@@ -12,6 +12,10 @@ namespace RestaurantSystem.Data.Models
 
         public int Id { get; set; }
 
+        public int SupplierId { get; set; }
+
+        public Supplier Supplier { get; set; }
+
         [Required]
         public double DeliveryPrice { get; set; }
 
