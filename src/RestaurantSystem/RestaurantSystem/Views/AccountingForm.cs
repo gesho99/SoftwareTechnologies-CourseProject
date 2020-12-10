@@ -96,19 +96,34 @@ namespace RestaurantSystem
                 if (validation.Contains("e"))
                 {
                     double eValue = double.Parse(electricity.Text);
-                    controller.AddElectricityExpense(dateString, eValue);
+                    if(controller.AddElectricityExpense(dateString, eValue) == false)
+                    {
+                        label30.Visible = true;
+                        label30.Text = "Въведеният разход " + electricity.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
+                        return;
+                    }
                 }
 
                 if (validation.Contains("w"))
                 {
                     double wValue = double.Parse(water.Text);
-                    controller.AddWaterExpense(dateString, wValue);
+                    if(!controller.AddWaterExpense(dateString, wValue))
+                    {
+                        label30.Visible = true;
+                        label30.Text = "Въведеният разход " + water.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
+                        return;
+                    }
                 }
 
                 if (validation.Contains("i"))
                 {
                     double iValue = double.Parse(internet.Text);
-                    controller.AddInternetExpense(dateString, iValue);
+                    if(!controller.AddInternetExpense(dateString, iValue))
+                    {
+                        label30.Visible = true;
+                        label30.Text = "Въведеният разход " + internet.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
+                        return;
+                    }
                 }
 
                 label30.Visible = true;
