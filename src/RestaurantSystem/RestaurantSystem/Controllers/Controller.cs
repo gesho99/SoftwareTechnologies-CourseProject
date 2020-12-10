@@ -95,7 +95,40 @@ namespace RestaurantSystem.Controllers
 
                 db.SaveChanges();
             }
-        } 
+        }
+        
+        public void AddElectricityExpense(string dateString, double elValue)
+        {
+            db.Expenses.Add(new Expenses
+            {
+                Name = "Ток",
+                Value = elValue,
+                ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                                System.Globalization.CultureInfo.InvariantCulture)
+            });
+        }
+
+        public void AddWaterExpense(string dateString, double wValue)
+        {
+            db.Expenses.Add(new Expenses
+            {
+                Name = "Вода",
+                Value = wValue,
+                ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                                System.Globalization.CultureInfo.InvariantCulture)
+            });
+        }
+
+        public void AddInternetExpense(string dateString, double iValue)
+        {
+            db.Expenses.Add(new Expenses
+            {
+                Name = "Интернет",
+                Value = iValue,
+                ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                               System.Globalization.CultureInfo.InvariantCulture)
+            });
+        }
 
     }
 }

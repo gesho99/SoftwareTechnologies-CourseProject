@@ -56,9 +56,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.electricity = new System.Windows.Forms.TextBox();
+            this.water = new System.Windows.Forms.TextBox();
+            this.internet = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -68,11 +68,15 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addExpense = new System.Windows.Forms.Button();
+            this.months = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.year = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -319,63 +323,63 @@
             this.label16.TabIndex = 27;
             this.label16.Text = "Добавяне на допълнителни разходи";
             // 
-            // textBox10
+            // electricity
             // 
-            this.textBox10.Location = new System.Drawing.Point(751, 160);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(50, 20);
-            this.textBox10.TabIndex = 28;
+            this.electricity.Location = new System.Drawing.Point(794, 211);
+            this.electricity.Name = "electricity";
+            this.electricity.Size = new System.Drawing.Size(50, 20);
+            this.electricity.TabIndex = 28;
             // 
-            // textBox11
+            // water
             // 
-            this.textBox11.Location = new System.Drawing.Point(751, 206);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(50, 20);
-            this.textBox11.TabIndex = 29;
+            this.water.Location = new System.Drawing.Point(794, 257);
+            this.water.Name = "water";
+            this.water.Size = new System.Drawing.Size(50, 20);
+            this.water.TabIndex = 29;
             // 
-            // textBox12
+            // internet
             // 
-            this.textBox12.Location = new System.Drawing.Point(751, 251);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(50, 20);
-            this.textBox12.TabIndex = 30;
+            this.internet.Location = new System.Drawing.Point(794, 302);
+            this.internet.Name = "internet";
+            this.internet.Size = new System.Drawing.Size(50, 20);
+            this.internet.TabIndex = 30;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(571, 162);
+            this.label17.Location = new System.Drawing.Point(534, 213);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(132, 15);
+            this.label17.Size = new System.Drawing.Size(222, 15);
             this.label17.TabIndex = 31;
-            this.label17.Text = "Месечен разход за ток:";
+            this.label17.Text = "Разход за ток за периода година/месец:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(571, 210);
+            this.label18.Location = new System.Drawing.Point(534, 259);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(139, 15);
+            this.label18.Size = new System.Drawing.Size(229, 15);
             this.label18.TabIndex = 32;
-            this.label18.Text = "Месечен разход за вода:";
+            this.label18.Text = "Разход за вода за периода година/месец:";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(571, 255);
+            this.label19.Location = new System.Drawing.Point(534, 305);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 15);
+            this.label19.Size = new System.Drawing.Size(254, 15);
             this.label19.TabIndex = 33;
-            this.label19.Text = "Месечен разход за интернет:";
+            this.label19.Text = "Разход за интернет за периода година/месец:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(562, 162);
+            this.label20.Location = new System.Drawing.Point(525, 213);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(13, 16);
             this.label20.TabIndex = 34;
@@ -386,7 +390,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(562, 211);
+            this.label21.Location = new System.Drawing.Point(525, 260);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(13, 16);
             this.label21.TabIndex = 35;
@@ -397,7 +401,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(562, 256);
+            this.label22.Location = new System.Drawing.Point(525, 306);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(13, 16);
             this.label22.TabIndex = 36;
@@ -406,7 +410,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(803, 166);
+            this.label23.Location = new System.Drawing.Point(846, 217);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(22, 13);
             this.label23.TabIndex = 37;
@@ -415,7 +419,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(803, 213);
+            this.label24.Location = new System.Drawing.Point(846, 264);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(22, 13);
             this.label24.TabIndex = 38;
@@ -424,25 +428,26 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(803, 258);
+            this.label25.Location = new System.Drawing.Point(846, 309);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(22, 13);
             this.label25.TabIndex = 39;
             this.label25.Text = ".лв";
             // 
-            // button4
+            // addExpense
             // 
-            this.button4.Location = new System.Drawing.Point(574, 306);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Добави";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addExpense.Location = new System.Drawing.Point(580, 357);
+            this.addExpense.Name = "addExpense";
+            this.addExpense.Size = new System.Drawing.Size(75, 23);
+            this.addExpense.TabIndex = 40;
+            this.addExpense.Text = "Добави";
+            this.addExpense.UseVisualStyleBackColor = true;
+            this.addExpense.Click += new System.EventHandler(this.addExpense_Click);
             // 
-            // comboBox1
+            // months
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.months.FormattingEnabled = true;
+            this.months.Items.AddRange(new object[] {
             "Януари",
             "Февруари",
             "Март",
@@ -455,10 +460,10 @@
             "Октомври",
             "Ноември",
             "Декември"});
-            this.comboBox1.Location = new System.Drawing.Point(698, 104);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(77, 21);
-            this.comboBox1.TabIndex = 42;
+            this.months.Location = new System.Drawing.Point(698, 104);
+            this.months.Name = "months";
+            this.months.Size = new System.Drawing.Size(77, 21);
+            this.months.TabIndex = 42;
             // 
             // label26
             // 
@@ -482,23 +487,63 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(687, 306);
+            this.button5.Location = new System.Drawing.Point(682, 357);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(162, 23);
             this.button5.TabIndex = 45;
             this.button5.Text = "Прегледай разходите";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label28.ForeColor = System.Drawing.Color.Red;
+            this.label28.Location = new System.Drawing.Point(595, 151);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(13, 16);
+            this.label28.TabIndex = 48;
+            this.label28.Text = "*";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(605, 153);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(86, 13);
+            this.label29.TabIndex = 47;
+            this.label29.Text = "Въведи година:";
+            // 
+            // year
+            // 
+            this.year.Location = new System.Drawing.Point(698, 151);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(77, 20);
+            this.year.TabIndex = 49;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(507, 417);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 50;
+            this.label30.Text = "label30";
+            // 
             // AccountingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 604);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.year);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label29);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.months);
+            this.Controls.Add(this.addExpense);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
@@ -508,9 +553,9 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.internet);
+            this.Controls.Add(this.water);
+            this.Controls.Add(this.electricity);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -541,6 +586,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AccountingForm";
             this.Text = "Счетоводство";
+            this.Load += new System.EventHandler(this.AccountingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,9 +622,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox electricity;
+        private System.Windows.Forms.TextBox water;
+        private System.Windows.Forms.TextBox internet;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -588,10 +634,14 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button addExpense;
+        private System.Windows.Forms.ComboBox months;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox year;
+        private System.Windows.Forms.Label label30;
     }
 }
