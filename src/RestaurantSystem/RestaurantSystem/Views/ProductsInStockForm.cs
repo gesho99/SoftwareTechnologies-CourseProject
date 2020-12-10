@@ -20,6 +20,8 @@ namespace RestaurantSystem
         {
             this.controller = controller;
             InitializeComponent();
+            label11.Visible = false;
+            label11.Text = "";
             LoadProducts();
         }
 
@@ -39,8 +41,6 @@ namespace RestaurantSystem
         {
             try
             {
-                label11.Visible = false;
-                label11.Text = "";
                 int quantity = int.Parse(productQuantity.Text);
                 double prPrice = double.Parse(productPrice.Text);
                 double dlPrice = double.Parse(deliveryPrice.Text);

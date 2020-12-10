@@ -448,18 +448,18 @@
             // 
             this.months.FormattingEnabled = true;
             this.months.Items.AddRange(new object[] {
-            "Януари",
-            "Февруари",
-            "Март",
-            "Април",
-            "Май",
-            "Юни",
-            "Юли",
-            "Август",
-            "Септември",
-            "Октомври",
-            "Ноември",
-            "Декември"});
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
             this.months.Location = new System.Drawing.Point(698, 104);
             this.months.Name = "months";
             this.months.Size = new System.Drawing.Size(77, 21);
@@ -524,6 +524,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Red;
             this.label30.Location = new System.Drawing.Point(507, 417);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(41, 13);

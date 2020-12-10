@@ -145,6 +145,8 @@ namespace RestaurantSystem.Controllers
                 ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
                                 System.Globalization.CultureInfo.InvariantCulture)
             });
+
+            db.SaveChanges();
         }
 
         public void AddWaterExpense(string dateString, double wValue)
@@ -156,6 +158,8 @@ namespace RestaurantSystem.Controllers
                 ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
                                 System.Globalization.CultureInfo.InvariantCulture)
             });
+
+            db.SaveChanges();
         }
 
         public void AddInternetExpense(string dateString, double iValue)
