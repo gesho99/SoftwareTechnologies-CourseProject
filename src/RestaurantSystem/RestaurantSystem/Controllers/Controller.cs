@@ -59,13 +59,20 @@ namespace RestaurantSystem.Controllers
 
         public void AddDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
         {
-            db.Dishes.Add(new Dish
+            Dish dish = new Dish
             {
                 DishName = dName,
                 DishPrice = dPrice,
                 DishWeight = dWeight,
                 Products = productsInDish
-            });
+            };
+            
+            db.Dishes.Add(dish);
+
+            foreach(Product product in productsInDish)
+            {
+                product.Dishes.Add(dish);
+            }
 
             db.SaveChanges();
         }
@@ -88,12 +95,28 @@ namespace RestaurantSystem.Controllers
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
             if(dish != null)
             {
-                dish.DishName = dName;
                 dish.DishPrice = dPrice;
                 dish.DishWeight = dWeight;
-                dish.Products = productsInDish;
+                
+                foreach(Product product in dish.Products)
+                {
+                    product.Dishes.Remove(dish);
+                }
+                
+                dish.Products = null;
 
                 db.SaveChanges();
+
+                AddProductsToDish(dish, productsInDish);
+            }
+        }
+
+        public void AddProductsToDish(Dish dish, ICollection<Product> productsInDish)
+        {
+
+            dish.Products = productsInDish;
+            foreach(Product product in dish.Products){
+                product.Dishes.Add(dish);
             }
         }
         
@@ -128,6 +151,8 @@ namespace RestaurantSystem.Controllers
                 ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
                                System.Globalization.CultureInfo.InvariantCulture)
             });
+
+            db.SaveChanges();
         }
 
     }

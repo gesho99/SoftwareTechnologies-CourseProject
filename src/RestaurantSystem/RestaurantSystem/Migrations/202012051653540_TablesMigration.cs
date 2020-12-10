@@ -15,7 +15,6 @@
                         Number = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
         }
         
         public override void Down()

@@ -105,14 +105,7 @@ namespace RestaurantSystem
                 }
 
                 controller.AddDish(dName, dPrice, dWeight, productsInDish);
-                menuItems.Items.Add(dName);
-                menuItemsParameters.Items.Add(dPrice + " " + productNamesInDish.ToString() + " " + dWeight);
-
-                foreach (String productName in productNamesInDish)
-                {
-                    Product product = controller.SelectProductByName(productName);
-                    product.Dishes.Add(controller.SelectDishByName(dName));
-                }
+                LoadDishes();
             }
         }
 
@@ -123,7 +116,6 @@ namespace RestaurantSystem
             {
 
                 ICollection<Product> productsInDish = new HashSet<Product>();
-                ICollection<Dish> dishesInproducts = new HashSet<Dish>();
                 String[] productNamesInDish = products.Text.Split(' ');
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
@@ -140,12 +132,7 @@ namespace RestaurantSystem
                         Product product = controller.SelectProductByName(productName);
                         if (product != null)
                         {
-                            Dish dish = controller.SelectDishByName(dName);
-                            if (!dish.Products.Contains(product))
-                            {
-                                productsInDish.Add(product);
-                                dishesInproducts.Add(dish);
-                            }
+                            productsInDish.Add(product);
                         }
                         else
                         {
@@ -154,6 +141,7 @@ namespace RestaurantSystem
                         }
                     }
                     controller.EditDish(dName, dPrice, dWeight, productsInDish);
+                    LoadDishes();
                 }
 
             }
@@ -163,6 +151,27 @@ namespace RestaurantSystem
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteMenuItem_Click(object sender, EventArgs e)
+        {
+            string dName = itemName.Text;
+
+            if (dName.Length < 3)
+            {
+               label6.Text = "Моля въведете валидно име на ястие";
+            }
+            else
+            {
+                if (!controller.RemoveDish(dName))
+                {
+                    label6.Text = "Въведеното ястие " + dName + " не съществува.";
+                }
+                else
+                {
+                    LoadDishes();
+                }
+            }
         }
     }
 }
