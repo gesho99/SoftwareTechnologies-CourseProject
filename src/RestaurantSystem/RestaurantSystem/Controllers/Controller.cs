@@ -119,7 +119,23 @@ namespace RestaurantSystem.Controllers
                 product.Dishes.Add(dish);
             }
         }
-        
+
+        public bool RemoveDish(string dName)
+        {
+
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
+            if (dish != null)
+            {
+                db.Dishes.Remove(dish);
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void AddElectricityExpense(string dateString, double elValue)
         {
             db.Expenses.Add(new Expenses
