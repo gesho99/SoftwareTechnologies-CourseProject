@@ -203,6 +203,85 @@ namespace RestaurantSystem.Controllers
                 db.SaveChanges();
             };
         }
+
+        public bool AddElectricityExpense(string dateString, double elValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Ток" && ex.ExpenseDate == expenseDate);
+
+            if (checkExpense != null)
+            {
+                return false;
+            }
+            else
+            {
+                Expenses expense = new Expenses
+                {
+                    Name = "Ток",
+                    Value = elValue,
+                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                                System.Globalization.CultureInfo.InvariantCulture)
+                };
+
+                db.Expenses.Add(expense);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool AddWaterExpense(string dateString, double wValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Вода" && ex.ExpenseDate == expenseDate);
+
+            if (checkExpense != null)
+            {
+                return false;
+            }
+            else
+            {
+                Expenses expense = new Expenses
+                {
+                    Name = "Вода",
+                    Value = wValue,
+                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                                System.Globalization.CultureInfo.InvariantCulture)
+                };
+
+                db.Expenses.Add(expense);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool AddInternetExpense(string dateString, double iValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Интернет" && ex.ExpenseDate == expenseDate);
+
+            if (checkExpense != null)
+            {
+                return false;
+            }
+            else
+            {
+                Expenses expense = new Expenses
+                {
+                    Name = "Интернет",
+                    Value = iValue,
+                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                              System.Globalization.CultureInfo.InvariantCulture)
+                };
+
+                db.Expenses.Add(expense);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
         public List<Expenses> GetExpenses(string dateString)
         {
             DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
