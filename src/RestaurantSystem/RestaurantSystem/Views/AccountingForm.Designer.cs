@@ -72,7 +72,7 @@
             this.months = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.seeExpenses = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.year = new System.Windows.Forms.TextBox();
@@ -485,14 +485,15 @@
             this.label27.TabIndex = 44;
             this.label27.Text = "*";
             // 
-            // button5
+            // seeExpenses
             // 
-            this.button5.Location = new System.Drawing.Point(682, 357);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(162, 23);
-            this.button5.TabIndex = 45;
-            this.button5.Text = "Прегледай разходите";
-            this.button5.UseVisualStyleBackColor = true;
+            this.seeExpenses.Location = new System.Drawing.Point(682, 357);
+            this.seeExpenses.Name = "seeExpenses";
+            this.seeExpenses.Size = new System.Drawing.Size(162, 23);
+            this.seeExpenses.TabIndex = 45;
+            this.seeExpenses.Text = "Прегледай разходите";
+            this.seeExpenses.UseVisualStyleBackColor = true;
+            this.seeExpenses.Click += new System.EventHandler(this.seeExpenses_Click);
             // 
             // label28
             // 
@@ -540,7 +541,7 @@
             this.Controls.Add(this.year);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.seeExpenses);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.months);
@@ -639,7 +640,7 @@
         private System.Windows.Forms.ComboBox months;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button seeExpenses;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox year;

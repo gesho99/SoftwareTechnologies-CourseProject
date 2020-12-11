@@ -214,5 +214,23 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public List<Expenses> GetExpenses(string dateString)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses electricityExpense = db.Expenses.SingleOrDefault(e => e.ExpenseDate == expenseDate && e.Name == "Ток");
+            Expenses waterExpense = db.Expenses.SingleOrDefault(e => e.ExpenseDate == expenseDate && e.Name == "Вода");
+            Expenses internetExpense = db.Expenses.SingleOrDefault(e => e.ExpenseDate == expenseDate && e.Name == "Интернет");
+
+            List<Expenses> expenses = new List<Expenses>()
+            {
+                electricityExpense,
+                waterExpense,
+                internetExpense
+            };
+
+            return expenses;
+        }
+
     }
 }
