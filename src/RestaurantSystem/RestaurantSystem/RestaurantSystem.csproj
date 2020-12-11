@@ -151,12 +151,6 @@
     <Compile Include="Views\ProductsInStockForm.Designer.cs">
       <DependentUpon>ProductsInStockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Registration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Registration.Designer.cs">
-      <DependentUpon>Registration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Tables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,9 +208,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\Registration.resx">
-      <DependentUpon>Registration.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Tables.resx">
       <DependentUpon>Tables.cs</DependentUpon>
     </EmbeddedResource>

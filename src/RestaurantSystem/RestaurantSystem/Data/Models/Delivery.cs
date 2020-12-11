@@ -22,6 +22,11 @@ namespace RestaurantSystem.Data.Models
         [Required]
         public DateTime DeliveryDate { get; set; }
 
+        [Required]
+        public int DeliveryQuantity { get; set; }
+
+        public bool Approved { get; set; }
+
         public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
     }

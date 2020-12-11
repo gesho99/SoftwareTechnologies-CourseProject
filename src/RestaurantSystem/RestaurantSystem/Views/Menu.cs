@@ -38,14 +38,15 @@ namespace RestaurantSystem
             }
         }
 
-            private bool productValidation()
-        {
+        private bool productValidation()
+            {
             try
             {
                 String productNamesInDish = products.Text;
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
                 string dName = itemName.Text;
+              
 
                 if (dWeight <= 0)
                 {

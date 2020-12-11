@@ -30,7 +30,7 @@
         {
             this.approvedDeliveries = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DeliveryButton = new System.Windows.Forms.Button();
+            this.approveDeliveryButton = new System.Windows.Forms.Button();
             this.productPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DeliveryQuantity = new System.Windows.Forms.Label();
@@ -47,11 +47,13 @@
             this.deliveryPrice = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.deliveryCompany = new System.Windows.Forms.TextBox();
+            this.deliverySupplier = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.addDelivery = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,14 +76,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Одобрени доставки:";
             // 
-            // DeliveryButton
+            // approveDeliveryButton
             // 
-            this.DeliveryButton.Location = new System.Drawing.Point(10, 159);
-            this.DeliveryButton.Name = "DeliveryButton";
-            this.DeliveryButton.Size = new System.Drawing.Size(185, 48);
-            this.DeliveryButton.TabIndex = 2;
-            this.DeliveryButton.Text = "Одобри поръчка";
-            this.DeliveryButton.UseVisualStyleBackColor = true;
+            this.approveDeliveryButton.Location = new System.Drawing.Point(177, 159);
+            this.approveDeliveryButton.Name = "approveDeliveryButton";
+            this.approveDeliveryButton.Size = new System.Drawing.Size(129, 48);
+            this.approveDeliveryButton.TabIndex = 2;
+            this.approveDeliveryButton.Text = "Одобри поръчка";
+            this.approveDeliveryButton.UseVisualStyleBackColor = true;
+            this.approveDeliveryButton.Click += new System.EventHandler(this.approveDeliveryButton_Click);
             // 
             // productPrice
             // 
@@ -109,7 +112,6 @@
             this.DeliveryQuantity.Size = new System.Drawing.Size(69, 13);
             this.DeliveryQuantity.TabIndex = 5;
             this.DeliveryQuantity.Text = "Количество:";
-            this.DeliveryQuantity.Click += new System.EventHandler(this.DeliveryQuantity_Click);
             // 
             // textBox1
             // 
@@ -135,6 +137,8 @@
             // waitingDeliveries
             // 
             this.waitingDeliveries.FormattingEnabled = true;
+            this.waitingDeliveries.Items.AddRange(new object[] {
+            "123"});
             this.waitingDeliveries.Location = new System.Drawing.Point(12, 43);
             this.waitingDeliveries.Name = "waitingDeliveries";
             this.waitingDeliveries.Size = new System.Drawing.Size(253, 251);
@@ -148,16 +152,16 @@
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Чакащи доставка:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // editDelivery
             // 
-            this.editDelivery.Location = new System.Drawing.Point(297, 159);
+            this.editDelivery.Location = new System.Drawing.Point(335, 159);
             this.editDelivery.Name = "editDelivery";
-            this.editDelivery.Size = new System.Drawing.Size(185, 48);
+            this.editDelivery.Size = new System.Drawing.Size(147, 48);
             this.editDelivery.TabIndex = 13;
             this.editDelivery.Text = "Промени поръчка";
             this.editDelivery.UseVisualStyleBackColor = true;
+            this.editDelivery.Click += new System.EventHandler(this.editDelivery_Click);
             // 
             // label7
             // 
@@ -230,12 +234,12 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "*";
             // 
-            // deliveryCompany
+            // deliverySupplier
             // 
-            this.deliveryCompany.Location = new System.Drawing.Point(177, 116);
-            this.deliveryCompany.Name = "deliveryCompany";
-            this.deliveryCompany.Size = new System.Drawing.Size(129, 20);
-            this.deliveryCompany.TabIndex = 21;
+            this.deliverySupplier.Location = new System.Drawing.Point(177, 116);
+            this.deliverySupplier.Name = "deliverySupplier";
+            this.deliverySupplier.Size = new System.Drawing.Size(129, 20);
+            this.deliverySupplier.TabIndex = 21;
             // 
             // label11
             // 
@@ -270,8 +274,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.addDelivery);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.deliveryCompany);
+            this.groupBox3.Controls.Add(this.deliverySupplier);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.deliveryPrice);
@@ -286,19 +292,37 @@
             this.groupBox3.Controls.Add(this.DeliveryQuantity);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.productPrice);
-            this.groupBox3.Controls.Add(this.DeliveryButton);
+            this.groupBox3.Controls.Add(this.approveDeliveryButton);
             this.groupBox3.Location = new System.Drawing.Point(12, 327);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(527, 238);
+            this.groupBox3.Size = new System.Drawing.Size(527, 262);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Одобрение/промяна на доставка";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 24;
+            // 
+            // addDelivery
+            // 
+            this.addDelivery.Location = new System.Drawing.Point(11, 159);
+            this.addDelivery.Name = "addDelivery";
+            this.addDelivery.Size = new System.Drawing.Size(145, 48);
+            this.addDelivery.TabIndex = 23;
+            this.addDelivery.Text = "Добави поръчка";
+            this.addDelivery.UseVisualStyleBackColor = true;
+            this.addDelivery.Click += new System.EventHandler(this.addDelivery_Click);
+            // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(437, 571);
+            this.backButton.Location = new System.Drawing.Point(451, 595);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(91, 47);
+            this.backButton.Size = new System.Drawing.Size(77, 23);
             this.backButton.TabIndex = 25;
             this.backButton.Text = "Назад";
             this.backButton.UseVisualStyleBackColor = true;
@@ -325,7 +349,7 @@
 
         private System.Windows.Forms.ListBox approvedDeliveries;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button DeliveryButton;
+        private System.Windows.Forms.Button approveDeliveryButton;
         private System.Windows.Forms.Label productPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label DeliveryQuantity;
@@ -342,11 +366,13 @@
         private System.Windows.Forms.TextBox deliveryPrice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox deliveryCompany;
+        private System.Windows.Forms.TextBox deliverySupplier;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button addDelivery;
+        private System.Windows.Forms.Label label2;
     }
 }

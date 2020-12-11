@@ -1,4 +1,4 @@
-﻿using RestaurantSystem.Data;
+using RestaurantSystem.Data;
 using RestaurantSystem.Data.Models;
 using RestaurantSystem.Models;
 using System;
@@ -11,6 +11,7 @@ namespace RestaurantSystem.Controllers
     public class Controller
     {
         RestaurantDbContext db;
+
         public void CreateDB()
         {
             db = new RestaurantDbContext();
@@ -40,7 +41,7 @@ namespace RestaurantSystem.Controllers
         public void EditProduct(string name, int quantity, double price, double dlprice)
         {
             Product product = db.Products.SingleOrDefault(p => p.Name == name);
-            if(product != null)
+            if (product != null)
             {
                 product.Name = name;
                 product.Quantity = quantity;
@@ -66,10 +67,10 @@ namespace RestaurantSystem.Controllers
                 DishWeight = dWeight,
                 Products = productsInDish
             };
-            
+
             db.Dishes.Add(dish);
 
-            foreach(Product product in productsInDish)
+            foreach (Product product in productsInDish)
             {
                 product.Dishes.Add(dish);
             }
@@ -93,16 +94,16 @@ namespace RestaurantSystem.Controllers
         public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
         {
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
-            if(dish != null)
+            if (dish != null)
             {
                 dish.DishPrice = dPrice;
                 dish.DishWeight = dWeight;
-                
-                foreach(Product product in dish.Products)
+
+                foreach (Product product in dish.Products)
                 {
                     product.Dishes.Remove(dish);
                 }
-                
+
                 dish.Products = null;
 
                 db.SaveChanges();
@@ -115,9 +116,12 @@ namespace RestaurantSystem.Controllers
         {
 
             dish.Products = productsInDish;
-            foreach(Product product in dish.Products){
+            foreach (Product product in dish.Products)
+            {
                 product.Dishes.Add(dish);
             }
+
+            db.SaveChanges();
         }
 
         public bool RemoveDish(string dName)
@@ -136,84 +140,69 @@ namespace RestaurantSystem.Controllers
             }
         }
 
-        public bool AddElectricityExpense(string dateString, double elValue)
+        public void AddDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
         {
-            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
 
-            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Ток" && ex.ExpenseDate == expenseDate);
-
-            if (checkExpense != null)
+            Delivery delivery = new Delivery
             {
-                return false;
-            }
-            else 
-            {
-                Expenses expense = new Expenses
-                {
-                    Name = "Ток",
-                    Value = elValue,
-                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
-                                System.Globalization.CultureInfo.InvariantCulture)
-                };
+                DeliveryQuantity = dQuantity,
+                DeliveryPrice = dPrice,
+                Supplier = supplier,
+                DeliveryDate = DateTime.UtcNow,
+                Approved = false,
+                Products = deliveryProducts
+            };
 
-                db.Expenses.Add(expense);
-                db.SaveChanges();
-                return true;
+            db.Deliveries.Add(delivery);
+
+            foreach (Product product in deliveryProducts)
+            {
+                product.Deliveries.Add(delivery);
             }
+
+            db.SaveChanges();
         }
 
-        public bool AddWaterExpense(string dateString, double wValue)
+        public ICollection<Delivery> LoadDeliveries()
         {
-            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
-
-            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Вода" && ex.ExpenseDate == expenseDate);
-
-            if (checkExpense != null)
-            {
-                return false;
-            }
-            else
-            {
-                Expenses expense = new Expenses
-                {
-                    Name = "Вода",
-                    Value = wValue,
-                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
-                                System.Globalization.CultureInfo.InvariantCulture)
-                };
-
-                db.Expenses.Add(expense);
-                db.SaveChanges();
-                return true;
-            }
+            return db.Deliveries
+                .Select(d => d)
+                .ToArray();
         }
 
-        public bool AddInternetExpense(string dateString, double iValue)
+        public void EditDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
         {
-            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts );
 
-            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Интернет" && ex.ExpenseDate == expenseDate);
+            if (delivery != null)
+            {
+                delivery.DeliveryQuantity = dQuantity;
+                delivery.DeliveryPrice = dPrice;
+                delivery.Supplier = supplier;
+                delivery.DeliveryDate = DateTime.UtcNow;
 
-            if (checkExpense != null)
-            {
-                return false;
-            }
-            else
-            {
-                Expenses expense = new Expenses
+                foreach  (Product product in deliveryProducts)
                 {
-                    Name = "Интернет",
-                    Value = iValue,
-                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
-                              System.Globalization.CultureInfo.InvariantCulture)
-                };
-
-                db.Expenses.Add(expense);
+                    delivery.Products.Add(product);
+                }
+                
                 db.SaveChanges();
-                return true;
-            }
+            };
+
+
         }
 
+        public void ApproveDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        {
+            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts);
+
+            if (delivery != null)
+            {
+                delivery.Approved = true;
+
+                db.SaveChanges();
+            };
+        }
         public List<Expenses> GetExpenses(string dateString)
         {
             DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
@@ -231,6 +220,5 @@ namespace RestaurantSystem.Controllers
 
             return expenses;
         }
-
     }
 }
