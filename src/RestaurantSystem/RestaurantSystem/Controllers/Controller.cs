@@ -11,6 +11,7 @@ namespace RestaurantSystem.Controllers
     public class Controller
     {
         RestaurantDbContext db;
+
         public void CreateDB()
         {
             db = new RestaurantDbContext();
@@ -40,7 +41,7 @@ namespace RestaurantSystem.Controllers
         public void EditProduct(string name, int quantity, double price, double dlprice)
         {
             Product product = db.Products.SingleOrDefault(p => p.Name == name);
-            if(product != null)
+            if (product != null)
             {
                 product.Name = name;
                 product.Quantity = quantity;
@@ -66,10 +67,10 @@ namespace RestaurantSystem.Controllers
                 DishWeight = dWeight,
                 Products = productsInDish
             };
-            
+
             db.Dishes.Add(dish);
 
-            foreach(Product product in productsInDish)
+            foreach (Product product in productsInDish)
             {
                 product.Dishes.Add(dish);
             }
@@ -93,16 +94,16 @@ namespace RestaurantSystem.Controllers
         public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
         {
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
-            if(dish != null)
+            if (dish != null)
             {
                 dish.DishPrice = dPrice;
                 dish.DishWeight = dWeight;
-                
-                foreach(Product product in dish.Products)
+
+                foreach (Product product in dish.Products)
                 {
                     product.Dishes.Remove(dish);
                 }
-                
+
                 dish.Products = null;
 
                 db.SaveChanges();
@@ -115,7 +116,8 @@ namespace RestaurantSystem.Controllers
         {
 
             dish.Products = productsInDish;
-            foreach(Product product in dish.Products){
+            foreach (Product product in dish.Products)
+            {
                 product.Dishes.Add(dish);
             }
 
@@ -138,5 +140,70 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public void AddDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        {
+
+            Delivery delivery = new Delivery
+            {
+                DeliveryQuantity = dQuantity,
+                DeliveryPrice = dPrice,
+                Supplier = supplier,
+                DeliveryDate = DateTime.UtcNow,
+                Approved = false,
+                Products = deliveryProducts
+            };
+
+            db.Deliveries.Add(delivery);
+
+            foreach (Product product in deliveryProducts)
+            {
+                product.Deliveries.Add(delivery);
+            }
+
+            db.SaveChanges();
+        }
+
+        public ICollection<Delivery> LoadDeliveries()
+        {
+            return db.Deliveries
+                .Select(d => d)
+                .ToArray();
+        }
+
+        public void EditDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        {
+            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts );
+
+            if (delivery != null)
+            {
+                delivery.DeliveryQuantity = dQuantity;
+                delivery.DeliveryPrice = dPrice;
+                delivery.Supplier = supplier;
+                delivery.DeliveryDate = DateTime.UtcNow;
+
+                foreach  (Product product in deliveryProducts)
+                {
+                    delivery.Products.Add(product);
+                }
+                
+                db.SaveChanges();
+            };
+
+
+        }
+
+        public void ApproveDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        {
+            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts);
+
+            if (delivery != null)
+            {
+                delivery.Approved = true;
+
+                db.SaveChanges();
+            };
+
+
+        }
     }
 }
