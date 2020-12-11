@@ -12,8 +12,15 @@ namespace RestaurantSystem.Data.Models
 
         public int Id { get; set; }
 
+        public int SupplierId { get; set; }
+
+        public Supplier Supplier { get; set; }
+
         [Required]
         public double DeliveryPrice { get; set; }
+
+        [Required]
+        public DateTime DeliveryDate { get; set; }
 
         public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 

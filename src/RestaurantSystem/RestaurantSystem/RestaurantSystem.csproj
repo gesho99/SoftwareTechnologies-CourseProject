@@ -70,15 +70,18 @@
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
+    <Compile Include="Data\Models\DishProducts2.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
     <Compile Include="Data\Models\Employer.cs" />
     <Compile Include="Data\Models\EmployerReport.cs" />
     <Compile Include="Data\Models\Dish.cs" />
     <Compile Include="Data\Models\Role.cs" />
+    <Compile Include="Data\Models\Supplier.cs" />
     <Compile Include="Data\Models\Table.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
+    <Compile Include="HashSetToString.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.designer.cs">
       <DependentUpon>202012031851268_InitialCreate.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using RestaurantSystem.Data;
+using RestaurantSystem.Data.Models;
 using RestaurantSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,169 @@ namespace RestaurantSystem.Controllers
                 product.DeliveryPrice = dlprice;
 
                 db.SaveChanges();
+            }
+        }
+
+        public Product SelectProductByName(string name)
+        {
+            Product product = db.Products.SingleOrDefault(p => p.Name == name);
+            return product;
+        }
+
+        public void AddDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        {
+            Dish dish = new Dish
+            {
+                DishName = dName,
+                DishPrice = dPrice,
+                DishWeight = dWeight,
+                Products = productsInDish
+            };
+            
+            db.Dishes.Add(dish);
+
+            foreach(Product product in productsInDish)
+            {
+                product.Dishes.Add(dish);
+            }
+
+            db.SaveChanges();
+        }
+
+        public Dish SelectDishByName(string name)
+        {
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == name);
+            return dish;
+        }
+
+        public ICollection<Dish> LoadDishes()
+        {
+            return db.Dishes
+                .Select(d => d)
+                .ToArray();
+        }
+
+        public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        {
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
+            if(dish != null)
+            {
+                dish.DishPrice = dPrice;
+                dish.DishWeight = dWeight;
+                
+                foreach(Product product in dish.Products)
+                {
+                    product.Dishes.Remove(dish);
+                }
+                
+                dish.Products = null;
+
+                db.SaveChanges();
+
+                AddProductsToDish(dish, productsInDish);
+            }
+        }
+
+        public void AddProductsToDish(Dish dish, ICollection<Product> productsInDish)
+        {
+
+            dish.Products = productsInDish;
+            foreach(Product product in dish.Products){
+                product.Dishes.Add(dish);
+            }
+        }
+
+        public bool RemoveDish(string dName)
+        {
+
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
+            if (dish != null)
+            {
+                db.Dishes.Remove(dish);
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool AddElectricityExpense(string dateString, double elValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Ток" && ex.ExpenseDate == expenseDate);
+
+            if (checkExpense != null)
+            {
+                return false;
+            }
+            else 
+            {
+                Expenses expense = new Expenses
+                {
+                    Name = "Ток",
+                    Value = elValue,
+                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                                System.Globalization.CultureInfo.InvariantCulture)
+                };
+
+                db.Expenses.Add(expense);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool AddWaterExpense(string dateString, double wValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Вода" && ex.ExpenseDate == expenseDate);
+
+            if (checkExpense != null)
+            {
+                return false;
+            }
+            else
+            {
+                Expenses expense = new Expenses
+                {
+                    Name = "Вода",
+                    Value = wValue,
+                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                                System.Globalization.CultureInfo.InvariantCulture)
+                };
+
+                db.Expenses.Add(expense);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool AddInternetExpense(string dateString, double iValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            Expenses checkExpense = db.Expenses.SingleOrDefault(ex => ex.Name == "Интернет" && ex.ExpenseDate == expenseDate);
+
+            if (checkExpense != null)
+            {
+                return false;
+            }
+            else
+            {
+                Expenses expense = new Expenses
+                {
+                    Name = "Интернет",
+                    Value = iValue,
+                    ExpenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ",
+                              System.Globalization.CultureInfo.InvariantCulture)
+                };
+
+                db.Expenses.Add(expense);
+                db.SaveChanges();
+                return true;
             }
         }
 

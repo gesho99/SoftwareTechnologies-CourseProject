@@ -28,6 +28,8 @@ namespace RestaurantSystem.Models
 
         public ICollection<Dish> Dishes { get; set; } = new HashSet<Dish>();
 
+        public ICollection<DishProducts2> DishProducts2 { get; set; } = new HashSet<DishProducts2>();
+
         public ICollection<Delivery> Deliveries { get; set; } = new HashSet<Delivery>();
 
     }

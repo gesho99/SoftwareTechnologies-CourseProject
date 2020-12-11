@@ -29,3 +29,34 @@ C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\sr
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishProductsMigration.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DeliveryAndProductsDeliveriesMigration.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.TablesMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\RestaurantSystem.exe.config
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\RestaurantSystem.exe
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\RestaurantSystem.pdb
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.dll
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.xml
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csprojAssemblyReference.cache
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.InitialCreate.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.UsersRolesEmployersMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.EmployerReportMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.ExpensesMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishesMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishProductsMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DeliveryAndProductsDeliveriesMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.TablesMigration.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.AccountingForm.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Deliveries.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Employees.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Menu.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.ProductsInStockForm.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Properties.Resources.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Tables.resources
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csproj.GenerateResource.cache
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csproj.CoreCompileInputs.cache
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csproj.CopyComplete
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.exe
+C:\Users\Доцко\Desktop\Гого\GitHub Repo\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.pdb
