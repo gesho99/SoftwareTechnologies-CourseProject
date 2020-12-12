@@ -140,27 +140,43 @@ namespace RestaurantSystem.Controllers
             }
         }
 
-        public void AddDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        public void AddDelivery()
         {
+            ICollection<Product> products = LoadProducts();
+            ICollection<Product> deliveryProducts = new HashSet<Product>();
+            string name = null;
+            int deliveryQuantity = 20;
+            double deliveryPrice = 0;
+            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == name);
 
-            Delivery delivery = new Delivery
+            foreach (Product product in products)
             {
-                DeliveryQuantity = dQuantity,
-                DeliveryPrice = dPrice,
-                Supplier = supplier,
-                DeliveryDate = DateTime.UtcNow,
-                Approved = false,
-                Products = deliveryProducts
-            };
-
-            db.Deliveries.Add(delivery);
-
-            foreach (Product product in deliveryProducts)
-            {
-                product.Deliveries.Add(delivery);
+                if (product.Quantity != 0 && product.Name != null)
+                {
+                    deliveryProducts.Add(product);
+                    deliveryPrice += product.DeliveryPrice;
+                }
             }
+            if (supplier.Name != null)
+            {
+                Delivery delivery = new Delivery
+                {
+                    DeliveryQuantity = deliveryQuantity,
+                    DeliveryPrice = deliveryPrice * deliveryQuantity,
+                    Supplier = supplier,
+                    DeliveryDate = DateTime.UtcNow,
+                    Approved = false,
+                    Products = deliveryProducts
+                };
 
-            db.SaveChanges();
+                AddDeliveriesToSupplier(supplier, supplier.Deliveries);
+            }
+        }
+
+        public Delivery SelectDeliveryByDeliveryQuantity(int quantity)
+        {
+            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.DeliveryQuantity == quantity);
+            return delivery;
         }
 
         public ICollection<Delivery> LoadDeliveries()
@@ -170,34 +186,44 @@ namespace RestaurantSystem.Controllers
                 .ToArray();
         }
 
-        public void EditDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        public void EditDelivery(int dQuantity, ICollection<Product> deliveryProducts)
         {
-            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts );
+            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.DeliveryQuantity == dQuantity);
 
             if (delivery != null)
             {
                 delivery.DeliveryQuantity = dQuantity;
-                delivery.DeliveryPrice = dPrice;
-                delivery.Supplier = supplier;
-                delivery.DeliveryDate = DateTime.UtcNow;
 
-                foreach  (Product product in deliveryProducts)
+                foreach (Product product in delivery.Products)
                 {
-                    delivery.Products.Add(product);
+                    delivery.Products.Remove(product);
                 }
-                
+
+                delivery.Products = null;
+
                 db.SaveChanges();
             };
 
-
         }
 
-        public void ApproveDelivery(int dQuantity, double dPrice, Supplier supplier, ICollection<Product> deliveryProducts)
+        public void AddDeliveriesToSupplier(Supplier supplier, ICollection<Delivery> deliveries)
+        {
+            supplier.Deliveries = deliveries;
+            foreach (Delivery delivery in deliveries)
+            {
+                supplier.Deliveries.Add(delivery);
+            }
+
+            db.SaveChanges();
+        }
+
+        public void ApproveDelivery(int dQuantity, ICollection<Product> deliveryProducts)
         {
             Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts);
 
             if (delivery != null)
             {
+                delivery.DeliveryQuantity = dQuantity;
                 delivery.Approved = true;
 
                 db.SaveChanges();

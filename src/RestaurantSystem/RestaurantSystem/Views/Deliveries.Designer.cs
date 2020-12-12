@@ -31,17 +31,14 @@
             this.approvedDeliveries = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.approveDeliveryButton = new System.Windows.Forms.Button();
-            this.productPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DeliveryQuantity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.productQuantity = new System.Windows.Forms.TextBox();
             this.productName = new System.Windows.Forms.TextBox();
             this.waitingDeliveries = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.editDelivery = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.deliveryPrice = new System.Windows.Forms.TextBox();
@@ -53,7 +50,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.addDelivery = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,27 +74,18 @@
             // 
             // approveDeliveryButton
             // 
-            this.approveDeliveryButton.Location = new System.Drawing.Point(177, 159);
+            this.approveDeliveryButton.Location = new System.Drawing.Point(56, 159);
             this.approveDeliveryButton.Name = "approveDeliveryButton";
-            this.approveDeliveryButton.Size = new System.Drawing.Size(129, 48);
+            this.approveDeliveryButton.Size = new System.Drawing.Size(160, 48);
             this.approveDeliveryButton.TabIndex = 2;
             this.approveDeliveryButton.Text = "Одобри поръчка";
             this.approveDeliveryButton.UseVisualStyleBackColor = true;
             this.approveDeliveryButton.Click += new System.EventHandler(this.approveDeliveryButton_Click);
             // 
-            // productPrice
-            // 
-            this.productPrice.AutoSize = true;
-            this.productPrice.Location = new System.Drawing.Point(360, 48);
-            this.productPrice.Name = "productPrice";
-            this.productPrice.Size = new System.Drawing.Size(94, 13);
-            this.productPrice.TabIndex = 3;
-            this.productPrice.Text = "Цена на продукт:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 46);
+            this.label3.Location = new System.Drawing.Point(62, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 4;
@@ -107,38 +94,29 @@
             // DeliveryQuantity
             // 
             this.DeliveryQuantity.AutoSize = true;
-            this.DeliveryQuantity.Location = new System.Drawing.Point(183, 49);
+            this.DeliveryQuantity.Location = new System.Drawing.Point(295, 46);
             this.DeliveryQuantity.Name = "DeliveryQuantity";
             this.DeliveryQuantity.Size = new System.Drawing.Size(69, 13);
             this.DeliveryQuantity.TabIndex = 5;
             this.DeliveryQuantity.Text = "Количество:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(353, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 6;
-            // 
             // productQuantity
             // 
-            this.productQuantity.Location = new System.Drawing.Point(177, 65);
+            this.productQuantity.Location = new System.Drawing.Point(286, 65);
             this.productQuantity.Name = "productQuantity";
-            this.productQuantity.Size = new System.Drawing.Size(129, 20);
+            this.productQuantity.Size = new System.Drawing.Size(160, 20);
             this.productQuantity.TabIndex = 7;
             // 
             // productName
             // 
-            this.productName.Location = new System.Drawing.Point(10, 65);
+            this.productName.Location = new System.Drawing.Point(56, 65);
             this.productName.Name = "productName";
-            this.productName.Size = new System.Drawing.Size(129, 20);
+            this.productName.Size = new System.Drawing.Size(160, 20);
             this.productName.TabIndex = 8;
             // 
             // waitingDeliveries
             // 
             this.waitingDeliveries.FormattingEnabled = true;
-            this.waitingDeliveries.Items.AddRange(new object[] {
-            "123"});
             this.waitingDeliveries.Location = new System.Drawing.Point(12, 43);
             this.waitingDeliveries.Name = "waitingDeliveries";
             this.waitingDeliveries.Size = new System.Drawing.Size(253, 251);
@@ -155,9 +133,9 @@
             // 
             // editDelivery
             // 
-            this.editDelivery.Location = new System.Drawing.Point(335, 159);
+            this.editDelivery.Location = new System.Drawing.Point(286, 159);
             this.editDelivery.Name = "editDelivery";
-            this.editDelivery.Size = new System.Drawing.Size(147, 48);
+            this.editDelivery.Size = new System.Drawing.Size(160, 48);
             this.editDelivery.TabIndex = 13;
             this.editDelivery.Text = "Промени поръчка";
             this.editDelivery.UseVisualStyleBackColor = true;
@@ -168,29 +146,18 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(174, 49);
+            this.label7.Location = new System.Drawing.Point(286, 46);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "*";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(350, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 16);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "*";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(7, 46);
+            this.label6.Location = new System.Drawing.Point(53, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 16);
             this.label6.TabIndex = 16;
@@ -201,7 +168,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(7, 100);
+            this.label8.Location = new System.Drawing.Point(53, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 16);
             this.label8.TabIndex = 19;
@@ -209,15 +176,15 @@
             // 
             // deliveryPrice
             // 
-            this.deliveryPrice.Location = new System.Drawing.Point(10, 116);
+            this.deliveryPrice.Location = new System.Drawing.Point(56, 116);
             this.deliveryPrice.Name = "deliveryPrice";
-            this.deliveryPrice.Size = new System.Drawing.Size(129, 20);
+            this.deliveryPrice.Size = new System.Drawing.Size(160, 20);
             this.deliveryPrice.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 99);
+            this.label9.Location = new System.Drawing.Point(62, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 13);
             this.label9.TabIndex = 17;
@@ -228,7 +195,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(174, 100);
+            this.label10.Location = new System.Drawing.Point(285, 100);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(13, 16);
             this.label10.TabIndex = 22;
@@ -236,15 +203,15 @@
             // 
             // deliverySupplier
             // 
-            this.deliverySupplier.Location = new System.Drawing.Point(177, 116);
+            this.deliverySupplier.Location = new System.Drawing.Point(286, 116);
             this.deliverySupplier.Name = "deliverySupplier";
-            this.deliverySupplier.Size = new System.Drawing.Size(129, 20);
+            this.deliverySupplier.Size = new System.Drawing.Size(160, 20);
             this.deliverySupplier.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(184, 99);
+            this.label11.Location = new System.Drawing.Point(295, 99);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 20;
@@ -275,7 +242,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.addDelivery);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.deliverySupplier);
             this.groupBox3.Controls.Add(this.label11);
@@ -283,15 +249,12 @@
             this.groupBox3.Controls.Add(this.deliveryPrice);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.editDelivery);
             this.groupBox3.Controls.Add(this.productName);
             this.groupBox3.Controls.Add(this.productQuantity);
-            this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.DeliveryQuantity);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.productPrice);
             this.groupBox3.Controls.Add(this.approveDeliveryButton);
             this.groupBox3.Location = new System.Drawing.Point(12, 327);
             this.groupBox3.Name = "groupBox3";
@@ -307,16 +270,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 24;
-            // 
-            // addDelivery
-            // 
-            this.addDelivery.Location = new System.Drawing.Point(11, 159);
-            this.addDelivery.Name = "addDelivery";
-            this.addDelivery.Size = new System.Drawing.Size(145, 48);
-            this.addDelivery.TabIndex = 23;
-            this.addDelivery.Text = "Добави поръчка";
-            this.addDelivery.UseVisualStyleBackColor = true;
-            this.addDelivery.Click += new System.EventHandler(this.addDelivery_Click);
             // 
             // backButton
             // 
@@ -350,17 +303,14 @@
         private System.Windows.Forms.ListBox approvedDeliveries;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button approveDeliveryButton;
-        private System.Windows.Forms.Label productPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label DeliveryQuantity;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox productQuantity;
         private System.Windows.Forms.TextBox productName;
         private System.Windows.Forms.ListBox waitingDeliveries;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button editDelivery;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox deliveryPrice;
@@ -372,7 +322,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button addDelivery;
         private System.Windows.Forms.Label label2;
     }
 }
