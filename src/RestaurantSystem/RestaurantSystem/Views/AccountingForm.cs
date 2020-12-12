@@ -187,5 +187,37 @@ namespace RestaurantSystem
                 }
             }
         }
+
+        private void editExpenses_Click(object sender, EventArgs e)
+        {
+            string validation = expensesValidation();
+            double eValue = 0, wValue = 0, iValue = 0;
+            if (validation != "f")
+            {
+                if (validation.Contains("e"))
+                {
+                    eValue = double.Parse(electricity.Text);
+                }
+                if (validation.Contains("w"))
+                {
+                    wValue = double.Parse(water.Text);
+                }
+                if (validation.Contains("i"))
+                {
+                    iValue = double.Parse(internet.Text);
+                }
+                string dateString = year.Text + months.SelectedItem.ToString() + "01T00:00:00Z";
+                if (controller.EditExpenses(dateString, eValue, wValue, iValue) == false)
+                {
+                    label30.Visible = true;
+                    label30.Text = "Някой от разходите, който се опитвате да редактирате за периода, не съществува.";
+                }
+                else
+                {
+                    label30.Visible = true;
+                    label30.Text = "Разходите са успешно редактирани.";
+                }
+            }
+        }
     }
 }

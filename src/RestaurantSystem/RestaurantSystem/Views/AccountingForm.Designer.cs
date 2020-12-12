@@ -79,6 +79,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.year = new System.Windows.Forms.TextBox();
+            this.editExpenses = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -438,11 +439,11 @@
             // 
             // addExpense
             // 
-            this.addExpense.Location = new System.Drawing.Point(576, 366);
+            this.addExpense.Location = new System.Drawing.Point(663, 366);
             this.addExpense.Name = "addExpense";
-            this.addExpense.Size = new System.Drawing.Size(75, 23);
+            this.addExpense.Size = new System.Drawing.Size(111, 23);
             this.addExpense.TabIndex = 40;
-            this.addExpense.Text = "Добави";
+            this.addExpense.Text = "Добави разход";
             this.addExpense.UseVisualStyleBackColor = true;
             this.addExpense.Click += new System.EventHandler(this.addExpense_Click);
             // 
@@ -489,7 +490,7 @@
             // 
             // seeExpenses
             // 
-            this.seeExpenses.Location = new System.Drawing.Point(677, 366);
+            this.seeExpenses.Location = new System.Drawing.Point(550, 404);
             this.seeExpenses.Name = "seeExpenses";
             this.seeExpenses.Size = new System.Drawing.Size(162, 23);
             this.seeExpenses.TabIndex = 45;
@@ -514,9 +515,9 @@
             // label30
             // 
             this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(508, 450);
+            this.label30.Location = new System.Drawing.Point(508, 469);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(423, 23);
+            this.label30.Size = new System.Drawing.Size(423, 126);
             this.label30.TabIndex = 0;
             this.label30.Text = "label30";
             // 
@@ -547,11 +548,22 @@
             this.year.Size = new System.Drawing.Size(77, 20);
             this.year.TabIndex = 49;
             // 
+            // editExpenses
+            // 
+            this.editExpenses.Location = new System.Drawing.Point(730, 404);
+            this.editExpenses.Name = "editExpenses";
+            this.editExpenses.Size = new System.Drawing.Size(164, 23);
+            this.editExpenses.TabIndex = 50;
+            this.editExpenses.Text = "Редактирай разходите";
+            this.editExpenses.UseVisualStyleBackColor = true;
+            this.editExpenses.Click += new System.EventHandler(this.editExpenses_Click);
+            // 
             // AccountingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 604);
+            this.Controls.Add(this.editExpenses);
             this.Controls.Add(this.year);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label32);
@@ -663,5 +675,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox year;
+        private System.Windows.Forms.Button editExpenses;
     }
 }

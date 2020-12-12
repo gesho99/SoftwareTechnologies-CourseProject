@@ -314,5 +314,63 @@ namespace RestaurantSystem.Controllers
 
             return expenses;
         }
+
+        public bool EditExpenses(string dateString, double eValue, double wValue, double iValue)
+        {
+            DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            List<Expenses> expenses = db.Expenses.Where(ex => ex.ExpenseDate == expenseDate).ToList();
+
+            bool check = false;
+
+            while(expenses.Count < 3)
+            {
+                expenses.Add(new Expenses
+                {
+                    Name = "невалиден"
+                });
+            }
+
+            foreach(Expenses expense in expenses)
+            {
+                if (expense.Name == "Ток" && eValue != 0)
+                {
+                    expense.Value = eValue;
+                    check = true;
+                }
+                else if (expense.Name == "Ток" && eValue == 0)
+                {
+                    continue;
+                }
+                else if (expense.Name == "Вода" && wValue != 0)
+                {
+                    expense.Value = wValue;
+                    check = true;
+                }
+                else if(expense.Name == "Вода" && wValue == 0)
+                {
+                    continue;
+                }
+                else if (expense.Name == "Интернет" && iValue != 0)
+                {
+                    expense.Value = iValue;
+                    check = true;
+                }
+                else if (expense.Name == "Интернет" && iValue == 0)
+                {
+                    continue;
+                }
+                else if(expense.Name == "невалиден" && check == true)
+                {
+                    break;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            db.SaveChanges();
+            return true;
+        }
     }
 }
