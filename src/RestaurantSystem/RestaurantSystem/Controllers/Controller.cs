@@ -297,6 +297,21 @@ namespace RestaurantSystem.Controllers
                 internetExpense
             };
 
+            List<int> indexesToRemove = new List<int>();
+
+            foreach(Expenses expense in expenses)
+            {
+                if(expense == null)
+                {
+                    indexesToRemove.Add(expenses.IndexOf(expense));
+                }
+            }
+
+            foreach(int index in indexesToRemove)
+            {
+                expenses.RemoveAt(index);
+            }
+
             return expenses;
         }
     }

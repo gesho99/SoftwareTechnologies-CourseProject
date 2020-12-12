@@ -146,9 +146,17 @@ namespace RestaurantSystem
             {
                 string dateString = year.Text + months.SelectedItem.ToString() + "01T00:00:00Z";
                 List<Expenses> expenses = controller.GetExpenses(dateString);
-                electricity.Text = expenses.Find(ex => ex.Name == "Ток").Value.ToString();
-                water.Text = expenses.Find(ex => ex.Name == "Вода").Value.ToString();
-                internet.Text = expenses.Find(ex => ex.Name == "Интернет").Value.ToString();
+                if (expenses.Count != 0)
+                {
+                    electricity.Text = expenses.SingleOrDefault(ex => ex.Name == "Ток").Value.ToString();
+                    water.Text = expenses.SingleOrDefault(ex => ex.Name == "Вода").Value.ToString();
+                    internet.Text = expenses.SingleOrDefault(ex => ex.Name == "Интернет").Value.ToString();
+                }
+                else
+                {
+                    label30.Visible = true;
+                    label30.Text = "Няма добавени разходи за периода " + year.Text + "/" + months.SelectedItem.ToString();
+                }
             }
         }
     }

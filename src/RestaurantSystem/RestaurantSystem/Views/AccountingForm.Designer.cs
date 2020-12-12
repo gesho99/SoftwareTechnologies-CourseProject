@@ -512,10 +512,12 @@
             // 
             // label30
             // 
-            this.label30.Location = new System.Drawing.Point(0, 0);
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Location = new System.Drawing.Point(508, 450);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(100, 23);
+            this.label30.Size = new System.Drawing.Size(423, 23);
             this.label30.TabIndex = 0;
+            this.label30.Text = "label30";
             // 
             // label31
             // 
