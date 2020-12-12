@@ -89,6 +89,7 @@ namespace RestaurantSystem
         private void addExpense_Click(object sender, EventArgs e)
         {
             string validation = expensesValidation();
+            MessageBox.Show(validation);
             if (validation != "f")
             {
                 string dateString = year.Text + months.SelectedItem.ToString() + "01T00:00:00Z";
@@ -102,27 +103,42 @@ namespace RestaurantSystem
                         label30.Text = "Въведеният разход " + electricity.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
                         return;
                     }
+                    else
+                    {
+                        label30.Visible = true;
+                        label30.Text = "Въведеният разход " + electricity.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " е успешно добавен";
+                    }
                 }
 
                 if (validation.Contains("w"))
                 {
                     double wValue = double.Parse(water.Text);
-                    if (!controller.AddWaterExpense(dateString, wValue))
+                    if (controller.AddWaterExpense(dateString, wValue) == false)
                     {
                         label30.Visible = true;
                         label30.Text = "Въведеният разход " + water.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
                         return;
+                    }
+                    else
+                    {
+                        label30.Visible = true;
+                        label30.Text = "Въведеният разход " + water.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " е успешно добавен.";
                     }
                 }
 
                 if (validation.Contains("i"))
                 {
                     double iValue = double.Parse(internet.Text);
-                    if (!controller.AddInternetExpense(dateString, iValue))
+                    if (!controller.AddInternetExpense(dateString, iValue) == false)
                     {
                         label30.Visible = true;
                         label30.Text = "Въведеният разход " + internet.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
                         return;
+                    }
+                    else
+                    {
+                        label30.Visible = true;
+                        label30.Text = "Въведеният разход " + internet.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " е успешно добавен.";
                     }
                 }
 
@@ -148,9 +164,21 @@ namespace RestaurantSystem
                 List<Expenses> expenses = controller.GetExpenses(dateString);
                 if (expenses.Count != 0)
                 {
-                    electricity.Text = expenses.SingleOrDefault(ex => ex.Name == "Ток").Value.ToString();
-                    water.Text = expenses.SingleOrDefault(ex => ex.Name == "Вода").Value.ToString();
-                    internet.Text = expenses.SingleOrDefault(ex => ex.Name == "Интернет").Value.ToString();
+                    foreach(Expenses expense in expenses)
+                    {
+                        if(expense.Name == "Ток")
+                        {
+                            electricity.Text = expense.Value.ToString();
+                        }
+                        else if (expense.Name == "Вода")
+                        {
+                            water.Text = expense.Value.ToString();
+                        }
+                        else if (expense.Name == "Интернет")
+                        {
+                            internet.Text = expense.Value.ToString();
+                        }
+                    }
                 }
                 else
                 {

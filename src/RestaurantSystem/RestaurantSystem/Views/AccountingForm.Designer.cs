@@ -68,7 +68,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.addExpense = new System.Windows.Forms.Button();
             this.months = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -436,14 +436,15 @@
             this.label25.TabIndex = 39;
             this.label25.Text = ".лв";
             // 
-            // button4
+            // addExpense
             // 
-            this.button4.Location = new System.Drawing.Point(576, 366);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Добави";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addExpense.Location = new System.Drawing.Point(576, 366);
+            this.addExpense.Name = "addExpense";
+            this.addExpense.Size = new System.Drawing.Size(75, 23);
+            this.addExpense.TabIndex = 40;
+            this.addExpense.Text = "Добави";
+            this.addExpense.UseVisualStyleBackColor = true;
+            this.addExpense.Click += new System.EventHandler(this.addExpense_Click);
             // 
             // months
             // 
@@ -561,7 +562,7 @@
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.months);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.addExpense);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
@@ -651,7 +652,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button addExpense;
         private System.Windows.Forms.ComboBox months;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
