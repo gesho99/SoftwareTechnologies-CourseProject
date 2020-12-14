@@ -152,12 +152,6 @@
             // dayIncomes
             // 
 
-            this.textBox1.Location = new System.Drawing.Point(57, 144);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 6;
-
             this.dayIncomes.Location = new System.Drawing.Point(43, 117);
             this.dayIncomes.Name = "dayIncomes";
             this.dayIncomes.Size = new System.Drawing.Size(100, 20);
@@ -167,12 +161,6 @@
             // dayExpenses
             // 
 
-            this.textBox2.Location = new System.Drawing.Point(241, 144);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 7;
-
             this.dayExpenses.Location = new System.Drawing.Point(181, 117);
             this.dayExpenses.Name = "dayExpenses";
             this.dayExpenses.Size = new System.Drawing.Size(100, 20);
@@ -181,12 +169,6 @@
             // 
             // dayProfit
             // 
-
-            this.textBox3.Location = new System.Drawing.Point(428, 144);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 8;
 
             this.dayProfit.Location = new System.Drawing.Point(321, 117);
             this.dayProfit.Name = "dayProfit";
@@ -310,14 +292,6 @@
             // 
             // addAccountingForDay
             // 
-
-            this.button1.Location = new System.Drawing.Point(257, 201);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Изчисли";
-            this.button1.UseVisualStyleBackColor = true;
 
             this.addAccountingForDay.Location = new System.Drawing.Point(193, 163);
             this.addAccountingForDay.Name = "addAccountingForDay";

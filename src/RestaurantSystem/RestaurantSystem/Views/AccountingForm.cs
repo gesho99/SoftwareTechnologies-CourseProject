@@ -228,6 +228,7 @@ namespace RestaurantSystem
         {
             new HomeAdmin().Show();
             this.Hide();
+        }
 
         private void addAccountingForDay_Click(object sender, EventArgs e)
         {
