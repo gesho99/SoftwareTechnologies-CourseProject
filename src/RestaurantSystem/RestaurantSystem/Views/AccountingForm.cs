@@ -22,7 +22,10 @@ namespace RestaurantSystem
             InitializeComponent();
             label30.Visible = false;
         }
+        public AccountingForm()
+        {
 
+        }
         private string expensesValidation()
         {
             string validation = "";
@@ -218,6 +221,12 @@ namespace RestaurantSystem
                     label30.Text = "Разходите са успешно редактирани.";
                 }
             }
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin().Show();
+            this.Hide();
         }
     }
 }

@@ -24,6 +24,7 @@ namespace RestaurantSystem
             InitializeComponent();
             LoadDishes();
         }
+        
 
         public void LoadDishes()
         {
@@ -149,10 +150,7 @@ namespace RestaurantSystem
 
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void deleteMenuItem_Click(object sender, EventArgs e)
         {
@@ -173,6 +171,12 @@ namespace RestaurantSystem
                     LoadDishes();
                 }
             }
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin().Show();
+            this.Hide();
         }
     }
 }

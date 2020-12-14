@@ -22,6 +22,7 @@ namespace RestaurantSystem
             InitializeComponent();
             LoadProducts();
         }
+        
 
         public void LoadProducts()
         {
@@ -138,6 +139,12 @@ namespace RestaurantSystem
         private void ProductsInStockForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin().Show();
+            this.Hide();
         }
     }
 }

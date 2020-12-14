@@ -5,16 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoginForm
+namespace RestaurantSystem.Views
 {
     public partial class StaffForm : Form
     {
         public StaffForm()
         {
             InitializeComponent();
+        }
+
+        private void Table_Click(object sender, EventArgs e)
+        {
+            new Tables().Show();
+            this.Hide();
         }
     }
 }

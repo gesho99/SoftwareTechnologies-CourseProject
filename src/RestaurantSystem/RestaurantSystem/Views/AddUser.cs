@@ -5,15 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
-namespace LoginForm
+namespace RestaurantSystem
 {
     public partial class AddUser : Form
     {
+
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
         public AddUser()
@@ -24,7 +23,7 @@ namespace LoginForm
 
         private void AddUser_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
+            StaffcomboBox.Items.Clear();
             con.Open();
             com = con.CreateCommand();
             com.CommandType = CommandType.Text;
@@ -37,8 +36,8 @@ namespace LoginForm
 
             foreach (DataRow dr in dt.Rows)
             {
-                comboBox1.Items.Add(dr["FirstName"].ToString());
-                    
+                StaffcomboBox.Items.Add(dr["FirstName"].ToString());
+
             }
             con.Close();
 
@@ -69,7 +68,7 @@ namespace LoginForm
             com = con.CreateCommand();
             com.CommandType = CommandType.Text;
             com.CommandText = "Insert into Users (EmployerId, RoleId,Username,Password)";
-            com.Parameters.AddWithValue("@EmployerId", comboBox1.SelectedValue);
+            com.Parameters.AddWithValue("@EmployerId", StaffcomboBox.SelectedValue);
             com.Parameters.AddWithValue("@RoleId", comboBox2.SelectedValue);
             com.Parameters.AddWithValue("@Username", usernameTextbox.Text);
             com.Parameters.AddWithValue("@Password", passwordTextbox);
@@ -78,6 +77,12 @@ namespace LoginForm
             com.ExecuteNonQuery();
             con.Close();
 
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin().Show();
+            this.Hide();
         }
     }
 }
