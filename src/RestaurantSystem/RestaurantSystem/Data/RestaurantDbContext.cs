@@ -31,7 +31,9 @@ namespace RestaurantSystem.Data
 
         public DbSet<DishProducts2> DishProducts2 { get; set; }
 
-        public DbSet<Supplier> Suppliers {get; set;}
+        public DbSet<Supplier> Suppliers { get; set; }
+
+        public DbSet<DayAccountings> DayAccountings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -70,6 +72,13 @@ namespace RestaurantSystem.Data
                 .HasRequired<Supplier>(d => d.Supplier)
                 .WithMany(s => s.Deliveries)
                 .HasForeignKey(d => d.SupplierId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<EmployerReport>()
+                .HasRequired<DayAccountings>(empr => empr.DayAccounting)
+                .WithMany(dayA => dayA.EmployerReports)
+                .HasForeignKey(empr => empr.DayAccountingId)
                 .WillCascadeOnDelete(false);
         }
     }

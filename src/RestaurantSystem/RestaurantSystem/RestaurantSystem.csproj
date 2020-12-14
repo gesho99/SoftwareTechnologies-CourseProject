@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Data\Models\DayAccountings.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
     <Compile Include="Data\Models\DishProducts2.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
