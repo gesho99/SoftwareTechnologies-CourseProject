@@ -45,47 +45,13 @@ namespace RestaurantSystem
         }
         private bool DeliveryValidation()
         {
-
-
-
-             try
-              {
-                  String pName = productName.Text;
-                  int dQuantity = int.Parse(productQuantity.Text);
-                  double dPrice = double.Parse(deliveryPrice.Text);
-                  string dSupplier = deliverySupplier.Text;
-                  label2.Visible = false;
-
-
-
-                  else if (dQuantity <= 0)
-                  {
-                      label2.Text = "Моля въведете количество по - голямо от нула";
-                      return false;
-                  }
-                  else if (pName.Length < 3 || dSupplier.Length < 3)
-                  {
-                      label2.Text = "Моля въведете валидно име на продукт / доставчик";
-                      return false;
-                  }
-                  else
-                  {
-                      return true;
-                  }
-              }
-              catch (FormatException)
-              {
-                  label2.Text = "Моля въведете валидни данни.";
-                  return false;
-              }
-              catch (OverflowException)
-              {
-                  label2.Text = "Моля въведете валидни данни.";
-                  return false;
-              }
-
-      
-            
+            try
+            {
+                String pName = productName.Text;
+                int dQuantity = int.Parse(productQuantity.Text);
+                double dPrice = double.Parse(deliveryPrice.Text);
+                string dSupplier = deliverySupplier.Text;
+                label2.Visible = false;
 
                 if (dQuantity <= 0)
                 {
@@ -112,10 +78,8 @@ namespace RestaurantSystem
                 label2.Text = "Моля въведете валидни данни.";
                 return false;
             }
-        
 
         }
-
 
         private void editDelivery_Click(object sender, EventArgs e)
         {
