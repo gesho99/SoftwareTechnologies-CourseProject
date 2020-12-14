@@ -14,13 +14,21 @@ namespace RestaurantSystem.Data.Models
 
         public int EmployerId { get; set; }
 
+        [ForeignKey("EmployerId")]
         public Employer Employer { get; set; }
+
+        public int DayAccountingId { get; set; }
+
+        [ForeignKey("DayAccountingId")]
+        public DayAccountings DayAccounting { get; set; }
 
         [Required]
         public double Bill { get; set; }
 
         [Required]
         public DateTime ReportDate { get; set; }
+
+        public ICollection<Dish> Dishes { get; set; } = new HashSet<Dish>();
 
     }
 }

@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Data\Models\DayAccountings.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
     <Compile Include="Data\Models\DishProducts2.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
@@ -136,6 +137,10 @@
     <Compile Include="Migrations\202012051653540_TablesMigration.designer.cs">
       <DependentUpon>202012051653540_TablesMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012141611099_EmployerReportsDishes.cs" />
+    <Compile Include="Migrations\202012141611099_EmployerReportsDishes.designer.cs">
+      <DependentUpon>202012141611099_EmployerReportsDishes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
       <SubType>Form</SubType>
@@ -154,6 +159,12 @@
     </Compile>
     <Compile Include="Views\Deliveries.Designer.cs">
       <DependentUpon>Deliveries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeRegistration.Designer.cs">
+      <DependentUpon>EmployeeRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Employees.cs">
       <SubType>Form</SubType>
@@ -223,6 +234,9 @@
     <EmbeddedResource Include="Migrations\202012051653540_TablesMigration.resx">
       <DependentUpon>202012051653540_TablesMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012141611099_EmployerReportsDishes.resx">
+      <DependentUpon>202012141611099_EmployerReportsDishes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeRegistration.resx">
+      <DependentUpon>EmployeeRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
@@ -275,7 +292,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

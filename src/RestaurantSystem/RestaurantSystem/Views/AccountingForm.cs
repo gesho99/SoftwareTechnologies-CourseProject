@@ -223,10 +223,30 @@ namespace RestaurantSystem
             }
         }
 
+
         private void Home_Click(object sender, EventArgs e)
         {
             new HomeAdmin().Show();
             this.Hide();
+
+        private void addAccountingForDay_Click(object sender, EventArgs e)
+        {
+            int day = DateTime.Now.Day;
+            int month = DateTime.Now.Month;
+            int year = DateTime.Now.Year;
+
+            string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
+
+            double expenses = controller.GetDayReportExpenses(dateString);
+            double incomes = controller.GetDayReportIncomes(dateString);
+
+            dayExpenses.Text = expenses.ToString();
+            dayIncomes.Text = incomes.ToString();
+
+            double profit = incomes - expenses;
+
+            dayProfit.Text = profit.ToString();
+
         }
     }
 }
