@@ -22,7 +22,10 @@ namespace RestaurantSystem
             InitializeComponent();
             label30.Visible = false;
         }
+        public AccountingForm()
+        {
 
+        }
         private string expensesValidation()
         {
             string validation = "";
@@ -220,6 +223,12 @@ namespace RestaurantSystem
             }
         }
 
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin().Show();
+            this.Hide();
+
         private void addAccountingForDay_Click(object sender, EventArgs e)
         {
             int day = DateTime.Now.Day;
@@ -237,6 +246,7 @@ namespace RestaurantSystem
             double profit = incomes - expenses;
 
             dayProfit.Text = profit.ToString();
+
         }
     }
 }

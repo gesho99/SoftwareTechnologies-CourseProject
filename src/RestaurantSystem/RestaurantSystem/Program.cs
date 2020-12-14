@@ -18,14 +18,18 @@ namespace RestaurantSystem
         [STAThread]
         static void Main()
         {
+               
             Controller controller = new Controller();
             controller.CreateDB();
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountingForm(controller));
+            //Application.Run(new AccountingForm(controller));
+            Application.Run(new Login());
+            
+        
 
         }
     }

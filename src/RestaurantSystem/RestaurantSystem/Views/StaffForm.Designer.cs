@@ -1,4 +1,4 @@
-﻿namespace LoginForm
+﻿namespace RestaurantSystem.Views
 {
     partial class StaffForm
     {
@@ -39,18 +39,19 @@
             this.table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table.Image = ((System.Drawing.Image)(resources.GetObject("table.Image")));
             this.table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.table.Location = new System.Drawing.Point(134, 28);
+            this.table.Location = new System.Drawing.Point(91, 37);
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(119, 160);
-            this.table.TabIndex = 9;
+            this.table.TabIndex = 10;
             this.table.Text = "Маси";
             this.table.UseVisualStyleBackColor = false;
+            this.table.Click += new System.EventHandler(this.Table_Click);
             // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 210);
+            this.ClientSize = new System.Drawing.Size(300, 234);
             this.Controls.Add(this.table);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffForm";

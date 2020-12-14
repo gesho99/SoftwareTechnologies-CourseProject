@@ -50,7 +50,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.backTb = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,9 +64,11 @@
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 369);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(387, 454);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Избрана маса";
@@ -78,18 +79,21 @@
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.item);
             this.groupBox3.Controls.Add(this.category);
-            this.groupBox3.Location = new System.Drawing.Point(6, 199);
+            this.groupBox3.Location = new System.Drawing.Point(8, 245);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(278, 158);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(371, 194);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Добавяне на продукт";
             // 
             // addItem
             // 
-            this.addItem.Location = new System.Drawing.Point(161, 115);
+            this.addItem.Location = new System.Drawing.Point(215, 142);
+            this.addItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addItem.Name = "addItem";
-            this.addItem.Size = new System.Drawing.Size(111, 37);
+            this.addItem.Size = new System.Drawing.Size(148, 46);
             this.addItem.TabIndex = 3;
             this.addItem.Text = "Добави продукт";
             this.addItem.UseVisualStyleBackColor = true;
@@ -97,18 +101,20 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 94);
+            this.textBox2.Location = new System.Drawing.Point(8, 116);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(105, 20);
+            this.textBox2.Size = new System.Drawing.Size(139, 22);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "Количество";
             // 
             // item
             // 
             this.item.FormattingEnabled = true;
-            this.item.Location = new System.Drawing.Point(6, 56);
+            this.item.Location = new System.Drawing.Point(8, 69);
+            this.item.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.item.Name = "item";
-            this.item.Size = new System.Drawing.Size(266, 21);
+            this.item.Size = new System.Drawing.Size(353, 24);
             this.item.TabIndex = 1;
             // 
             // category
@@ -119,33 +125,37 @@
             "Non-alcoholic drinks",
             "Alcoholic drinks",
             "Cocktails"});
-            this.category.Location = new System.Drawing.Point(6, 19);
+            this.category.Location = new System.Drawing.Point(8, 23);
+            this.category.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(266, 21);
+            this.category.Size = new System.Drawing.Size(353, 24);
             this.category.TabIndex = 0;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 59);
+            this.richTextBox1.Location = new System.Drawing.Point(8, 73);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(278, 134);
+            this.richTextBox1.Size = new System.Drawing.Size(369, 164);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(235, 37);
+            this.textBox1.Location = new System.Drawing.Point(313, 46);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(49, 20);
+            this.textBox1.Size = new System.Drawing.Size(64, 22);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(95, 32);
+            this.label1.Location = new System.Drawing.Point(127, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 24);
+            this.label1.Size = new System.Drawing.Size(181, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Избрана маса:";
             // 
@@ -165,90 +175,101 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(312, 12);
+            this.groupBox2.Location = new System.Drawing.Point(416, 15);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 369);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(396, 454);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Маси";
             // 
             // addTable
             // 
-            this.addTable.Location = new System.Drawing.Point(174, 314);
+            this.addTable.Location = new System.Drawing.Point(232, 386);
+            this.addTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addTable.Name = "addTable";
-            this.addTable.Size = new System.Drawing.Size(111, 37);
+            this.addTable.Size = new System.Drawing.Size(148, 46);
             this.addTable.TabIndex = 10;
             this.addTable.Text = "Добави маса";
             this.addTable.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(174, 239);
+            this.button10.Location = new System.Drawing.Point(232, 294);
+            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(111, 37);
+            this.button10.Size = new System.Drawing.Size(148, 46);
             this.button10.TabIndex = 9;
             this.button10.Text = "Маса 10";
             this.button10.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(174, 186);
+            this.button9.Location = new System.Drawing.Point(232, 229);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(111, 37);
+            this.button9.Size = new System.Drawing.Size(148, 46);
             this.button9.TabIndex = 8;
             this.button9.Text = "Маса 9";
             this.button9.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(174, 134);
+            this.button8.Location = new System.Drawing.Point(232, 165);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(111, 37);
+            this.button8.Size = new System.Drawing.Size(148, 46);
             this.button8.TabIndex = 7;
             this.button8.Text = "Маса 8";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(174, 81);
+            this.button7.Location = new System.Drawing.Point(232, 100);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(111, 37);
+            this.button7.Size = new System.Drawing.Size(148, 46);
             this.button7.TabIndex = 6;
             this.button7.Text = "Маса 7";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(174, 28);
+            this.button6.Location = new System.Drawing.Point(232, 34);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(111, 37);
+            this.button6.Size = new System.Drawing.Size(148, 46);
             this.button6.TabIndex = 5;
             this.button6.Text = "Маса 6";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(16, 239);
+            this.button5.Location = new System.Drawing.Point(21, 294);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 37);
+            this.button5.Size = new System.Drawing.Size(148, 46);
             this.button5.TabIndex = 4;
             this.button5.Text = "Маса 5";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(16, 187);
+            this.button4.Location = new System.Drawing.Point(21, 230);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 37);
+            this.button4.Size = new System.Drawing.Size(148, 46);
             this.button4.TabIndex = 3;
             this.button4.Text = "Маса 4";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(16, 134);
+            this.button3.Location = new System.Drawing.Point(21, 165);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 37);
+            this.button3.Size = new System.Drawing.Size(148, 46);
             this.button3.TabIndex = 2;
             this.button3.Text = "Маса 3";
             this.button3.UseVisualStyleBackColor = true;
@@ -261,9 +282,10 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(16, 81);
+            this.button2.Location = new System.Drawing.Point(21, 100);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 37);
+            this.button2.Size = new System.Drawing.Size(148, 46);
             this.button2.TabIndex = 1;
             this.button2.Text = "Маса 2";
             this.button2.UseVisualStyleBackColor = false;
@@ -271,31 +293,23 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(16, 28);
+            this.button1.Location = new System.Drawing.Point(21, 34);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 37);
+            this.button1.Size = new System.Drawing.Size(148, 46);
             this.button1.TabIndex = 0;
             this.button1.Text = "Маса 1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // backTb
-            // 
-            this.backTb.Location = new System.Drawing.Point(486, 387);
-            this.backTb.Name = "backTb";
-            this.backTb.Size = new System.Drawing.Size(111, 37);
-            this.backTb.TabIndex = 11;
-            this.backTb.Text = "Назад";
-            this.backTb.UseVisualStyleBackColor = true;
-            // 
             // Tables
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 426);
-            this.Controls.Add(this.backTb);
+            this.ClientSize = new System.Drawing.Size(828, 524);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Tables";
             this.Text = "Маси";
             this.groupBox1.ResumeLayout(false);
@@ -330,6 +344,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button backTb;
     }
 }

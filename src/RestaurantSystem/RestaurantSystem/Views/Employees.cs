@@ -16,5 +16,11 @@ namespace RestaurantSystem
         {
             InitializeComponent();
         }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin().Show();
+            this.Hide();
+        }
     }
 }

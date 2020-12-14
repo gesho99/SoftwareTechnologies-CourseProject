@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoginForm
+namespace RestaurantSystem
 {
     public partial class Login : Form
     {
@@ -18,6 +18,7 @@ namespace LoginForm
             Username.Select(0, 0);
             Password.UseSystemPasswordChar = false;
         }
+        
 
         private void Username_KeyDown(object sender, KeyEventArgs e)
         {
