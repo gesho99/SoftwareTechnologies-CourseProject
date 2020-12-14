@@ -398,5 +398,38 @@ namespace RestaurantSystem.Controllers
             db.SaveChanges();
             return true;
         }
+
+        public double GetDayReportExpenses(String dateString)
+        {
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+            List<EmployerReport> todayReports = db.EmployerReports.Where(er => er.ReportDate == today).ToList();
+            double productsInTodayDishesPrice = 0;
+
+            foreach(EmployerReport report in todayReports)
+            {
+                foreach(Dish dish in report.Dishes)
+                {
+                    foreach(Product product in dish.Products){
+                        productsInTodayDishesPrice += product.Price + product.DeliveryPrice;
+                    }
+                }
+            }
+
+            return productsInTodayDishesPrice;
+        }
+
+        public double GetDayReportIncomes(String dateString)
+        {
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+            List<EmployerReport> todayReports = db.EmployerReports.Where(er => er.ReportDate == today).ToList();
+            double reportsBills = 0;
+
+            foreach(EmployerReport report in todayReports)
+            {
+                reportsBills += report.Bill;
+            }
+
+            return reportsBills;
+        }
     }
 }

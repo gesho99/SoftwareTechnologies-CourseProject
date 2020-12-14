@@ -34,9 +34,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dayIncomes = new System.Windows.Forms.TextBox();
+            this.dayExpenses = new System.Windows.Forms.TextBox();
+            this.dayProfit = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -142,26 +142,26 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Печалба";
             // 
-            // textBox1
+            // dayIncomes
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.dayIncomes.Location = new System.Drawing.Point(43, 117);
+            this.dayIncomes.Name = "dayIncomes";
+            this.dayIncomes.Size = new System.Drawing.Size(100, 20);
+            this.dayIncomes.TabIndex = 6;
             // 
-            // textBox2
+            // dayExpenses
             // 
-            this.textBox2.Location = new System.Drawing.Point(181, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.dayExpenses.Location = new System.Drawing.Point(181, 117);
+            this.dayExpenses.Name = "dayExpenses";
+            this.dayExpenses.Size = new System.Drawing.Size(100, 20);
+            this.dayExpenses.TabIndex = 7;
             // 
-            // textBox3
+            // dayProfit
             // 
-            this.textBox3.Location = new System.Drawing.Point(321, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.dayProfit.Location = new System.Drawing.Point(321, 117);
+            this.dayProfit.Name = "dayProfit";
+            this.dayProfit.Size = new System.Drawing.Size(100, 20);
+            this.dayProfit.TabIndex = 8;
             // 
             // label7
             // 
@@ -607,9 +607,9 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dayProfit);
+            this.Controls.Add(this.dayExpenses);
+            this.Controls.Add(this.dayIncomes);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -631,9 +631,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox dayIncomes;
+        private System.Windows.Forms.TextBox dayExpenses;
+        private System.Windows.Forms.TextBox dayProfit;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
