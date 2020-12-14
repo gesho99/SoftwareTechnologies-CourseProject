@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LoginForm
 {
     public partial class Login : Form
     {
+        SqlConnection con = new SqlConnection();
+        SqlCommand com = new SqlCommand();
+
         public Login()
         {
             InitializeComponent();
+            con.ConnectionString = @"Data Source=DESKTOP-MJGIC87;Initial Catalog=RestaurantDataBase;Integrated Security=True";
             Username.Select(0, 0);
             Password.UseSystemPasswordChar = false;
         }
@@ -101,23 +106,27 @@ namespace LoginForm
             Password.UseSystemPasswordChar = true;
         }
 
-        private void Admin_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Admin.Checked)
-            {
-                Username.Text = "Admin";
-                Username.ReadOnly = true;
-            }
-            else
-            {
-                Username.ForeColor = Color.DarkGray;
-                Username.Text = "  Enter Username:";
-                Username.ReadOnly = false;
-            }
-        }
-
+       
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            con.Open();
+            com.Connection = con;
+            com.CommandText = "select * from Users";
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())
+            {
+                if (Username.Text.Equals(dr["Username"].ToString())&&Password.Text.Equals(dr["Password"].ToString())&&dr["RoleId"].Equals(1))
+                {
+                    new AdminHome().Show();
+                    this.Hide();
+                }
+            }
+            else if(Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(2))
+            {
+                new StaffForm().Show();
+                this.Hide();
+            }
+
             
         }
     }

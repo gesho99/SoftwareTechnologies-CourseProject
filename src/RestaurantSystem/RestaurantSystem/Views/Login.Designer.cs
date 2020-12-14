@@ -34,7 +34,6 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Label();
             this.Show = new System.Windows.Forms.Label();
-            this.Admin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // LoginLabel
@@ -115,24 +114,12 @@
             this.Show.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Show_MouseDown);
             this.Show.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Show_MouseUp);
             // 
-            // Admin
-            // 
-            this.Admin.AutoSize = true;
-            this.Admin.Location = new System.Drawing.Point(19, 219);
-            this.Admin.Name = "Admin";
-            this.Admin.Size = new System.Drawing.Size(69, 21);
-            this.Admin.TabIndex = 7;
-            this.Admin.Text = "Admin";
-            this.Admin.UseVisualStyleBackColor = true;
-            this.Admin.CheckedChanged += new System.EventHandler(this.Admin_CheckedChanged);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(586, 267);
-            this.Controls.Add(this.Admin);
             this.Controls.Add(this.Show);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.LoginButton);
@@ -158,7 +145,6 @@
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label Show;
-        private System.Windows.Forms.CheckBox Admin;
     }
 }
 
