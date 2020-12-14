@@ -51,7 +51,7 @@ namespace RestaurantSystem
                 label2.Visible = false;
             
 
-                else if (dQuantity <= 0)
+                if (dQuantity <= 0)
                 {
                     label2.Text = "Моля въведете количество по - голямо от нула";
                     return false;

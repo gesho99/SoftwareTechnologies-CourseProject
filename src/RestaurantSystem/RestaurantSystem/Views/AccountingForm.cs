@@ -219,5 +219,10 @@ namespace RestaurantSystem
                 }
             }
         }
+
+        private void addAccountingForDay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

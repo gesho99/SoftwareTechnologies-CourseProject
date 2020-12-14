@@ -49,7 +49,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addAccountingForDay = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -265,14 +265,15 @@
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 20;
             // 
-            // button1
+            // addAccountingForDay
             // 
-            this.button1.Location = new System.Drawing.Point(193, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Изчисли";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addAccountingForDay.Location = new System.Drawing.Point(193, 163);
+            this.addAccountingForDay.Name = "addAccountingForDay";
+            this.addAccountingForDay.Size = new System.Drawing.Size(75, 23);
+            this.addAccountingForDay.TabIndex = 21;
+            this.addAccountingForDay.Text = "Изчисли";
+            this.addAccountingForDay.UseVisualStyleBackColor = true;
+            this.addAccountingForDay.Click += new System.EventHandler(this.addAccountingForDay_Click);
             // 
             // button2
             // 
@@ -593,7 +594,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addAccountingForDay);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
@@ -645,7 +646,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addAccountingForDay;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;

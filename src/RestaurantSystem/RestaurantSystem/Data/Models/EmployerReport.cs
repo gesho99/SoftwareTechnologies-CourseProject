@@ -22,5 +22,7 @@ namespace RestaurantSystem.Data.Models
         [Required]
         public DateTime ReportDate { get; set; }
 
+        public ICollection<Dish> Dishes { get; set; } = new HashSet<Dish>();
+
     }
 }

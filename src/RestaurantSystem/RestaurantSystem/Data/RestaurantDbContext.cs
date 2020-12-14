@@ -71,7 +71,6 @@ namespace RestaurantSystem.Data
                 .WithMany(s => s.Deliveries)
                 .HasForeignKey(d => d.SupplierId)
                 .WillCascadeOnDelete(false);
-
         }
     }
 }

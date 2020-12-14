@@ -114,6 +114,10 @@
     <Compile Include="Migrations\202012051653540_TablesMigration.designer.cs">
       <DependentUpon>202012051653540_TablesMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012141611099_EmployerReportsDishes.cs" />
+    <Compile Include="Migrations\202012141611099_EmployerReportsDishes.designer.cs">
+      <DependentUpon>202012141611099_EmployerReportsDishes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
       <SubType>Form</SubType>
@@ -182,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012051653540_TablesMigration.resx">
       <DependentUpon>202012051653540_TablesMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012141611099_EmployerReportsDishes.resx">
+      <DependentUpon>202012141611099_EmployerReportsDishes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>
