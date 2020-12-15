@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using RestaurantSystem.Controllers;
 
 namespace RestaurantSystem
 {
     public partial class AddUser : Form
     {
+        Controller controller;
 
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
-        public AddUser()
+        public AddUser(Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
             con.ConnectionString = @"Data Source=DESKTOP-MJGIC87;Initial Catalog=RestaurantDataBase;Integrated Security=True";
         }
@@ -81,7 +84,7 @@ namespace RestaurantSystem
 
         private void Home_Click(object sender, EventArgs e)
         {
-            new HomeAdmin().Show();
+            new HomeAdmin(controller).Show();
             this.Hide();
         }
     }

@@ -150,7 +150,7 @@ namespace RestaurantSystem
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            new HomeAdmin().Show();
+            new HomeAdmin(controller).Show();
             this.Hide();
         }
     }

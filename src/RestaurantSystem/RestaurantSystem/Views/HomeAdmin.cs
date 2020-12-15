@@ -12,8 +12,11 @@ namespace RestaurantSystem
 {
     public partial class HomeAdmin : Form
     {
-        public HomeAdmin()
+        Controller controller;
+
+        public HomeAdmin(Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
         }
 
@@ -25,14 +28,14 @@ namespace RestaurantSystem
 
         private void AddUser_Click(object sender, EventArgs e)
         {
-            new AddUser().Show();
+            new AddUser(controller).Show();
             this.Hide();
         }
 
         private void Employees_Click(object sender, EventArgs e)
         {
             
-            new Employees().Show();
+            new Employees(controller).Show();
             this.Hide();
         }
 
@@ -53,7 +56,7 @@ namespace RestaurantSystem
 
         private void Delivery_Click(object sender, EventArgs e)
         {
-            new Deliveries().Show();
+            new Deliveries(controller).Show();
             this.Hide();
         }
 
