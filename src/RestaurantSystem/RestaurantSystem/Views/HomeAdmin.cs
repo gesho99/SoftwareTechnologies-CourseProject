@@ -42,15 +42,15 @@ namespace RestaurantSystem
         private void Menu_Click(object sender, EventArgs e)
         {
           
-               // new Menu().Show();
+                new Menu(controller).Show();
                 this.Hide();
 
-                }
+        }
 
-            private void Stock_Click(object sender, EventArgs e)
+        private void Stock_Click(object sender, EventArgs e)
         {
 
-            //new ProductsInStockForm().Visible = true
+            new ProductsInStockForm(controller).Visible = true;
             this.Hide();
         }
 
