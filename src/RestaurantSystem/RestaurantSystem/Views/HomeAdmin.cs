@@ -42,8 +42,8 @@ namespace RestaurantSystem
         private void Menu_Click(object sender, EventArgs e)
         {
           
-                new Menu(controller).Show();
-                this.Hide();
+             new Menu(controller).Show();
+             this.Hide();
 
         }
 
@@ -62,7 +62,7 @@ namespace RestaurantSystem
 
         private void Accounting_Click(object sender, EventArgs e)
         {
-            new AccountingForm().Show();
+            new AccountingForm(controller).Show();
             this.Hide();
         }
     }
