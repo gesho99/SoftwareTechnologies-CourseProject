@@ -140,43 +140,71 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public Supplier SelectSupplierByDay(string day)
+        {
+            ICollection<Supplier> suppliers = new HashSet<Supplier>();
+            DateTime dt = DateTime.UtcNow;
+            string today = dt.ToString("dddd");
+
+            suppliers = db.Suppliers
+                .Select(p => p)
+                .ToArray();
+
+            foreach (Supplier supplier in suppliers)
+            {
+                if (supplier.AvailableDays.Split(',').ToArray().Contains(today))
+                {
+                    return supplier;
+                }               
+            }
+
+            return null;
+            
+        }
+
         public void AddDelivery()
         {
             ICollection<Product> products = LoadProducts();
-            ICollection<Product> deliveryProducts = new HashSet<Product>();
-            string name = null;
+            ICollection<Product> deliveryProducts = new HashSet<Product>();           
+
             int deliveryQuantity = 20;
-            double deliveryPrice = 0;
-            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == name);
+            double productPrice = 0;
 
-            foreach (Product product in products)
+            DateTime dt = DateTime.UtcNow;
+            string today = dt.ToString("dddd");
+            Supplier supplier = SelectSupplierByDay(today);
+
+            if (supplier != null)
             {
-                if (product.Quantity != 0 && product.Name != null)
+                foreach (Product product in products)
                 {
-                    deliveryProducts.Add(product);
-                    deliveryPrice += product.DeliveryPrice;
+                    if (product.Quantity <= 5 && product.Name != null)
+                    {
+                        deliveryProducts.Add(product);
+                        productPrice = product.DeliveryPrice;
+                    }
                 }
-            }
-            if (supplier.Name != null)
-            {
-                Delivery delivery = new Delivery
+                if (deliveryProducts != null)
                 {
-                    DeliveryQuantity = deliveryQuantity,
-                    DeliveryPrice = deliveryPrice * deliveryQuantity,
-                    Supplier = supplier,
-                    DeliveryDate = DateTime.UtcNow,
-                    Approved = false,
-                    Products = deliveryProducts
-                };
+                    db.Deliveries.Add(new Delivery
+                    {
+                        DeliveryQuantity = deliveryQuantity,
+                        DeliveryPrice = productPrice * deliveryQuantity,
+                        DeliveryDate = dt,
+                        Approved = false,
+                        Products = deliveryProducts,
+                        Supplier = supplier
 
-                AddDeliveriesToSupplier(supplier, supplier.Deliveries);
+                    });
+
+                    db.SaveChanges();
+
+                }
+
             }
-        }
 
-        public Delivery SelectDeliveryByDeliveryQuantity(int quantity)
-        {
-            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.DeliveryQuantity == quantity);
-            return delivery;
+            AddDeliveriesToSupplier(supplier, supplier.Deliveries);
+            
         }
 
         public ICollection<Delivery> LoadDeliveries()

@@ -16,6 +16,8 @@ namespace RestaurantSystem.Data.Models
         [Required]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
+         
+        public string AvailableDays { get; set; }
 
         public ICollection<Delivery> Deliveries { get; set; }
 

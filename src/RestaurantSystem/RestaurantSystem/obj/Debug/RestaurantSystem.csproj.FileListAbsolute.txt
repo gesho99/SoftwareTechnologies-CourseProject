@@ -132,3 +132,9 @@ C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\sr
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Login.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.HomeAdmin.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.StaffForm.resources
+C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.EmployerReportsDishes.resources
+C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.AddUser.resources
+C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.EmployeeRegistration.resources
+C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Login.resources
+C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.HomeAdmin.resources
+C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.StaffForm.resources

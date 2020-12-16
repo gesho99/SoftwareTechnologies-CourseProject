@@ -23,11 +23,14 @@ namespace RestaurantSystem
             controller.CreateDB();
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
+
+            controller.AddDelivery();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AccountingForm(controller));
-            Application.Run(new HomeAdmin(controller));
+            Application.Run(new Deliveries(controller));
+            //Application.Run(new ProductsInStockForm(controller));
             
         
 

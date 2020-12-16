@@ -28,21 +28,30 @@ namespace RestaurantSystem
         {
             waitingDeliveries.Items.Clear();
 
-            ICollection<Delivery> Deliveries = controller.LoadDeliveries();
-            
-            foreach (Delivery delivery in Deliveries)
-            {
-                waitingDeliveries.Items.Add(
-                    delivery.Products + " " +
-                    delivery.DeliveryQuantity + " " +
-                    delivery.DeliveryPrice + " " +
-                    delivery.Supplier);
-            }
-        }
-        public Deliveries()
-        {
+            ICollection<Delivery> deliveries = controller.LoadDeliveries();
 
+            foreach (Delivery delivery in deliveries)
+            {
+                foreach (Product product in delivery.Products)
+                {
+                    if (!waitingDeliveries.Items.Contains(product.Name))
+                    {
+                        waitingDeliveries.Items.Add(
+                        product.Name + " " +
+                        delivery.DeliveryQuantity);
+                    }
+                                                         
+                }
+                if (!waitingDeliveries.Items.Contains(delivery.DeliveryPrice))
+                {
+                    waitingDeliveries.Items.Add(
+                    delivery.DeliveryPrice + " " +
+                    delivery.Supplier.Name);
+                }             
+            } 
+                
         }
+
         private bool DeliveryValidation()
         {
             try
