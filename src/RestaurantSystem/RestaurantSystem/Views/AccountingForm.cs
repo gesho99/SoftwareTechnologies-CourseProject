@@ -247,7 +247,6 @@ namespace RestaurantSystem
             double profit = incomes - expenses;
 
             dayProfit.Text = profit.ToString();
-
         }
     }
 }

@@ -18,7 +18,7 @@ namespace RestaurantSystem.Data.Models
 
         public DateTime Date { get; set; }
 
-        public ICollection<EmployerReport> EmployerReports { get; set; }
+        public ICollection<EmployerReport> EmployerReports { get; set; } = new HashSet<EmployerReport>();
          
     }
 }

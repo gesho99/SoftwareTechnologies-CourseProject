@@ -518,5 +518,30 @@ namespace RestaurantSystem.Controllers
 
             return reportsBills;
         }
+
+        public List<EmployerReport> GetDayReports(string dateString)
+        {
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+            List<EmployerReport> todayReports = db.EmployerReports.Where(er => er.ReportDate == today).ToList();
+            return todayReports;
+        }
+
+        public void AddDayAccounting(string dateString, double expenses, double incomes, double profit, List<EmployerReport> dayReports)
+        {
+            DateTime day = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+            DayAccountings accounting = db.DayAccountings.SingleOrDefault(da => da.Date == day);
+
+            if(accounting == null)
+            {
+                db.DayAccountings.Add(new DayAccountings
+                {
+                    DayExpense = expenses,
+                    DayIncome = incomes,
+                    DayProfit = profit,
+                    Date = day,
+                    EmployerReports = dayReports
+                });
+            }
+        }
     }
 }
