@@ -18,6 +18,67 @@ namespace RestaurantSystem.Controllers
             db.Database.CreateIfNotExists();
         }
 
+        public void CreateRoles()
+        {
+            Role admin = db.Roles.SingleOrDefault(r => r.Name == "admin");
+            Role waiter = db.Roles.SingleOrDefault(r => r.Name == "waiter");
+
+            if(admin == null)
+            {
+                db.Roles.Add(new Role
+                {
+                    Name = "admin"
+                });
+            }
+
+            if(waiter == null)
+            {
+                db.Roles.Add(new Role
+                {
+                    Name = "waiter"
+                });
+            }
+
+            db.SaveChanges();
+        }
+
+        public void CreateAdminEmployer()
+        {
+            Employer admin = db.Employers.SingleOrDefault(e => e.FirstName == "admin");
+            
+            if(admin == null)
+            {
+                db.Employers.Add(new Employer
+                {
+                    FirstName = "admin",
+                    LastName = "admin",
+                    Salary = 0
+                });
+
+                db.SaveChanges();
+            }
+        }
+
+        public void CreateAdminAccount()
+        {
+            User admin = db.Users.SingleOrDefault(u => u.Username == "admin");
+            int roleId = db.Roles.SingleOrDefault(r => r.Name == "admin").Id;
+            int employerId = db.Employers.SingleOrDefault(e => e.FirstName == "admin").Id;
+
+            if(admin == null)
+            {
+                db.Users.Add(new User
+                {
+                    Username = "admin",
+                    Password = "admin",
+                    RoleId = roleId,
+                    EmployerId = employerId
+                });
+
+                db.SaveChanges();
+            }
+        }
+
         public void AddProduct(string name, int quantity, double price, double dlprice)
         {
             db.Products.Add(new Product
@@ -200,10 +261,8 @@ namespace RestaurantSystem.Controllers
                     db.SaveChanges();
 
                 }
-
+                AddDeliveriesToSupplier(supplier, supplier.Deliveries);
             }
-
-            AddDeliveriesToSupplier(supplier, supplier.Deliveries);
             
         }
 

@@ -24,16 +24,17 @@ namespace RestaurantSystem
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
 
+            controller.CreateRoles();
+            controller.CreateAdminEmployer();
+            controller.CreateAdminAccount();
             controller.AddDelivery();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AccountingForm(controller));
-            Application.Run(new Deliveries(controller));
+            //Application.Run(new Deliveries(controller));
             //Application.Run(new ProductsInStockForm(controller));
-            
-        
-
+            Application.Run(new Login());
         }
     }
 }

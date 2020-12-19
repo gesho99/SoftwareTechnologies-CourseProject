@@ -106,8 +106,9 @@ namespace RestaurantSystem
         {
             if (Admin.Checked)
             {
-                Username.Text = "Admin";
+                Username.Text = "admin";
                 Username.ReadOnly = true;
+                Password.Text = "admin";
             }
             else
             {
