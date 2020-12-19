@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -9,6 +10,11 @@ namespace RestaurantSystem.Data.Models
     {
 
         public int Id { get; set; }
+
+        public int MonthAccountingId { get; set; }
+
+        [ForeignKey("MonthAccountingId")]
+        public MonthAccountings MonthAccountings { get; set; }
 
         public double DayExpense { get; set; }
 

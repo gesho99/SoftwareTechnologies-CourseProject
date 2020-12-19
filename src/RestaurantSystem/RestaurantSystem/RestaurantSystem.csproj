@@ -98,6 +98,7 @@
     <Compile Include="Data\Models\Employer.cs" />
     <Compile Include="Data\Models\EmployerReport.cs" />
     <Compile Include="Data\Models\Dish.cs" />
+    <Compile Include="Data\Models\MonthAccountings.cs" />
     <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Data\Models\Supplier.cs" />
     <Compile Include="Data\Models\Table.cs" />
