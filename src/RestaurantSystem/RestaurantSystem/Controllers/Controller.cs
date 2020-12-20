@@ -529,18 +529,57 @@ namespace RestaurantSystem.Controllers
         public void AddDayAccounting(string dateString, double expenses, double incomes, double profit, List<EmployerReport> dayReports)
         {
             DateTime day = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
-            DayAccountings accounting = db.DayAccountings.SingleOrDefault(da => da.Date == day);
+            DayAccountings dayAccounting = db.DayAccountings.SingleOrDefault(da => da.Date == day);
+            MonthAccountings monthAccounting = db.MonthAccountings.SingleOrDefault(ma => ma.Date.Month == day.Month);
 
-            if(accounting == null)
+            if(dayAccounting == null)
             {
-                db.DayAccountings.Add(new DayAccountings
+                if(monthAccounting == null)
                 {
-                    DayExpense = expenses,
-                    DayIncome = incomes,
-                    DayProfit = profit,
-                    Date = day,
-                    EmployerReports = dayReports
-                });
+                    db.MonthAccountings.Add(new MonthAccountings
+                    {
+                        MonthExpense = expenses,
+                        MonthIncome = incomes,
+                        MonthProfit = profit,
+                        Date = day
+                    });
+
+                    MonthAccountings newMonthAccounting = db.MonthAccountings.SingleOrDefault(ma => ma.Date.Month == day.Month);
+                    DayAccountings newDayAccounting = new DayAccountings
+                    {
+                        DayExpense = expenses,
+                        DayIncome = incomes,
+                        DayProfit = profit,
+                        Date = day,
+                        EmployerReports = dayReports,
+                        MonthAccountings = newMonthAccounting
+                    };
+
+                    db.DayAccountings.Add(newDayAccounting);
+                    newMonthAccounting.DayAccountings.Add(newDayAccounting);
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    DayAccountings newDayAccounting = new DayAccountings
+                    {
+                        DayExpense = expenses,
+                        DayIncome = incomes,
+                        DayProfit = profit,
+                        Date = day,
+                        EmployerReports = dayReports,
+                        MonthAccountings = monthAccounting
+                    };
+
+                    db.DayAccountings.Add(newDayAccounting);
+                    monthAccounting.DayAccountings.Add(newDayAccounting);
+                    monthAccounting.MonthExpense += newDayAccounting.DayExpense;
+                    monthAccounting.MonthIncome += newDayAccounting.DayIncome;
+                    monthAccounting.MonthProfit += newDayAccounting.DayProfit;
+
+                    db.SaveChanges();
+                }
             }
         }
     }
