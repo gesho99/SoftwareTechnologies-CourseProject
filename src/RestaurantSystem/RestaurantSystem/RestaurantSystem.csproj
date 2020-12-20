@@ -103,6 +103,7 @@
     <Compile Include="Data\Models\Supplier.cs" />
     <Compile Include="Data\Models\Table.cs" />
     <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Data\Models\YearAccountings.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
     <Compile Include="HashSetToString.cs" />
@@ -145,6 +146,10 @@
     <Compile Include="Migrations\202012191619426_MonthAccountingMigration.cs" />
     <Compile Include="Migrations\202012191619426_MonthAccountingMigration.designer.cs">
       <DependentUpon>202012191619426_MonthAccountingMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201529387_YearAccountingsMigration.cs" />
+    <Compile Include="Migrations\202012201529387_YearAccountingsMigration.designer.cs">
+      <DependentUpon>202012201529387_YearAccountingsMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountingForm.cs">
@@ -244,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012191619426_MonthAccountingMigration.resx">
       <DependentUpon>202012191619426_MonthAccountingMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201529387_YearAccountingsMigration.resx">
+      <DependentUpon>202012201529387_YearAccountingsMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>

@@ -37,6 +37,8 @@ namespace RestaurantSystem.Data
 
         public DbSet<MonthAccountings> MonthAccountings { get; set; }
 
+        public DbSet<YearAccountings> YearAccountings { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -88,6 +90,13 @@ namespace RestaurantSystem.Data
                 .HasRequired<MonthAccountings>(da => da.MonthAccountings)
                 .WithMany(ma => ma.DayAccountings)
                 .HasForeignKey(da => da.MonthAccountingId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<MonthAccountings>()
+                .HasRequired<YearAccountings>(ma => ma.YearAccountings)
+                .WithMany(ya => ya.MonthAccountings)
+                .HasForeignKey(ma => ma.YearAccountingId)
                 .WillCascadeOnDelete(false);
         }
     }
