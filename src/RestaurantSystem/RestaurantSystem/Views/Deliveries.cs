@@ -21,35 +21,68 @@ namespace RestaurantSystem
         {
             this.controller = controller;
             InitializeComponent();
-            LoadDeliveries();
+            LoadWaitingDeliveries();
+            LoadApprovedDeliveries();
         }
 
-        public void LoadDeliveries()
+        public void LoadWaitingDeliveries()
         {
             waitingDeliveries.Items.Clear();
 
             ICollection<Delivery> deliveries = controller.LoadDeliveries();
+                        
+            string st = null;
 
             foreach (Delivery delivery in deliveries)
             {
-                foreach (Product product in delivery.Products)
+                
+                ICollection<Product> products = controller.GetDeliveryProducts(delivery.Id);
+                if (delivery.Approved == false)
                 {
-                    if (!waitingDeliveries.Items.Contains(product.Name))
+                    foreach (Product product in products)
                     {
-                        waitingDeliveries.Items.Add(
-                        product.Name + " " +
-                        delivery.DeliveryQuantity);
+                        st += product.Name + " - " + product.Quantity + " ";
                     }
-                                                         
-                }
-                if (!waitingDeliveries.Items.Contains(delivery.DeliveryPrice))
-                {
-                    waitingDeliveries.Items.Add(
-                    delivery.DeliveryPrice + " " +
-                    delivery.Supplier.Name);
-                }             
+                    if (st != null)
+                    {
+                        st += delivery.DeliveryQuantity + ", " + delivery.DeliveryPrice + ", " + delivery.Supplier.Name;
+                        waitingDeliveries.Items.Add(st);
+                        st = null;
+                    }
+                }                               
             } 
                 
+        }
+
+        public void LoadApprovedDeliveries()
+        {
+            approvedDeliveries.Items.Clear();
+
+            ICollection<Delivery> deliveries = controller.LoadDeliveries();
+
+            string st = null;
+            
+            foreach (Delivery delivery in deliveries)
+            {
+                if (delivery.Approved==true)
+                {
+                    ICollection<Product> products = controller.GetDeliveryProducts(delivery.Id);
+                    if (delivery.Approved == true)
+                    {
+                        foreach (Product product in products)
+                        {
+                            st += product.Name + " - " + product.Quantity + " ";
+                        }
+                        if (st != null)
+                        {
+                            st += delivery.DeliveryQuantity + ", " + delivery.DeliveryPrice + ", " + delivery.Supplier.Name;
+                            approvedDeliveries.Items.Add(st);
+                            st = null;
+                        }
+                    }
+
+                }
+            }
         }
 
         private bool DeliveryValidation()
@@ -57,23 +90,39 @@ namespace RestaurantSystem
             try
             {
                 String pName = productName.Text;
-                int dQuantity = int.Parse(productQuantity.Text);
-                double dPrice = double.Parse(deliveryPrice.Text);
+                int pQuantity = int.Parse(productQuantity.Text);
+                int dQuantity = int.Parse(approvedQuantity.Text);
                 string dSupplier = deliverySupplier.Text;
                 label2.Visible = false;
 
-                if (dQuantity <= 0)
+                if (pQuantity <= 0)
                 {
-                    label2.Text = "Моля въведете количество по - голямо от нула";
+                    if (dQuantity > 0)
+                    {
+                        return true;
+                    }
+                    label2.Visible = true;
+                    label2.Text = "Моля въведете количество по - голямо от нула";                  
                     return false;
                 }
-                else if (pName.Length < 3 || dSupplier.Length < 3)
+                else if (dQuantity <= 0)
                 {
+                    if (pQuantity > 0)
+                    {
+                        return true;
+                    }
+                    label2.Visible = true;
+                    label2.Text = "Моля въведете количество за одобрение по - голямо от нула";
+                    return false;
+                }
+                else if (pName.Length < 2|| dSupplier.Length < 3)
+                {
+                    label2.Visible = true;
                     label2.Text = "Моля въведете валидно име на продукт / доставчик";
                     return false;
-                }
+                }               
                 else
-                {
+                {                   
                     return true;
                 }
             }
@@ -92,70 +141,81 @@ namespace RestaurantSystem
 
         private void editDelivery_Click(object sender, EventArgs e)
         {
+            label2.Visible = false;
+           
             if (DeliveryValidation() == true)
             {
-                ICollection<Product> deliveryProducts = new HashSet<Product>();
-                String[] productsInDelivery = productName.Text.Split(' ');
-                int dQuantity = int.Parse(productQuantity.Text);
-                double dPrice = double.Parse(deliveryPrice.Text);
-                string dSupplier = deliverySupplier.Text;
 
-                if (!waitingDeliveries.Items.Contains(productsInDelivery) || !waitingDeliveries.Items.Contains(dQuantity) || !waitingDeliveries.Items.Contains(dSupplier))
+                string[] items = waitingDeliveries.Text.Split(' ', ',', '-');
+                string name = productName.Text;
+                int pQuantity = int.Parse(productQuantity.Text);
+                string dSupplier = deliverySupplier.Text;
+                
+                if (!(items.Count()==1))
                 {
-                    label2.Visible = true;
-                    label11.Text = "Тази поръчка не съществува.";
+                    if (!(items.Contains(dSupplier)))
+                    {
+                        label2.Visible = true;
+                        label2.Text = "Този доставчик не съществува.";
+                    }
+                    else if (!(items.Contains(name)))
+                    {                       
+                        label2.Visible = true;
+                        label2.Text = "Този продукт не съществува.";
+                    }
+                    else
+                    {
+                        controller.EditDelivery(name, pQuantity, dSupplier);
+                        LoadWaitingDeliveries();
+                        LoadApprovedDeliveries();
+                    }
                 }
                 else
                 {
-                    foreach (String deliveryProduct in productsInDelivery)
-                    {
-                        Product product = controller.SelectProductByName(deliveryProduct);
+                    label2.Visible = true;
+                    label2.Text = "Изберете поръчка";
+                }
+            }
+        }
 
-                        if (product != null)
-                        {
-                            deliveryProducts.Add(product);
-                        }
-                        else
-                        {
-                            label2.Text = "Въведените продукти " + productName + " не са наличен.";
-                            return;
-                        }
+       public void approveDeliveryButton_Click(object sender, EventArgs e)
+       {
+            label2.Visible = false;
+
+            if (DeliveryValidation() == true)
+            {
+
+                string[] items = waitingDeliveries.Text.Split(' ', ',', '-');
+                string name = productName.Text;
+                int pQuantity = int.Parse(productQuantity.Text);
+                string dSupplier = deliverySupplier.Text;
+
+                if (!(items.Count() == 1))
+                {
+                    if (!(items.Contains(dSupplier)))
+                    {
+                        label2.Visible = true;
+                        label2.Text = "Този доставчик не съществува.";
+                    }
+                    else if (!(items.Contains(name)))
+                    {
+                        label2.Visible = true;
+                        label2.Text = "Този продукт не съществува.";
+                    }
+                    else
+                    {
+                        controller.ApproveDelivery(name, pQuantity, dSupplier);
+                        LoadWaitingDeliveries();
+                        LoadApprovedDeliveries();
                     }
                 }
-
-
+                else
+                {
+                    label2.Visible = true;
+                    label2.Text = "Изберете поръчка";
+                }
             }
-        }
-
-        public void approveDeliveryButton_Click(object sender, EventArgs e)
-        {
-            ICollection<Product> deliveryProducts = new HashSet<Product>();
-            String[] productsInDelivery = productName.Text.Split(' ');
-            int dQuantity = int.Parse(productQuantity.Text);
-            double dPrice = double.Parse(deliveryPrice.Text);
-            string dSupplier = deliverySupplier.Text;
-
-            if (!waitingDeliveries.Items.Contains(deliveryProducts))
-            {
-                label2.Text = "Поръчката, която се опитвате да одобрите не съществува ";
-            }
-            else
-            {
-                waitingDeliveries.Items.Remove(
-                    deliveryProducts.ToString() + " " +
-                    dQuantity + " " +
-                    dPrice + " " +
-                    dSupplier);
-
-                controller.ApproveDelivery(dQuantity, deliveryProducts);
-
-                approvedDeliveries.Items.Add(
-                    deliveryProducts.ToString() + " " +
-                    dQuantity + " " +
-                    dPrice + " " +
-                    dSupplier);
-            }
-        }
+        }        
 
         private void BackButton_Click(object sender, EventArgs e)
         {

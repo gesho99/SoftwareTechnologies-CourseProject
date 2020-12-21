@@ -23,7 +23,7 @@ namespace RestaurantSystem.Controllers
             Role admin = db.Roles.SingleOrDefault(r => r.Name == "admin");
             Role waiter = db.Roles.SingleOrDefault(r => r.Name == "waiter");
 
-            if(admin == null)
+            if (admin == null)
             {
                 db.Roles.Add(new Role
                 {
@@ -31,7 +31,7 @@ namespace RestaurantSystem.Controllers
                 });
             }
 
-            if(waiter == null)
+            if (waiter == null)
             {
                 db.Roles.Add(new Role
                 {
@@ -45,8 +45,8 @@ namespace RestaurantSystem.Controllers
         public void CreateAdminEmployer()
         {
             Employer admin = db.Employers.SingleOrDefault(e => e.FirstName == "admin");
-            
-            if(admin == null)
+
+            if (admin == null)
             {
                 db.Employers.Add(new Employer
                 {
@@ -65,7 +65,7 @@ namespace RestaurantSystem.Controllers
             int roleId = db.Roles.SingleOrDefault(r => r.Name == "admin").Id;
             int employerId = db.Employers.SingleOrDefault(e => e.FirstName == "admin").Id;
 
-            if(admin == null)
+            if (admin == null)
             {
                 db.Users.Add(new User
                 {
@@ -216,20 +216,35 @@ namespace RestaurantSystem.Controllers
                 if (supplier.AvailableDays.Split(',').ToArray().Contains(today))
                 {
                     return supplier;
-                }               
+                }
             }
 
             return null;
-            
+
+        }
+
+        public ICollection<Product> GetDeliveryProducts(int id)
+        {
+            ICollection<Product> products = new HashSet<Product>();
+            ICollection<DeliveryProducts2> dp = db.DeliveryProducts2.Select(p => p).ToArray();
+            foreach (DeliveryProducts2 dp2 in dp)
+            {
+                if (dp2.DeliveryId == id)
+                {
+                    products.Add(db.Products.SingleOrDefault(p => p.Id == dp2.ProductId));
+                }
+            }
+            return products;
+
         }
 
         public void AddDelivery()
         {
             ICollection<Product> products = LoadProducts();
-            ICollection<Product> deliveryProducts = new HashSet<Product>();           
+            ICollection<Product> deliveryProducts = new HashSet<Product>();
 
-            int deliveryQuantity = 20;
-            double productPrice = 0;
+            double deliveryPrice = 0;
+            int deliveryQuantity = 0;
 
             DateTime dt = DateTime.UtcNow;
             string today = dt.ToString("dddd");
@@ -239,32 +254,38 @@ namespace RestaurantSystem.Controllers
             {
                 foreach (Product product in products)
                 {
-                    if (product.Quantity <= 5 && product.Name != null)
+                    if (product.Quantity <= 5)
                     {
                         deliveryProducts.Add(product);
-                        productPrice = product.DeliveryPrice;
                     }
                 }
-                if (deliveryProducts != null)
+                if (deliveryProducts.Count() > 0)
                 {
-                    db.Deliveries.Add(new Delivery
+                    Delivery delivery = new Delivery
                     {
                         DeliveryQuantity = deliveryQuantity,
-                        DeliveryPrice = productPrice * deliveryQuantity,
+                        DeliveryPrice = deliveryPrice,
                         DeliveryDate = dt,
                         Approved = false,
                         Products = deliveryProducts,
                         Supplier = supplier
 
-                    });
+                    };
+                    foreach (Product product in deliveryProducts)
+                    {
+                        AddProductsToDelivery(delivery, deliveryProducts);
+                        db.DeliveryProducts2.Add(new DeliveryProducts2 { DeliveryId = delivery.Id, ProductId = product.Id });
 
+                        supplier.Deliveries.Add(delivery);
+                    }
+                    supplier.Deliveries.Add(delivery);
                     db.SaveChanges();
-
                 }
-                AddDeliveriesToSupplier(supplier, supplier.Deliveries);
+
             }
-            
-        }
+
+
+        } 
 
         public ICollection<Delivery> LoadDeliveries()
         {
@@ -273,50 +294,84 @@ namespace RestaurantSystem.Controllers
                 .ToArray();
         }
 
-        public void EditDelivery(int dQuantity, ICollection<Product> deliveryProducts)
-        {
-            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.DeliveryQuantity == dQuantity);
+        public void EditDelivery(string name,int quantity,string supplierName)
+        {           
+            ICollection <Delivery> deliveries= LoadDeliveries();
 
-            if (delivery != null)
-            {
-                delivery.DeliveryQuantity = dQuantity;
+            Delivery deliveryEdit = null;
+            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == supplierName);
 
-                foreach (Product product in delivery.Products)
-                {
-                    delivery.Products.Remove(product);
-                }
-
-                delivery.Products = null;
-
-                db.SaveChanges();
-            };
-
-        }
-
-        public void AddDeliveriesToSupplier(Supplier supplier, ICollection<Delivery> deliveries)
-        {
-            supplier.Deliveries = deliveries;
             foreach (Delivery delivery in deliveries)
             {
-                supplier.Deliveries.Add(delivery);
+               if (delivery.Supplier == supplier)
+               {
+                    deliveryEdit = delivery;
+                    delivery.DeliveryQuantity += quantity;
+               }
+            }
+
+            if (deliveryEdit != null)
+            {
+                ICollection<Product> products = GetDeliveryProducts(deliveryEdit.Id);
+                foreach (Product product in products)
+                {
+                    if (product.Name == name)
+                    {
+                        if (quantity == 0)
+                        {
+                            products.Remove(product);                          
+                        }
+                        else
+                        {
+                            product.Quantity += quantity;
+                            
+                            deliveryEdit.DeliveryPrice += product.DeliveryPrice * quantity;
+                        }                       
+                    }                   
+                }
+            }
+            else
+            {
+                db.Deliveries.Remove(deliveryEdit);
             }
 
             db.SaveChanges();
         }
 
-        public void ApproveDelivery(int dQuantity, ICollection<Product> deliveryProducts)
+        public void ApproveDelivery(string name,int quantity, string supplierName)
         {
-            Delivery delivery = db.Deliveries.SingleOrDefault(d => d.Products == deliveryProducts);
+            ICollection<Delivery> deliveries = LoadDeliveries();
 
-            if (delivery != null)
+            Delivery deliveryApproved = null;
+            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == supplierName);
+            Product product = db.Products.SingleOrDefault(p => p.Name == name);
+
+            foreach (Delivery delivery in deliveries)
             {
-                delivery.DeliveryQuantity = dQuantity;
-                delivery.Approved = true;
+                if (delivery.Supplier == supplier)
+                {                 
+                    deliveryApproved = delivery;
+                }
+            }
+            if (deliveryApproved != null)
+            {             
+                deliveryApproved.Approved = true;
+            }
 
-                db.SaveChanges();
-            };
+            db.SaveChanges();
         }
 
+        public void AddProductsToDelivery(Delivery delivery, ICollection<Product> productsInDelivery)
+        {
+            delivery.Products = productsInDelivery;
+            foreach (Product product in delivery.Products)
+            {
+                product.Deliveries.Add(delivery);
+            }
+
+            db.SaveChanges();
+        }
+       
         public bool AddElectricityExpense(string dateString, double elValue)
         {
             DateTime expenseDate = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);

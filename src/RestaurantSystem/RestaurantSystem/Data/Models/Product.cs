@@ -32,5 +32,7 @@ namespace RestaurantSystem.Models
 
         public ICollection<Delivery> Deliveries { get; set; } = new HashSet<Delivery>();
 
+        public ICollection<DeliveryProducts2> DeliveryProducts2 { get; set; } = new HashSet<DeliveryProducts2>();
+
     }
 }
