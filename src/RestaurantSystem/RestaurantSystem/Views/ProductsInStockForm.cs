@@ -22,6 +22,11 @@ namespace RestaurantSystem
             InitializeComponent();
             LoadProducts();
         }
+
+        public ProductsInStockForm()
+        {
+
+        }
         
 
         public void LoadProducts()
@@ -36,9 +41,10 @@ namespace RestaurantSystem
             }
         }
 
-        public void ChangeLabelVisibility(Label label, bool visibility)
+        public bool ChangeLabelVisibility(Label label, bool visibility)
         {
             label.Visible = visibility;
+            return label.Visible;
         }
 
         public void ChangeLabelText(Label label, String text)
