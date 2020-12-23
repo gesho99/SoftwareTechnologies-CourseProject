@@ -92,7 +92,7 @@ namespace RestaurantSystem.Controllers
             db.SaveChanges();
         }
 
-        public ICollection<Product> LoadProducts()
+        public virtual ICollection<Product> LoadProducts()
         {
             return db.Products
                 .Select(p => p)
