@@ -32,9 +32,9 @@ namespace RestaurantSystem
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountingForm(controller));
-            Application.Run(new Deliveries(controller));                 
-            //Application.Run(new ProductsInStockForm(controller));
+            //Application.Run(new AccountingForm(controller));
+            //Application.Run(new Deliveries(controller));                 
+            Application.Run(new ProductsInStockForm(controller));
             //Application.Run(new Login());
         }
     }

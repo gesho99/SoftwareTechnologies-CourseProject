@@ -86,16 +86,16 @@ namespace RestaurantSystem
             return Parameters;
         }
 
-        public bool productValidation()
+        public bool ProductValidation(string productQuantity, string productPrice, string deliveryPrice, string productName)
         {
             try
             {
                 ChangeLabelVisibility(label11, false);
                 ChangeLabelText(label11, "");
-                int quantity = int.Parse(productQuantity.Text);
-                double prPrice = double.Parse(productPrice.Text);
-                double dlPrice = double.Parse(deliveryPrice.Text);
-                string prName = productName.Text;
+                int quantity = int.Parse(productQuantity);
+                double prPrice = double.Parse(productPrice);
+                double dlPrice = double.Parse(deliveryPrice);
+                string prName = productName;
 
                 if (quantity <= 0)
                 {
@@ -103,22 +103,22 @@ namespace RestaurantSystem
                     ChangeLabelText(label11, "Моля въведете количество по-голямо от нула.");
                     return false;
                 }
-                else if (prPrice < 0)
+                else if (prPrice <= 0)
                 {
                     ChangeLabelVisibility(label11, true);
                     ChangeLabelText(label11, "Моля въведете цена на продукта по - голяма или равна на нула.");
                     return false;
                 }
-                else if (dlPrice < 0)
+                else if (dlPrice <= 0)
                 {
                     ChangeLabelVisibility(label11, true);
                     ChangeLabelText(label11, "Моля въведете доставна цена по - голяма или равна на нула.");
                     return false;
                 }
-                else if (prName == "")
+                else if (prName.Length <= 2)
                 {
                     ChangeLabelVisibility(label11, true);
-                    ChangeLabelText(label11, "Моля въведете името на продукта.");
+                    ChangeLabelText(label11, "Моля въведете валидно име на продукта.");
                     return false;
                 }
                 else
@@ -143,7 +143,7 @@ namespace RestaurantSystem
         //Добавяне на продукт
         public void button1_Click(object sender, EventArgs e)
         {
-            if (productValidation() == true)
+            if (ProductValidation(productQuantity.Text, productPrice.Text, deliveryPrice.Text, productName.Text) == true)
             {
                 int quantity = int.Parse(productQuantity.Text);
                 double prPrice = double.Parse(productPrice.Text);
@@ -167,7 +167,7 @@ namespace RestaurantSystem
         //Редактиране на продукт
         public void button2_Click(object sender, EventArgs e)
         {
-            if (productValidation() == true)
+            if (ProductValidation(productQuantity.Text, productPrice.Text, deliveryPrice.Text, productName.Text) == true)
             {
                 int quantity = int.Parse(productQuantity.Text);
                 double prPrice = double.Parse(productPrice.Text);
