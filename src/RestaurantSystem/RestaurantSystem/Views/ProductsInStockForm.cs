@@ -25,7 +25,7 @@ namespace RestaurantSystem
 
         public ProductsInStockForm()
         {
-
+            InitializeComponent();
         }
         
 
@@ -47,9 +47,10 @@ namespace RestaurantSystem
             return label.Visible;
         }
 
-        public void ChangeLabelText(Label label, String text)
+        public string ChangeLabelText(Label label, String text)
         {
             label.Text = text;
+            return label.Text;
         }
 
         public void ClearProducts()
@@ -73,14 +74,16 @@ namespace RestaurantSystem
             controller.EditProduct(prName, quantity, prPrice, dlPrice);
         }
 
-        public void AddProductAsItem(string productName)
+        public ListBox AddProductAsItem(string productName)
         {
             ItemsInStock.Items.Add(productName);
+            return ItemsInStock;
         }
 
-        public void AddProductParameters(int quantity, double prPrice, double dlPrice)
+        public ListBox AddProductParameters(int quantity, double prPrice, double dlPrice)
         {
             Parameters.Items.Add(quantity + " " + prPrice + " " + dlPrice);
+            return Parameters;
         }
 
         public bool productValidation()
