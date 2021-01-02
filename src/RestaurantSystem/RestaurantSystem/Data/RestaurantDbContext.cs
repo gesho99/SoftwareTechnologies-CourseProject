@@ -38,6 +38,12 @@ namespace RestaurantSystem.Data
 
         public DbSet<DayAccountings> DayAccountings { get; set; }
 
+        public DbSet<MonthAccountings> MonthAccountings { get; set; }
+
+        public DbSet<YearAccountings> YearAccountings { get; set; }
+
+        public DbSet<DeliveryProducts2> DeliveryProducts2 { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -83,6 +89,35 @@ namespace RestaurantSystem.Data
                 .WithMany(dayA => dayA.EmployerReports)
                 .HasForeignKey(empr => empr.DayAccountingId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<DayAccountings>()
+                .HasRequired<MonthAccountings>(da => da.MonthAccountings)
+                .WithMany(ma => ma.DayAccountings)
+                .HasForeignKey(da => da.MonthAccountingId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<MonthAccountings>()
+                .HasRequired<YearAccountings>(ma => ma.YearAccountings)
+                .WithMany(ya => ya.MonthAccountings)
+                .HasForeignKey(ma => ma.YearAccountingId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<DeliveryProducts2>().HasKey(dp => new { dp.DeliveryId, dp.ProductId });
+
+            modelBuilder
+                .Entity<DeliveryProducts2>()
+                .HasRequired<Delivery>(d => d.Delivery)
+                .WithMany(dp => dp.DeliveryProducts2)
+                .HasForeignKey(d => d.DeliveryId);
+
+            modelBuilder
+               .Entity<DeliveryProducts2>()
+               .HasRequired<Product>(p =>p.Product)
+               .WithMany(dp => dp.DeliveryProducts2)
+               .HasForeignKey(p => p.ProductId);     
         }
     }
 }

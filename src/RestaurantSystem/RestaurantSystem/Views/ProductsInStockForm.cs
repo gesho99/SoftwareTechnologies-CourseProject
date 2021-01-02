@@ -22,13 +22,18 @@ namespace RestaurantSystem
             InitializeComponent();
             LoadProducts();
         }
+
+        public ProductsInStockForm()
+        {
+            InitializeComponent();
+        }
         
 
         public void LoadProducts()
         {
-            ItemsInStock.Items.Clear();
-            Parameters.Items.Clear();
-            ICollection<Product> products = controller.LoadProducts();
+            ClearProducts();
+            ICollection<Product> products = LoadProductsFromDataBase();
+
             foreach (Product pr in products)
             {
                 ItemsInStock.Items.Add(pr.Name);
@@ -36,39 +41,84 @@ namespace RestaurantSystem
             }
         }
 
-        private bool productValidation()
+        public bool ChangeLabelVisibility(Label label, bool visibility)
+        {
+            label.Visible = visibility;
+            return label.Visible;
+        }
+
+        public string ChangeLabelText(Label label, String text)
+        {
+            label.Text = text;
+            return label.Text;
+        }
+
+        public void ClearProducts()
+        {
+            ItemsInStock.Items.Clear();
+            Parameters.Items.Clear();
+        }
+
+        public ICollection<Product> LoadProductsFromDataBase()
+        {
+            return controller.LoadProducts();
+        }
+
+        public void AddProductInDataBase(string prName, int quantity, double prPrice, double dlPrice)
+        {
+            controller.AddProduct(prName, quantity, prPrice, dlPrice);
+        }
+
+        public void EditProductInDataBase(string prName, int quantity, double prPrice, double dlPrice)
+        {
+            controller.EditProduct(prName, quantity, prPrice, dlPrice);
+        }
+
+        public ListBox AddProductAsItem(string productName)
+        {
+            ItemsInStock.Items.Add(productName);
+            return ItemsInStock;
+        }
+
+        public ListBox AddProductParameters(int quantity, double prPrice, double dlPrice)
+        {
+            Parameters.Items.Add(quantity + " " + prPrice + " " + dlPrice);
+            return Parameters;
+        }
+
+        public bool ProductValidation(string productQuantity, string productPrice, string deliveryPrice, string productName)
         {
             try
             {
-                label11.Visible = false;
-                label11.Text = "";
-                int quantity = int.Parse(productQuantity.Text);
-                double prPrice = double.Parse(productPrice.Text);
-                double dlPrice = double.Parse(deliveryPrice.Text);
-                string prName = productName.Text;
+                ChangeLabelVisibility(label11, false);
+                ChangeLabelText(label11, "");
+                int quantity = int.Parse(productQuantity);
+                double prPrice = double.Parse(productPrice);
+                double dlPrice = double.Parse(deliveryPrice);
+                string prName = productName;
 
                 if (quantity <= 0)
                 {
-                    label11.Visible = true;
-                    label11.Text = "Моля въведете количество по-голямо от нула.";
+                    ChangeLabelVisibility(label11, true);
+                    ChangeLabelText(label11, "Моля въведете количество по-голямо от нула.");
                     return false;
                 }
-                else if (prPrice < 0)
+                else if (prPrice <= 0)
                 {
-                    label11.Visible = true;
-                    label11.Text = "Моля въведете цена на продукта по - голяма или равна на нула.";
+                    ChangeLabelVisibility(label11, true);
+                    ChangeLabelText(label11, "Моля въведете цена на продукта по - голяма или равна на нула.");
                     return false;
                 }
-                else if (dlPrice < 0)
+                else if (dlPrice <= 0)
                 {
-                    label11.Visible = true;
-                    label11.Text = "Моля въведете доставна цена по - голяма или равна на нула.";
+                    ChangeLabelVisibility(label11, true);
+                    ChangeLabelText(label11, "Моля въведете доставна цена по - голяма или равна на нула.");
                     return false;
                 }
-                else if (prName == "")
+                else if (prName.Length <= 2)
                 {
-                    label11.Visible = true;
-                    label11.Text = "Моля въведете името на продукта.";
+                    ChangeLabelVisibility(label11, true);
+                    ChangeLabelText(label11, "Моля въведете валидно име на продукта.");
                     return false;
                 }
                 else
@@ -78,21 +128,22 @@ namespace RestaurantSystem
             }
             catch (FormatException)
             {
-                label11.Visible = true;
-                label11.Text = "Моля въведете валидни данни.";
+                ChangeLabelVisibility(label11, true);
+                ChangeLabelText(label11, "Моля въведете валидни данни.");
                 return false;
             }
             catch (OverflowException)
             {
-                label11.Visible = true;
-                label11.Text = "Моля въведете валидни данни.";
+                ChangeLabelVisibility(label11, true);
+                ChangeLabelText(label11, "Моля въведете валидни данни.");
                 return false;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Добавяне на продукт
+        public void button1_Click(object sender, EventArgs e)
         {
-            if (productValidation() == true)
+            if (ProductValidation(productQuantity.Text, productPrice.Text, deliveryPrice.Text, productName.Text) == true)
             {
                 int quantity = int.Parse(productQuantity.Text);
                 double prPrice = double.Parse(productPrice.Text);
@@ -101,21 +152,22 @@ namespace RestaurantSystem
 
                 if (ItemsInStock.Items.Contains(prName))
                 {
-                    label11.Visible = true;
-                    label11.Text = "Този продукт вече е добавен. Ако искате да го редактирате моля натиснете бутона редактирай.";
+                    ChangeLabelVisibility(label11, true);
+                    ChangeLabelText(label11, "Този продукт вече е добавен. Ако искате да го редактирате моля натиснете бутона редактирай.");
                 }
                 else
                 {
-                    controller.AddProduct(prName, quantity, prPrice, dlPrice);
-                    ItemsInStock.Items.Add(productName.Text);
-                    Parameters.Items.Add(quantity + " " + prPrice + " " + dlPrice );
+                    AddProductInDataBase(prName, quantity, prPrice, dlPrice);
+                    AddProductAsItem(prName);
+                    AddProductParameters(quantity, prPrice, dlPrice);
                 }
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //Редактиране на продукт
+        public void button2_Click(object sender, EventArgs e)
         {
-            if (productValidation() == true)
+            if (ProductValidation(productQuantity.Text, productPrice.Text, deliveryPrice.Text, productName.Text) == true)
             {
                 int quantity = int.Parse(productQuantity.Text);
                 double prPrice = double.Parse(productPrice.Text);
@@ -124,16 +176,15 @@ namespace RestaurantSystem
 
                 if (!ItemsInStock.Items.Contains(prName))
                 {
-                    label11.Visible = true;
-                    label11.Text = "Продуктът, който се опитвате да редактирате, не съществува.";
+                    ChangeLabelVisibility(label11, true);
+                    ChangeLabelText(label11, "Продуктът, който се опитвате да редактирате, не съществува.");
                 }
                 else
                 { 
-                    controller.EditProduct(prName, quantity, prPrice, dlPrice);
+                    EditProductInDataBase(prName, quantity, prPrice, dlPrice);
                     LoadProducts();
                 }
             }
-
         }
 
         private void ProductsInStockForm_Load(object sender, EventArgs e)
@@ -143,9 +194,8 @@ namespace RestaurantSystem
 
         private void Home_Click(object sender, EventArgs e)
         {
-            new HomeAdmin().Show();
+            new HomeAdmin(controller).Show();
             this.Hide();
         }
     }
 }
-

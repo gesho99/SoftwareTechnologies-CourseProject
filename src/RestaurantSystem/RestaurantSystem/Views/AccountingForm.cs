@@ -226,8 +226,9 @@ namespace RestaurantSystem
 
         private void Home_Click(object sender, EventArgs e)
         {
-            new HomeAdmin().Show();
+            new HomeAdmin(controller).Show();
             this.Hide();
+        }
 
         private void addAccountingForDay_Click(object sender, EventArgs e)
         {
@@ -246,7 +247,6 @@ namespace RestaurantSystem
             double profit = incomes - expenses;
 
             dayProfit.Text = profit.ToString();
-
         }
     }
 }

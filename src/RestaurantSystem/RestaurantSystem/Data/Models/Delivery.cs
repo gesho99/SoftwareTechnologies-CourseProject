@@ -27,6 +27,8 @@ namespace RestaurantSystem.Data.Models
 
         public bool Approved { get; set; }
 
+        public ICollection<DeliveryProducts2> DeliveryProducts2 { get; set; } = new HashSet<DeliveryProducts2>();
+
         public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
     }
