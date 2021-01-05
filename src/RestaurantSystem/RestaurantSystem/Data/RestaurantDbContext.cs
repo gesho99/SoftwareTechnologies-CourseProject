@@ -8,8 +8,11 @@ using System.Text;
 
 namespace RestaurantSystem.Data
 {
-    class RestaurantDbContext : DbContext
+    public class RestaurantDbContext : DbContext
     {
+        public RestaurantDbContext() : base("name=RestaurantDbContext") { }
+
+        public DbSet<Employee> EmployeesList { get; set; }
 
         public DbSet<Product> Products { get; set; }
 
