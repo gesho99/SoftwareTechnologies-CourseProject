@@ -105,6 +105,7 @@
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
+    <Compile Include="Data\Models\DeliveryProducts2.cs" />
     <Compile Include="HashSetToString.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.designer.cs">
@@ -139,6 +140,7 @@
       <DependentUpon>202012051653540_TablesMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Data\Models\MonthAccountings.cs" />
     <Compile Include="Views\AccountingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +209,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\Models\YearAccountings.cs" />
     <EmbeddedResource Include="Migrations\202012031851268_InitialCreate.resx">
       <DependentUpon>202012031851268_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,19 +6,19 @@ namespace RestaurantSystem.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class MonthAccountingMigration : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
+    public sealed partial class DeliveryProducts2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MonthAccountingMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DeliveryProducts2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012191619426_MonthAccountingMigration"; }
+            get { return "202101051643581_DeliveryProducts2"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
