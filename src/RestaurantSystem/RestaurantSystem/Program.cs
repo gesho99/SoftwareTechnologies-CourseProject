@@ -22,6 +22,9 @@ namespace RestaurantSystem
                
             Controller controller = new Controller();            
             controller.CreateDB();
+            controller.CreateRoles();
+            controller.CreateAdminEmployer();
+            controller.CreateAdminAccount();
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
 
