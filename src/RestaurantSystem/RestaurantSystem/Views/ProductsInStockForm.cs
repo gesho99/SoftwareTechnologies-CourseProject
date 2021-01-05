@@ -62,18 +62,6 @@ namespace RestaurantSystem
             controller.EditProduct(prName, quantity, prPrice, dlPrice);
         }
 
-        public ListBox AddProductAsItem(string productName)
-        {
-            ItemsInStock.Items.Add(productName);
-            return ItemsInStock;
-        }
-
-        public ListBox AddProductParameters(int quantity, double prPrice, double dlPrice)
-        {
-            Parameters.Items.Add(quantity + " " + prPrice + " " + dlPrice);
-            return Parameters;
-        }
-
         public bool ProductValidation(string productQuantity, string productPrice, string deliveryPrice, string productName)
         {
             try
@@ -146,8 +134,8 @@ namespace RestaurantSystem
                 else
                 {
                     AddProductInDataBase(prName, quantity, prPrice, dlPrice);
-                    AddProductAsItem(prName);
-                    AddProductParameters(quantity, prPrice, dlPrice);
+                    ListBoxController.AddProductAsItem(ref ItemsInStock, prName);
+                    ListBoxController.AddProductParameters(ref Parameters, quantity, prPrice, dlPrice);
                 }
             }
         }
