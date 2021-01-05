@@ -15,9 +15,9 @@ namespace RestaurantSystem
 {
     public partial class Deliveries : Form
     {
-        Controller controller;
+        DBController controller;
 
-        public Deliveries(Controller controller)
+        public Deliveries(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();

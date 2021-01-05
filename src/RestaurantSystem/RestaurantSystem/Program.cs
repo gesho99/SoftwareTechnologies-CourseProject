@@ -20,7 +20,7 @@ namespace RestaurantSystem
         static void Main()
         {
                
-            Controller controller = new Controller();            
+            DBController controller = new DBController();            
             controller.CreateDB();
             controller.CreateRoles();
             controller.CreateAdminEmployer();

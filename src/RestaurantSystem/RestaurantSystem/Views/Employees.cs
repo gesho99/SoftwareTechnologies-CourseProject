@@ -13,8 +13,8 @@ namespace RestaurantSystem
 {
     public partial class Employees : Form
     {
-        Controller controller;
-        public Employees(Controller controller)
+        DBController controller;
+        public Employees(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();

@@ -13,11 +13,11 @@ namespace RestaurantSystem
 {
     public partial class AddUser : Form
     {
-        Controller controller;
+        DBController controller;
 
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
-        public AddUser(Controller controller)
+        public AddUser(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();

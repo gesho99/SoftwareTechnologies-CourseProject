@@ -15,8 +15,8 @@ namespace RestaurantSystem
 {
     public partial class ProductsInStockForm : Form
     {
-        Controller controller;
-        public ProductsInStockForm(Controller controller)
+        DBController controller;
+        public ProductsInStockForm(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();
@@ -31,35 +31,16 @@ namespace RestaurantSystem
 
         public void LoadProducts()
         {
-            ClearProducts();
-            ICollection<Product> products = LoadProductsFromDataBase();
+            ListBoxController.ClearProducts(ref ItemsInStock);
+            ListBoxController.ClearProducts(ref Parameters);
+
+            ICollection<Product> products = FormToDBController.LoadProductsFromDataBase(ref controller);
 
             foreach (Product pr in products)
             {
-                ItemsInStock.Items.Add(pr.Name);
-                Parameters.Items.Add(pr.Quantity + " " + pr.Price + " " + pr.DeliveryPrice);
+                ListBoxController.AddProductAsItem(ref ItemsInStock, pr.Name);
+                ListBoxController.AddProductParameters(ref Parameters, pr.Quantity, pr.Price, pr.DeliveryPrice);
             }
-        }
-
-        public void ClearProducts()
-        {
-            ItemsInStock.Items.Clear();
-            Parameters.Items.Clear();
-        }
-
-        public ICollection<Product> LoadProductsFromDataBase()
-        {
-            return controller.LoadProducts();
-        }
-
-        public void AddProductInDataBase(string prName, int quantity, double prPrice, double dlPrice)
-        {
-            controller.AddProduct(prName, quantity, prPrice, dlPrice);
-        }
-
-        public void EditProductInDataBase(string prName, int quantity, double prPrice, double dlPrice)
-        {
-            controller.EditProduct(prName, quantity, prPrice, dlPrice);
         }
 
         public bool ProductValidation(string productQuantity, string productPrice, string deliveryPrice, string productName)
@@ -133,7 +114,7 @@ namespace RestaurantSystem
                 }
                 else
                 {
-                    AddProductInDataBase(prName, quantity, prPrice, dlPrice);
+                    FormToDBController.AddProductInDataBase(ref controller, prName, quantity, prPrice, dlPrice);
                     ListBoxController.AddProductAsItem(ref ItemsInStock, prName);
                     ListBoxController.AddProductParameters(ref Parameters, quantity, prPrice, dlPrice);
                 }
@@ -157,7 +138,7 @@ namespace RestaurantSystem
                 }
                 else
                 { 
-                    EditProductInDataBase(prName, quantity, prPrice, dlPrice);
+                    FormToDBController.EditProductInDataBase(ref controller, prName, quantity, prPrice, dlPrice);
                     LoadProducts();
                 }
             }

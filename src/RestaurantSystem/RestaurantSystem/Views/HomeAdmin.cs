@@ -12,9 +12,9 @@ namespace RestaurantSystem
 {
     public partial class HomeAdmin : Form
     {
-        Controller controller;
+        DBController controller;
 
-        public HomeAdmin(Controller controller)
+        public HomeAdmin(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();

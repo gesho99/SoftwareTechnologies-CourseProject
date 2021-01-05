@@ -122,7 +122,6 @@ C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantS
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csproj.CopyComplete
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.exe
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.pdb
-C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.EmployerReportsDishes.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\RestaurantSystem.exe.config
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\RestaurantSystem.exe
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\RestaurantSystem.pdb
@@ -158,3 +157,8 @@ D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Login.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.HomeAdmin.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.StaffForm.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.AddUser.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.EmployeeRegistration.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Login.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.HomeAdmin.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.StaffForm.resources

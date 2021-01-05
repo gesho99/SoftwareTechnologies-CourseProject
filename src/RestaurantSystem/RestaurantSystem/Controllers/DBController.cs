@@ -8,7 +8,7 @@ using System.Text;
 
 namespace RestaurantSystem.Controllers
 {
-    public class Controller
+    public class DBController
     {
         RestaurantDbContext db;
 

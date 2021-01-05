@@ -14,9 +14,9 @@ namespace RestaurantSystem
 {
     public partial class AccountingForm : Form
     {
-        Controller controller;
+        DBController controller;
 
-        public AccountingForm(Controller controller)
+        public AccountingForm(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();

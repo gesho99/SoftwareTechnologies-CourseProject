@@ -21,5 +21,11 @@ namespace RestaurantSystem.Controllers
             return listbox;
         }
 
+        public static ListBox ClearProducts(ref ListBox listbox)
+        {
+            listbox.Items.Clear();
+            return listbox;
+        }
+
     }
 }
