@@ -9,19 +9,25 @@ namespace RestaurantSystem.Controllers
     public static class ListBoxController
     {
 
-        public static ListBox AddProductAsItem(ref ListBox listbox, string productName)
+        public static ListBox AddListBoxItems(ref ListBox listbox, string productName)
         {
             listbox.Items.Add(productName);
             return listbox;
         }
 
-        public static ListBox AddProductParameters(ref ListBox listbox, int quantity, double prPrice, double dlPrice)
+        public static ListBox AddListBoxParameters(ref ListBox listbox, int quantity, double prPrice, double dlPrice)
         {
             listbox.Items.Add(quantity + " " + prPrice + " " + dlPrice);
             return listbox;
         }
 
-        public static ListBox ClearProducts(ref ListBox listbox)
+        public static ListBox AddListBoxParameters(ref ListBox listbox, double dishPrice, string products, double dishWeight)
+        {
+            listbox.Items.Add(dishPrice + " " + products + " " + dishWeight);
+            return listbox;
+        }
+
+        public static ListBox ClearItems(ref ListBox listbox)
         {
             listbox.Items.Clear();
             return listbox;

@@ -28,19 +28,20 @@ namespace RestaurantSystem
 
         public void LoadDishes()
         {
-            menuItems.Items.Clear();
-            menuItemsParameters.Items.Clear();
-            ICollection<Dish> Dishes = controller.LoadDishes();
+            ListBoxController.ClearItems(ref menuItems);
+            ListBoxController.ClearItems(ref menuItemsParameters);
+
+            ICollection<Dish> Dishes = FormToDBController.LoadDishesFromDataBase(ref controller);
 
             foreach(Dish dish in Dishes)
             {
-                menuItems.Items.Add(dish.DishName);
-                menuItemsParameters.Items.Add(dish.DishPrice + " " + dish.Products.ToString() + " " + dish.DishWeight);
+                ListBoxController.AddListBoxItems(ref menuItems, dish.DishName);
+                ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishPrice, dish.Products.ToString(), dish.DishWeight);
             }
         }
 
         private bool productValidation()
-            {
+        {
             try
             {
                 String productNamesInDish = products.Text;
@@ -51,17 +52,17 @@ namespace RestaurantSystem
 
                 if (dWeight <= 0)
                 {
-                    label6.Text = "Моля въведете тегло по - голямо от нула";
+                    LabelController.ChangeLabelText(ref label6, "Моля въведете тегло по - голямо от нула");
                     return false;
                 }
                 else if (dPrice <= 0)
                 {
-                    label6.Text = "Моля въведете цена на ястие по - голяма от нула";
+                    LabelController.ChangeLabelText(ref label6, "Моля въведете цена на ястие по - голяма от нула");
                     return false;
                 }
                 else if (dName.Length < 3 || productNamesInDish.Length < 3)
                 {
-                    label6.Text = "Моля въведете валидно име на ястие / продукти в ястието";
+                    LabelController.ChangeLabelText(ref label6, "Моля въведете валидно име на ястие / продукти в ястието");
                     return false;
                 }
                 else
@@ -71,12 +72,12 @@ namespace RestaurantSystem
             }
             catch (FormatException)
             {
-                label6.Text = "Моля въведете валидни данни.";
+                LabelController.ChangeLabelText(ref label6, "Моля въведете валидни данни.");
                 return false;
             }
             catch (OverflowException)
             {
-                label6.Text = "Моля въведете валидни данни.";
+                LabelController.ChangeLabelText(ref label6, "Моля въведете валидни данни.");
                 return false;
             }
         }
@@ -94,19 +95,19 @@ namespace RestaurantSystem
 
                 foreach (String productName in productNamesInDish)
                 {
-                    Product product = controller.SelectProductByName(productName);
+                    Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller, productName);
                     if (product != null)
                     {
                         productsInDish.Add(product);
                     }
                     else
                     {
-                        label6.Text = "Въведеният продукт " + productName + " не е наличен.";
+                        LabelController.ChangeLabelText(ref label6, "Въведеният продукт " + productName + " не е наличен.");
                         return;
                     }
                 }
 
-                controller.AddDish(dName, dPrice, dWeight, productsInDish);
+                FormToDBController.AddDishesToDataBase(ref controller, dName, dPrice, dWeight, productsInDish);
                 LoadDishes();
             }
         }
@@ -125,24 +126,25 @@ namespace RestaurantSystem
 
                 if (!menuItems.Items.Contains(dName))
                 {
-                    label6.Text = "Ястието, което се опитвате да редактирате, не съществува.";
+                    LabelController.ChangeLabelText(ref label6, "Ястието, което се опитвате да редактирате, не съществува.");
                 }
                 else
                 {
                     foreach (String productName in productNamesInDish)
                     {
-                        Product product = controller.SelectProductByName(productName);
+                        Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller, productName);
                         if (product != null)
                         {
                             productsInDish.Add(product);
                         }
                         else
                         {
-                            label6.Text = "Въведеният продукт " + productName + " не е наличен.";
+                            LabelController.ChangeLabelText(ref label6, "Въведеният продукт " + productName + " не е наличен.");
                             return;
                         }
                     }
-                    controller.EditDish(dName, dPrice, dWeight, productsInDish);
+
+                    FormToDBController.EditDishInDataBase(ref controller, dName, dPrice, dWeight, productsInDish);
                     LoadDishes();
                 }
 
@@ -150,21 +152,19 @@ namespace RestaurantSystem
 
         }
 
-      
-
         private void deleteMenuItem_Click(object sender, EventArgs e)
         {
             string dName = itemName.Text;
 
             if (dName.Length < 3)
             {
-               label6.Text = "Моля въведете валидно име на ястие";
+                LabelController.ChangeLabelText(ref label6, "Моля въведете валидно име на ястие");
             }
             else
             {
                 if (!controller.RemoveDish(dName))
                 {
-                    label6.Text = "Въведеното ястие " + dName + " не съществува.";
+                    LabelController.ChangeLabelText(ref label6, "Въведеното ястие " + dName + " не съществува.");
                 }
                 else
                 {

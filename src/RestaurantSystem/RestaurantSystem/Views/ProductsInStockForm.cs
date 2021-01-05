@@ -31,15 +31,15 @@ namespace RestaurantSystem
 
         public void LoadProducts()
         {
-            ListBoxController.ClearProducts(ref ItemsInStock);
-            ListBoxController.ClearProducts(ref Parameters);
+            ListBoxController.ClearItems(ref ItemsInStock);
+            ListBoxController.ClearItems(ref Parameters);
 
             ICollection<Product> products = FormToDBController.LoadProductsFromDataBase(ref controller);
 
             foreach (Product pr in products)
             {
-                ListBoxController.AddProductAsItem(ref ItemsInStock, pr.Name);
-                ListBoxController.AddProductParameters(ref Parameters, pr.Quantity, pr.Price, pr.DeliveryPrice);
+                ListBoxController.AddListBoxItems(ref ItemsInStock, pr.Name);
+                ListBoxController.AddListBoxParameters(ref Parameters, pr.Quantity, pr.Price, pr.DeliveryPrice);
             }
         }
 
@@ -115,8 +115,8 @@ namespace RestaurantSystem
                 else
                 {
                     FormToDBController.AddProductInDataBase(ref controller, prName, quantity, prPrice, dlPrice);
-                    ListBoxController.AddProductAsItem(ref ItemsInStock, prName);
-                    ListBoxController.AddProductParameters(ref Parameters, quantity, prPrice, dlPrice);
+                    ListBoxController.AddListBoxItems(ref ItemsInStock, prName);
+                    ListBoxController.AddListBoxParameters(ref Parameters, quantity, prPrice, dlPrice);
                 }
             }
         }
