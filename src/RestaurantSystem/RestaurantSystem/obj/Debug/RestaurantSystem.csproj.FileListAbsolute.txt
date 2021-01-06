@@ -160,8 +160,9 @@ C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\sr
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.ManagerProfile.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.EmployeesTables.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.StaffForm.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.ManagerProfile.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.EmployeesTables.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.EmployeesHome.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.EmployeesMenu.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.Login.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.EmployeesHome.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.EmployeesMenu.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.Login.resources
