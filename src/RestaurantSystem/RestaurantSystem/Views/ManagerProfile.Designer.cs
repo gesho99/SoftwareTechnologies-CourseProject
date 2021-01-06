@@ -28,8 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.empIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobPositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.idBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
@@ -45,23 +57,74 @@
             this.firstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.empIdDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.jobPositionDataGridViewTextBoxColumn,
+            this.salaryDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.employeeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(345, 336);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 363);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // empIdDataGridViewTextBoxColumn
+            // 
+            this.empIdDataGridViewTextBoxColumn.DataPropertyName = "EmpId";
+            this.empIdDataGridViewTextBoxColumn.HeaderText = "EmpId";
+            this.empIdDataGridViewTextBoxColumn.Name = "empIdDataGridViewTextBoxColumn";
+            this.empIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // jobPositionDataGridViewTextBoxColumn
+            // 
+            this.jobPositionDataGridViewTextBoxColumn.DataPropertyName = "JobPosition";
+            this.jobPositionDataGridViewTextBoxColumn.HeaderText = "JobPosition";
+            this.jobPositionDataGridViewTextBoxColumn.Name = "jobPositionDataGridViewTextBoxColumn";
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(RestaurantSystem.Data.Models.Employee);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.deleteBtn);
+            this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.idBox);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cancelBtn);
@@ -81,8 +144,44 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(363, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 336);
+            this.panel1.Size = new System.Drawing.Size(345, 363);
             this.panel1.TabIndex = 1;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(192, 317);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(70, 33);
+            this.deleteBtn.TabIndex = 18;
+            this.deleteBtn.Text = "Изтрий";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            // 
+            // editBtn
+            // 
+            this.editBtn.Location = new System.Drawing.Point(80, 317);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(93, 33);
+            this.editBtn.TabIndex = 17;
+            this.editBtn.Text = "Редактиране";
+            this.editBtn.UseVisualStyleBackColor = true;
+            // 
+            // idBox
+            // 
+            this.idBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "EmpId", true));
+            this.idBox.Location = new System.Drawing.Point(225, 22);
+            this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
+            this.idBox.Size = new System.Drawing.Size(100, 20);
+            this.idBox.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(132, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "ID";
             // 
             // cancelBtn
             // 
@@ -110,6 +209,7 @@
             this.addBtn.TabIndex = 12;
             this.addBtn.Text = "Регистрация";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // browseBtn
             // 
@@ -119,9 +219,11 @@
             this.browseBtn.TabIndex = 11;
             this.browseBtn.Text = "Избери";
             this.browseBtn.UseVisualStyleBackColor = true;
+            this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
             // 
             // salaryBox
             // 
+            this.salaryBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Salary", true));
             this.salaryBox.Location = new System.Drawing.Point(254, 161);
             this.salaryBox.Name = "salaryBox";
             this.salaryBox.Size = new System.Drawing.Size(71, 20);
@@ -138,6 +240,7 @@
             // 
             // jobPosition
             // 
+            this.jobPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "JobPosition", true));
             this.jobPosition.Location = new System.Drawing.Point(225, 132);
             this.jobPosition.Name = "jobPosition";
             this.jobPosition.Size = new System.Drawing.Size(100, 20);
@@ -154,6 +257,7 @@
             // 
             // emailBox
             // 
+            this.emailBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Email", true));
             this.emailBox.Location = new System.Drawing.Point(225, 106);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(100, 20);
@@ -170,6 +274,7 @@
             // 
             // lastName
             // 
+            this.lastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "LastName", true));
             this.lastName.Location = new System.Drawing.Point(225, 80);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(100, 20);
@@ -186,6 +291,7 @@
             // 
             // firstName
             // 
+            this.firstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "FirstName", true));
             this.firstName.Location = new System.Drawing.Point(225, 49);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(100, 20);
@@ -209,33 +315,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // idBox
-            // 
-            this.idBox.Location = new System.Drawing.Point(225, 22);
-            this.idBox.Name = "idBox";
-            this.idBox.ReadOnly = true;
-            this.idBox.Size = new System.Drawing.Size(100, 20);
-            this.idBox.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(132, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "ID";
-            // 
-            // EmployeeRegistration
+            // ManagerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 387);
+            this.ClientSize = new System.Drawing.Size(720, 414);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "EmployeeRegistration";
+            this.Name = "ManagerProfile";
             this.Text = "EmployeeRegistration";
+            this.Load += new System.EventHandler(this.ManagerProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -264,5 +355,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobPositionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button editBtn;
     }
 }

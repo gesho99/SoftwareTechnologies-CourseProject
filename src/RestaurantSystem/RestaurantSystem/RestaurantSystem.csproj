@@ -94,6 +94,7 @@
     <Compile Include="Controllers\FormToDBController.cs" />
     <Compile Include="Controllers\LabelController.cs" />
     <Compile Include="Controllers\ListBoxController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\TextBoxController.cs" />
     <Compile Include="Data\Models\DayAccountings.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
@@ -299,6 +300,7 @@
       <DependentUpon>ManagerTables.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RestaurantSystem.Data.Models.Employee.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
