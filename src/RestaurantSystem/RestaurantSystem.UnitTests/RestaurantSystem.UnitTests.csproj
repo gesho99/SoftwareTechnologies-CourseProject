@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LabelControllerTests.cs" />
+    <Compile Include="ListBoxControllerTests.cs" />
     <Compile Include="ProductsInStockTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
