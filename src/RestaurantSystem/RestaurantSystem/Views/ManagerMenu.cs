@@ -175,7 +175,7 @@ namespace RestaurantSystem
 
         private void Home_Click(object sender, EventArgs e)
         {
-            new HomeAdmin(controller).Show();
+            new ManagerHome(controller).Show();
             this.Hide();
         }
     }

@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using RestaurantSystem.Controllers;
 
 namespace RestaurantSystem.Views
 {
     public partial class Login : Form
     {
+        DBController controller;
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
 
@@ -109,6 +111,10 @@ namespace RestaurantSystem.Views
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            new ManagerHome(controller).Show();
+            this.Hide();
+
+            /*
             con.Open();
             com.Connection = con;
             com.CommandText = "select * from Users";
@@ -117,18 +123,17 @@ namespace RestaurantSystem.Views
             {
                 if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(1))
                 {
-                    //new ManagerHome().Show();
-                    //this.Hide();
+                    new ManagerHome(controller).Show();
+                    this.Hide();
                 }
             }
             else if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(2))
             {
                 
-                //new EmployeesTables().Show();
-                //this.Hide();
+                new EmployeesTables().Show();
+                this.Hide();
             }
-
-
+            */
         }
     }
 }

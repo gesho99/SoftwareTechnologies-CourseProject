@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using RestaurantSystem.Controllers;
+using RestaurantSystem.Views;
 
 namespace RestaurantSystem
 {
-    public partial class HomeAdmin : Form
+    public partial class ManagerHome : Form
     {
         DBController controller;
 
-        public HomeAdmin(DBController controller)
+        public ManagerHome(DBController controller)
         {
             this.controller = controller;
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace RestaurantSystem
         private void Employees_Click(object sender, EventArgs e)
         {
             
-            new Employees(controller).Show();
+            new ManagerProfile().Show();
             this.Hide();
         }
 

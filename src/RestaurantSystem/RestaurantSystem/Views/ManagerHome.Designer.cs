@@ -1,6 +1,6 @@
 ﻿namespace RestaurantSystem
 {
-    partial class HomeAdmin
+    partial class ManagerHome
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerHome));
             this.addUser = new System.Windows.Forms.Button();
             this.employees = new System.Windows.Forms.Button();
             this.table = new System.Windows.Forms.Button();

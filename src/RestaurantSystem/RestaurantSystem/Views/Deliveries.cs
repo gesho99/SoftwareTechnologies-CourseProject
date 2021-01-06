@@ -219,7 +219,7 @@ namespace RestaurantSystem
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            new HomeAdmin(controller).Show();
+            new ManagerHome(controller).Show();
             this.Hide();
         }
     }
