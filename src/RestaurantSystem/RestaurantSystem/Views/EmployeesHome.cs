@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RestaurantSystem.Views
+namespace RestaurantSystem
 {
-    public partial class EmployeeRegistration : Form
+    public partial class EmployeesHome : Form
     {
-        public EmployeeRegistration()
+        public EmployeesHome()
         {
             InitializeComponent();
         }

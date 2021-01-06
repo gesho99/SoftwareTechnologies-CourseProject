@@ -110,6 +110,18 @@
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
     <Compile Include="Data\Models\DeliveryProducts2.cs" />
+    <Compile Include="Views\EmployeesHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeesHome.Designer.cs">
+      <DependentUpon>EmployeesHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeesMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeesMenu.Designer.cs">
+      <DependentUpon>EmployeesMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202012031851268_InitialCreate.cs" />
     <Compile Include="Migrations\202012031851268_InitialCreate.designer.cs">
       <DependentUpon>202012031851268_InitialCreate.cs</DependentUpon>
@@ -162,35 +174,35 @@
     <Compile Include="Views\Deliveries.Designer.cs">
       <DependentUpon>Deliveries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EmployeeRegistration.cs">
+    <Compile Include="Views\ManagerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\EmployeeRegistration.Designer.cs">
-      <DependentUpon>EmployeeRegistration.cs</DependentUpon>
+    <Compile Include="Views\ManagerProfile.Designer.cs">
+      <DependentUpon>ManagerProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Employees.cs">
+    <Compile Include="Views\EmployeesProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Employees.Designer.cs">
-      <DependentUpon>Employees.cs</DependentUpon>
+    <Compile Include="Views\EmployeesProfile.Designer.cs">
+      <DependentUpon>EmployeesProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Form1.cs">
+    <Compile Include="Views\Login-1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Login-1.Designer.cs">
+      <DependentUpon>Login-1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\HomeAdmin.cs">
+    <Compile Include="Views\ManagerHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\HomeAdmin.Designer.cs">
-      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    <Compile Include="Views\ManagerHome.Designer.cs">
+      <DependentUpon>ManagerHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Menu.cs">
+    <Compile Include="Views\ManagerMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Views\ManagerMenu.Designer.cs">
+      <DependentUpon>ManagerMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductsInStockForm.cs">
       <SubType>Form</SubType>
@@ -198,17 +210,17 @@
     <Compile Include="Views\ProductsInStockForm.Designer.cs">
       <DependentUpon>ProductsInStockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\StaffForm.cs">
+    <Compile Include="Views\EmployeesTables.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\StaffForm.Designer.cs">
-      <DependentUpon>StaffForm.cs</DependentUpon>
+    <Compile Include="Views\EmployeesTables.Designer.cs">
+      <DependentUpon>EmployeesTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tables.cs">
+    <Compile Include="Views\ManagerTables.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Tables.Designer.cs">
-      <DependentUpon>Tables.cs</DependentUpon>
+    <Compile Include="Views\ManagerTables.Designer.cs">
+      <DependentUpon>ManagerTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,20 +258,20 @@
     <EmbeddedResource Include="Views\Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EmployeeRegistration.resx">
-      <DependentUpon>EmployeeRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ManagerProfile.resx">
+      <DependentUpon>ManagerProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Employees.resx">
-      <DependentUpon>Employees.cs</DependentUpon>
+    <EmbeddedResource Include="Views\EmployeesProfile.resx">
+      <DependentUpon>EmployeesProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Login-1.resx">
+      <DependentUpon>Login-1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\HomeAdmin.resx">
-      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ManagerHome.resx">
+      <DependentUpon>ManagerHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ManagerMenu.resx">
+      <DependentUpon>ManagerMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductsInStockForm.resx">
       <DependentUpon>ProductsInStockForm.cs</DependentUpon>
@@ -274,11 +286,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\StaffForm.resx">
-      <DependentUpon>StaffForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\EmployeesTables.resx">
+      <DependentUpon>EmployeesTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Tables.resx">
-      <DependentUpon>Tables.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ManagerTables.resx">
+      <DependentUpon>ManagerTables.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

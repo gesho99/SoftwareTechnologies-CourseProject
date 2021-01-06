@@ -1,6 +1,6 @@
 ﻿namespace RestaurantSystem.Views
 {
-    partial class EmployeeRegistration
+    partial class ManagerProfile
     {
         /// <summary>
         /// Required designer variable.

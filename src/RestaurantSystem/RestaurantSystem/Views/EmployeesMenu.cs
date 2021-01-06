@@ -7,19 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RestaurantSystem.Views
+namespace RestaurantSystem
 {
-    public partial class StaffForm : Form
+    public partial class EmployeesMenu : Form
     {
-        public StaffForm()
+        public EmployeesMenu()
         {
             InitializeComponent();
-        }
-
-        private void Table_Click(object sender, EventArgs e)
-        {
-            new Tables().Show();
-            this.Hide();
         }
     }
 }

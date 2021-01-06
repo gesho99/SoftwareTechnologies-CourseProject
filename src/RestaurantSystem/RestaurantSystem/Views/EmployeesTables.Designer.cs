@@ -1,6 +1,6 @@
 ﻿namespace RestaurantSystem.Views
 {
-    partial class StaffForm
+    partial class EmployeesTables
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesTables));
             this.table = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
