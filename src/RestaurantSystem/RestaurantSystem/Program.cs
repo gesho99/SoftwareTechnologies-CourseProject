@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RestaurantSystem.Views;
 
 namespace RestaurantSystem
 {
@@ -37,8 +38,8 @@ namespace RestaurantSystem
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AccountingForm(controller));
             //Application.Run(new Deliveries(controller));                 
-            Application.Run(new ProductsInStockForm(controller));
-            //Application.Run(new Login());
+            //Application.Run(new ProductsInStockForm(controller));
+            Application.Run(new Login());
             //Application.Run(new Menu(controller));
         }
     }

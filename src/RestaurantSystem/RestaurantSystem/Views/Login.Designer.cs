@@ -1,4 +1,4 @@
-﻿namespace LoginForm
+﻿namespace RestaurantSystem.Views
 {
     partial class Login
     {

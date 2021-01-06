@@ -174,6 +174,12 @@
     <Compile Include="Views\Deliveries.Designer.cs">
       <DependentUpon>Deliveries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ManagerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,12 +191,6 @@
     </Compile>
     <Compile Include="Views\EmployeesProfile.Designer.cs">
       <DependentUpon>EmployeesProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Login-1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Login-1.Designer.cs">
-      <DependentUpon>Login-1.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ManagerHome.cs">
       <SubType>Form</SubType>
@@ -258,14 +258,20 @@
     <EmbeddedResource Include="Views\Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeesHome.resx">
+      <DependentUpon>EmployeesHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeesMenu.resx">
+      <DependentUpon>EmployeesMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ManagerProfile.resx">
       <DependentUpon>ManagerProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeesProfile.resx">
       <DependentUpon>EmployeesProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Login-1.resx">
-      <DependentUpon>Login-1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ManagerHome.resx">
       <DependentUpon>ManagerHome.cs</DependentUpon>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace LoginForm
+namespace RestaurantSystem.Views
 {
     public partial class Login : Form
     {
@@ -26,7 +26,7 @@ namespace LoginForm
 
         private void Username_KeyDown(object sender, KeyEventArgs e)
         {
-            if(Username.Text=="  Enter Username:")
+            if (Username.Text == "  Enter Username:")
             {
                 Username.Clear();
                 Username.ForeColor = Color.Black;
@@ -54,7 +54,7 @@ namespace LoginForm
 
         private void Username_Click(object sender, EventArgs e)
         {
-            if(Username.Text=="  Enter Username:")
+            if (Username.Text == "  Enter Username:")
             {
                 Username.Clear();
                 Username.ForeColor = Color.Black;
@@ -69,7 +69,7 @@ namespace LoginForm
 
         private void Password_Click(object sender, EventArgs e)
         {
-            if(Password.Text=="  Enter Password:")
+            if (Password.Text == "  Enter Password:")
             {
                 Password.Clear();
                 Password.UseSystemPasswordChar = true;
@@ -106,7 +106,7 @@ namespace LoginForm
             Password.UseSystemPasswordChar = true;
         }
 
-       
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -115,19 +115,20 @@ namespace LoginForm
             SqlDataReader dr = com.ExecuteReader();
             if (dr.Read())
             {
-                if (Username.Text.Equals(dr["Username"].ToString())&&Password.Text.Equals(dr["Password"].ToString())&&dr["RoleId"].Equals(1))
+                if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(1))
                 {
-                    new AdminHome().Show();
-                    this.Hide();
+                    //new ManagerHome().Show();
+                    //this.Hide();
                 }
             }
-            else if(Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(2))
+            else if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(2))
             {
-                new StaffForm().Show();
-                this.Hide();
+                
+                //new EmployeesTables().Show();
+                //this.Hide();
             }
 
-            
+
         }
     }
 }
