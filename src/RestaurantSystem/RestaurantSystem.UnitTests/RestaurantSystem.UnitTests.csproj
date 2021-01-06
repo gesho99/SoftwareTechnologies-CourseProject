@@ -64,6 +64,7 @@
     <Compile Include="ListBoxControllerTests.cs" />
     <Compile Include="ProductsInStockTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextBoxControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RestaurantSystem\RestaurantSystem.csproj">
