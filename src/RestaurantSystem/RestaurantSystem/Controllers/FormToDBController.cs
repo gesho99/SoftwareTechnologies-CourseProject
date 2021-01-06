@@ -69,5 +69,15 @@ namespace RestaurantSystem.Controllers
             return controller.GetExpenses(dateString);
         }
 
+        public static double GetDayReportExpensesFromDataBase(ref DBController controller, string dateString)
+        {
+            return controller.GetDayReportExpenses(dateString);
+        }
+
+        public static double GetDayReportIncomesFromDataBase(ref DBController controller, string dateString)
+        {
+            return controller.GetDayReportIncomes(dateString);
+        }
+
     }
 }
