@@ -283,8 +283,6 @@ namespace RestaurantSystem.Controllers
                 }
 
             }
-
-
         } 
 
         public ICollection<Delivery> LoadDeliveries()

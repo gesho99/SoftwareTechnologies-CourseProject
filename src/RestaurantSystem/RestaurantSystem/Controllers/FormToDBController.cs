@@ -44,5 +44,30 @@ namespace RestaurantSystem.Controllers
             return controller.SelectProductByName(productName);
         }
 
+        public static bool AddElectricityExpenseInDataBaseIfNotExists(ref DBController controller, string dateString, double eValue)
+        {
+            return controller.AddElectricityExpense(dateString, eValue);
+        }
+
+        public static bool AddWaterExpenseInDataBaseIfNotExists(ref DBController controller, string dateString, double wValue)
+        {
+            return controller.AddWaterExpense(dateString, wValue);
+        }
+
+        public static bool AddInternetExpenseInDataBaseIfNotExists(ref DBController controller, string dateString, double iValue)
+        {
+            return controller.AddWaterExpense(dateString, iValue);
+        }
+
+        public static bool EditExpensesInDataBase(ref DBController controller, string dateString, double eValue, double wValue, double iValue)
+        {
+            return controller.EditExpenses(dateString, eValue, wValue, iValue);
+        }
+
+        public static List<Expenses> GetExpensesFromDataBase(ref DBController controller, string dateString)
+        {
+            return controller.GetExpenses(dateString);
+        }
+
     }
 }

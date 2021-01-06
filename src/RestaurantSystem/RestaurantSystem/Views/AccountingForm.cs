@@ -20,7 +20,7 @@ namespace RestaurantSystem
         {
             this.controller = controller;
             InitializeComponent();
-            label30.Visible = false;
+            LabelController.ChangeLabelVisibility(ref label30, false);
         }
         public AccountingForm()
         {
@@ -33,8 +33,8 @@ namespace RestaurantSystem
             {
                 if (year.Text.Length != 4 || months.SelectedItem == null)
                 {
-                    label30.Visible = true;
-                    label30.Text = "Моля въведете валидни данни за година/месец.";
+                    LabelController.ChangeLabelVisibility(ref label30, true);
+                    LabelController.ChangeLabelText(ref label30, "Моля въведете валидни данни за година/месец.");
                     return "f";
                 }
                 else
@@ -61,8 +61,8 @@ namespace RestaurantSystem
 
                     if (electricity.Text == "" && water.Text == "" && internet.Text == "")
                     {
-                        label30.Visible = true;
-                        label30.Text = "Моля въведете поне един разход.";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Моля въведете поне един разход.");
                         return "f";
                     }
 
@@ -71,17 +71,22 @@ namespace RestaurantSystem
             }
             catch (FormatException)
             {
-                label30.Visible = true;
-                label30.Text = "Моля въведете валидни данни.";
+                LabelController.ChangeLabelVisibility(ref label30, true);
+                LabelController.ChangeLabelText(ref label30, "Моля въведете валидни данни.");
                 return "f";
             }
             catch (OverflowException)
             {
-                label30.Visible = true;
-                label30.Text = "Моля въведете валидни данни.";
+                LabelController.ChangeLabelVisibility(ref label30, true);
+                LabelController.ChangeLabelText(ref label30, "Моля въведете валидни данни.");
                 return "f";
             }
 
+        }
+
+        private double CalculateProfit(double incomes, double expenses)
+        {
+            return incomes - expenses;
         }
 
         private void AccountingForm_Load(object sender, EventArgs e)
@@ -92,7 +97,6 @@ namespace RestaurantSystem
         private void addExpense_Click(object sender, EventArgs e)
         {
             string validation = expensesValidation();
-            MessageBox.Show(validation);
             if (validation != "f")
             {
                 string dateString = year.Text + months.SelectedItem.ToString() + "01T00:00:00Z";
@@ -100,93 +104,113 @@ namespace RestaurantSystem
                 if (validation.Contains("e"))
                 {
                     double eValue = double.Parse(electricity.Text);
-                    if (controller.AddElectricityExpense(dateString, eValue) == false)
+                    if (FormToDBController.AddElectricityExpenseInDataBaseIfNotExists(ref controller, dateString, eValue) == false)
                     {
-                        label30.Visible = true;
-                        label30.Text = "Въведеният разход " + electricity.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                                                        electricity.Text + " за периода " + 
+                                                        year.Text + "/" + 
+                                                        months.SelectedItem.ToString() + " вече съществува.");
                         return;
                     }
                     else
                     {
-                        label30.Visible = true;
-                        label30.Text = "Въведеният разход " + electricity.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " е успешно добавен";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                                                        electricity.Text + " за периода " + 
+                                                        year.Text + "/" + 
+                                                        months.SelectedItem.ToString() + " е успешно добавен");
                     }
                 }
 
                 if (validation.Contains("w"))
                 {
                     double wValue = double.Parse(water.Text);
-                    if (controller.AddWaterExpense(dateString, wValue) == false)
+                    if (FormToDBController.AddWaterExpenseInDataBaseIfNotExists(ref controller, dateString, wValue) == false)
                     {
-                        label30.Visible = true;
-                        label30.Text = "Въведеният разход " + water.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                                                        water.Text + " за периода " + 
+                                                        year.Text + "/" + 
+                                                        months.SelectedItem.ToString() + " вече съществува.");
                         return;
                     }
                     else
                     {
-                        label30.Visible = true;
-                        label30.Text = "Въведеният разход " + water.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " е успешно добавен.";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                                                        water.Text + " за периода " + 
+                                                        year.Text + "/" + 
+                                                        months.SelectedItem.ToString() + " е успешно добавен.");
                     }
                 }
 
                 if (validation.Contains("i"))
                 {
                     double iValue = double.Parse(internet.Text);
-                    if (!controller.AddInternetExpense(dateString, iValue) == false)
+                    if (FormToDBController.AddInternetExpenseInDataBaseIfNotExists(ref controller, dateString, iValue) == false)
                     {
-                        label30.Visible = true;
-                        label30.Text = "Въведеният разход " + internet.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " вече съществува.";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                                                        internet.Text + " за периода " + 
+                                                        year.Text + "/" + 
+                                                        months.SelectedItem.ToString() + " вече съществува.");
                         return;
                     }
                     else
                     {
-                        label30.Visible = true;
-                        label30.Text = "Въведеният разход " + internet.Text + " за периода " + year.Text + "/" + months.SelectedItem.ToString() + " е успешно добавен.";
+                        LabelController.ChangeLabelVisibility(ref label30, true);
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                                                        internet.Text + " за периода " + 
+                                                        year.Text + "/" + 
+                                                        months.SelectedItem.ToString() + " е успешно добавен.");
                     }
                 }
 
-                label30.Visible = true;
-                label30.Text = "Разходите за периода " + year.Text + "/" + months.SelectedItem.ToString() + " са успешно добавени.";
+                LabelController.ChangeLabelVisibility(ref label30, true);
+                LabelController.ChangeLabelText(ref label30, "Разходите за периода " + 
+                                                year.Text + "/" + 
+                                                months.SelectedItem.ToString() + " са успешно добавени.");
             }
         }
 
         private void seeExpenses_Click(object sender, EventArgs e)
         {
-            electricity.Text = "";
-            water.Text = "";
-            internet.Text = "";
+            TextBoxController.ChangeThreeTextBoxesText(ref electricity, ref water, ref internet, "", "", "");
 
             if (year.Text.Length != 4 || months.SelectedItem == null)
             {
-                label30.Visible = true;
-                label30.Text = "Моля въведете валидни данни за година/месец.";
+                LabelController.ChangeLabelVisibility(ref label30, true);
+                LabelController.ChangeLabelText(ref label30, "Моля въведете валидни данни за година/месец.");
             }
             else
             {
                 string dateString = year.Text + months.SelectedItem.ToString() + "01T00:00:00Z";
-                List<Expenses> expenses = controller.GetExpenses(dateString);
+                List<Expenses> expenses = FormToDBController.GetExpensesFromDataBase(ref controller, dateString);
                 if (expenses.Count != 0)
                 {
                     foreach(Expenses expense in expenses)
                     {
                         if(expense.Name == "Ток")
                         {
-                            electricity.Text = expense.Value.ToString();
+                            TextBoxController.ChangeTextBoxText(ref electricity, expense.Value.ToString());
                         }
-                        else if (expense.Name == "Вода")
+                        else if (expense.Name == "Вода") 
                         {
-                            water.Text = expense.Value.ToString();
+                            TextBoxController.ChangeTextBoxText(ref water, expense.Value.ToString());
                         }
                         else if (expense.Name == "Интернет")
                         {
-                            internet.Text = expense.Value.ToString();
+                            TextBoxController.ChangeTextBoxText(ref internet, expense.Value.ToString());
                         }
                     }
                 }
                 else
                 {
-                    label30.Visible = true;
-                    label30.Text = "Няма добавени разходи за периода " + year.Text + "/" + months.SelectedItem.ToString();
+                    LabelController.ChangeLabelVisibility(ref label30, true);
+                    LabelController.ChangeLabelText(ref label30, "Няма добавени разходи за периода " + 
+                                                    year.Text + "/" + 
+                                                    months.SelectedItem.ToString());
                 }
             }
         }
@@ -210,24 +234,17 @@ namespace RestaurantSystem
                     iValue = double.Parse(internet.Text);
                 }
                 string dateString = year.Text + months.SelectedItem.ToString() + "01T00:00:00Z";
-                if (controller.EditExpenses(dateString, eValue, wValue, iValue) == false)
+                if (FormToDBController.EditExpensesInDataBase(ref controller, dateString, eValue, wValue, iValue) == false)
                 {
-                    label30.Visible = true;
-                    label30.Text = "Някой от разходите, който се опитвате да редактирате за периода, не съществува.";
+                    LabelController.ChangeLabelVisibility(ref label30, true);
+                    LabelController.ChangeLabelText(ref label30, "Някой от разходите, който се опитвате да редактирате за периода, не съществува.");
                 }
                 else
                 {
-                    label30.Visible = true;
-                    label30.Text = "Разходите са успешно редактирани.";
+                    LabelController.ChangeLabelVisibility(ref label30, true);
+                    LabelController.ChangeLabelText(ref label30, "Разходите са успешно редактирани.");
                 }
             }
-        }
-
-
-        private void Home_Click(object sender, EventArgs e)
-        {
-            new HomeAdmin(controller).Show();
-            this.Hide();
         }
 
         private void addAccountingForDay_Click(object sender, EventArgs e)
@@ -238,15 +255,21 @@ namespace RestaurantSystem
 
             string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
 
-            double expenses = controller.GetDayReportExpenses(dateString);
-            double incomes = controller.GetDayReportIncomes(dateString);
+            double expenses = FormToDBController.GetDayReportExpensesFromDataBase(ref controller, dateString);
+            double incomes = FormToDBController.GetDayReportIncomesFromDataBase(ref controller, dateString);
 
-            dayExpenses.Text = expenses.ToString();
-            dayIncomes.Text = incomes.ToString();
+            TextBoxController.ChangeTextBoxText(ref dayExpenses, expenses.ToString());
+            TextBoxController.ChangeTextBoxText(ref dayIncomes, incomes.ToString());
 
-            double profit = incomes - expenses;
+            double profit = CalculateProfit(incomes, expenses);
 
-            dayProfit.Text = profit.ToString();
+            TextBoxController.ChangeTextBoxText(ref dayProfit, profit.ToString());
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            new HomeAdmin(controller).Show();
+            this.Hide();
         }
     }
 }
