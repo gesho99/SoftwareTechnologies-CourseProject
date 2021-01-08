@@ -23,6 +23,24 @@ namespace RestaurantSystem
             InitializeComponent();
             con.ConnectionString = @"Data Source=DESKTOP-MJGIC87;Initial Catalog=RestaurantDataBase;Integrated Security=True";
         }
+          private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.SecondaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.SecondaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+
+        }
 
         private void AddUser_Load(object sender, EventArgs e)
         {
@@ -86,6 +104,11 @@ namespace RestaurantSystem
         {
             new ManagerHome(controller).Show();
             this.Hide();
+        }
+
+        private void AddUser_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }

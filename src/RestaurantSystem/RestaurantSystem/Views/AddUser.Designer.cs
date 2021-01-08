@@ -144,6 +144,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
             this.Text = "AddUser";
+            this.Load += new System.EventHandler(this.AddUser_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
