@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\RestaurantSystem"
+    "\\src\\RestaurantSystem",
+    "\\src\\RestaurantSystem\\RestaurantSystem"
   ],
-  "SelectedNode": "\\src\\RestaurantSystem\\RestaurantSystem.sln",
+  "SelectedNode": "\\src\\RestaurantSystem\\RestaurantSystem\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

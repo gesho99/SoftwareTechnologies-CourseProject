@@ -111,6 +111,7 @@
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
     <Compile Include="Data\Models\DeliveryProducts2.cs" />
+    <Compile Include="ThemeColor.cs" />
     <Compile Include="Views\EmployeesHome.cs">
       <SubType>Form</SubType>
     </Compile>
