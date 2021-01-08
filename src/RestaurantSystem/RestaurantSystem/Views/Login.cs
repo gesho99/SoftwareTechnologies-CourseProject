@@ -18,12 +18,13 @@ namespace RestaurantSystem.Views
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
 
-        public Login()
+        public Login(DBController controller)
         {
             InitializeComponent();
             con.ConnectionString = @"Data Source=DESKTOP-MJGIC87;Initial Catalog=RestaurantDataBase;Integrated Security=True";
             Username.Select(0, 0);
             Password.UseSystemPasswordChar = false;
+            this.controller = controller;
         }
 
         private void Username_KeyDown(object sender, KeyEventArgs e)
