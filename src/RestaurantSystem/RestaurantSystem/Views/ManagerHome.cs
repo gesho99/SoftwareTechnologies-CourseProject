@@ -17,6 +17,7 @@ namespace RestaurantSystem
         private Button currentButton;
         private Random random;
         private int tempIndex;
+        private Form activeForm;
 
         public ManagerHome(DBController controller)
         {
@@ -47,8 +48,8 @@ namespace RestaurantSystem
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    // panelTitleBar.BackColor = color;
-                    //panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    panelTitleBar.BackColor = color;
+                    panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     //ThemeColor.PrimaryColor = color;
                     //ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     //btnCloseChildForm.Visible = true;
@@ -67,56 +68,71 @@ namespace RestaurantSystem
                 }
             }
         }
+        public void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelDesktopPanel.Controls.Add(childForm);
+            this.panelDesktopPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitle.Text = childForm.Text;
+        }
 
 
         private void Table_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new Tables().Show();
-            this.Hide();
+            OpenChildForm(new Tables(), sender);
+            //new Tables().Show();
+            //this.Hide();
         }
 
         private void AddUser_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new AddUser(controller).Show();
-            this.Hide();
+            OpenChildForm(new AddUser(controller), sender);
+            // new AddUser(controller).Show();
+            // this.Hide();
         }
 
         private void Employees_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new ManagerProfile().Show();
-            this.Hide();
+            OpenChildForm(new ManagerProfile(), sender);
+            // new ManagerProfile().Show();
+            // this.Hide();
         }
 
         private void Menu_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new Menu(controller).Show();
-             this.Hide();
+           OpenChildForm(new Menu(controller), sender);
+            //new Menu(controller).Show();
+            //this.Hide();
 
         }
 
         private void Stock_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new ProductsInStockForm(controller).Visible = true;
-            this.Hide();
+            OpenChildForm(new ProductsInStockForm(controller), sender);
+            // new ProductsInStockForm(controller).Visible = true;
+            //this.Hide();
         }
 
         private void Delivery_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new Deliveries(controller).Show();
-            this.Hide();
+            OpenChildForm(new Deliveries(controller), sender);
+            // new Deliveries(controller).Show();
+            // this.Hide();
         }
 
         private void Accounting_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            new AccountingForm(controller).Show();
-            this.Hide();
+            OpenChildForm(new AccountingForm(controller), sender);
+            // new AccountingForm(controller).Show();
+            // this.Hide();
         }
     }
 }

@@ -46,11 +46,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.products = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Home = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.deleteMenuItem = new System.Windows.Forms.Button();
             this.editMenuItem = new System.Windows.Forms.Button();
             this.addMenuItem = new System.Windows.Forms.Button();
-            this.Home = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.menuItems.FormattingEnabled = true;
             this.menuItems.ItemHeight = 16;
             this.menuItems.Location = new System.Drawing.Point(16, 31);
-            this.menuItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuItems.Margin = new System.Windows.Forms.Padding(4);
             this.menuItems.Name = "menuItems";
             this.menuItems.Size = new System.Drawing.Size(197, 356);
             this.menuItems.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.menuItemsParameters.FormattingEnabled = true;
             this.menuItemsParameters.ItemHeight = 16;
             this.menuItemsParameters.Location = new System.Drawing.Point(211, 31);
-            this.menuItemsParameters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuItemsParameters.Margin = new System.Windows.Forms.Padding(4);
             this.menuItemsParameters.Name = "menuItemsParameters";
             this.menuItemsParameters.Size = new System.Drawing.Size(369, 356);
             this.menuItemsParameters.TabIndex = 2;
@@ -102,9 +102,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.menuItems);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(636, 402);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -135,7 +135,7 @@
             // itemName
             // 
             this.itemName.Location = new System.Drawing.Point(32, 49);
-            this.itemName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.itemName.Margin = new System.Windows.Forms.Padding(4);
             this.itemName.Name = "itemName";
             this.itemName.Size = new System.Drawing.Size(187, 22);
             this.itemName.TabIndex = 14;
@@ -166,7 +166,7 @@
             // itemWeight
             // 
             this.itemWeight.Location = new System.Drawing.Point(32, 277);
-            this.itemWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.itemWeight.Margin = new System.Windows.Forms.Padding(4);
             this.itemWeight.Name = "itemWeight";
             this.itemWeight.Size = new System.Drawing.Size(187, 22);
             this.itemWeight.TabIndex = 26;
@@ -197,7 +197,7 @@
             // itemPrice
             // 
             this.itemPrice.Location = new System.Drawing.Point(32, 119);
-            this.itemPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.itemPrice.Margin = new System.Windows.Forms.Padding(4);
             this.itemPrice.Name = "itemPrice";
             this.itemPrice.Size = new System.Drawing.Size(187, 22);
             this.itemPrice.TabIndex = 29;
@@ -228,7 +228,7 @@
             // products
             // 
             this.products.Location = new System.Drawing.Point(32, 202);
-            this.products.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.products.Margin = new System.Windows.Forms.Padding(4);
             this.products.Name = "products";
             this.products.Size = new System.Drawing.Size(187, 22);
             this.products.TabIndex = 32;
@@ -253,12 +253,22 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.itemName);
             this.groupBox2.Location = new System.Drawing.Point(672, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(487, 402);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
+            // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(412, 379);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 23);
+            this.Home.TabIndex = 53;
+            this.Home.Text = "Назад";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // label6
             // 
@@ -274,7 +284,7 @@
             // deleteMenuItem
             // 
             this.deleteMenuItem.Location = new System.Drawing.Point(273, 254);
-            this.deleteMenuItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteMenuItem.Margin = new System.Windows.Forms.Padding(4);
             this.deleteMenuItem.Name = "deleteMenuItem";
             this.deleteMenuItem.Size = new System.Drawing.Size(188, 48);
             this.deleteMenuItem.TabIndex = 43;
@@ -285,7 +295,7 @@
             // editMenuItem
             // 
             this.editMenuItem.Location = new System.Drawing.Point(273, 148);
-            this.editMenuItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editMenuItem.Margin = new System.Windows.Forms.Padding(4);
             this.editMenuItem.Name = "editMenuItem";
             this.editMenuItem.Size = new System.Drawing.Size(188, 48);
             this.editMenuItem.TabIndex = 42;
@@ -296,23 +306,13 @@
             // addMenuItem
             // 
             this.addMenuItem.Location = new System.Drawing.Point(273, 49);
-            this.addMenuItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addMenuItem.Margin = new System.Windows.Forms.Padding(4);
             this.addMenuItem.Name = "addMenuItem";
             this.addMenuItem.Size = new System.Drawing.Size(188, 48);
             this.addMenuItem.TabIndex = 41;
             this.addMenuItem.Text = "Добави ново ястие";
             this.addMenuItem.UseVisualStyleBackColor = true;
             this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
-            // 
-            // Home
-            // 
-            this.Home.Location = new System.Drawing.Point(412, 379);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(75, 23);
-            this.Home.TabIndex = 53;
-            this.Home.Text = "Назад";
-            this.Home.UseVisualStyleBackColor = true;
-            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Menu
             // 
@@ -321,7 +321,7 @@
             this.ClientSize = new System.Drawing.Size(1169, 439);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "Меню";
             this.groupBox1.ResumeLayout(false);
