@@ -59,5 +59,25 @@ namespace RestaurantSystem.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap onlinelogomaker_010721_1136_4394_2000_transparent {
+            get {
+                object obj = ResourceManager.GetObject("onlinelogomaker-010721-1136-4394-2000-transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap onlinelogomaker_010721_1136_4394_500 {
+            get {
+                object obj = ResourceManager.GetObject("onlinelogomaker-010721-1136-4394-500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
