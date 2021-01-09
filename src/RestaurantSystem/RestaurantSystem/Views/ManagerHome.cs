@@ -28,7 +28,7 @@ namespace RestaurantSystem
             btnCloseChildForm.Visible = false;
           
         }
-        //DragForm
+        
      
         private Color SelectThemeColor()
         {

@@ -112,29 +112,34 @@ namespace RestaurantSystem.Views
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            new ManagerHome(controller).Show();
+
+            //new ManagerHome(controller).Show();
+            //this.Hide();
+            new EmployeesHome(controller).Show();
             this.Hide();
 
-            /*
-            con.Open();
-            com.Connection = con;
-            com.CommandText = "select * from Users";
-            SqlDataReader dr = com.ExecuteReader();
-            if (dr.Read())
-            {
-                if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(1))
-                {
-                    new ManagerHome(controller).Show();
-                    this.Hide();
-                }
-            }
-            else if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(2))
-            {
-                
-                new EmployeesTables().Show();
-                this.Hide();
-            }
-            */
+
+            /*  con.Open();
+              com.Connection = con;
+              com.CommandText = "select * from Users";
+              SqlDataReader dr = com.ExecuteReader();
+              if (dr.Read())
+              {
+                  if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(1))
+                  {
+                      new ManagerHome(controller).Show();
+                      this.Hide();
+                  }
+              }
+              else if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(3))
+              {
+
+                  new EmployeesHome().Show();
+                  this.Hide();
+              }
+
+          }
+          */
         }
     }
 }

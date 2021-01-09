@@ -15,5 +15,19 @@ namespace RestaurantSystem
         {
             InitializeComponent();
         }
+        private void LoadTheme()
+        {
+           
+            label2.ForeColor = ThemeColor.SecondaryColor;
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            domainUpDown1.ForeColor = ThemeColor.SecondaryColor;
+           
+
+        }
+
+        private void EmployeesMenu_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
     }
 }

@@ -309,7 +309,6 @@
             // 
             this.panelDesktopPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelDesktopPanel.Controls.Add(this.pictureBox1);
-            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPanel.ForeColor = System.Drawing.Color.Transparent;
             this.panelDesktopPanel.Location = new System.Drawing.Point(260, 80);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
