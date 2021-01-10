@@ -149,6 +149,20 @@
             this.stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.stock.UseVisualStyleBackColor = false;
             this.stock.Click += new System.EventHandler(this.Stock_Click);
+=======
+            this.addUser.BackColor = System.Drawing.Color.Transparent;
+            this.addUser.FlatAppearance.BorderSize = 0;
+            this.addUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUser.Image = ((System.Drawing.Image)(resources.GetObject("addUser.Image")));
+            this.addUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.addUser.Location = new System.Drawing.Point(1, 1);
+            this.addUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addUser.Name = "addUser";
+            this.addUser.Size = new System.Drawing.Size(110, 206);
+            this.addUser.TabIndex = 4;
+            this.addUser.Text = "Добави нов потребител";
+            this.addUser.UseVisualStyleBackColor = false;
+            this.addUser.Click += new System.EventHandler(this.AddUser_Click);
             // 
             // employees
             // 
@@ -162,6 +176,12 @@
             this.employees.Location = new System.Drawing.Point(-3, 170);
             this.employees.Name = "employees";
             this.employees.Size = new System.Drawing.Size(260, 93);
+=======
+            this.employees.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.employees.Location = new System.Drawing.Point(166, 1);
+            this.employees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employees.Name = "employees";
+            this.employees.Size = new System.Drawing.Size(87, 197);
             this.employees.TabIndex = 7;
             this.employees.Text = "Служители";
             this.employees.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -199,6 +219,12 @@
             this.table.Location = new System.Drawing.Point(3, 269);
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(260, 93);
+=======
+            this.table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.table.Location = new System.Drawing.Point(316, 13);
+            this.table.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.table.Name = "table";
+            this.table.Size = new System.Drawing.Size(117, 181);
             this.table.TabIndex = 9;
             this.table.Text = "Маси";
             this.table.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,6 +244,12 @@
             this.menu.Location = new System.Drawing.Point(0, 356);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(260, 93);
+=======
+            this.menu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.menu.Location = new System.Drawing.Point(470, 34);
+            this.menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(103, 139);
             this.menu.TabIndex = 10;
             this.menu.Text = "Меню";
             this.menu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -238,6 +270,20 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1322, 80);
             this.panelTitleBar.TabIndex = 14;
+=======
+            this.delivery.BackColor = System.Drawing.Color.Transparent;
+            this.delivery.FlatAppearance.BorderSize = 0;
+            this.delivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delivery.Image = ((System.Drawing.Image)(resources.GetObject("delivery.Image")));
+            this.delivery.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.delivery.Location = new System.Drawing.Point(251, 167);
+            this.delivery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delivery.Name = "delivery";
+            this.delivery.Size = new System.Drawing.Size(74, 188);
+            this.delivery.TabIndex = 11;
+            this.delivery.Text = "Доставки";
+            this.delivery.UseVisualStyleBackColor = false;
+            this.delivery.Click += new System.EventHandler(this.Delivery_Click);
             // 
             // btnMinimize
             // 
@@ -252,6 +298,21 @@
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
+=======
+            this.accounting.BackColor = System.Drawing.Color.Transparent;
+            this.accounting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.accounting.FlatAppearance.BorderSize = 0;
+            this.accounting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.accounting.Image = ((System.Drawing.Image)(resources.GetObject("accounting.Image")));
+            this.accounting.Location = new System.Drawing.Point(424, 155);
+            this.accounting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accounting.Name = "accounting";
+            this.accounting.Size = new System.Drawing.Size(83, 117);
+            this.accounting.TabIndex = 12;
+            this.accounting.Text = "Счетоводство";
+            this.accounting.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.accounting.UseVisualStyleBackColor = false;
+            this.accounting.Click += new System.EventHandler(this.Accounting_Click);
             // 
             // btnMaximize
             // 
@@ -325,9 +386,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+=======
+            this.stock.BackColor = System.Drawing.Color.Transparent;
+            this.stock.FlatAppearance.BorderSize = 0;
+            this.stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
+            this.stock.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.stock.Location = new System.Drawing.Point(65, 167);
+            this.stock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(74, 188);
+            this.stock.TabIndex = 13;
+            this.stock.Text = "Наличност";
+            this.stock.UseVisualStyleBackColor = false;
+            this.stock.Click += new System.EventHandler(this.Stock_Click);
+            // 
             // ManagerHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1582, 1055);
@@ -339,6 +415,18 @@
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "ManagerHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+=======
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.stock);
+            this.Controls.Add(this.accounting);
+            this.Controls.Add(this.delivery);
+            this.Controls.Add(this.menu);
+            this.Controls.Add(this.table);
+            this.Controls.Add(this.employees);
+            this.Controls.Add(this.addUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "ManagerHome";
             this.Text = "HomeAdmin";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
