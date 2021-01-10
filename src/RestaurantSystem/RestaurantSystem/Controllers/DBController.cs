@@ -119,22 +119,36 @@ namespace RestaurantSystem.Controllers
             return product;
         }
 
-        public void AddDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        public Product SelectProductById(int id)
         {
+            Product product = db.Products.SingleOrDefault(p => p.Id == id);
+            return product;
+        }
+
+        public void AddDish(string dName, double dPrice, double dWeight, ICollection<int> productsInDish)
+        {
+            
             Dish dish = new Dish
             {
                 DishName = dName,
                 DishPrice = dPrice,
-                DishWeight = dWeight,
-                Products = productsInDish
+                DishWeight = dWeight
             };
 
-            foreach (Product product in productsInDish)
-            {
-                product.Dishes.Add(dish);
-            }
-
             db.Dishes.Add(dish);
+
+            db.SaveChanges();
+
+            var currentDish = db.Dishes.FirstOrDefault(d => d.DishName == dName);
+
+            foreach (int id in productsInDish)
+            {
+                db.DishProducts.Add(new DishProducts
+                {
+                    DishId = currentDish.Id,
+                    ProductId = id
+                });
+            }
 
             db.SaveChanges();
         }
@@ -155,32 +169,40 @@ namespace RestaurantSystem.Controllers
         public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
         {
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
+            var productsIds = db.DishProducts.Select(p => p.ProductId).ToList();
             if (dish != null)
             {
                 dish.DishPrice = dPrice;
                 dish.DishWeight = dWeight;
 
-                foreach (Product product in dish.Products)
+                var dishProducts = db.DishProducts.Where(dp => dp.DishId == dish.Id).ToList();
+
+                db.DishProducts.RemoveRange(dishProducts);
+
+                foreach (var product in productsInDish)
                 {
-                    product.Dishes.Remove(dish);
+                    var editedDishProduct = new DishProducts
+                    {
+                        DishId = dish.Id,
+                        ProductId = product.Id
+                    };
+
+                    db.DishProducts.Add(editedDishProduct);
                 }
-
-                dish.Products = null;
-
-                db.SaveChanges();
-
-                AddProductsToDish(dish, productsInDish);
             }
+
+            db.SaveChanges();
         }
 
-        public void AddProductsToDish(Dish dish, ICollection<Product> productsInDish)
+        public void AddProductsToDish(Dish dish, ICollection<Product> products)
         {
 
-            dish.Products = productsInDish;
-            foreach (Product product in dish.Products)
+            foreach(Product product in products)
             {
-                product.Dishes.Add(dish);
+                db.Products.Add(product);
             }
+
+            db.Dishes.Add(dish);
 
             db.SaveChanges();
         }
@@ -199,6 +221,16 @@ namespace RestaurantSystem.Controllers
             {
                 return false;
             }
+        }
+
+        public List<DishProducts> SelectAllDishProducts(int id)
+        {
+            return db.DishProducts.Where(dp => dp.DishId == id).ToList();
+        }
+
+        public Dish SelectDishById(int id)
+        {
+            return db.Dishes.FirstOrDefault(d => d.Id == id);
         }
 
         public Supplier SelectSupplierByDay(string day)
@@ -549,9 +581,10 @@ namespace RestaurantSystem.Controllers
             {
                 foreach(Dish dish in report.Dishes)
                 {
-                    foreach(Product product in dish.Products){
-                        productsInTodayDishesPrice += product.Price + product.DeliveryPrice;
-                    }
+                    //foreach(Product product in dish.DishProducts)
+                    //{
+                    //    productsInTodayDishesPrice += product.Price + product.DeliveryPrice;
+                    //}
                 }
             }
 
