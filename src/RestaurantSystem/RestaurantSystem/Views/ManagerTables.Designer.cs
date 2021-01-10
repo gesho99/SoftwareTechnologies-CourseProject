@@ -1,6 +1,6 @@
-﻿namespace RestaurantSystem
+﻿namespace WindowsFormsApp1
 {
-    partial class Tables
+    partial class ManagerTables
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tables));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerTables));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.addItem = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.item = new System.Windows.Forms.ComboBox();
-            this.category = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.billBtn = new System.Windows.Forms.Button();
+            this.billTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.productsList = new System.Windows.Forms.RichTextBox();
+            this.tableNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.addTable = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.deleteTableBtn = new System.Windows.Forms.Button();
+            this.tablesCombo = new System.Windows.Forms.ComboBox();
+            this.tablesAddBtn = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.priceTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.addItem = new System.Windows.Forms.Button();
+            this.itemsList = new System.Windows.Forms.ComboBox();
+            this.back = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,263 +62,255 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.dateTxt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.billBtn);
+            this.groupBox1.Controls.Add(this.billTxt);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.productsList);
+            this.groupBox1.Controls.Add(this.tableNum);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(387, 454);
+            this.groupBox1.Size = new System.Drawing.Size(402, 412);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Избрана маса";
             // 
-            // groupBox3
+            // dateTxt
             // 
-            this.groupBox3.Controls.Add(this.addItem);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.item);
-            this.groupBox3.Controls.Add(this.category);
-            this.groupBox3.Location = new System.Drawing.Point(8, 245);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(371, 194);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Добавяне на продукт";
+            this.dateTxt.Location = new System.Drawing.Point(81, 40);
+            this.dateTxt.Name = "dateTxt";
+            this.dateTxt.ReadOnly = true;
+            this.dateTxt.Size = new System.Drawing.Size(49, 20);
+            this.dateTxt.TabIndex = 12;
             // 
-            // addItem
+            // label3
             // 
-            this.addItem.Location = new System.Drawing.Point(215, 142);
-            this.addItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.addItem.Name = "addItem";
-            this.addItem.Size = new System.Drawing.Size(148, 46);
-            this.addItem.TabIndex = 3;
-            this.addItem.Text = "Добави продукт";
-            this.addItem.UseVisualStyleBackColor = true;
-            this.addItem.Click += new System.EventHandler(this.addItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(16, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 24);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Дата:";
             // 
-            // textBox2
+            // billBtn
             // 
-            this.textBox2.Location = new System.Drawing.Point(8, 116);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 22);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Количество";
+            this.billBtn.Location = new System.Drawing.Point(261, 352);
+            this.billBtn.Name = "billBtn";
+            this.billBtn.Size = new System.Drawing.Size(111, 37);
+            this.billBtn.TabIndex = 10;
+            this.billBtn.Text = "Издай касов бон";
+            this.billBtn.UseVisualStyleBackColor = true;
             // 
-            // item
+            // billTxt
             // 
-            this.item.FormattingEnabled = true;
-            this.item.Location = new System.Drawing.Point(8, 69);
-            this.item.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.item.Name = "item";
-            this.item.Size = new System.Drawing.Size(353, 24);
-            this.item.TabIndex = 1;
+            this.billTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.billTxt.Location = new System.Drawing.Point(250, 303);
+            this.billTxt.Name = "billTxt";
+            this.billTxt.Size = new System.Drawing.Size(111, 29);
+            this.billTxt.TabIndex = 4;
+            this.billTxt.Text = "0";
+            this.billTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // category
+            // label2
             // 
-            this.category.FormattingEnabled = true;
-            this.category.Items.AddRange(new object[] {
-            "Hot drinks",
-            "Non-alcoholic drinks",
-            "Alcoholic drinks",
-            "Cocktails"});
-            this.category.Location = new System.Drawing.Point(8, 23);
-            this.category.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(353, 24);
-            this.category.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(133, 308);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 24);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Обща сума:";
             // 
-            // richTextBox1
+            // productsList
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 73);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(369, 164);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.productsList.Location = new System.Drawing.Point(20, 87);
+            this.productsList.Name = "productsList";
+            this.productsList.Size = new System.Drawing.Size(352, 202);
+            this.productsList.TabIndex = 2;
+            this.productsList.Text = "";
             // 
-            // textBox1
+            // tableNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(313, 46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 22);
-            this.textBox1.TabIndex = 1;
+            this.tableNum.Location = new System.Drawing.Point(323, 40);
+            this.tableNum.Name = "tableNum";
+            this.tableNum.ReadOnly = true;
+            this.tableNum.Size = new System.Drawing.Size(49, 20);
+            this.tableNum.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(127, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(178, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 29);
+            this.label1.Size = new System.Drawing.Size(139, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Избрана маса:";
             // 
-            // groupBox2
+            // groupBox4
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.addTable);
-            this.groupBox2.Controls.Add(this.button10);
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(416, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(396, 454);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Маси";
+            this.groupBox4.Controls.Add(this.deleteTableBtn);
+            this.groupBox4.Controls.Add(this.tablesCombo);
+            this.groupBox4.Controls.Add(this.tablesAddBtn);
+            this.groupBox4.Location = new System.Drawing.Point(442, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(388, 117);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Маси";
             // 
-            // addTable
+            // deleteTableBtn
             // 
-            this.addTable.Location = new System.Drawing.Point(232, 386);
-            this.addTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.addTable.Name = "addTable";
-            this.addTable.Size = new System.Drawing.Size(148, 46);
-            this.addTable.TabIndex = 10;
-            this.addTable.Text = "Добави маса";
-            this.addTable.UseVisualStyleBackColor = true;
+            this.deleteTableBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteTableBtn.Location = new System.Drawing.Point(201, 62);
+            this.deleteTableBtn.Name = "deleteTableBtn";
+            this.deleteTableBtn.Size = new System.Drawing.Size(155, 32);
+            this.deleteTableBtn.TabIndex = 7;
+            this.deleteTableBtn.Text = "Изтрий маса";
+            this.deleteTableBtn.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // tablesCombo
             // 
-            this.button10.Location = new System.Drawing.Point(232, 294);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(148, 46);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "Маса 10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.tablesCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tablesCombo.FormattingEnabled = true;
+            this.tablesCombo.Location = new System.Drawing.Point(15, 32);
+            this.tablesCombo.Name = "tablesCombo";
+            this.tablesCombo.Size = new System.Drawing.Size(155, 32);
+            this.tablesCombo.TabIndex = 6;
             // 
-            // button9
+            // tablesAddBtn
             // 
-            this.button9.Location = new System.Drawing.Point(232, 229);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(148, 46);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Маса 9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.tablesAddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tablesAddBtn.Location = new System.Drawing.Point(201, 24);
+            this.tablesAddBtn.Name = "tablesAddBtn";
+            this.tablesAddBtn.Size = new System.Drawing.Size(151, 32);
+            this.tablesAddBtn.TabIndex = 5;
+            this.tablesAddBtn.Text = "Добави маса";
+            this.tablesAddBtn.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // groupBox3
             // 
-            this.button8.Location = new System.Drawing.Point(232, 165);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(148, 46);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Маса 8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.priceTxt);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.addItem);
+            this.groupBox3.Controls.Add(this.itemsList);
+            this.groupBox3.Location = new System.Drawing.Point(442, 135);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(388, 251);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Добавяне на продукт";
             // 
-            // button7
+            // numericUpDown1
             // 
-            this.button7.Location = new System.Drawing.Point(232, 100);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 46);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Маса 7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown1.Location = new System.Drawing.Point(191, 77);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(143, 29);
+            this.numericUpDown1.TabIndex = 14;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // button6
+            // label4
             // 
-            this.button6.Location = new System.Drawing.Point(232, 34);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(148, 46);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Маса 6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(11, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 24);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Цена:";
             // 
-            // button5
+            // priceTxt
             // 
-            this.button5.Location = new System.Drawing.Point(21, 294);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(148, 46);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Маса 5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.priceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceTxt.Location = new System.Drawing.Point(191, 132);
+            this.priceTxt.Name = "priceTxt";
+            this.priceTxt.Size = new System.Drawing.Size(143, 29);
+            this.priceTxt.TabIndex = 12;
+            this.priceTxt.Text = "\r\n";
             // 
-            // button4
+            // label5
             // 
-            this.button4.Location = new System.Drawing.Point(21, 230);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 46);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Маса 4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(6, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 24);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Количество:";
             // 
-            // button3
+            // label6
             // 
-            this.button3.Location = new System.Drawing.Point(21, 165);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 46);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Маса 3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 24);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Продукти:";
             // 
-            // button2
+            // addItem
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(21, 100);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Маса 2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.addItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addItem.Location = new System.Drawing.Point(223, 185);
+            this.addItem.Name = "addItem";
+            this.addItem.Size = new System.Drawing.Size(111, 37);
+            this.addItem.TabIndex = 3;
+            this.addItem.Text = "Добави";
+            this.addItem.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // itemsList
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(21, 34);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Маса 1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.itemsList.DisplayMember = "DishCategory";
+            this.itemsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.itemsList.FormattingEnabled = true;
+            this.itemsList.Location = new System.Drawing.Point(191, 19);
+            this.itemsList.Name = "itemsList";
+            this.itemsList.Size = new System.Drawing.Size(143, 32);
+            this.itemsList.TabIndex = 0;
+            this.itemsList.ValueMember = "DishCategory";
             // 
-            // Tables
+            // back
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back.Location = new System.Drawing.Point(726, 392);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(121, 43);
+            this.back.TabIndex = 13;
+            this.back.Text = "Назад";
+            this.back.UseVisualStyleBackColor = true;
+            // 
+            // ManagerTables
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 524);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(868, 469);
+            this.Controls.Add(this.back);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Tables";
+            this.Name = "ManagerTables";
             this.Text = "Маси";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,25 +318,26 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button addItem;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox item;
-        private System.Windows.Forms.ComboBox category;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox productsList;
+        private System.Windows.Forms.TextBox tableNum;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button addTable;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button billBtn;
+        private System.Windows.Forms.TextBox billTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button deleteTableBtn;
+        private System.Windows.Forms.ComboBox tablesCombo;
+        private System.Windows.Forms.Button tablesAddBtn;
+        private System.Windows.Forms.TextBox dateTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox priceTxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button addItem;
+        private System.Windows.Forms.ComboBox itemsList;
+        private System.Windows.Forms.Button back;
     }
 }

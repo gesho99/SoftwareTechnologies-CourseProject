@@ -16,6 +16,9 @@ namespace RestaurantSystem.Data.Models
         [MaxLength(30)]
         public string DishName { get; set; }
 
+        [MaxLength(30)]
+        public string DishCategory { get; set; }
+
         [Required]
         public double DishPrice { get; set; }
 

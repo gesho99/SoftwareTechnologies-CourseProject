@@ -18,7 +18,7 @@ namespace RestaurantSystem.Views
 
         private void Table_Click(object sender, EventArgs e)
         {
-            new Tables().Show();
+            //new Tables().Show();
             this.Hide();
         }
     }
