@@ -24,12 +24,17 @@ namespace RestaurantSystem.Controllers
             controller.EditProduct(prName, quantity, prPrice, dlPrice);
         }
 
+        public static Product SelectProductById(ref DBController controller, int id)
+        {
+            return controller.SelectProductById(id);
+        }
+
         public static ICollection<Dish> LoadDishesFromDataBase(ref DBController controller)
         {
             return controller.LoadDishes();
         }
 
-        public static void AddDishesToDataBase(ref DBController controller, string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        public static void AddDishesToDataBase(ref DBController controller, string dName, double dPrice, double dWeight, ICollection<int> productsInDish)
         {
             controller.AddDish(dName, dPrice, dWeight, productsInDish);
         }
@@ -77,6 +82,16 @@ namespace RestaurantSystem.Controllers
         public static double GetDayReportIncomesFromDataBase(ref DBController controller, string dateString)
         {
             return controller.GetDayReportIncomes(dateString);
+        }
+
+        public static List<DishProducts> SelectAllDishProducts(ref DBController controller, int id)
+        {
+            return controller.SelectAllDishProducts(id);
+        }
+
+        public static Dish SelectDishById(ref DBController controller, int id)
+        {
+            return controller.SelectDishById(id);
         }
 
     }
