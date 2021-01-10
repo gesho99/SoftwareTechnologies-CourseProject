@@ -135,8 +135,8 @@ namespace RestaurantSystem.Views
 
               con.Open();
               com.Connection = con;
-              //com.CommandText = "select * from Users";
-            com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
+              com.CommandText = "select * from Users";
+            //com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
             SqlDataReader dr = com.ExecuteReader();
               if (dr.Read())
               {
