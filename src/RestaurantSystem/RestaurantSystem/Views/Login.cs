@@ -24,7 +24,7 @@ namespace RestaurantSystem.Views
         public Login(DBController controller)
         {
             InitializeComponent();
-            con.ConnectionString = @"Data Source=DESKTOP-MJGIC87;Initial Catalog=RestaurantDataBase;Integrated Security=True";
+            con.ConnectionString = @"Data Source=localhost;Initial Catalog=RestaurantDataBase;Integrated Security=True";
             Username.Select(0, 0);
             Password.UseSystemPasswordChar = false;
             this.controller = controller;
@@ -135,8 +135,8 @@ namespace RestaurantSystem.Views
 
               con.Open();
               com.Connection = con;
-              com.CommandText = "select * from Users";
-            //com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
+              //com.CommandText = "select * from Users";
+              com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
             SqlDataReader dr = com.ExecuteReader();
               if (dr.Read())
               {

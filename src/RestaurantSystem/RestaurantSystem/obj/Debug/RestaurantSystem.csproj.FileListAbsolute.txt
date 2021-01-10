@@ -101,7 +101,6 @@ C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantS
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.xml
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServerCompact.xml
-C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csprojAssemblyReference.cache
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.InitialCreate.resources
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.UsersRolesEmployersMigration.resources
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.EmployerReportMigration.resources
