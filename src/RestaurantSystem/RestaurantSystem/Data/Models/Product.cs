@@ -26,11 +26,11 @@ namespace RestaurantSystem.Models
         [Required]
         public double DeliveryPrice { get; set; }
 
-        public ICollection<Dish> Dishes { get; set; } = new HashSet<Dish>();
-
         public ICollection<Delivery> Deliveries { get; set; } = new HashSet<Delivery>();
 
         public ICollection<DeliveryProducts2> DeliveryProducts2 { get; set; } = new HashSet<DeliveryProducts2>();
+
+        public ICollection<DishProducts> DishProducts { get; set; } = new HashSet<DishProducts>();
 
     }
 }
