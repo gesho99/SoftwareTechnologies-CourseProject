@@ -31,17 +31,22 @@ namespace RestaurantSystem
             ListBoxController.ClearItems(ref menuItems);
             ListBoxController.ClearItems(ref menuItemsParameters);
 
-            ICollection<Dish> Dishes = FormToDBController.LoadDishesFromDataBase(ref controller);
+            ICollection<Dish> dishes = FormToDBController.LoadDishesFromDataBase(ref controller);
+            string products = string.Empty;
 
-            foreach(Dish dish in Dishes)
+            foreach(Dish dish in dishes)
             {
                 ListBoxController.AddListBoxItems(ref menuItems, dish.DishName);
-                string products = "";
-                foreach(Product product in dish.Products)
+                List<DishProducts> dishProducts = FormToDBController.SelectAllDishProducts(ref controller, dish.Id);
+
+                foreach(DishProducts dp in dishProducts)
                 {
-                    products += product.Name + " ";
+                    products += FormToDBController.SelectProductById(ref controller, dp.ProductId).Name + " ";
                 }
+
                 ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishPrice, products, dish.DishWeight);
+
+                products = string.Empty;
             }
         }
 
@@ -113,7 +118,7 @@ namespace RestaurantSystem
             if (productValidation() == true)
             {
 
-                ICollection<Product> productsInDish = new HashSet<Product>();
+                ICollection<int> productsIds = new HashSet<int>();
                 String[] productNamesInDish = products.Text.Split(' ');
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
@@ -124,7 +129,7 @@ namespace RestaurantSystem
                     Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller, productName);
                     if (product != null)
                     {
-                        productsInDish.Add(product);
+                        productsIds.Add(product.Id);
                     }
                     else
                     {
@@ -133,7 +138,7 @@ namespace RestaurantSystem
                     }
                 }
 
-                FormToDBController.AddDishesToDataBase(ref controller, dName, dPrice, dWeight, productsInDish);
+                FormToDBController.AddDishesToDataBase(ref controller, dName, dPrice, dWeight, productsIds);
                 LoadDishes();
             }
         }
