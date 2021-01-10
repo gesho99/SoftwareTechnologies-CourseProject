@@ -38,6 +38,12 @@ namespace RestaurantSystem
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.SecondaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label16.ForeColor = ThemeColor.SecondaryColor;
+
+           
             label4.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
             label6.ForeColor = ThemeColor.SecondaryColor;
@@ -47,6 +53,14 @@ namespace RestaurantSystem
             label10.ForeColor = ThemeColor.SecondaryColor;
             label11.ForeColor = ThemeColor.PrimaryColor;
             label12.ForeColor = ThemeColor.SecondaryColor;
+
+            label17.ForeColor = ThemeColor.PrimaryColor;
+            label18.ForeColor = ThemeColor.SecondaryColor;
+            label19.ForeColor = ThemeColor.PrimaryColor;
+            label26.ForeColor = ThemeColor.SecondaryColor;
+            label32.ForeColor = ThemeColor.PrimaryColor;
+
+            
 
 
         }

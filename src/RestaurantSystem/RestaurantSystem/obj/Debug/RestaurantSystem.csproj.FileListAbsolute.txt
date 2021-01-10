@@ -174,3 +174,4 @@ C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantS
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\Control.Draggable.dll
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\WindowsFormsApp1.ManagerTables.resources
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\WindowsFormsApp1.ManagerTables.resources
+C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csprojAssemblyReference.cache

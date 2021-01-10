@@ -38,7 +38,6 @@
             this.usernameTextbox = new System.Windows.Forms.TextBox();
             this.passwordTextbox = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
-            this.Home = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,27 +110,16 @@
             // 
             this.save.Location = new System.Drawing.Point(516, 339);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.Size = new System.Drawing.Size(123, 41);
             this.save.TabIndex = 12;
-            this.save.Text = "Save";
+            this.save.Text = "Запази";
             this.save.UseVisualStyleBackColor = true;
-            // 
-            // Home
-            // 
-            this.Home.Location = new System.Drawing.Point(516, 383);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(75, 23);
-            this.Home.TabIndex = 52;
-            this.Home.Text = "Назад";
-            this.Home.UseVisualStyleBackColor = true;
-            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Home);
             this.Controls.Add(this.save);
             this.Controls.Add(this.passwordTextbox);
             this.Controls.Add(this.usernameTextbox);
@@ -143,7 +131,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
-            this.Text = "AddUser";
+            this.Text = "Добави потребител";
             this.Load += new System.EventHandler(this.AddUser_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,6 +149,5 @@
         private System.Windows.Forms.TextBox usernameTextbox;
         private System.Windows.Forms.TextBox passwordTextbox;
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Button Home;
     }
 }

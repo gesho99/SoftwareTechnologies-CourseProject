@@ -86,7 +86,7 @@ namespace RestaurantSystem
         }
         private void LoadTheme()
         {
-            foreach (Control btns in this.Controls)
+            foreach (Control btns in groupBox3.Controls)
             {
                 if (btns.GetType() == typeof(Button))
                 {
@@ -101,7 +101,7 @@ namespace RestaurantSystem
             DeliveryQuantity.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
             label9.ForeColor = ThemeColor.SecondaryColor;
-            
+            label17.ForeColor = ThemeColor.PrimaryColor;
 
         }
         private bool DeliveryValidation()

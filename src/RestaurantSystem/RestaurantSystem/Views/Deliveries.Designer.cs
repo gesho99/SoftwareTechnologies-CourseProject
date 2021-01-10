@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.deliverySupplier = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -51,7 +51,6 @@
             this.approvedQuantity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +61,7 @@
             this.approvedDeliveries.HorizontalScrollbar = true;
             this.approvedDeliveries.ItemHeight = 16;
             this.approvedDeliveries.Location = new System.Drawing.Point(323, 53);
-            this.approvedDeliveries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.approvedDeliveries.Margin = new System.Windows.Forms.Padding(4);
             this.approvedDeliveries.Name = "approvedDeliveries";
             this.approvedDeliveries.Size = new System.Drawing.Size(305, 308);
             this.approvedDeliveries.TabIndex = 0;
@@ -80,7 +79,7 @@
             // approveDeliveryButton
             // 
             this.approveDeliveryButton.Location = new System.Drawing.Point(47, 194);
-            this.approveDeliveryButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.approveDeliveryButton.Margin = new System.Windows.Forms.Padding(4);
             this.approveDeliveryButton.Name = "approveDeliveryButton";
             this.approveDeliveryButton.Size = new System.Drawing.Size(213, 59);
             this.approveDeliveryButton.TabIndex = 2;
@@ -111,7 +110,7 @@
             // productQuantity
             // 
             this.productQuantity.Location = new System.Drawing.Point(371, 79);
-            this.productQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.productQuantity.Name = "productQuantity";
             this.productQuantity.Size = new System.Drawing.Size(212, 22);
             this.productQuantity.TabIndex = 7;
@@ -119,7 +118,7 @@
             // productName
             // 
             this.productName.Location = new System.Drawing.Point(47, 79);
-            this.productName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productName.Margin = new System.Windows.Forms.Padding(4);
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(212, 22);
             this.productName.TabIndex = 8;
@@ -130,7 +129,7 @@
             this.waitingDeliveries.HorizontalScrollbar = true;
             this.waitingDeliveries.ItemHeight = 16;
             this.waitingDeliveries.Location = new System.Drawing.Point(8, 53);
-            this.waitingDeliveries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.waitingDeliveries.Margin = new System.Windows.Forms.Padding(4);
             this.waitingDeliveries.Name = "waitingDeliveries";
             this.waitingDeliveries.Size = new System.Drawing.Size(305, 308);
             this.waitingDeliveries.TabIndex = 9;
@@ -148,7 +147,7 @@
             // editDelivery
             // 
             this.editDelivery.Location = new System.Drawing.Point(371, 194);
-            this.editDelivery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.editDelivery.Name = "editDelivery";
             this.editDelivery.Size = new System.Drawing.Size(213, 59);
             this.editDelivery.TabIndex = 13;
@@ -195,20 +194,20 @@
             // deliverySupplier
             // 
             this.deliverySupplier.Location = new System.Drawing.Point(47, 144);
-            this.deliverySupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deliverySupplier.Margin = new System.Windows.Forms.Padding(4);
             this.deliverySupplier.Name = "deliverySupplier";
             this.deliverySupplier.Size = new System.Drawing.Size(212, 22);
             this.deliverySupplier.TabIndex = 21;
             // 
-            // label11
+            // label17
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(59, 123);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 17);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Доставчик:";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(59, 123);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 17);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Доставчик:";
             // 
             // groupBox1
             // 
@@ -219,13 +218,12 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.approvedDeliveries);
             this.groupBox1.Location = new System.Drawing.Point(17, 9);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(652, 393);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            
             // 
             // label4
             // 
@@ -240,9 +238,9 @@
             // groupBox2
             // 
             this.groupBox2.Location = new System.Drawing.Point(4, 391);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(696, 284);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -256,7 +254,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.deliverySupplier);
-            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.editDelivery);
@@ -266,9 +264,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.approveDeliveryButton);
             this.groupBox3.Location = new System.Drawing.Point(16, 402);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(653, 322);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
@@ -289,7 +287,7 @@
             // approvedQuantity
             // 
             this.approvedQuantity.Location = new System.Drawing.Point(371, 144);
-            this.approvedQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.approvedQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.approvedQuantity.Name = "approvedQuantity";
             this.approvedQuantity.Size = new System.Drawing.Size(212, 22);
             this.approvedQuantity.TabIndex = 26;
@@ -314,26 +312,14 @@
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 24;
             // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(544, 732);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(103, 28);
-            this.backButton.TabIndex = 25;
-            this.backButton.Text = "Назад";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
             // Deliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 775);
-            this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Deliveries";
             this.Text = "Доставки";
             this.Load += new System.EventHandler(this.Deliveries_Load);
@@ -361,11 +347,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox deliverySupplier;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;

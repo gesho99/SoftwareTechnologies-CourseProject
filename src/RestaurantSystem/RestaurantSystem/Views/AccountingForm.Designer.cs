@@ -75,12 +75,11 @@
             this.seeExpenses = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.year = new System.Windows.Forms.TextBox();
             this.editExpenses = new System.Windows.Forms.Button();
-            this.Home = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -209,7 +208,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(57, 380);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 12;
@@ -217,7 +216,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(241, 379);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 13;
@@ -225,7 +224,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(428, 379);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 14;
@@ -266,7 +265,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(57, 609);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(132, 22);
             this.textBox7.TabIndex = 18;
@@ -274,7 +273,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(241, 609);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(132, 22);
             this.textBox8.TabIndex = 19;
@@ -282,7 +281,7 @@
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(428, 609);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(132, 22);
             this.textBox9.TabIndex = 20;
@@ -301,7 +300,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(257, 426);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 22;
@@ -311,7 +310,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(257, 656);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 23;
@@ -359,7 +358,7 @@
             // electricity
             // 
             this.electricity.Location = new System.Drawing.Point(1004, 271);
-            this.electricity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.electricity.Margin = new System.Windows.Forms.Padding(4);
             this.electricity.Name = "electricity";
             this.electricity.Size = new System.Drawing.Size(65, 22);
             this.electricity.TabIndex = 28;
@@ -367,7 +366,7 @@
             // water
             // 
             this.water.Location = new System.Drawing.Point(1004, 327);
-            this.water.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.water.Margin = new System.Windows.Forms.Padding(4);
             this.water.Name = "water";
             this.water.Size = new System.Drawing.Size(65, 22);
             this.water.TabIndex = 29;
@@ -375,7 +374,7 @@
             // internet
             // 
             this.internet.Location = new System.Drawing.Point(1004, 383);
-            this.internet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.internet.Margin = new System.Windows.Forms.Padding(4);
             this.internet.Name = "internet";
             this.internet.Size = new System.Drawing.Size(65, 22);
             this.internet.TabIndex = 30;
@@ -482,9 +481,9 @@
             // addExpense
             // 
             this.addExpense.Location = new System.Drawing.Point(884, 450);
-            this.addExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addExpense.Margin = new System.Windows.Forms.Padding(4);
             this.addExpense.Name = "addExpense";
-            this.addExpense.Size = new System.Drawing.Size(148, 28);
+            this.addExpense.Size = new System.Drawing.Size(188, 48);
             this.addExpense.TabIndex = 40;
             this.addExpense.Text = "Добави разход";
             this.addExpense.UseVisualStyleBackColor = true;
@@ -507,7 +506,7 @@
             "11",
             "12"});
             this.months.Location = new System.Drawing.Point(931, 128);
-            this.months.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.months.Margin = new System.Windows.Forms.Padding(4);
             this.months.Name = "months";
             this.months.Size = new System.Drawing.Size(101, 24);
             this.months.TabIndex = 42;
@@ -536,10 +535,10 @@
             // 
             // seeExpenses
             // 
-            this.seeExpenses.Location = new System.Drawing.Point(733, 497);
-            this.seeExpenses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seeExpenses.Location = new System.Drawing.Point(729, 525);
+            this.seeExpenses.Margin = new System.Windows.Forms.Padding(4);
             this.seeExpenses.Name = "seeExpenses";
-            this.seeExpenses.Size = new System.Drawing.Size(216, 28);
+            this.seeExpenses.Size = new System.Drawing.Size(188, 48);
             this.seeExpenses.TabIndex = 45;
             this.seeExpenses.Text = "Прегледай разходите";
             this.seeExpenses.UseVisualStyleBackColor = true;
@@ -560,16 +559,6 @@
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(133, 28);
             this.label29.TabIndex = 3;
-            // 
-            // label30
-            // 
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(677, 577);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(564, 155);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "label30";
             // 
             // label31
             // 
@@ -596,39 +585,37 @@
             // year
             // 
             this.year.Location = new System.Drawing.Point(929, 180);
-            this.year.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year.Margin = new System.Windows.Forms.Padding(4);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(101, 22);
             this.year.TabIndex = 49;
             // 
             // editExpenses
             // 
-            this.editExpenses.Location = new System.Drawing.Point(973, 497);
-            this.editExpenses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editExpenses.Location = new System.Drawing.Point(987, 525);
+            this.editExpenses.Margin = new System.Windows.Forms.Padding(4);
             this.editExpenses.Name = "editExpenses";
-            this.editExpenses.Size = new System.Drawing.Size(219, 28);
+            this.editExpenses.Size = new System.Drawing.Size(188, 48);
             this.editExpenses.TabIndex = 50;
             this.editExpenses.Text = "Редактирай разходите";
             this.editExpenses.UseVisualStyleBackColor = true;
             this.editExpenses.Click += new System.EventHandler(this.editExpenses_Click);
             // 
-            // Home
+            // label30
             // 
-            this.Home.Location = new System.Drawing.Point(1165, 694);
-            this.Home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(75, 23);
-            this.Home.TabIndex = 51;
-            this.Home.Text = "Назад";
-            this.Home.UseVisualStyleBackColor = true;
-            this.Home.Click += new System.EventHandler(this.Home_Click);
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Location = new System.Drawing.Point(677, 577);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(564, 155);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "label30";
             // 
             // AccountingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 743);
-            this.Controls.Add(this.Home);
             this.Controls.Add(this.editExpenses);
             this.Controls.Add(this.year);
             this.Controls.Add(this.label31);
@@ -681,7 +668,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AccountingForm";
             this.Text = "Счетоводство";
             this.Load += new System.EventHandler(this.AccountingForm_Load_1);
@@ -739,11 +726,10 @@
         private System.Windows.Forms.Button seeExpenses;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox year;
         private System.Windows.Forms.Button editExpenses;
-        private System.Windows.Forms.Button Home;
+        private System.Windows.Forms.Label label30;
     }
 }

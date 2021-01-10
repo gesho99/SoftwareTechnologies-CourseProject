@@ -46,7 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.products = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Home = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.deleteMenuItem = new System.Windows.Forms.Button();
             this.editMenuItem = new System.Windows.Forms.Button();
@@ -235,7 +234,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Home);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.deleteMenuItem);
             this.groupBox2.Controls.Add(this.editMenuItem);
@@ -259,16 +257,6 @@
             this.groupBox2.Size = new System.Drawing.Size(487, 402);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
-            // 
-            // Home
-            // 
-            this.Home.Location = new System.Drawing.Point(412, 379);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(75, 23);
-            this.Home.TabIndex = 53;
-            this.Home.Text = "Назад";
-            this.Home.UseVisualStyleBackColor = true;
-            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // label6
             // 
@@ -357,6 +345,5 @@
         private System.Windows.Forms.Button editMenuItem;
         private System.Windows.Forms.Button addMenuItem;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Home;
     }
 }

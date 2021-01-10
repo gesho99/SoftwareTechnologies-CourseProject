@@ -83,7 +83,7 @@ namespace RestaurantSystem
         }
         private void LoadTheme()
         {
-            foreach (Control btns in this.Controls)
+            foreach (Control btns in groupBox2.Controls)
             {
                 if (btns.GetType() == typeof(Button))
                 {
@@ -99,6 +99,8 @@ namespace RestaurantSystem
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.SecondaryColor;
             label6.ForeColor = ThemeColor.PrimaryColor;
+            label14.ForeColor = ThemeColor.SecondaryColor;
+            label12.ForeColor = ThemeColor.PrimaryColor;
 
         }
         private void addMenuItem_Click(object sender, EventArgs e)

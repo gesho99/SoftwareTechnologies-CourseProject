@@ -53,9 +53,9 @@
             this.panelDesktopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            //
+            // 
             // panelMenu
-            //
+            // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.accounting);
@@ -70,9 +70,9 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(300, 1055);
             this.panelMenu.TabIndex = 14;
-            //
+            // 
             // panelLogo
-            //
+            // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -80,9 +80,9 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(300, 80);
             this.panelLogo.TabIndex = 0;
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
@@ -91,9 +91,9 @@
             this.label1.Size = new System.Drawing.Size(177, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant System";
-            //
+            // 
             // accounting
-            //
+            // 
             this.accounting.BackColor = System.Drawing.Color.Transparent;
             this.accounting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.accounting.FlatAppearance.BorderSize = 0;
@@ -102,7 +102,7 @@
             this.accounting.ForeColor = System.Drawing.Color.Gainsboro;
             this.accounting.Image = ((System.Drawing.Image)(resources.GetObject("accounting.Image")));
             this.accounting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.accounting.Location = new System.Drawing.Point(21, 693);
+            this.accounting.Location = new System.Drawing.Point(21, 729);
             this.accounting.Name = "accounting";
             this.accounting.Size = new System.Drawing.Size(294, 93);
             this.accounting.TabIndex = 12;
@@ -111,9 +111,9 @@
             this.accounting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.accounting.UseVisualStyleBackColor = false;
             this.accounting.Click += new System.EventHandler(this.Accounting_Click);
-            //
+            // 
             // delivery
-            //
+            // 
             this.delivery.BackColor = System.Drawing.Color.Transparent;
             this.delivery.FlatAppearance.BorderSize = 0;
             this.delivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -121,7 +121,7 @@
             this.delivery.ForeColor = System.Drawing.Color.Gainsboro;
             this.delivery.Image = ((System.Drawing.Image)(resources.GetObject("delivery.Image")));
             this.delivery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delivery.Location = new System.Drawing.Point(21, 604);
+            this.delivery.Location = new System.Drawing.Point(6, 640);
             this.delivery.Name = "delivery";
             this.delivery.Size = new System.Drawing.Size(260, 93);
             this.delivery.TabIndex = 11;
@@ -130,9 +130,9 @@
             this.delivery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.delivery.UseVisualStyleBackColor = false;
             this.delivery.Click += new System.EventHandler(this.Delivery_Click);
-            //
+            // 
             // stock
-            //
+            // 
             this.stock.BackColor = System.Drawing.Color.Transparent;
             this.stock.FlatAppearance.BorderSize = 0;
             this.stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -149,9 +149,9 @@
             this.stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.stock.UseVisualStyleBackColor = false;
             this.stock.Click += new System.EventHandler(this.Stock_Click);
-            //
+            // 
             // employees
-            //
+            // 
             this.employees.BackColor = System.Drawing.Color.Transparent;
             this.employees.FlatAppearance.BorderSize = 0;
             this.employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -168,9 +168,9 @@
             this.employees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.employees.UseVisualStyleBackColor = false;
             this.employees.Click += new System.EventHandler(this.Employees_Click);
-            //
+            // 
             // addUser
-            //
+            // 
             this.addUser.BackColor = System.Drawing.Color.Transparent;
             this.addUser.FlatAppearance.BorderSize = 0;
             this.addUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,9 +186,9 @@
             this.addUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.addUser.UseVisualStyleBackColor = false;
             this.addUser.Click += new System.EventHandler(this.AddUser_Click);
-            //
+            // 
             // table
-            //
+            // 
             this.table.BackColor = System.Drawing.Color.Transparent;
             this.table.FlatAppearance.BorderSize = 0;
             this.table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -205,9 +205,9 @@
             this.table.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.table.UseVisualStyleBackColor = false;
             this.table.Click += new System.EventHandler(this.Table_Click);
-            //
+            // 
             // menu
-            //
+            // 
             this.menu.BackColor = System.Drawing.Color.Transparent;
             this.menu.FlatAppearance.BorderSize = 0;
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -224,9 +224,9 @@
             this.menu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.menu.UseVisualStyleBackColor = false;
             this.menu.Click += new System.EventHandler(this.Menu_Click);
-            //
+            // 
             // panelTitleBar
-            //
+            // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(0)))));
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
@@ -238,9 +238,9 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1282, 80);
             this.panelTitleBar.TabIndex = 14;
-            //
+            // 
             // btnMinimize
-            //
+            // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -252,9 +252,9 @@
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
-            //
+            // 
             // btnMaximize
-            //
+            // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -266,9 +266,9 @@
             this.btnMaximize.TabIndex = 3;
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.BtnMaximize_Click);
-            //
+            // 
             // btnClose
-            //
+            // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -280,9 +280,9 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            //
+            // 
             // btnCloseChildForm
-            //
+            // 
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
@@ -292,9 +292,9 @@
             this.btnCloseChildForm.TabIndex = 1;
             this.btnCloseChildForm.UseVisualStyleBackColor = true;
             this.btnCloseChildForm.Click += new System.EventHandler(this.BtnCloseChildForm_Click);
-            //
+            // 
             // lblTitle
-            //
+            // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -304,9 +304,9 @@
             this.lblTitle.Size = new System.Drawing.Size(128, 31);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "НАЧАЛО";
-            //
+            // 
             // panelDesktopPanel
-            //
+            // 
             this.panelDesktopPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelDesktopPanel.Controls.Add(this.pictureBox1);
             this.panelDesktopPanel.ForeColor = System.Drawing.Color.Transparent;
@@ -314,9 +314,9 @@
             this.panelDesktopPanel.Name = "panelDesktopPanel";
             this.panelDesktopPanel.Size = new System.Drawing.Size(1282, 975);
             this.panelDesktopPanel.TabIndex = 15;
-            //
+            // 
             // pictureBox1
-            //
+            // 
             this.pictureBox1.Image = global::RestaurantSystem.Properties.Resources.onlinelogomaker_010721_1136_4394_2000_transparent;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -324,9 +324,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            //
+            // 
             // ManagerHome
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
