@@ -42,6 +42,8 @@ namespace RestaurantSystem.Data
 
         public DbSet<DeliveryProducts2> DeliveryProducts2 { get; set; }
 
+        public DbSet<DishProducts> DishProducts { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -85,6 +87,21 @@ namespace RestaurantSystem.Data
                 .WithMany(ya => ya.MonthAccountings)
                 .HasForeignKey(ma => ma.YearAccountingId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .Entity<DishProducts>().HasKey(dp => new { dp.DishId, dp.ProductId });
+
+            modelBuilder
+                .Entity<DishProducts>()
+                .HasRequired<Dish>(d => d.Dish)
+                .WithMany(dp => dp.DishProducts)
+                .HasForeignKey(d => d.DishId);
+
+            modelBuilder
+               .Entity<DishProducts>()
+               .HasRequired<Product>(p => p.Product)
+               .WithMany(dp => dp.DishProducts)
+               .HasForeignKey(p => p.ProductId);
 
             modelBuilder
                 .Entity<DeliveryProducts2>().HasKey(dp => new { dp.DeliveryId, dp.ProductId });
