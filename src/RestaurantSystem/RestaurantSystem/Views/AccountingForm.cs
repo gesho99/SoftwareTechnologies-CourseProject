@@ -26,6 +26,30 @@ namespace RestaurantSystem
         {
 
         }
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label4.ForeColor = ThemeColor.SecondaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+            label6.ForeColor = ThemeColor.SecondaryColor;
+            label7.ForeColor = ThemeColor.PrimaryColor;
+            label8.ForeColor = ThemeColor.SecondaryColor;
+            label9.ForeColor = ThemeColor.PrimaryColor;
+            label10.ForeColor = ThemeColor.SecondaryColor;
+            label11.ForeColor = ThemeColor.PrimaryColor;
+            label12.ForeColor = ThemeColor.SecondaryColor;
+
+
+        }
         private string expensesValidation()
         {
             string validation = "";
@@ -270,6 +294,11 @@ namespace RestaurantSystem
         {
             new ManagerHome(controller).Show();
             this.Hide();
+        }
+
+        private void AccountingForm_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }

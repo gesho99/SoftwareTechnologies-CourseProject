@@ -84,7 +84,26 @@ namespace RestaurantSystem
                 }
             }
         }
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.SecondaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            DeliveryQuantity.ForeColor = ThemeColor.SecondaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+            label9.ForeColor = ThemeColor.SecondaryColor;
+            
 
+        }
         private bool DeliveryValidation()
         {
             try
@@ -221,6 +240,13 @@ namespace RestaurantSystem
         {
             new ManagerHome(controller).Show();
             this.Hide();
+        }
+
+       
+
+        private void Deliveries_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }

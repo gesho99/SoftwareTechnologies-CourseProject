@@ -17,6 +17,9 @@ namespace RestaurantSystem.Views
         DBController controller;
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
+        private Random random;
+        private int tempIndex;
+
 
         public Login(DBController controller)
         {
@@ -25,8 +28,19 @@ namespace RestaurantSystem.Views
             Username.Select(0, 0);
             Password.UseSystemPasswordChar = false;
             this.controller = controller;
+            random = new Random();
         }
-
+        private Color SelectThemeColor()
+        {
+            int index = random.Next(ThemeColor.ColorList.Count);
+            while (tempIndex == index)
+            {
+                index = random.Next(ThemeColor.ColorList.Count);
+            }
+            tempIndex = index;
+            string color = ThemeColor.ColorList[index];
+            return ColorTranslator.FromHtml(color);
+        }
         private void Username_KeyDown(object sender, KeyEventArgs e)
         {
             if (Username.Text == "  Enter Username:")
@@ -112,29 +126,43 @@ namespace RestaurantSystem.Views
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            new ManagerHome(controller).Show();
-            this.Hide();
 
-            /*
-            con.Open();
-            com.Connection = con;
-            com.CommandText = "select * from Users";
+            //new ManagerHome(controller).Show();
+            //this.Hide();
+           // new EmployeesHome(controller).Show();
+            //this.Hide();
+
+
+              con.Open();
+              com.Connection = con;
+              //com.CommandText = "select * from Users";
+            com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
             SqlDataReader dr = com.ExecuteReader();
-            if (dr.Read())
-            {
-                if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(1))
+              if (dr.Read())
+              {
+                  if ( dr["RoleId"].Equals(1))
+                  {
+                      new ManagerHome(controller).Show();
+                     this.Hide();
+                  }
+
+                else 
+
                 {
-                    new ManagerHome(controller).Show();
+
+                    new EmployeesHome(controller).Show();
                     this.Hide();
                 }
+         
             }
-            else if (Username.Text.Equals(dr["Username"].ToString()) && Password.Text.Equals(dr["Password"].ToString()) && dr["RoleId"].Equals(2))
+            else
             {
-                
-                new EmployeesTables().Show();
-                this.Hide();
+                MessageBox.Show("Грешна парола или потребителско име");
             }
-            */
+    
+
+            con.Close();
+          
         }
     }
 }

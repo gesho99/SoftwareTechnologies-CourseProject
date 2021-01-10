@@ -24,7 +24,26 @@ namespace RestaurantSystem.Views
         {
             InitializeComponent();
         }
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.SecondaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.SecondaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.SecondaryColor;
+            label6.ForeColor = ThemeColor.PrimaryColor;
 
+        }
         private void back_Click(object sender, EventArgs e)
         {
             new ManagerHome(controller).Show();
@@ -50,6 +69,7 @@ namespace RestaurantSystem.Views
 
         private void ManagerProfile_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             using (RestaurantDbContext db = new RestaurantDbContext())
             {
                 employeeBindingSource.DataSource = db.EmployeesList.ToList();
