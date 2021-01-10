@@ -27,8 +27,6 @@ namespace RestaurantSystem.Data.Models
 
         public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
-        public ICollection<DishProducts2> DishProducts2 { get; set; } = new HashSet<DishProducts2>();
-
         public ICollection<EmployerReport> EmployerReports { get; set; } = new HashSet<EmployerReport>();
 
     }

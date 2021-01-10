@@ -32,8 +32,6 @@ namespace RestaurantSystem.Data
 
         public DbSet<Table> Tables { get; set; }
 
-        public DbSet<DishProducts2> DishProducts2 { get; set; }
-
         public DbSet<Supplier> Suppliers { get; set; }
 
         public DbSet<DayAccountings> DayAccountings { get; set; }
@@ -59,22 +57,6 @@ namespace RestaurantSystem.Data
                 .WithMany(emp => emp.Reports)
                 .HasForeignKey(emprep => emprep.EmployerId)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder
-                .Entity<DishProducts2>().HasKey(dp => new { dp.DishId, dp.ProductId });
-
-
-            modelBuilder
-                .Entity<DishProducts2>()
-                .HasRequired<Dish>(dp => dp.Dish)
-                .WithMany(d => d.DishProducts2)
-                .HasForeignKey(dp => dp.DishId);
-
-            modelBuilder
-                .Entity<DishProducts2>()
-                .HasRequired<Product>(dp => dp.Product)
-                .WithMany(d => d.DishProducts2)
-                .HasForeignKey(dp => dp.ProductId);
 
             modelBuilder
                 .Entity<Delivery>()

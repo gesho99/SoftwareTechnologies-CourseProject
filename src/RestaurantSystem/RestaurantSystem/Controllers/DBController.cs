@@ -129,12 +129,12 @@ namespace RestaurantSystem.Controllers
                 Products = productsInDish
             };
 
-            db.Dishes.Add(dish);
-
             foreach (Product product in productsInDish)
             {
                 product.Dishes.Add(dish);
             }
+
+            db.Dishes.Add(dish);
 
             db.SaveChanges();
         }

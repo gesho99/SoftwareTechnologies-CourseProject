@@ -36,7 +36,12 @@ namespace RestaurantSystem
             foreach(Dish dish in Dishes)
             {
                 ListBoxController.AddListBoxItems(ref menuItems, dish.DishName);
-                ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishPrice, dish.Products.ToString(), dish.DishWeight);
+                string products = "";
+                foreach(Product product in dish.Products)
+                {
+                    products += product.Name + " ";
+                }
+                ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishPrice, products, dish.DishWeight);
             }
         }
 
