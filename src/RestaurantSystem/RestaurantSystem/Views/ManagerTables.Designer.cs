@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace RestaurantSystem.Views
 {
     partial class ManagerTables
     {
