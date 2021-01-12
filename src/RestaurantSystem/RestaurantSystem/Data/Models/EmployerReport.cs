@@ -15,7 +15,7 @@ namespace RestaurantSystem.Data.Models
         public int EmployerId { get; set; }
 
         [ForeignKey("EmployerId")]
-        public Employer Employer { get; set; }
+        public Employee Employer { get; set; }
 
         public int DayAccountingId { get; set; }
 

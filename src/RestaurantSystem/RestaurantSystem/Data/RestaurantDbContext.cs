@@ -16,8 +16,6 @@ namespace RestaurantSystem.Data
 
         public DbSet<Product> Products { get; set; }
 
-        public DbSet<Employer> Employers { get; set; }
-
         public DbSet<Expenses> Expenses { get; set; }
 
         public DbSet<EmployerReport> EmployerReports { get; set; }
@@ -55,7 +53,7 @@ namespace RestaurantSystem.Data
 
             modelBuilder
                 .Entity<EmployerReport>()
-                .HasRequired<Employer>(emprep => emprep.Employer)
+                .HasRequired<Employee>(emprep => emprep.Employer)
                 .WithMany(emp => emp.Reports)
                 .HasForeignKey(emprep => emprep.EmployerId)
                 .WillCascadeOnDelete(false);
