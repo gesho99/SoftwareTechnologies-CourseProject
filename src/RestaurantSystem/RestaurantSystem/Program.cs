@@ -39,8 +39,9 @@ namespace RestaurantSystem
             //Application.Run(new AccountingForm(controller));
             //Application.Run(new Deliveries(controller));                 
             //Application.Run(new ProductsInStockForm(controller));
-            Application.Run(new Login(controller));
+            //Application.Run(new Login(controller));
             //Application.Run(new Menu(controller));
+            Application.Run(new AddUser(controller));
         }
     }
 }
