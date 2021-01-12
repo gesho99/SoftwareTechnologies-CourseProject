@@ -124,6 +124,22 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public void AddUserToDataBase(string username, string password, string firstName, string lastName)
+        {
+            Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+
+            User user = new User
+            {
+                Username = username,
+                Password = password,
+                EmployerId = employer.EmpId
+            };
+
+            db.Users.Add(user);
+
+            db.SaveChanges();
+        }
+
         public void AddProduct(string name, int quantity, double price, double dlprice)
         {
             db.Products.Add(new Product
