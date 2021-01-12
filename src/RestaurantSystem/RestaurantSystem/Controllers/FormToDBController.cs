@@ -29,6 +29,26 @@ namespace RestaurantSystem.Controllers
             return controller.SelectProductById(id);
         }
 
+        public static List<Employee> SelectEmployees(ref DBController controller)
+        {
+            return controller.GetEmployers();
+        }
+
+        public static String GetEmployerJobPosition(ref DBController controller, string firstName, string lastName)
+        {
+            return controller.GetEmployerJobPosition(firstName, lastName);
+        }
+
+        public static String GetEmployerUserName(ref DBController controller, string firstName, string lastName)
+        {
+            return controller.GetEmployerUserName(firstName, lastName);
+        }
+
+        public static String GetEmployerPassword(ref DBController controller, string firstName, string lastName)
+        {
+            return controller.GetEmployerPassword(firstName, lastName);
+        }
+
         public static ICollection<Dish> LoadDishesFromDataBase(ref DBController controller)
         {
             return controller.LoadDishes();
