@@ -53,9 +53,9 @@ namespace RestaurantSystem.Data
 
             modelBuilder
                 .Entity<EmployerReport>()
-                .HasRequired<Employee>(emprep => emprep.Employer)
+                .HasRequired<Employee>(emprep => emprep.Employeе)
                 .WithMany(emp => emp.Reports)
-                .HasForeignKey(emprep => emprep.EmployerId)
+                .HasForeignKey(emprep => emprep.EmployeеId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder

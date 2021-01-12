@@ -49,9 +49,9 @@ namespace RestaurantSystem.Controllers
             return controller.GetEmployerPassword(firstName, lastName);
         }
 
-        public static void AddUserToDataBase(ref DBController controller, string username, string password, string firstName, string lastName)
+        public static void AddUserToDataBase(ref DBController controller, string username, string role, string password, string firstName, string lastName)
         {
-            controller.AddUserToDataBase(username, password, firstName, lastName);
+            controller.AddUserToDataBase(username, password, role, firstName, lastName);
         }
 
         public static ICollection<Dish> LoadDishesFromDataBase(ref DBController controller)

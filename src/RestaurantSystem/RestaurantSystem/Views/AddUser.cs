@@ -63,6 +63,8 @@ namespace RestaurantSystem
             JobPosition.Text = FormToDBController.GetEmployerJobPosition(ref controller, employeeFirstName, employeeLastName);
 
             usernameTextbox.Text = FormToDBController.GetEmployerUserName(ref controller, employeeFirstName, employeeLastName);
+
+            passwordTextbox.Text = FormToDBController.GetEmployerPassword(ref controller, employeeFirstName, employeeLastName);
         }
 
         private void AddUser_Load(object sender, EventArgs e)
@@ -72,7 +74,9 @@ namespace RestaurantSystem
 
         private void Save_Click(object sender, EventArgs e)
         {
-
+            FormToDBController.AddUserToDataBase(ref controller, usernameTextbox.Text, JobPosition.Text, passwordTextbox.Text,
+                StaffcomboBox.SelectedItem.ToString().Split(' ')[0],
+                StaffcomboBox.SelectedItem.ToString().Split(' ')[1]);
         }
 
         private void Home_Click(object sender, EventArgs e)

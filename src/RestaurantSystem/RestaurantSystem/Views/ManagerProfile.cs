@@ -76,7 +76,7 @@ namespace RestaurantSystem.Views
             }
             panel1.Enabled = false;
             Employee emp = employeeBindingSource.Current as Employee;
-            if (emp != null)
+            if (emp != null && emp.ImageUrl != null)
             {
                 pictureBox1.Image = Image.FromFile(emp.ImageUrl);
             }

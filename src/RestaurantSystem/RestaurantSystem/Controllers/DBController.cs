@@ -72,7 +72,7 @@ namespace RestaurantSystem.Controllers
                     Username = "admin",
                     Password = "admin",
                     RoleId = roleId,
-                    EmployerId = employerId
+                    EmployeеId = employerId
                 });
 
                 db.SaveChanges();
@@ -97,7 +97,7 @@ namespace RestaurantSystem.Controllers
         public String GetEmployerUserName(string firstName, string lastName)
         {
             Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
-            User user = db.Users.SingleOrDefault(u => u.EmployerId == employer.EmpId);
+            User user = db.Users.SingleOrDefault(u => u.EmployeеId == employer.EmpId);
             
             if(user != null)
             {
@@ -112,7 +112,7 @@ namespace RestaurantSystem.Controllers
         public String GetEmployerPassword(string firstName, string lastName)
         {
             Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
-            User user = db.Users.SingleOrDefault(u => u.EmployerId == employer.EmpId);
+            User user = db.Users.SingleOrDefault(u => u.EmployeеId == employer.EmpId);
 
             if(user != null)
             {
@@ -124,20 +124,29 @@ namespace RestaurantSystem.Controllers
             }
         }
 
-        public void AddUserToDataBase(string username, string password, string firstName, string lastName)
+        public void AddUserToDataBase(string username, string password, string roleName, string firstName, string lastName)
         {
             Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            Role role = GetRoleByName(roleName);
 
             User user = new User
             {
                 Username = username,
                 Password = password,
-                EmployerId = employer.EmpId
+                EmployeеId = employer.EmpId,
+                Employer = employer,
+                Role = role,
+                RoleId = role.Id
             };
 
             db.Users.Add(user);
 
             db.SaveChanges();
+        }
+
+        public Role GetRoleByName(string name)
+        {
+            return db.Roles.SingleOrDefault(r => r.Name == name);
         }
 
         public void AddProduct(string name, int quantity, double price, double dlprice)

@@ -84,7 +84,7 @@
             // 
             this.StaffcomboBox.FormattingEnabled = true;
             this.StaffcomboBox.Location = new System.Drawing.Point(184, 57);
-            this.StaffcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StaffcomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.StaffcomboBox.Name = "StaffcomboBox";
             this.StaffcomboBox.Size = new System.Drawing.Size(174, 21);
             this.StaffcomboBox.TabIndex = 8;
@@ -93,7 +93,7 @@
             // usernameTextbox
             // 
             this.usernameTextbox.Location = new System.Drawing.Point(184, 162);
-            this.usernameTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTextbox.Name = "usernameTextbox";
             this.usernameTextbox.Size = new System.Drawing.Size(174, 20);
             this.usernameTextbox.TabIndex = 10;
@@ -101,7 +101,7 @@
             // passwordTextbox
             // 
             this.passwordTextbox.Location = new System.Drawing.Point(184, 220);
-            this.passwordTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextbox.Name = "passwordTextbox";
             this.passwordTextbox.Size = new System.Drawing.Size(174, 20);
             this.passwordTextbox.TabIndex = 11;
@@ -109,12 +109,13 @@
             // save
             // 
             this.save.Location = new System.Drawing.Point(387, 275);
-            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save.Margin = new System.Windows.Forms.Padding(2);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(92, 33);
             this.save.TabIndex = 12;
             this.save.Text = "Запази";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
             // JobPosition
             // 
@@ -138,7 +139,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddUser";
             this.Text = "Добави потребител";
             this.Load += new System.EventHandler(this.AddUser_Load_1);
