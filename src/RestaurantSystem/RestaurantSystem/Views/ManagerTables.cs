@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using RestaurantSystem.Controllers;
 
-namespace WindowsFormsApp1
+namespace RestaurantSystem.Views
 {
     public partial class ManagerTables : Form
     {
-        public ManagerTables()
+        //DBController controller;
+
+        public ManagerTables(DBController controller)
         {
             InitializeComponent();
             FillCategoryList();
@@ -43,7 +46,7 @@ namespace WindowsFormsApp1
             SqlDataReader reader;
             try
             {
-                con.Open();
+                con.Open();               
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {

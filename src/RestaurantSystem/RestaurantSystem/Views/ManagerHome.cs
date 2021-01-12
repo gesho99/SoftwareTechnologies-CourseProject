@@ -92,8 +92,8 @@ namespace RestaurantSystem
 
         private void Table_Click(object sender, EventArgs e)
         {
-           //OpenChildForm()
-            //new Tables().Show();
+            OpenChildForm(new ManagerTables(controller), sender);
+            //new ManagerTables().Show();
             //this.Hide();
         }
 
