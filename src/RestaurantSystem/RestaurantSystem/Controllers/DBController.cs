@@ -44,11 +44,11 @@ namespace RestaurantSystem.Controllers
 
         public void CreateAdminEmployer()
         {
-            Employer admin = db.Employers.SingleOrDefault(e => e.FirstName == "admin");
+            Employee admin = db.EmployeesList.SingleOrDefault(e => e.FirstName == "admin");
 
             if (admin == null)
             {
-                db.Employers.Add(new Employer
+                db.EmployeesList.Add(new Employee
                 {
                     FirstName = "admin",
                     LastName = "admin",
@@ -63,7 +63,7 @@ namespace RestaurantSystem.Controllers
         {
             User admin = db.Users.SingleOrDefault(u => u.Username == "admin");
             int roleId = db.Roles.SingleOrDefault(r => r.Name == "admin").Id;
-            int employerId = db.Employers.SingleOrDefault(e => e.FirstName == "admin").Id;
+            int employerId = db.EmployeesList.SingleOrDefault(e => e.FirstName == "admin").EmpId;
 
             if (admin == null)
             {
@@ -76,6 +76,36 @@ namespace RestaurantSystem.Controllers
                 });
 
                 db.SaveChanges();
+            }
+        }
+
+        public List<Employee> GetEmployers()
+        {
+            return db.EmployeesList.Select(e => e).ToList();
+        }
+
+        public Employee GetEmployeeByFirstAndLastName(string firstName, string lastName)
+        {
+            return db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+        }
+
+        public String GetEmployerJobPosition(string firstName, string lastName)
+        {
+            return GetEmployeeByFirstAndLastName(firstName, lastName).JobPosition;
+        }
+
+        public String GetEmployerUserName(string firstName, string lastName)
+        {
+            Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            User user = db.Users.SingleOrDefault(u => u.EmployerId == employer.EmpId);
+            
+            if(user != null)
+            {
+                return user.Username;
+            }
+            else
+            {
+                return "";
             }
         }
 
