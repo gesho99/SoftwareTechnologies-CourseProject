@@ -109,6 +109,21 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public String GetEmployerPassword(string firstName, string lastName)
+        {
+            Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            User user = db.Users.SingleOrDefault(u => u.EmployerId == employer.EmpId);
+
+            if(user != null)
+            {
+                return user.Password;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
         public void AddProduct(string name, int quantity, double price, double dlprice)
         {
             db.Products.Add(new Product
