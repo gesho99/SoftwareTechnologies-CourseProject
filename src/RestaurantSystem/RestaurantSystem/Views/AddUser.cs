@@ -67,6 +67,55 @@ namespace RestaurantSystem
             passwordTextbox.Text = FormToDBController.GetEmployerPassword(ref controller, employeeFirstName, employeeLastName);
         }
 
+        private bool ValidPass()
+        {
+            bool passLength = false, hasDigit = false, hasUpper = false, hasLower = false, hasSpecialChar = false;
+
+            if (passwordTextbox.TextLength >= 6)
+            {
+                passLength = true;
+            }
+            else
+            {
+                label5.Text = "Моля въведете парола с поне 6 символа.";
+                return false;
+            }
+
+            foreach (char c in passwordTextbox.Text)
+            {
+                if (char.IsDigit(c))
+                    hasDigit = true;
+
+                else if (char.IsUpper(c))
+                    hasUpper = true;
+
+                else if (char.IsLower(c))
+                    hasLower = true;
+            }
+
+            string specialChar = "\\/~!@#$%^&*()-_+={[]};:'\"|,<.>?";
+            foreach (char c in specialChar)
+            {
+                if (passwordTextbox.Text.Contains(c))
+                {
+                    hasSpecialChar = true;
+                }
+            }
+
+            if(hasSpecialChar == false)
+            {
+                label5.Text = "Моля въведете парола, която да съдържа поне един специален символ, различен от буква или цифра.";
+                return false;
+            }
+
+            if (passLength && hasDigit && hasUpper && hasLower && hasSpecialChar)
+                return true;
+
+            label5.Text = "Моля въведете парола, в която има поне една цифра, малка и голяма буква.";
+
+            return false;
+        }
+
         private void AddUser_Load(object sender, EventArgs e)
         {
                  
@@ -74,9 +123,14 @@ namespace RestaurantSystem
 
         private void Save_Click(object sender, EventArgs e)
         {
-            FormToDBController.AddUserToDataBase(ref controller, usernameTextbox.Text, JobPosition.Text, passwordTextbox.Text,
-                StaffcomboBox.SelectedItem.ToString().Split(' ')[0],
-                StaffcomboBox.SelectedItem.ToString().Split(' ')[1]);
+            if (ValidPass() == true)
+            {
+                FormToDBController.AddUserToDataBase(ref controller, usernameTextbox.Text, JobPosition.Text, passwordTextbox.Text,
+                    StaffcomboBox.SelectedItem.ToString().Split(' ')[0],
+                    StaffcomboBox.SelectedItem.ToString().Split(' ')[1]);
+
+                label5.Text = "Потребителят е успешно създаден!";
+            }
         }
 
         private void Home_Click(object sender, EventArgs e)

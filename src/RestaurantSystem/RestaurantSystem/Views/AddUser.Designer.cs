@@ -38,6 +38,7 @@
             this.passwordTextbox = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
             this.JobPosition = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -108,7 +109,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(387, 275);
+            this.save.Location = new System.Drawing.Point(222, 274);
             this.save.Margin = new System.Windows.Forms.Padding(2);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(92, 33);
@@ -124,11 +125,22 @@
             this.JobPosition.Size = new System.Drawing.Size(174, 20);
             this.JobPosition.TabIndex = 13;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(33, 339);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 14;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(435, 394);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.JobPosition);
             this.Controls.Add(this.save);
             this.Controls.Add(this.passwordTextbox);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.TextBox passwordTextbox;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.TextBox JobPosition;
+        private System.Windows.Forms.Label label5;
     }
 }
