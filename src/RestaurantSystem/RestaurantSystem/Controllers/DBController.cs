@@ -128,18 +128,27 @@ namespace RestaurantSystem.Controllers
         {
             Employee employer = db.Employees.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
             Role role = GetRoleByName(roleName);
+            User existingUser = db.Users.SingleOrDefault(u => u.EmployeеId == employer.EmpId);
 
-            User user = new User
+            if (existingUser == null)
             {
-                Username = username,
-                Password = password,
-                EmployeеId = employer.EmpId,
-                Employer = employer,
-                Role = role,
-                RoleId = role.Id
-            };
+                User user = new User
+                {
+                    Username = username,
+                    Password = password,
+                    EmployeеId = employer.EmpId,
+                    Employer = employer,
+                    Role = role,
+                    RoleId = role.Id
+                };
 
-            db.Users.Add(user);
+                db.Users.Add(user);
+            }
+            else
+            {
+                existingUser.Username = username;
+                existingUser.Password = password;
+            }
 
             db.SaveChanges();
         }
