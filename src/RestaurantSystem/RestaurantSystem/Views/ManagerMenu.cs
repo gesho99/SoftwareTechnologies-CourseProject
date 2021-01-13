@@ -39,9 +39,18 @@ namespace RestaurantSystem
                 ListBoxController.AddListBoxItems(ref menuItems, dish.DishName);
                 List<DishProducts> dishProducts = FormToDBController.SelectAllDishProducts(ref controller, dish.Id);
 
+                int counter = 1;
                 foreach(DishProducts dp in dishProducts)
                 {
-                    products += FormToDBController.SelectProductById(ref controller, dp.ProductId).Name + " ";
+                    if(counter < dishProducts.Count) {
+                        products += FormToDBController.SelectProductById(ref controller, dp.ProductId).Name + ",";
+                    }
+                    else
+                    {
+                        products += FormToDBController.SelectProductById(ref controller, dp.ProductId).Name + " ";
+                    }
+
+                    counter++;
                 }
 
                 ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishPrice, products, dish.DishWeight);
@@ -213,6 +222,15 @@ namespace RestaurantSystem
         private void Menu_Load(object sender, EventArgs e)
         {
             LoadTheme();
+        }
+
+        private void menuItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            itemName.Text = menuItems.SelectedItem.ToString();
+            menuItemsParameters.SetSelected(menuItems.SelectedIndex, true);
+            itemPrice.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[0];
+            products.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[1].Replace(",", " ");
+            itemWeight.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[2];
         }
     }
 }
