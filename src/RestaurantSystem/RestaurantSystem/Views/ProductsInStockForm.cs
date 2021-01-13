@@ -175,5 +175,14 @@ namespace RestaurantSystem
             new ManagerHome(controller).Show();
             this.Hide();
         }
+
+        private void ItemsInStock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            productName.Text = ItemsInStock.SelectedItem.ToString();
+            Parameters.SetSelected(ItemsInStock.SelectedIndex, true);
+            productQuantity.Text = Parameters.SelectedItem.ToString().Split(' ')[0];
+            productPrice.Text = Parameters.SelectedItem.ToString().Split(' ')[1];
+            deliveryPrice.Text = Parameters.SelectedItem.ToString().Split(' ')[2];
+        }
     }
 }

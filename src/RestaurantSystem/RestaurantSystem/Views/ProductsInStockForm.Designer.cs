@@ -59,6 +59,7 @@
             this.ItemsInStock.Name = "ItemsInStock";
             this.ItemsInStock.Size = new System.Drawing.Size(228, 199);
             this.ItemsInStock.TabIndex = 0;
+            this.ItemsInStock.SelectedIndexChanged += new System.EventHandler(this.ItemsInStock_SelectedIndexChanged);
             // 
             // label2
             // 
