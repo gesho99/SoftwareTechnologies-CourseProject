@@ -79,6 +79,23 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public void CreateSupplier()
+        {
+            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == "Канзас ООД");
+
+            if(supplier == null)
+            {
+                db.Suppliers.Add(new Supplier
+                {
+                    Name = "Канзас ООД",
+                    PhoneNumber = "0882764871",
+                    AvailableDays="четвъртък"
+                });
+
+                db.SaveChanges();
+            }
+        }
+
         public List<Employee> GetEmployers()
         {
             return db.Employees.Select(e => e).ToList();

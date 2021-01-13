@@ -22,16 +22,14 @@ namespace RestaurantSystem
         {
                
             DBController controller = new DBController();            
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
+
             controller.CreateDB();
             controller.CreateRoles();
             controller.CreateAdminEmployer();
             controller.CreateAdminAccount();
-
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
-
-            //controller.CreateRoles();
-            //controller.CreateAdminEmployer();
-            //controller.CreateAdminAccount();
+            controller.CreateSupplier();
             controller.AddDelivery();
             
             Application.EnableVisualStyles();
