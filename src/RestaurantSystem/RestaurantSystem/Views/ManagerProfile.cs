@@ -72,7 +72,7 @@ namespace RestaurantSystem.Views
             LoadTheme();
             using (RestaurantDbContext db = new RestaurantDbContext())
             {
-                employeeBindingSource.DataSource = db.EmployeesList.ToList();
+                employeeBindingSource.DataSource = db.Employees.ToList();
             }
             panel1.Enabled = false;
             Employee emp = employeeBindingSource.Current as Employee;

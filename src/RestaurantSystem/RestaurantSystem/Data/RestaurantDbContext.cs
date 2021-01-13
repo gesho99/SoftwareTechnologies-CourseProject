@@ -12,7 +12,7 @@ namespace RestaurantSystem.Data
     {
         public RestaurantDbContext() : base("name=RestaurantDbContext") { }
 
-        public DbSet<Employee> EmployeesList { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         public DbSet<Product> Products { get; set; }
 
@@ -55,7 +55,7 @@ namespace RestaurantSystem.Data
                 .Entity<EmployerReport>()
                 .HasRequired<Employee>(emprep => emprep.Employeе)
                 .WithMany(emp => emp.Reports)
-                .HasForeignKey(emprep => emprep.EmployeеId)
+                .HasForeignKey(emprep => emprep.EmpId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder

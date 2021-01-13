@@ -6,14 +6,14 @@ namespace RestaurantSystem.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class EmployerReportMigration : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
+    public sealed partial class AllMigrationsTillNow : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EmployerReportMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AllMigrationsTillNow));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012051530236_EmployerReportMigration"; }
+            get { return "202101131658193_AllMigrationsTillNow"; }
         }
         
         string IMigrationMetadata.Source

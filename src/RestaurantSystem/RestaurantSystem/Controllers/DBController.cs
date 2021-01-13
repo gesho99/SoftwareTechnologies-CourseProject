@@ -44,11 +44,11 @@ namespace RestaurantSystem.Controllers
 
         public void CreateAdminEmployer()
         {
-            Employee admin = db.EmployeesList.SingleOrDefault(e => e.FirstName == "admin");
+            Employee admin = db.Employees.SingleOrDefault(e => e.FirstName == "admin");
 
             if (admin == null)
             {
-                db.EmployeesList.Add(new Employee
+                db.Employees.Add(new Employee
                 {
                     FirstName = "admin",
                     LastName = "admin",
@@ -63,7 +63,7 @@ namespace RestaurantSystem.Controllers
         {
             User admin = db.Users.SingleOrDefault(u => u.Username == "admin");
             int roleId = db.Roles.SingleOrDefault(r => r.Name == "admin").Id;
-            int employerId = db.EmployeesList.SingleOrDefault(e => e.FirstName == "admin").EmpId;
+            int employerId = db.Employees.SingleOrDefault(e => e.FirstName == "admin").EmpId;
 
             if (admin == null)
             {
@@ -81,12 +81,12 @@ namespace RestaurantSystem.Controllers
 
         public List<Employee> GetEmployers()
         {
-            return db.EmployeesList.Select(e => e).ToList();
+            return db.Employees.Select(e => e).ToList();
         }
 
         public Employee GetEmployeeByFirstAndLastName(string firstName, string lastName)
         {
-            return db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            return db.Employees.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
         }
 
         public String GetEmployerJobPosition(string firstName, string lastName)
@@ -96,7 +96,7 @@ namespace RestaurantSystem.Controllers
 
         public String GetEmployerUserName(string firstName, string lastName)
         {
-            Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            Employee employer = db.Employees.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
             User user = db.Users.SingleOrDefault(u => u.EmployeеId == employer.EmpId);
             
             if(user != null)
@@ -111,7 +111,7 @@ namespace RestaurantSystem.Controllers
 
         public String GetEmployerPassword(string firstName, string lastName)
         {
-            Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            Employee employer = db.Employees.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
             User user = db.Users.SingleOrDefault(u => u.EmployeеId == employer.EmpId);
 
             if(user != null)
@@ -126,7 +126,7 @@ namespace RestaurantSystem.Controllers
 
         public void AddUserToDataBase(string username, string password, string roleName, string firstName, string lastName)
         {
-            Employee employer = db.EmployeesList.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
+            Employee employer = db.Employees.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);
             Role role = GetRoleByName(roleName);
 
             User user = new User
