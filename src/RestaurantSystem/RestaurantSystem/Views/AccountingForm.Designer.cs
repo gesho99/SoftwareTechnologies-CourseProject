@@ -40,9 +40,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.monthIncomes = new System.Windows.Forms.TextBox();
+            this.monthExpenses = new System.Windows.Forms.TextBox();
+            this.monthProfit = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.addAccountingForDay = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addAccountingForMonth = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -199,29 +199,29 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Печалба";
             // 
-            // textBox4
+            // monthIncomes
             // 
-            this.textBox4.Location = new System.Drawing.Point(43, 309);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
+            this.monthIncomes.Location = new System.Drawing.Point(43, 309);
+            this.monthIncomes.Name = "monthIncomes";
+            this.monthIncomes.ReadOnly = true;
+            this.monthIncomes.Size = new System.Drawing.Size(100, 20);
+            this.monthIncomes.TabIndex = 12;
             // 
-            // textBox5
+            // monthExpenses
             // 
-            this.textBox5.Location = new System.Drawing.Point(181, 308);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 13;
+            this.monthExpenses.Location = new System.Drawing.Point(181, 308);
+            this.monthExpenses.Name = "monthExpenses";
+            this.monthExpenses.ReadOnly = true;
+            this.monthExpenses.Size = new System.Drawing.Size(100, 20);
+            this.monthExpenses.TabIndex = 13;
             // 
-            // textBox6
+            // monthProfit
             // 
-            this.textBox6.Location = new System.Drawing.Point(321, 308);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 14;
+            this.monthProfit.Location = new System.Drawing.Point(321, 308);
+            this.monthProfit.Name = "monthProfit";
+            this.monthProfit.ReadOnly = true;
+            this.monthProfit.Size = new System.Drawing.Size(100, 20);
+            this.monthProfit.TabIndex = 14;
             // 
             // label10
             // 
@@ -288,14 +288,15 @@
             this.addAccountingForDay.UseVisualStyleBackColor = true;
             this.addAccountingForDay.Click += new System.EventHandler(this.addAccountingForDay_Click);
             // 
-            // button2
+            // addAccountingForMonth
             // 
-            this.button2.Location = new System.Drawing.Point(193, 346);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Изчисли";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addAccountingForMonth.Location = new System.Drawing.Point(193, 346);
+            this.addAccountingForMonth.Name = "addAccountingForMonth";
+            this.addAccountingForMonth.Size = new System.Drawing.Size(75, 23);
+            this.addAccountingForMonth.TabIndex = 22;
+            this.addAccountingForMonth.Text = "Изчисли";
+            this.addAccountingForMonth.UseVisualStyleBackColor = true;
+            this.addAccountingForMonth.Click += new System.EventHandler(this.addAccountingForMonth_Click);
             // 
             // button3
             // 
@@ -606,7 +607,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.addAccountingForMonth);
             this.Controls.Add(this.addAccountingForDay);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
@@ -614,9 +615,9 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.monthProfit);
+            this.Controls.Add(this.monthExpenses);
+            this.Controls.Add(this.monthIncomes);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -651,9 +652,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox monthIncomes;
+        private System.Windows.Forms.TextBox monthExpenses;
+        private System.Windows.Forms.TextBox monthProfit;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -661,7 +662,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Button addAccountingForDay;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addAccountingForMonth;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;

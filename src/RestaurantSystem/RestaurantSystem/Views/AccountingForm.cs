@@ -290,9 +290,19 @@ namespace RestaurantSystem
 
         private void addAccountingForDay_Click(object sender, EventArgs e)
         {
-            int day = DateTime.Now.Day;
-            int month = DateTime.Now.Month;
-            int year = DateTime.Now.Year;
+            string day = DateTime.Now.Day.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string year = DateTime.Now.Year.ToString();
+
+            if(day.Length < 2)
+            {
+                day = "0" + day;
+            }
+
+            if(month.Length < 2)
+            {
+                month = "0" + month;
+            }
 
             string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
 
@@ -305,6 +315,35 @@ namespace RestaurantSystem
             double profit = CalculateProfit(incomes, expenses);
 
             TextBoxController.ChangeTextBoxText(ref dayProfit, profit.ToString());
+        }
+
+        private void addAccountingForMonth_Click(object sender, EventArgs e)
+        {
+            string month = DateTime.Now.Month.ToString();
+            string year = DateTime.Now.Year.ToString();
+
+            if (month.Length < 2)
+            {
+                month = "0" + month;
+            }
+
+            string dateString = year.ToString() + month.ToString() + "01T00:00:00Z";
+
+            List<Expenses> otherExpensesForMonth = FormToDBController.GetExpensesFromDataBase(ref controller, dateString);
+            double expenses = 0;
+            double incomes = 0;
+
+            foreach(Expenses expense in otherExpensesForMonth)
+            {
+                expenses += expense.Value;
+            }
+
+            TextBoxController.ChangeTextBoxText(ref monthExpenses, expenses.ToString());
+            TextBoxController.ChangeTextBoxText(ref monthIncomes, incomes.ToString());
+
+            double profit = CalculateProfit(incomes, expenses);
+
+            TextBoxController.ChangeTextBoxText(ref monthProfit, profit.ToString());
         }
 
         private void Home_Click(object sender, EventArgs e)
