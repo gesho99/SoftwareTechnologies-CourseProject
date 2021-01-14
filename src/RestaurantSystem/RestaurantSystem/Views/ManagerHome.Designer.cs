@@ -47,10 +47,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -109,16 +105,18 @@
             this.accounting.ForeColor = System.Drawing.Color.Gainsboro;
             this.accounting.Image = ((System.Drawing.Image)(resources.GetObject("accounting.Image")));
             this.accounting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.accounting.Location = new System.Drawing.Point(18, 770);
+            this.accounting.Location = new System.Drawing.Point(2, 770);
             this.accounting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.accounting.Name = "accounting";
-            this.accounting.Size = new System.Drawing.Size(220, 76);
+            this.accounting.Size = new System.Drawing.Size(223, 76);
             this.accounting.TabIndex = 12;
             this.accounting.Text = "   Счетоводство";
             this.accounting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.accounting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.accounting.UseVisualStyleBackColor = false;
             this.accounting.Click += new System.EventHandler(this.Accounting_Click);
+            this.accounting.MouseEnter += new System.EventHandler(this.accounting_MouseEnter);
+            this.accounting.MouseLeave += new System.EventHandler(this.accounting_MouseLeave);
             // 
             // delivery
             // 
@@ -129,16 +127,18 @@
             this.delivery.ForeColor = System.Drawing.Color.Gainsboro;
             this.delivery.Image = ((System.Drawing.Image)(resources.GetObject("delivery.Image")));
             this.delivery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delivery.Location = new System.Drawing.Point(26, 656);
+            this.delivery.Location = new System.Drawing.Point(2, 657);
             this.delivery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.delivery.Name = "delivery";
-            this.delivery.Size = new System.Drawing.Size(195, 76);
+            this.delivery.Size = new System.Drawing.Size(225, 76);
             this.delivery.TabIndex = 11;
-            this.delivery.Text = "    Доставки";
+            this.delivery.Text = "     Доставки";
             this.delivery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.delivery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.delivery.UseVisualStyleBackColor = false;
             this.delivery.Click += new System.EventHandler(this.Delivery_Click);
+            this.delivery.MouseEnter += new System.EventHandler(this.delivery_MouseEnter);
+            this.delivery.MouseLeave += new System.EventHandler(this.delivery_MouseLeave);
             // 
             // stock
             // 
@@ -149,16 +149,18 @@
             this.stock.ForeColor = System.Drawing.Color.Gainsboro;
             this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
             this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stock.Location = new System.Drawing.Point(11, 516);
+            this.stock.Location = new System.Drawing.Point(0, 516);
             this.stock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.stock.Name = "stock";
-            this.stock.Size = new System.Drawing.Size(197, 98);
+            this.stock.Size = new System.Drawing.Size(223, 98);
             this.stock.TabIndex = 13;
             this.stock.Text = "Наличност";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.stock.UseVisualStyleBackColor = false;
             this.stock.Click += new System.EventHandler(this.Stock_Click);
+            this.stock.MouseEnter += new System.EventHandler(this.stock_MouseEnter);
+            this.stock.MouseLeave += new System.EventHandler(this.stock_MouseLeave);
             // 
             // employees
             // 
@@ -169,16 +171,18 @@
             this.employees.ForeColor = System.Drawing.Color.Gainsboro;
             this.employees.Image = ((System.Drawing.Image)(resources.GetObject("employees.Image")));
             this.employees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.employees.Location = new System.Drawing.Point(-2, 191);
+            this.employees.Location = new System.Drawing.Point(-18, 191);
             this.employees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.employees.Name = "employees";
-            this.employees.Size = new System.Drawing.Size(221, 91);
+            this.employees.Size = new System.Drawing.Size(243, 91);
             this.employees.TabIndex = 7;
             this.employees.Text = "Служители";
             this.employees.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.employees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.employees.UseVisualStyleBackColor = false;
             this.employees.Click += new System.EventHandler(this.Employees_Click);
+            this.employees.MouseEnter += new System.EventHandler(this.employees_MouseEnter);
+            this.employees.MouseLeave += new System.EventHandler(this.employees_MouseLeave);
             // 
             // addUser
             // 
@@ -189,15 +193,17 @@
             this.addUser.ForeColor = System.Drawing.Color.Gainsboro;
             this.addUser.Image = ((System.Drawing.Image)(resources.GetObject("addUser.Image")));
             this.addUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.addUser.Location = new System.Drawing.Point(-2, 70);
+            this.addUser.Location = new System.Drawing.Point(-18, 70);
             this.addUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addUser.Name = "addUser";
-            this.addUser.Size = new System.Drawing.Size(225, 103);
+            this.addUser.Size = new System.Drawing.Size(241, 103);
             this.addUser.TabIndex = 4;
             this.addUser.Text = "Добави нов потребител";
             this.addUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.addUser.UseVisualStyleBackColor = false;
             this.addUser.Click += new System.EventHandler(this.AddUser_Click);
+            this.addUser.MouseEnter += new System.EventHandler(this.addUser_MouseEnter);
+            this.addUser.MouseLeave += new System.EventHandler(this.addUser_MouseLeave);
             // 
             // table
             // 
@@ -208,16 +214,18 @@
             this.table.ForeColor = System.Drawing.Color.Gainsboro;
             this.table.Image = ((System.Drawing.Image)(resources.GetObject("table.Image")));
             this.table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.table.Location = new System.Drawing.Point(20, 317);
+            this.table.Location = new System.Drawing.Point(2, 319);
             this.table.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.table.Name = "table";
-            this.table.Size = new System.Drawing.Size(205, 76);
+            this.table.Size = new System.Drawing.Size(221, 76);
             this.table.TabIndex = 9;
-            this.table.Text = "        Маси";
+            this.table.Text = "       Маси";
             this.table.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.table.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.table.UseVisualStyleBackColor = false;
             this.table.Click += new System.EventHandler(this.Table_Click);
+            this.table.MouseEnter += new System.EventHandler(this.table_MouseEnter);
+            this.table.MouseLeave += new System.EventHandler(this.table_MouseLeave);
             // 
             // menu
             // 
@@ -228,16 +236,18 @@
             this.menu.ForeColor = System.Drawing.Color.Gainsboro;
             this.menu.Image = ((System.Drawing.Image)(resources.GetObject("menu.Image")));
             this.menu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menu.Location = new System.Drawing.Point(30, 415);
+            this.menu.Location = new System.Drawing.Point(5, 415);
             this.menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(195, 97);
+            this.menu.Size = new System.Drawing.Size(220, 97);
             this.menu.TabIndex = 10;
             this.menu.Text = "          Меню";
             this.menu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.menu.UseVisualStyleBackColor = false;
             this.menu.Click += new System.EventHandler(this.Menu_Click);
+            this.menu.MouseEnter += new System.EventHandler(this.menu_MouseEnter);
+            this.menu.MouseLeave += new System.EventHandler(this.menu_MouseLeave);
             // 
             // panelTitleBar
             // 
@@ -328,10 +338,6 @@
             // panelDesktopPanel
             // 
             this.panelDesktopPanel.BackColor = System.Drawing.Color.Transparent;
-            this.panelDesktopPanel.Controls.Add(this.label5);
-            this.panelDesktopPanel.Controls.Add(this.label4);
-            this.panelDesktopPanel.Controls.Add(this.label3);
-            this.panelDesktopPanel.Controls.Add(this.label2);
             this.panelDesktopPanel.Controls.Add(this.pictureBox1);
             this.panelDesktopPanel.ForeColor = System.Drawing.Color.Transparent;
             this.panelDesktopPanel.Location = new System.Drawing.Point(225, 65);
@@ -350,50 +356,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rounds Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(291, 241);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Георги Донков";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Rounds Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(623, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Бончо Бонев";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Rounds Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(283, 461);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Йоана Ангелова";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Rounds Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(606, 461);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Анита Караиванова";
             // 
             // ManagerHome
             // 
@@ -417,7 +379,6 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPanel.ResumeLayout(false);
-            this.panelDesktopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -443,9 +404,5 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
     }
 }

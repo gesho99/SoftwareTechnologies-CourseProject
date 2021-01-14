@@ -179,5 +179,75 @@ namespace RestaurantSystem
                 activeForm.Close();
             Reset();
         }
+
+        private void addUser_MouseEnter(object sender, EventArgs e)
+        {
+            addUser.ForeColor = Color.Black;
+        }
+
+        private void addUser_MouseLeave(object sender, EventArgs e)
+        {
+            addUser.ForeColor = Color.White;
+        }
+
+        private void employees_MouseEnter(object sender, EventArgs e)
+        {
+            employees.ForeColor = Color.Black;
+        }
+
+        private void employees_MouseLeave(object sender, EventArgs e)
+        {
+            employees.ForeColor = Color.White;
+        }
+
+        private void table_MouseEnter(object sender, EventArgs e)
+        {
+            table.ForeColor = Color.Black;
+        }
+
+        private void table_MouseLeave(object sender, EventArgs e)
+        {
+            table.ForeColor = Color.White;
+        }
+
+        private void menu_MouseEnter(object sender, EventArgs e)
+        {
+            menu.ForeColor = Color.Black;
+        }
+
+        private void menu_MouseLeave(object sender, EventArgs e)
+        {
+            menu.ForeColor = Color.White;
+        }
+
+        private void stock_MouseEnter(object sender, EventArgs e)
+        {
+            stock.ForeColor = Color.Black;
+        }
+
+        private void stock_MouseLeave(object sender, EventArgs e)
+        {
+            stock.ForeColor = Color.White;
+        }
+
+        private void delivery_MouseEnter(object sender, EventArgs e)
+        {
+            delivery.ForeColor = Color.Black;
+        }
+
+        private void delivery_MouseLeave(object sender, EventArgs e)
+        {
+            delivery.ForeColor = Color.White;
+        }
+
+        private void accounting_MouseEnter(object sender, EventArgs e)
+        {
+            accounting.ForeColor = Color.Black;
+        }
+
+        private void accounting_MouseLeave(object sender, EventArgs e)
+        {
+            accounting.ForeColor = Color.White;
+        }
     }
 }
