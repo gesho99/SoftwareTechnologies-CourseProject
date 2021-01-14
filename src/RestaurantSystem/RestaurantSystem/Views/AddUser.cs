@@ -60,11 +60,11 @@ namespace RestaurantSystem
             string employeeFirstName = employeeName.Split(' ')[0];
             string employeeLastName = employeeName.Split(' ')[1];
 
-            JobPosition.Text = FormToDBController.GetEmployerJobPosition(ref controller, employeeFirstName, employeeLastName);
+            TextBoxController.ChangeTextBoxText(ref JobPosition, FormToDBController.GetEmployerJobPosition(ref controller, employeeFirstName, employeeLastName));
 
-            usernameTextbox.Text = FormToDBController.GetEmployerUserName(ref controller, employeeFirstName, employeeLastName);
+            TextBoxController.ChangeTextBoxText(ref usernameTextbox, FormToDBController.GetEmployerUserName(ref controller, employeeFirstName, employeeLastName));
 
-            passwordTextbox.Text = FormToDBController.GetEmployerPassword(ref controller, employeeFirstName, employeeLastName);
+            TextBoxController.ChangeTextBoxText(ref passwordTextbox, FormToDBController.GetEmployerPassword(ref controller, employeeFirstName, employeeLastName));
         }
 
         private bool ValidPass()
@@ -77,7 +77,7 @@ namespace RestaurantSystem
             }
             else
             {
-                label5.Text = "Моля въведете парола с поне 6 символа.";
+                LabelController.ChangeLabelText(ref label5, "Моля въведете парола с поне 6 символа.");
                 return false;
             }
 
@@ -104,14 +104,14 @@ namespace RestaurantSystem
 
             if(hasSpecialChar == false)
             {
-                label5.Text = "Моля въведете парола, която да съдържа поне един специален символ, различен от буква или цифра.";
+                LabelController.ChangeLabelText(ref label5, "Моля въведете парола, която да съдържа поне един специален символ, различен от буква или цифра.");
                 return false;
             }
 
             if (passLength && hasDigit && hasUpper && hasLower && hasSpecialChar)
                 return true;
 
-            label5.Text = "Моля въведете парола, в която има поне една цифра, малка и голяма буква.";
+            LabelController.ChangeLabelText(ref label5, "Моля въведете парола, в която има поне една цифра, малка и голяма буква.");
 
             return false;
         }
@@ -122,12 +122,12 @@ namespace RestaurantSystem
 
             if (usernameTextbox.Text.Length <= 3)
             {
-                label5.Text = "Моля въведете име от поне 4 символа.";
+                LabelController.ChangeLabelText(ref label5, "Моля въведете име от поне 4 символа.");
                 return false;
             }
             else if(usernameTextbox.Text.Length > 20)
             {
-                label5.Text = "Въведеното име е твърде дълго.";
+                LabelController.ChangeLabelText(ref label5, "Въведеното име е твърде дълго.");
                 return false;
             }
 
@@ -135,7 +135,7 @@ namespace RestaurantSystem
             {
                 if (passwordTextbox.Text.Contains(c))
                 {
-                    label5.Text = "Името може да се състои само от букви и цифри.";
+                    LabelController.ChangeLabelText(ref label5, "Името може да се състои само от букви и цифри.");
                     return false;
                 }
             }
@@ -157,7 +157,7 @@ namespace RestaurantSystem
                     StaffcomboBox.SelectedItem.ToString().Split(' ')[0],
                     StaffcomboBox.SelectedItem.ToString().Split(' ')[1]);
 
-                label5.Text = "Потребителят е успешно създаден!";
+                LabelController.ChangeLabelText(ref label5, "Потребителят е успешно създаден!");
             }
         }
 
