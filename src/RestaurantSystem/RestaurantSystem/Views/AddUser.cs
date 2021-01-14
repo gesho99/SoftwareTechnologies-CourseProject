@@ -116,6 +116,34 @@ namespace RestaurantSystem
             return false;
         }
 
+        private bool ValidUsername()
+        {
+            string specialChar = "\\/~!@#$%^&*()-_+={[]};:'\"|,<.>?";
+
+            if (usernameTextbox.Text.Length <= 3)
+            {
+                label5.Text = "Моля въведете име от поне 4 символа.";
+                return false;
+            }
+            else if(usernameTextbox.Text.Length > 20)
+            {
+                label5.Text = "Въведеното име е твърде дълго.";
+                return false;
+            }
+
+            foreach (char c in specialChar)
+            {
+                if (passwordTextbox.Text.Contains(c))
+                {
+                    label5.Text = "Името може да се състои само от букви и цифри.";
+                    return false;
+                }
+            }
+
+            return true;
+
+        }
+
         private void AddUser_Load(object sender, EventArgs e)
         {
                  
@@ -123,7 +151,7 @@ namespace RestaurantSystem
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (ValidPass() == true)
+            if (ValidUsername() == true && ValidPass() == true)
             {
                 FormToDBController.AddUserToDataBase(ref controller, usernameTextbox.Text, JobPosition.Text, passwordTextbox.Text,
                     StaffcomboBox.SelectedItem.ToString().Split(' ')[0],
