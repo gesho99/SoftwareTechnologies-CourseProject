@@ -164,5 +164,14 @@ namespace RestaurantSystem.Views
             con.Close();
           
         }
+
+        private void Password_Enter(object sender, EventArgs e)
+        {
+            if(Password.Text == "  Enter Password:")
+            {
+                Password.Clear();
+            }
+            Password.UseSystemPasswordChar = true;
+        }
     }
 }

@@ -83,6 +83,7 @@
             // 
             // StaffcomboBox
             // 
+            this.StaffcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StaffcomboBox.FormattingEnabled = true;
             this.StaffcomboBox.Location = new System.Drawing.Point(184, 57);
             this.StaffcomboBox.Margin = new System.Windows.Forms.Padding(2);
@@ -122,6 +123,7 @@
             // 
             this.JobPosition.Location = new System.Drawing.Point(184, 110);
             this.JobPosition.Name = "JobPosition";
+            this.JobPosition.ReadOnly = true;
             this.JobPosition.Size = new System.Drawing.Size(174, 20);
             this.JobPosition.TabIndex = 13;
             // 
