@@ -59,8 +59,9 @@
             this.panelMenu.Controls.Add(this.table);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(260, 700);
+            this.panelMenu.Size = new System.Drawing.Size(195, 569);
             this.panelMenu.TabIndex = 15;
             // 
             // profileBtn
@@ -72,15 +73,18 @@
             this.profileBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.profileBtn.Image = ((System.Drawing.Image)(resources.GetObject("profileBtn.Image")));
             this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profileBtn.Location = new System.Drawing.Point(0, 82);
+            this.profileBtn.Location = new System.Drawing.Point(-4, 65);
+            this.profileBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.profileBtn.Name = "profileBtn";
-            this.profileBtn.Size = new System.Drawing.Size(260, 93);
+            this.profileBtn.Size = new System.Drawing.Size(195, 76);
             this.profileBtn.TabIndex = 11;
-            this.profileBtn.Text = "Профил";
+            this.profileBtn.Text = "         Профил";
             this.profileBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.profileBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.profileBtn.UseVisualStyleBackColor = false;
             this.profileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
+            this.profileBtn.MouseEnter += new System.EventHandler(this.profileBtn_MouseEnter);
+            this.profileBtn.MouseLeave += new System.EventHandler(this.profileBtn_MouseLeave);
             // 
             // panelLogo
             // 
@@ -88,8 +92,9 @@
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(260, 80);
+            this.panelLogo.Size = new System.Drawing.Size(195, 65);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
@@ -97,9 +102,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(38, 27);
+            this.label1.Location = new System.Drawing.Point(28, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 25);
+            this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant System";
             // 
@@ -112,15 +118,18 @@
             this.menu.ForeColor = System.Drawing.Color.Gainsboro;
             this.menu.Image = ((System.Drawing.Image)(resources.GetObject("menu.Image")));
             this.menu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menu.Location = new System.Drawing.Point(-3, 317);
+            this.menu.Location = new System.Drawing.Point(-2, 258);
+            this.menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(260, 93);
+            this.menu.Size = new System.Drawing.Size(195, 76);
             this.menu.TabIndex = 10;
-            this.menu.Text = "Меню";
+            this.menu.Text = "          Меню";
             this.menu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.menu.UseVisualStyleBackColor = false;
             this.menu.Click += new System.EventHandler(this.Menu_Click);
+            this.menu.MouseEnter += new System.EventHandler(this.menu_MouseEnter);
+            this.menu.MouseLeave += new System.EventHandler(this.menu_MouseLeave);
             // 
             // table
             // 
@@ -131,15 +140,18 @@
             this.table.ForeColor = System.Drawing.Color.Gainsboro;
             this.table.Image = ((System.Drawing.Image)(resources.GetObject("table.Image")));
             this.table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.table.Location = new System.Drawing.Point(-3, 196);
+            this.table.Location = new System.Drawing.Point(-2, 159);
+            this.table.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.table.Name = "table";
-            this.table.Size = new System.Drawing.Size(260, 93);
+            this.table.Size = new System.Drawing.Size(195, 76);
             this.table.TabIndex = 9;
-            this.table.Text = "Маси";
+            this.table.Text = "       Маси";
             this.table.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.table.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.table.UseVisualStyleBackColor = false;
             this.table.Click += new System.EventHandler(this.Table_Click);
+            this.table.MouseEnter += new System.EventHandler(this.table_MouseEnter);
+            this.table.MouseLeave += new System.EventHandler(this.table_MouseLeave);
             // 
             // panelTitleBar
             // 
@@ -150,9 +162,10 @@
             this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(260, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(195, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1040, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(780, 65);
             this.panelTitleBar.TabIndex = 16;
             // 
             // btnMinimize
@@ -162,9 +175,10 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(867, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(650, 10);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(29, 29);
+            this.btnMinimize.Size = new System.Drawing.Size(22, 24);
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click_1);
@@ -176,9 +190,10 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.ForeColor = System.Drawing.Color.Transparent;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(902, 12);
+            this.btnMaximize.Location = new System.Drawing.Point(676, 10);
+            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(29, 29);
+            this.btnMaximize.Size = new System.Drawing.Size(22, 24);
             this.btnMaximize.TabIndex = 3;
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.BtnMaximize_Click_1);
@@ -190,9 +205,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(937, 12);
+            this.btnClose.Location = new System.Drawing.Point(703, 10);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(29, 29);
+            this.btnClose.Size = new System.Drawing.Size(22, 24);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click_1);
@@ -202,9 +218,10 @@
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
-            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 51);
+            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 41);
+            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(34, 29);
+            this.btnCloseChildForm.Size = new System.Drawing.Size(26, 24);
             this.btnCloseChildForm.TabIndex = 1;
             this.btnCloseChildForm.UseVisualStyleBackColor = true;
             this.btnCloseChildForm.Click += new System.EventHandler(this.BtnCloseChildForm_Click_1);
@@ -215,9 +232,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(474, 27);
+            this.lblTitle.Location = new System.Drawing.Point(356, 22);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(128, 31);
+            this.lblTitle.Size = new System.Drawing.Size(106, 26);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "НАЧАЛО";
             // 
@@ -226,33 +244,34 @@
             this.panelDesktopPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelDesktopPanel.Controls.Add(this.pictureBox1);
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(260, 80);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(195, 65);
+            this.panelDesktopPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(1040, 620);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(780, 504);
             this.panelDesktopPanel.TabIndex = 17;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RestaurantSystem.Properties.Resources.onlinelogomaker_010721_1136_4394_2000_transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(239, 135);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(440, 214);
+            this.pictureBox1.Size = new System.Drawing.Size(330, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // EmployeesHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 700);
+            this.ClientSize = new System.Drawing.Size(975, 569);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1300, 700);
+            this.MinimumSize = new System.Drawing.Size(975, 569);
             this.Name = "EmployeesHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeesHome";

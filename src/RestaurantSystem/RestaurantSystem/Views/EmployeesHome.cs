@@ -142,5 +142,35 @@ namespace RestaurantSystem
                 activeForm.Close();
             Reset();
         }
+
+        private void profileBtn_MouseEnter(object sender, EventArgs e)
+        {
+            profileBtn.ForeColor = Color.Black;
+        }
+
+        private void profileBtn_MouseLeave(object sender, EventArgs e)
+        {
+            profileBtn.ForeColor = Color.White;
+        }
+
+        private void table_MouseEnter(object sender, EventArgs e)
+        {
+            table.ForeColor = Color.Black;
+        }
+
+        private void table_MouseLeave(object sender, EventArgs e)
+        {
+            table.ForeColor = Color.White;
+        }
+
+        private void menu_MouseEnter(object sender, EventArgs e)
+        {
+            menu.ForeColor = Color.Black;
+        }
+
+        private void menu_MouseLeave(object sender, EventArgs e)
+        {
+            menu.ForeColor = Color.White;
+        }
     }
 }
