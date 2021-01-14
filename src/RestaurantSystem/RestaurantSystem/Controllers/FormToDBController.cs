@@ -86,7 +86,7 @@ namespace RestaurantSystem.Controllers
 
         public static bool AddInternetExpenseInDataBaseIfNotExists(ref DBController controller, string dateString, double iValue)
         {
-            return controller.AddWaterExpense(dateString, iValue);
+            return controller.AddInternetExpense(dateString, iValue);
         }
 
         public static bool EditExpensesInDataBase(ref DBController controller, string dateString, double eValue, double wValue, double iValue)

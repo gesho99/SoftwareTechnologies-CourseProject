@@ -145,7 +145,7 @@ namespace RestaurantSystem
                     if (FormToDBController.AddElectricityExpenseInDataBaseIfNotExists(ref controller, dateString, eValue) == false)
                     {
                         LabelController.ChangeLabelVisibility(ref label30, true);
-                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход за ток " + 
                                                         electricity.Text + " за периода " + 
                                                         year.Text + "/" + 
                                                         months.SelectedItem.ToString() + " вече съществува.");
@@ -154,7 +154,7 @@ namespace RestaurantSystem
                     else
                     {
                         LabelController.ChangeLabelVisibility(ref label30, true);
-                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход за ток " + 
                                                         electricity.Text + " за периода " + 
                                                         year.Text + "/" + 
                                                         months.SelectedItem.ToString() + " е успешно добавен");
@@ -167,7 +167,7 @@ namespace RestaurantSystem
                     if (FormToDBController.AddWaterExpenseInDataBaseIfNotExists(ref controller, dateString, wValue) == false)
                     {
                         LabelController.ChangeLabelVisibility(ref label30, true);
-                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход за вода " + 
                                                         water.Text + " за периода " + 
                                                         year.Text + "/" + 
                                                         months.SelectedItem.ToString() + " вече съществува.");
@@ -176,7 +176,7 @@ namespace RestaurantSystem
                     else
                     {
                         LabelController.ChangeLabelVisibility(ref label30, true);
-                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход за вода " + 
                                                         water.Text + " за периода " + 
                                                         year.Text + "/" + 
                                                         months.SelectedItem.ToString() + " е успешно добавен.");
@@ -189,7 +189,7 @@ namespace RestaurantSystem
                     if (FormToDBController.AddInternetExpenseInDataBaseIfNotExists(ref controller, dateString, iValue) == false)
                     {
                         LabelController.ChangeLabelVisibility(ref label30, true);
-                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход за интернет " + 
                                                         internet.Text + " за периода " + 
                                                         year.Text + "/" + 
                                                         months.SelectedItem.ToString() + " вече съществува.");
@@ -198,8 +198,8 @@ namespace RestaurantSystem
                     else
                     {
                         LabelController.ChangeLabelVisibility(ref label30, true);
-                        LabelController.ChangeLabelText(ref label30, "Въведеният разход " + 
-                                                        internet.Text + " за периода " + 
+                        LabelController.ChangeLabelText(ref label30, "Въведеният разход за интернет" + 
+                                                        " за периода " + 
                                                         year.Text + "/" + 
                                                         months.SelectedItem.ToString() + " е успешно добавен.");
                     }
