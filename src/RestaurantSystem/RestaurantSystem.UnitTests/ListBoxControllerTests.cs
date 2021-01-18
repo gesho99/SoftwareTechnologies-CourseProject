@@ -49,7 +49,7 @@ namespace RestaurantSystem.UnitTests
             bool expected = true;
 
             //Act
-            ListBoxController.AddListBoxParameters(ref listbox, 5.60, "test", 5.60);
+            ListBoxController.AddListBoxParameters(ref listbox, 5.60, "test", "test", 5.60);
             bool actual = listbox.Items.Contains(5.60 + " test " + 5.60);
 
             //Assert
