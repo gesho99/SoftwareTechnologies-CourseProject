@@ -133,7 +133,7 @@ namespace RestaurantSystem
 
             foreach (char c in specialChar)
             {
-                if (passwordTextbox.Text.Contains(c))
+                if (usernameTextbox.Text.Contains(c))
                 {
                     LabelController.ChangeLabelText(ref label5, "Името може да се състои само от букви и цифри.");
                     return false;
