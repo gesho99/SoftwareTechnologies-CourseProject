@@ -114,14 +114,6 @@ D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServer.xml
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\EntityFramework.SqlServerCompact.xml
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csprojResolveAssemblyReference.cache
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.InitialCreate.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.UsersRolesEmployersMigration.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.EmployerReportMigration.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.ExpensesMigration.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishesMigration.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishProductsMigration.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DeliveryAndProductsDeliveriesMigration.resources
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.TablesMigration.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.AccountingForm.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Deliveries.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Employees.resources
@@ -157,9 +149,9 @@ C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantS
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\Control.Draggable.dll
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.csprojAssemblyReference.cache
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\bin\Debug\Control.Draggable.dll
-D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishProductsMigration1.resources
 D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.ManagerTables.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.ManagerTables.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.AllMigrationsTillNow.resources
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.AllMigrationsTillNow.resources
 C:\Users\ANI\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.ManagerTables.resources
+D:\Yoana\ТУ\Пети семестър\СТ\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.AllMigrationsTillNow.resources

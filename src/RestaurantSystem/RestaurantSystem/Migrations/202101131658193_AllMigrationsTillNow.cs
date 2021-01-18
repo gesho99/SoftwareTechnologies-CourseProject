@@ -124,7 +124,6 @@
                         Email = c.String(),
                         JobPosition = c.String(),
                         Salary = c.Int(nullable: false),
-                        ImageUrl = c.String(),
                     })
                 .PrimaryKey(t => t.EmpId);
             

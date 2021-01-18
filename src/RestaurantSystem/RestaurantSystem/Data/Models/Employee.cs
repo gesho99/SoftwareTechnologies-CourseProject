@@ -15,7 +15,6 @@ namespace RestaurantSystem.Data.Models
         public string Email { get; set; }
         public string JobPosition { get; set; }
         public int Salary { get; set; }
-        public string ImageUrl { get; set; }
 
         public ICollection<EmployerReport> Reports { get; set; } = new HashSet<EmployerReport>();
     }

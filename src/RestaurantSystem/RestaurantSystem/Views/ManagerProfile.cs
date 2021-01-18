@@ -11,7 +11,7 @@ using RestaurantSystem.Data;
 using System.Data.Entity;
 using RestaurantSystem.Views;
 using RestaurantSystem.Controllers;
-
+using System.Text.RegularExpressions;
 
 
 namespace RestaurantSystem.Views
@@ -57,12 +57,6 @@ namespace RestaurantSystem.Views
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     Employee emp = employeeBindingSource.Current as Employee;
-                    pictureBox1.Image = Image.FromFile(ofd.FileName);
-                    
-                    if (emp != null)
-                    {
-                        emp.ImageUrl = ofd.FileName;
-                    }
                 }
             }
         }
@@ -76,15 +70,10 @@ namespace RestaurantSystem.Views
             }
             panel1.Enabled = false;
             Employee emp = employeeBindingSource.Current as Employee;
-            if (emp != null && emp.ImageUrl != null)
-            {
-                pictureBox1.Image = Image.FromFile(emp.ImageUrl);
-            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = null;
             panel1.Enabled = true;
             employeeBindingSource.Add(new Employee());
             employeeBindingSource.MoveLast();
@@ -108,10 +97,6 @@ namespace RestaurantSystem.Views
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Employee emp = employeeBindingSource.Current as Employee;
-            if (emp != null)
-            {
-                pictureBox1.Image = Image.FromFile(emp.ImageUrl);
-            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -132,7 +117,6 @@ namespace RestaurantSystem.Views
                         MessageBox.Show(this, "Deleted successfully.");
                         employeeBindingSource.RemoveCurrent();
                         panel1.Enabled = false;
-                        pictureBox1.Image = null;
                     }
                 }
             }
@@ -142,27 +126,52 @@ namespace RestaurantSystem.Views
         {
             using (RestaurantDbContext db = new RestaurantDbContext())
             {
-                Employee emp = employeeBindingSource.Current as Employee;
-                if (emp != null)
+                if (firstName.Text != "" && lastName.Text != "" && emailBox.Text != "" && jobPosition.Text != "" && salaryBox.Text != "")
                 {
-                    if (db.Entry<Employee>(emp).State == EntityState.Detached)
-                    {
-                        db.Set<Employee>().Attach(emp);
-                    }
-                    if (emp.EmpId == 0)
-                    {
-                        db.Entry<Employee>(emp).State = EntityState.Added;
+                    string firstNameRegex = @"^([А-Я]{1})([а-я]+)(([-]{1}[А-Я]{1}[а-я]+)?)$";
+                    Match firstNameMatch = Regex.Match(firstName.Text, firstNameRegex);
+
+                    string lastNameRegex = @"^([А-Я]{1})([а-я]+)$";
+                    Match lastNameMatch = Regex.Match(lastName.Text, lastNameRegex);
+
+                    string emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+                    Match emailMatch = Regex.Match(emailBox.Text, emailRegex);
+
+                    string jobRegex = @"^([А-Я]{1})([а-я]+)(\/{0,1})([а-я]+)$";
+                    Match jobMatch = Regex.Match(jobPosition.Text, jobRegex);
+
+                    if (firstNameMatch.Success && lastNameMatch.Success && emailMatch.Success && jobMatch.Success) {
+                        Employee emp = employeeBindingSource.Current as Employee;
+                        if (emp != null)
+                        {
+                            if (db.Entry<Employee>(emp).State == EntityState.Detached)
+                            {
+                                db.Set<Employee>().Attach(emp);
+                            }
+                            if (emp.EmpId == 0)
+                            {
+                                db.Entry<Employee>(emp).State = EntityState.Added;
+                            }
+                            else
+                            {
+                                db.Entry<Employee>(emp).State = EntityState.Modified;
+                            }
+                            db.SaveChanges();
+                            MessageBox.Show(this, "Saved successfully!");
+                            dataGridView1.Refresh();
+                            panel1.Enabled = false;
+                        }
                     }
                     else
                     {
-                        db.Entry<Employee>(emp).State = EntityState.Modified;
+                        MessageBox.Show("Моля, попълнете правилно нужните данни.");
                     }
-                    db.SaveChanges();
-                    MessageBox.Show(this, "Saved successfully!");
-                    dataGridView1.Refresh();
-                    panel1.Enabled = false;
                 }
-            }
+                else
+                {
+                    MessageBox.Show("Попълнете полетата с нужните данни.");
+                }
+            }           
         }
     }
 }
