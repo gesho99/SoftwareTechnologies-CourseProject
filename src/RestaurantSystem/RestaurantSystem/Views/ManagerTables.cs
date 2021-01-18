@@ -22,6 +22,48 @@ namespace RestaurantSystem.Views
             FillCategoryList();
             FillTablesList();
         }
+        private void LoadTheme()
+        {
+            foreach (Control btns in groupBox1.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            foreach (Control btns in groupBox3.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            foreach (Control btns in groupBox4.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+
+
+            label1.ForeColor = ThemeColor.SecondaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.SecondaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.SecondaryColor;
+            label6.ForeColor = ThemeColor.PrimaryColor;
+
+        }
 
         decimal bill = 0;
         
@@ -183,6 +225,11 @@ namespace RestaurantSystem.Views
         {
             string selectedTableNum = tablesCombo.Text;
             tableNum.Text = selectedTableNum;
+        }
+
+        private void ManagerTables_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }

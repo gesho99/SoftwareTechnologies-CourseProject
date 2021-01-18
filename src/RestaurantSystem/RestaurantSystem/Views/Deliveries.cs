@@ -98,6 +98,7 @@ namespace RestaurantSystem
             }
             label1.ForeColor = ThemeColor.SecondaryColor;
             label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
             DeliveryQuantity.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
             label9.ForeColor = ThemeColor.SecondaryColor;
