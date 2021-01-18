@@ -30,7 +30,12 @@ namespace RestaurantSystem
             controller.CreateAdminAccount();
             controller.CreateSupplier();
             controller.AddDeliveryBasedOnProductQuantity();
-            
+            controller.CreateYearAccounting();
+            controller.CreateMonthAccounting();
+            controller.CreateDayAccounting();
+            controller.CreateEmployerReport();
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AccountingForm(controller));

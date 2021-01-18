@@ -162,3 +162,4 @@ C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\Restaurant
 C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.EmployeesTables.resources
 C:\Users\User\Documents\GitHub\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.ManagerTables.resources
 C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Views.AddSupplier.resources
+C:\Users\gesho\Desktop\GitHub-Repositories\SoftwareTechnologies-CourseProject\src\RestaurantSystem\RestaurantSystem\obj\Debug\RestaurantSystem.Migrations.DishEmployerReportsMigration.resources

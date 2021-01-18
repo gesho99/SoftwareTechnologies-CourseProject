@@ -103,6 +103,7 @@
     <Compile Include="Data\Models\DayAccountings.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
     <Compile Include="Data\Models\DeliveryProducts2.cs" />
+    <Compile Include="Data\Models\DishEmployerReports.cs" />
     <Compile Include="Data\Models\DishProducts.cs" />
     <Compile Include="Data\Models\Employee.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
@@ -126,6 +127,10 @@
     <Compile Include="Migrations\202101181749211_UpdatingDishModel1.cs" />
     <Compile Include="Migrations\202101181749211_UpdatingDishModel1.designer.cs">
       <DependentUpon>202101181749211_UpdatingDishModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101182245460_DishEmployerReportsMigration.cs" />
+    <Compile Include="Migrations\202101182245460_DishEmployerReportsMigration.designer.cs">
+      <DependentUpon>202101182245460_DishEmployerReportsMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="Views\EmployeesHome.cs">
@@ -225,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101181749211_UpdatingDishModel1.resx">
       <DependentUpon>202101181749211_UpdatingDishModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101182245460_DishEmployerReportsMigration.resx">
+      <DependentUpon>202101182245460_DishEmployerReportsMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>

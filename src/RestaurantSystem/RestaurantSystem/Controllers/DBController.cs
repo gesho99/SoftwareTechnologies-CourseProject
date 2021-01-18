@@ -96,6 +96,146 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public void CreateYearAccounting()
+        {
+            string year = DateTime.Now.Year.ToString();
+
+            string dateString = year.ToString() + "0101T00:00:00Z";
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            YearAccountings acc = db.YearAccountings.SingleOrDefault(a => a.Date == today);
+
+            if(acc == null)
+            {
+                db.YearAccountings.Add(new YearAccountings
+                {
+                    Date = today,
+                    YearExpense = 0,
+                    YearIncome = 0,
+                    YearProfit = 0
+                });
+
+                db.SaveChanges();
+            }
+        }
+
+        public void CreateMonthAccounting()
+        {
+            string year = DateTime.Now.Year.ToString();
+            string month = DateTime.Now.Month.ToString();
+
+            if (month.Length < 2)
+            {
+                month = "0" + month;
+            }
+
+            string dateString = year.ToString() + month.ToString() + "01T00:00:00Z";
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            MonthAccountings acc = db.MonthAccountings.SingleOrDefault(a => a.Date == today);
+
+            if(acc == null)
+            {
+                db.MonthAccountings.Add(new MonthAccountings
+                {
+                    Date = today,
+                    MonthExpense = 0,
+                    MonthIncome = 0,
+                    MonthProfit = 0,
+                    YearAccountingId = 1
+                });
+
+                db.SaveChanges();
+            }
+        }
+
+        public void CreateDayAccounting()
+        {
+            string day = DateTime.Now.Day.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string year = DateTime.Now.Year.ToString();
+
+            if (month.Length < 2)
+            {
+                month = "0" + month;
+            }
+
+            if (day.Length < 2)
+            {
+                day = "0" + day;
+            }
+
+            string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            DayAccountings acc = db.DayAccountings.SingleOrDefault(a => a.Date == today);
+
+            if(acc == null)
+            {
+                db.DayAccountings.Add(new DayAccountings
+                {
+                    DayExpense = 0,
+                    DayIncome = 0,
+                    DayProfit = 0,
+                    Date = today,
+                    MonthAccountingId = 1
+                });
+
+                db.SaveChanges();
+            }
+        }
+
+        public void CreateEmployerReport()
+        {
+            string day = DateTime.Now.Day.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string year = DateTime.Now.Year.ToString();
+
+            if (month.Length < 2)
+            {
+                month = "0" + month;
+            }
+
+            if (day.Length < 2)
+            {
+                day = "0" + day;
+            }
+
+            string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
+            DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+
+            EmployerReport empRep = db.EmployerReports.SingleOrDefault(er => er.EmpId == 2);
+            Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == "Снежанка");
+
+            if (empRep == null)
+            {
+                db.EmployerReports.Add(new EmployerReport
+                {
+                    Bill = dish.DishSellingPrice,
+                    EmpId = 2,
+                    ReportDate = today,
+                    DayAccountingId = 1,
+                    Id = 1
+                });
+
+                DishEmployerReports der = new DishEmployerReports
+                {
+                    DishId = dish.Id,
+                    EmployerReportId = 1
+                };
+
+                db.DishEmployerReports.Add(der);
+
+                db.SaveChanges();
+
+                ICollection<EmployerReport> reports = new HashSet<EmployerReport>();
+                reports.Add(empRep);
+
+                db.SaveChanges();
+            }
+
+        }
+
         public List<Employee> GetEmployers()
         {
             return db.Employees.Select(e => e).ToList();
@@ -825,16 +965,19 @@ namespace RestaurantSystem.Controllers
         {
             DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
             List<EmployerReport> todayReports = db.EmployerReports.Where(er => er.ReportDate == today).ToList();
+            List<Dish> dishes = new List<Dish>();
             double productsInTodayDishesPrice = 0;
 
             foreach(EmployerReport report in todayReports)
             {
-                foreach(Dish dish in report.Dishes)
+                List<DishEmployerReports> dishEmpReps = db.DishEmployerReports.Where(der => der.EmployerReportId == report.Id).ToList();
+                foreach(DishEmployerReports empRep in dishEmpReps)
                 {
-                    //foreach(Product product in dish.DishProducts)
-                    //{
-                    //    productsInTodayDishesPrice += product.Price + product.DeliveryPrice;
-                    //}
+                    dishes.Add(SelectDishById(empRep.DishId));
+                }
+                foreach (Dish dish in dishes)
+                {
+                    productsInTodayDishesPrice += dish.DishMakingPrice;
                 }
             }
 
