@@ -33,6 +33,7 @@ namespace RestaurantSystem
 
             ICollection<Dish> dishes = FormToDBController.LoadDishesFromDataBase(ref controller);
             string products = string.Empty;
+            string productsQuantities = string.Empty;
 
             foreach(Dish dish in dishes)
             {
@@ -53,9 +54,26 @@ namespace RestaurantSystem
                     counter++;
                 }
 
-                ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishPrice, products, dish.DishWeight);
+                string[] productsQuantitiesSplitted = dish.ProductsQuantity.Split(' ');
+
+                int counter2 = 1;
+                foreach(string quantity in productsQuantitiesSplitted)
+                {
+                    if (counter2 < productsQuantitiesSplitted.Length)
+                    {
+                        productsQuantities += quantity + ",";
+                    }
+                    else
+                    {
+                        productsQuantities += quantity + " ";
+                    }
+                    counter2++;
+                }
+
+                ListBoxController.AddListBoxParameters(ref menuItemsParameters, dish.DishSellingPrice, products, productsQuantities, dish.DishWeight);
 
                 products = string.Empty;
+                productsQuantities = string.Empty;
             }
         }
 
@@ -63,11 +81,18 @@ namespace RestaurantSystem
         {
             try
             {
-                String productNamesInDish = products.Text;
+                string productNamesInDish = products.Text;
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
                 string dName = itemName.Text;
-              
+                string[] productsQuantities = productQuantities.Text.Split(' ');
+                string[] productNamesInDishSplitted = products.Text.Split(' ');
+                List<double> productsQuantitiesAsDouble = new List<double>();
+
+                foreach(string quantity in productsQuantities)
+                {
+                    productsQuantitiesAsDouble.Add(double.Parse(quantity));
+                }
 
                 if (dWeight <= 0)
                 {
@@ -82,6 +107,11 @@ namespace RestaurantSystem
                 else if (dName.Length < 3 || productNamesInDish.Length < 3)
                 {
                     LabelController.ChangeLabelText(ref label6, "Моля въведете валидно име на ястие / продукти в ястието");
+                    return false;
+                }
+                else if(productsQuantities.Length != productNamesInDishSplitted.Length)
+                {
+                    LabelController.ChangeLabelText(ref label6, "Моля въведете съответните количества за всяко едно ястие");
                     return false;
                 }
                 else
@@ -132,6 +162,8 @@ namespace RestaurantSystem
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
                 string dName = itemName.Text;
+                String[] productsQuantity = productQuantities.Text.Split(' ');
+                int counter = 0;
 
                 foreach (String productName in productNamesInDish)
                 {
@@ -139,15 +171,21 @@ namespace RestaurantSystem
                     if (product != null)
                     {
                         productsIds.Add(product.Id);
+                        if(product.Quantity < int.Parse(productsQuantity[counter]))
+                        {
+                            LabelController.ChangeLabelText(ref label6, "Количеството на продукта " + product.Name + " не достига.");
+                            return;
+                        }
                     }
                     else
                     {
                         LabelController.ChangeLabelText(ref label6, "Въведеният продукт " + productName + " не е наличен.");
                         return;
                     }
+                    counter++;
                 }
 
-                FormToDBController.AddDishesToDataBase(ref controller, dName, dPrice, dWeight, productsIds);
+                FormToDBController.AddDishesToDataBase(ref controller, dName, dPrice, dWeight, productsIds, productQuantities.Text);
                 LoadDishes();
             }
         }
@@ -159,10 +197,13 @@ namespace RestaurantSystem
             {
 
                 ICollection<Product> productsInDish = new HashSet<Product>();
-                String[] productNamesInDish = products.Text.Split(' ');
+                string[] productNamesInDish = products.Text.Split(' ');
                 double dPrice = double.Parse(itemPrice.Text);
                 double dWeight = double.Parse(itemWeight.Text);
-                string dName = itemName.Text;       
+                string dName = itemName.Text;
+                string productsQuantities = productQuantities.Text;
+                string[] productsQuantity = productsQuantities.Split(' ');
+                int counter = 0;
 
                 if (!menuItems.Items.Contains(dName))
                 {
@@ -176,15 +217,21 @@ namespace RestaurantSystem
                         if (product != null)
                         {
                             productsInDish.Add(product);
+                            if (product.Quantity < int.Parse(productsQuantity[counter]))
+                            {
+                                LabelController.ChangeLabelText(ref label6, "Количеството на продукта " + product.Name + " не достига.");
+                                return;
+                            }
                         }
                         else
                         {
                             LabelController.ChangeLabelText(ref label6, "Въведеният продукт " + productName + " не е наличен.");
                             return;
                         }
+                        counter++;
                     }
 
-                    FormToDBController.EditDishInDataBase(ref controller, dName, dPrice, dWeight, productsInDish);
+                    FormToDBController.EditDishInDataBase(ref controller, dName, dPrice, dWeight, productsInDish, productsQuantities);
                     LoadDishes();
                 }
 
@@ -230,7 +277,8 @@ namespace RestaurantSystem
             menuItemsParameters.SetSelected(menuItems.SelectedIndex, true);
             itemPrice.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[0];
             products.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[1].Replace(",", " ");
-            itemWeight.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[2];
+            productQuantities.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[2].Replace(",", " ");
+            itemWeight.Text = menuItemsParameters.SelectedItem.ToString().Split(' ')[3];
         }
     }
 }

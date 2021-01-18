@@ -221,14 +221,26 @@ namespace RestaurantSystem.Controllers
             return product;
         }
 
-        public void AddDish(string dName, double dPrice, double dWeight, ICollection<int> productsInDish)
+        public void AddDish(string dName, double dPrice, double dWeight, ICollection<int> productsInDish, string productsQuantities)
         {
-            
+            double makingPrice = 0;
+            string[] productsQuantitiesSplitted = productsQuantities.Split(' ');
+            int counter = 0;
+
+            foreach(int prId in productsInDish)
+            {
+                Product pr = SelectProductById(prId);
+                makingPrice += pr.Price * double.Parse(productsQuantitiesSplitted[counter]);
+                counter++;
+            }
+
             Dish dish = new Dish
             {
                 DishName = dName,
-                DishPrice = dPrice,
-                DishWeight = dWeight
+                DishSellingPrice = dPrice,
+                DishWeight = dWeight,
+                ProductsQuantity = productsQuantities,
+                DishMakingPrice = makingPrice
             };
 
             db.Dishes.Add(dish);
@@ -262,13 +274,13 @@ namespace RestaurantSystem.Controllers
                 .ToArray();
         }
 
-        public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        public void EditDish(string dName, double dPrice, double dWeight, ICollection<Product> productsInDish, string productsQuantities)
         {
             Dish dish = db.Dishes.SingleOrDefault(d => d.DishName == dName);
             var productsIds = db.DishProducts.Select(p => p.ProductId).ToList();
             if (dish != null)
             {
-                dish.DishPrice = dPrice;
+                dish.DishSellingPrice = dPrice;
                 dish.DishWeight = dWeight;
 
                 var dishProducts = db.DishProducts.Where(dp => dp.DishId == dish.Id).ToList();
@@ -285,6 +297,20 @@ namespace RestaurantSystem.Controllers
 
                     db.DishProducts.Add(editedDishProduct);
                 }
+
+                dish.ProductsQuantity = productsQuantities;
+
+                double makingPrice = 0;
+                string[] productsQuantitiesSplitted = productsQuantities.Split(' ');
+                int counter = 0;
+
+                foreach (Product pr in productsInDish)
+                {
+                    makingPrice += pr.Price * double.Parse(productsQuantitiesSplitted[counter]);
+                    counter++;
+                }
+
+                dish.DishMakingPrice = makingPrice;
             }
 
             db.SaveChanges();

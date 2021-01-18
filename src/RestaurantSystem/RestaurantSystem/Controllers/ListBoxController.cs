@@ -21,9 +21,9 @@ namespace RestaurantSystem.Controllers
             return listbox;
         }
 
-        public static ListBox AddListBoxParameters(ref ListBox listbox, double dishPrice, string products, double dishWeight)
+        public static ListBox AddListBoxParameters(ref ListBox listbox, double dishPrice, string products, string productQuantities, double dishWeight)
         {
-            listbox.Items.Add(dishPrice + " " + products + dishWeight);
+            listbox.Items.Add(dishPrice + " " + products + productQuantities + dishWeight);
             return listbox;
         }
 

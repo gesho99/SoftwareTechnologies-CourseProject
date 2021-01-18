@@ -119,6 +119,14 @@
     <Compile Include="Migrations\202101131658193_AllMigrationsTillNow.designer.cs">
       <DependentUpon>202101131658193_AllMigrationsTillNow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101181742038_UpdatingDishModel.cs" />
+    <Compile Include="Migrations\202101181742038_UpdatingDishModel.designer.cs">
+      <DependentUpon>202101181742038_UpdatingDishModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181749211_UpdatingDishModel1.cs" />
+    <Compile Include="Migrations\202101181749211_UpdatingDishModel1.designer.cs">
+      <DependentUpon>202101181749211_UpdatingDishModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="Views\EmployeesHome.cs">
       <SubType>Form</SubType>
@@ -205,6 +213,12 @@
     <Compile Include="Data\Models\YearAccountings.cs" />
     <EmbeddedResource Include="Migrations\202101131658193_AllMigrationsTillNow.resx">
       <DependentUpon>202101131658193_AllMigrationsTillNow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181742038_UpdatingDishModel.resx">
+      <DependentUpon>202101181742038_UpdatingDishModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181749211_UpdatingDishModel1.resx">
+      <DependentUpon>202101181749211_UpdatingDishModel1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountingForm.resx">
       <DependentUpon>AccountingForm.cs</DependentUpon>

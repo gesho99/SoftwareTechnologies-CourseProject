@@ -59,14 +59,14 @@ namespace RestaurantSystem.Controllers
             return controller.LoadDishes();
         }
 
-        public static void AddDishesToDataBase(ref DBController controller, string dName, double dPrice, double dWeight, ICollection<int> productsInDish)
+        public static void AddDishesToDataBase(ref DBController controller, string dName, double dPrice, double dWeight, ICollection<int> productsInDish, string productsQuantities)
         {
-            controller.AddDish(dName, dPrice, dWeight, productsInDish);
+            controller.AddDish(dName, dPrice, dWeight, productsInDish, productsQuantities);
         }
 
-        public static void EditDishInDataBase(ref DBController controller, string dName, double dPrice, double dWeight, ICollection<Product> productsInDish)
+        public static void EditDishInDataBase(ref DBController controller, string dName, double dPrice, double dWeight, ICollection<Product> productsInDish, string productsQuantities)
         {
-            controller.EditDish(dName, dPrice, dWeight, productsInDish);
+            controller.EditDish(dName, dPrice, dWeight, productsInDish, productsQuantities);
         }
 
         public static Product SelectProductByNameFromDataBase(ref DBController controller, string productName)
