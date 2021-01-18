@@ -25,10 +25,10 @@ namespace RestaurantSystem
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
             
             controller.CreateDB();
-           // controller.CreateRoles();
-           // controller.CreateAdminEmployer();
-           // controller.CreateAdminAccount();
-           // controller.CreateSupplier();
+            controller.CreateRoles();
+            controller.CreateAdminEmployer();
+            controller.CreateAdminAccount();
+            controller.CreateSupplier();
             controller.AddDeliveryBasedOnProductQuantity();
             
             Application.EnableVisualStyles();
@@ -36,7 +36,7 @@ namespace RestaurantSystem
             //Application.Run(new AccountingForm(controller));
             //Application.Run(new Deliveries(controller));                 
             //Application.Run(new ProductsInStockForm(controller));
-            //Application.Run(new Login(controller));
+            Application.Run(new Login(controller));
             //Application.Run(new Menu(controller));
             //Application.Run(new AddUser(controller));
         }

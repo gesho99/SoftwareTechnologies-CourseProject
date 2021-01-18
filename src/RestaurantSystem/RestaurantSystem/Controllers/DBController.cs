@@ -81,15 +81,15 @@ namespace RestaurantSystem.Controllers
 
         public void CreateSupplier()
         {
-            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == "Канзас ООД");
+            Supplier supplier = db.Suppliers.SingleOrDefault(s => s.Name == "Канзас");
 
             if(supplier == null)
             {
                 db.Suppliers.Add(new Supplier
                 {
-                    Name = "Канзас ООД",
+                    Name = "Канзас",
                     PhoneNumber = "0882764871",
-                    AvailableDays="четвъртък"
+                    AvailableDays="понеделник, вторник, сряда, четвъртък, петък, събота, неделя"
                 });
 
                 db.SaveChanges();

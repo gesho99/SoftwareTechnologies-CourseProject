@@ -21,6 +21,8 @@ namespace RestaurantSystem.Views
             InitializeComponent();
             FillCategoryList();
             FillTablesList();
+            string date = DateTime.Now.ToString("dd/MM/yyyy");
+            dateTxt.Text = date;
         }
         private void LoadTheme()
         {
