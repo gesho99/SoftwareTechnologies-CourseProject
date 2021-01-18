@@ -102,6 +102,7 @@
     <Compile Include="Controllers\TextBoxController.cs" />
     <Compile Include="Data\Models\DayAccountings.cs" />
     <Compile Include="Data\Models\Delivery.cs" />
+    <Compile Include="Data\Models\DeliveryProducts2.cs" />
     <Compile Include="Data\Models\DishProducts.cs" />
     <Compile Include="Data\Models\Employee.cs" />
     <Compile Include="Data\Models\Expenses.cs" />
@@ -114,7 +115,6 @@
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
-    <Compile Include="Data\Models\DeliveryProducts2.cs" />
     <Compile Include="Migrations\202101131658193_AllMigrationsTillNow.cs" />
     <Compile Include="Migrations\202101131658193_AllMigrationsTillNow.designer.cs">
       <DependentUpon>202101131658193_AllMigrationsTillNow.cs</DependentUpon>
@@ -159,6 +159,12 @@
     </Compile>
     <Compile Include="Views\Deliveries.Designer.cs">
       <DependentUpon>Deliveries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeesMenu.resx">
       <DependentUpon>EmployeesMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -315,4 +324,8 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -15,6 +15,18 @@ namespace RestaurantSystem.Controllers
             return listbox;
         }
 
+        public static ListBox AddListBoxSuppliers(ref ListBox listbox, string supplierName, string supplierPhone, string supplierAvailableDays)
+        {
+            listbox.Items.Add(supplierName + ", " + supplierPhone + " - " + supplierAvailableDays);
+            return listbox;
+        }
+
+        public static ListBox AddListBoxDeliveries(ref ListBox listbox,string products,double deliveryQuantity,double deliveryPrice,string supplierName)
+        {
+            listbox.Items.Add(products + ", " + deliveryQuantity + ", " + deliveryQuantity + ", " + supplierName);
+            return listbox;
+        }
+
         public static ListBox AddListBoxParameters(ref ListBox listbox, int quantity, double prPrice, double dlPrice)
         {
             listbox.Items.Add(quantity + " " + prPrice + " " + dlPrice);

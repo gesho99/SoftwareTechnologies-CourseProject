@@ -119,5 +119,42 @@ namespace RestaurantSystem.Controllers
             return controller.SelectDishById(id);
         }
 
+        public static ICollection<Supplier> LoadSuppliersFromDataBase(ref DBController controller)
+        {
+            return controller.LoadSuppliers();
+        }
+
+        public static void AddSupplierInDataBase(ref DBController controller, string supplierName, string supplierPhone, string supplierAvailableDays)
+        {
+            controller.AddSupplier(supplierName, supplierPhone, supplierAvailableDays);
+        }
+
+        public static void EditSupplierInDataBase(ref DBController controller, string supplierName, string supplierPhone, string supplierAvailableDays)
+        {
+            controller.EditSupplier(supplierName, supplierPhone, supplierAvailableDays);
+        }
+
+        public static ICollection<Delivery> LoadDeliveriesFromDataBase(ref DBController controller)
+        {
+            return controller.LoadDeliveries();
+        }
+
+        public static ICollection<Product> GetDeliveryProductsFromDataBase(ref DBController controller,int id)
+        {
+            return controller.GetDeliveryProducts(id);
+        }
+
+        public static void AddDeliveryInDataBase(ref DBController controller, string productName, int productQuantity, string supplierName)
+        {
+            controller.AddDelivery(productName, productQuantity, supplierName);
+        }
+
+        public static void ApproveDeliveryInDataBase(ref DBController controller,string supplierName)
+        {
+            controller.ApproveDelivery(supplierName);
+        }
+
+
+
     }
 }

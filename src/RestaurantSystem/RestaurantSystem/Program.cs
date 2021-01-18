@@ -20,24 +20,23 @@ namespace RestaurantSystem
         [STAThread]
         static void Main()
         {
-               
             DBController controller = new DBController();            
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
-
+            
             controller.CreateDB();
-            controller.CreateRoles();
-            controller.CreateAdminEmployer();
-            controller.CreateAdminAccount();
-            controller.CreateSupplier();
-            controller.AddDelivery();
+           // controller.CreateRoles();
+           // controller.CreateAdminEmployer();
+           // controller.CreateAdminAccount();
+           // controller.CreateSupplier();
+            controller.AddDeliveryBasedOnProductQuantity();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AccountingForm(controller));
             //Application.Run(new Deliveries(controller));                 
             //Application.Run(new ProductsInStockForm(controller));
-            Application.Run(new Login(controller));
+            //Application.Run(new Login(controller));
             //Application.Run(new Menu(controller));
             //Application.Run(new AddUser(controller));
         }
