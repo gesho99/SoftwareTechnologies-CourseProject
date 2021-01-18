@@ -42,6 +42,8 @@ namespace RestaurantSystem.Data
 
         public DbSet<DishProducts> DishProducts { get; set; }
 
+        public DbSet<DishEmployerReports> DishEmployerReports { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -114,7 +116,22 @@ namespace RestaurantSystem.Data
                .Entity<DeliveryProducts2>()
                .HasRequired<Product>(p =>p.Product)
                .WithMany(dp => dp.DeliveryProducts2)
-               .HasForeignKey(p => p.ProductId);     
+               .HasForeignKey(p => p.ProductId);
+
+            modelBuilder
+                .Entity<DishEmployerReports>().HasKey(dp => new { dp.DishId, dp.EmployerReportId });
+
+            modelBuilder
+                .Entity<DishEmployerReports>()
+                .HasRequired<EmployerReport>(d => d.EmployerReport)
+                .WithMany(dp => dp.DishEmployerReports)
+                .HasForeignKey(d => d.EmployerReportId);
+
+            modelBuilder
+               .Entity<DishEmployerReports>()
+               .HasRequired<Dish>(p => p.Dish)
+               .WithMany(dp => dp.DishEmployerReports)
+               .HasForeignKey(p => p.DishId);
         }
     }
 }

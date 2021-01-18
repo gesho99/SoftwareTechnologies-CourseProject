@@ -28,7 +28,7 @@ namespace RestaurantSystem.Data.Models
         [Required]
         public double DishWeight { get; set; }
 
-        public ICollection<EmployerReport> EmployerReports { get; set; } = new HashSet<EmployerReport>();
+        public ICollection<DishEmployerReports> DishEmployerReports { get; set; } = new HashSet<DishEmployerReports>();
 
         public ICollection<DishProducts> DishProducts { get; set; } = new HashSet<DishProducts>();
 
