@@ -187,8 +187,8 @@ namespace RestaurantSystem.Views
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    string tableName = reader.GetString(2);
-                    tablesCombo.Items.Add(tableName);
+                    string tableName = reader.GetString(1);
+                    tablesCombo.Items.Add($"Маса {tableName}");
                 }
             }
             catch (Exception ex)
@@ -209,7 +209,7 @@ namespace RestaurantSystem.Views
                 tablesCombo.Items.Add($"Маса {tablesCount + 1}");
             }
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
-            string sql = $"INSERT INTO dbo.Tables (Id, Number, Name) VALUES ({tablesCount + 1},'{tablesCount + 1}','Маса {tablesCount + 1}');";
+            string sql = $"INSERT INTO dbo.Tables (Number) VALUES ('{tablesCount + 1}');";
             SqlCommand command = new SqlCommand(sql, con);
             SqlDataReader reader;
             try

@@ -195,7 +195,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Number = c.Int(nullable: false),
+                        Number = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
