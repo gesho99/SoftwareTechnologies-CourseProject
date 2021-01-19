@@ -39,7 +39,6 @@
             this.tableNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.deleteTableBtn = new System.Windows.Forms.Button();
             this.tablesCombo = new System.Windows.Forms.ComboBox();
             this.tablesAddBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -152,7 +151,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.deleteTableBtn);
             this.groupBox4.Controls.Add(this.tablesCombo);
             this.groupBox4.Controls.Add(this.tablesAddBtn);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -162,16 +160,6 @@
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Маси";
-            // 
-            // deleteTableBtn
-            // 
-            this.deleteTableBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteTableBtn.Location = new System.Drawing.Point(201, 62);
-            this.deleteTableBtn.Name = "deleteTableBtn";
-            this.deleteTableBtn.Size = new System.Drawing.Size(155, 32);
-            this.deleteTableBtn.TabIndex = 7;
-            this.deleteTableBtn.Text = "Изтрий маса";
-            this.deleteTableBtn.UseVisualStyleBackColor = true;
             // 
             // tablesCombo
             // 
@@ -319,7 +307,6 @@
         private System.Windows.Forms.TextBox billTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button deleteTableBtn;
         private System.Windows.Forms.ComboBox tablesCombo;
         private System.Windows.Forms.Button tablesAddBtn;
         private System.Windows.Forms.TextBox dateTxt;
