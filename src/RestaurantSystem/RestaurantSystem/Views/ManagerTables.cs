@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using RestaurantSystem.Controllers;
+using RestaurantSystem.Data.Models;
 
 namespace RestaurantSystem.Views
 {
@@ -19,6 +20,7 @@ namespace RestaurantSystem.Views
         public ManagerTables(DBController controller)
         {
             InitializeComponent();
+            InsertFirstTableIntoDB();
             FillCategoryList();
             FillTablesList();
             string date = DateTime.Now.ToString("dd/MM/yyyy");
@@ -174,7 +176,24 @@ namespace RestaurantSystem.Views
             billTxt.Text = "0 лв.";
             bill = 0;
         }
+        public void InsertFirstTableIntoDB()
+        {
+            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
 
+            string sqlInsert = $"INSERT INTO dbo.Tables (Number) VALUES ({1});";
+            SqlCommand commandInsert = new SqlCommand(sqlInsert, con);
+            SqlDataReader reader;
+            try
+            {
+                con.Open();
+                reader = commandInsert.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+        }
         public void FillTablesList()
         {
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
