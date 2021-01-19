@@ -47,6 +47,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AddSupplier = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -57,6 +58,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.AddSupplier);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.accounting);
             this.panelMenu.Controls.Add(this.delivery);
@@ -67,9 +69,9 @@
             this.panelMenu.Controls.Add(this.menu);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(225, 857);
+            this.panelMenu.Size = new System.Drawing.Size(300, 1100);
             this.panelMenu.TabIndex = 14;
             // 
             // panelLogo
@@ -78,9 +80,9 @@
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(225, 65);
+            this.panelLogo.Size = new System.Drawing.Size(300, 80);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
@@ -88,10 +90,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(28, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(37, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 20);
+            this.label1.Size = new System.Drawing.Size(177, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant System";
             // 
@@ -105,10 +106,10 @@
             this.accounting.ForeColor = System.Drawing.Color.Gainsboro;
             this.accounting.Image = ((System.Drawing.Image)(resources.GetObject("accounting.Image")));
             this.accounting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.accounting.Location = new System.Drawing.Point(2, 770);
-            this.accounting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accounting.Location = new System.Drawing.Point(0, 857);
+            this.accounting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accounting.Name = "accounting";
-            this.accounting.Size = new System.Drawing.Size(223, 76);
+            this.accounting.Size = new System.Drawing.Size(297, 94);
             this.accounting.TabIndex = 12;
             this.accounting.Text = "   Счетоводство";
             this.accounting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -127,10 +128,10 @@
             this.delivery.ForeColor = System.Drawing.Color.Gainsboro;
             this.delivery.Image = ((System.Drawing.Image)(resources.GetObject("delivery.Image")));
             this.delivery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delivery.Location = new System.Drawing.Point(2, 657);
-            this.delivery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delivery.Location = new System.Drawing.Point(3, 636);
+            this.delivery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.delivery.Name = "delivery";
-            this.delivery.Size = new System.Drawing.Size(225, 76);
+            this.delivery.Size = new System.Drawing.Size(300, 94);
             this.delivery.TabIndex = 11;
             this.delivery.Text = "     Доставки";
             this.delivery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -149,10 +150,10 @@
             this.stock.ForeColor = System.Drawing.Color.Gainsboro;
             this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
             this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stock.Location = new System.Drawing.Point(0, 516);
-            this.stock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.stock.Location = new System.Drawing.Point(-4, 511);
+            this.stock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stock.Name = "stock";
-            this.stock.Size = new System.Drawing.Size(223, 98);
+            this.stock.Size = new System.Drawing.Size(297, 121);
             this.stock.TabIndex = 13;
             this.stock.Text = "Наличност";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,10 +172,10 @@
             this.employees.ForeColor = System.Drawing.Color.Gainsboro;
             this.employees.Image = ((System.Drawing.Image)(resources.GetObject("employees.Image")));
             this.employees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.employees.Location = new System.Drawing.Point(-18, 191);
-            this.employees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employees.Location = new System.Drawing.Point(-24, 194);
+            this.employees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employees.Name = "employees";
-            this.employees.Size = new System.Drawing.Size(243, 91);
+            this.employees.Size = new System.Drawing.Size(324, 112);
             this.employees.TabIndex = 7;
             this.employees.Text = "Служители";
             this.employees.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,10 +194,10 @@
             this.addUser.ForeColor = System.Drawing.Color.Gainsboro;
             this.addUser.Image = ((System.Drawing.Image)(resources.GetObject("addUser.Image")));
             this.addUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.addUser.Location = new System.Drawing.Point(-18, 70);
-            this.addUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addUser.Location = new System.Drawing.Point(-24, 86);
+            this.addUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addUser.Name = "addUser";
-            this.addUser.Size = new System.Drawing.Size(241, 103);
+            this.addUser.Size = new System.Drawing.Size(321, 127);
             this.addUser.TabIndex = 4;
             this.addUser.Text = "Добави нов потребител";
             this.addUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -214,10 +215,10 @@
             this.table.ForeColor = System.Drawing.Color.Gainsboro;
             this.table.Image = ((System.Drawing.Image)(resources.GetObject("table.Image")));
             this.table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.table.Location = new System.Drawing.Point(2, 319);
-            this.table.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.table.Location = new System.Drawing.Point(-1, 310);
+            this.table.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.table.Name = "table";
-            this.table.Size = new System.Drawing.Size(221, 76);
+            this.table.Size = new System.Drawing.Size(295, 94);
             this.table.TabIndex = 9;
             this.table.Text = "       Маси";
             this.table.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -236,10 +237,10 @@
             this.menu.ForeColor = System.Drawing.Color.Gainsboro;
             this.menu.Image = ((System.Drawing.Image)(resources.GetObject("menu.Image")));
             this.menu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menu.Location = new System.Drawing.Point(5, 415);
-            this.menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu.Location = new System.Drawing.Point(1, 407);
+            this.menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(220, 97);
+            this.menu.Size = new System.Drawing.Size(293, 119);
             this.menu.TabIndex = 10;
             this.menu.Text = "          Меню";
             this.menu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -258,10 +259,10 @@
             this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(225, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Location = new System.Drawing.Point(300, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(961, 65);
+            this.panelTitleBar.Size = new System.Drawing.Size(1281, 80);
             this.panelTitleBar.TabIndex = 14;
             // 
             // btnMinimize
@@ -271,10 +272,10 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(831, 10);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimize.Location = new System.Drawing.Point(1108, 12);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(22, 24);
+            this.btnMinimize.Size = new System.Drawing.Size(29, 30);
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
@@ -286,10 +287,10 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.ForeColor = System.Drawing.Color.Transparent;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(857, 10);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMaximize.Location = new System.Drawing.Point(1143, 12);
+            this.btnMaximize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(22, 24);
+            this.btnMaximize.Size = new System.Drawing.Size(29, 30);
             this.btnMaximize.TabIndex = 3;
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.BtnMaximize_Click);
@@ -301,10 +302,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(883, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Location = new System.Drawing.Point(1177, 12);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(22, 24);
+            this.btnClose.Size = new System.Drawing.Size(29, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
@@ -314,10 +315,10 @@
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
-            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 41);
-            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 50);
+            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(26, 24);
+            this.btnCloseChildForm.Size = new System.Drawing.Size(35, 30);
             this.btnCloseChildForm.TabIndex = 1;
             this.btnCloseChildForm.UseVisualStyleBackColor = true;
             this.btnCloseChildForm.Click += new System.EventHandler(this.BtnCloseChildForm_Click);
@@ -328,10 +329,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(445, 22);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle.Location = new System.Drawing.Point(593, 27);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(106, 26);
+            this.lblTitle.Size = new System.Drawing.Size(128, 31);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "НАЧАЛО";
             // 
@@ -339,37 +339,58 @@
             // 
             this.panelDesktopPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelDesktopPanel.Controls.Add(this.pictureBox1);
+            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPanel.ForeColor = System.Drawing.Color.Transparent;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(225, 65);
-            this.panelDesktopPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(300, 80);
+            this.panelDesktopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(962, 792);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(1281, 1020);
             this.panelDesktopPanel.TabIndex = 15;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::RestaurantSystem.Properties.Resources.onlinelogomaker_010721_1136_4394_2000_transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(337, 266);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(449, 327);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(330, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(440, 214);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // AddSupplier
+            // 
+            this.AddSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.AddSupplier.FlatAppearance.BorderSize = 0;
+            this.AddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddSupplier.ForeColor = System.Drawing.Color.Gainsboro;
+            this.AddSupplier.Image = ((System.Drawing.Image)(resources.GetObject("AddSupplier.Image")));
+            this.AddSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddSupplier.Location = new System.Drawing.Point(-1, 734);
+            this.AddSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddSupplier.Name = "AddSupplier";
+            this.AddSupplier.Size = new System.Drawing.Size(293, 119);
+            this.AddSupplier.TabIndex = 15;
+            this.AddSupplier.Text = "Добави доставчик";
+            this.AddSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AddSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddSupplier.UseVisualStyleBackColor = false;
+            this.AddSupplier.Click += new System.EventHandler(this.AddSupplier_Click);
+            // 
             // ManagerHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1186, 857);
+            this.ClientSize = new System.Drawing.Size(1581, 1100);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(750, 406);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "ManagerHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeAdmin";
@@ -404,5 +425,6 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button AddSupplier;
     }
 }

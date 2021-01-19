@@ -249,5 +249,10 @@ namespace RestaurantSystem
         {
             accounting.ForeColor = Color.White;
         }
+
+        private void AddSupplier_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new AddSupplier(controller), sender);
+        }
     }
 }
