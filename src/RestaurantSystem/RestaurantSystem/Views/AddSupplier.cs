@@ -24,7 +24,23 @@ namespace RestaurantSystem.Views
             InitializeComponent();
             LoadSuppliers();
         }
-
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.SecondaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.SecondaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+        }
         private bool SupplierValidation(string spName, string spPhone, string spAvailableDays)
         {
             try
@@ -157,6 +173,11 @@ namespace RestaurantSystem.Views
         {
             new Deliveries(controller).Show();
             this.Close();
+        }
+
+        private void AddSupplier_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
         }
     }
 }
