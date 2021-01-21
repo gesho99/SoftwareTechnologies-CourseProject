@@ -28,75 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dishBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dishNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dishSellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dishWeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dishProductsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dishBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(36, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Избери категория";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dishNameDataGridViewTextBoxColumn,
+            this.dishSellingPriceDataGridViewTextBoxColumn,
+            this.dishWeightDataGridViewTextBoxColumn,
+            this.dishProductsDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.dishBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(544, 237);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // domainUpDown1
+            // dishBindingSource
             // 
-            this.domainUpDown1.Location = new System.Drawing.Point(39, 100);
-            this.domainUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(160, 22);
-            this.domainUpDown1.TabIndex = 2;
+            this.dishBindingSource.DataSource = typeof(RestaurantSystem.Data.Models.Dish);
             // 
-            // label2
+            // idDataGridViewTextBoxColumn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(414, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Продукти";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // listBox1
+            // dishNameDataGridViewTextBoxColumn
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(417, 100);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(262, 196);
-            this.listBox1.TabIndex = 3;
+            this.dishNameDataGridViewTextBoxColumn.DataPropertyName = "DishName";
+            this.dishNameDataGridViewTextBoxColumn.HeaderText = "DishName";
+            this.dishNameDataGridViewTextBoxColumn.Name = "dishNameDataGridViewTextBoxColumn";
+            this.dishNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dishSellingPriceDataGridViewTextBoxColumn
+            // 
+            this.dishSellingPriceDataGridViewTextBoxColumn.DataPropertyName = "DishSellingPrice";
+            this.dishSellingPriceDataGridViewTextBoxColumn.HeaderText = "DishSellingPrice";
+            this.dishSellingPriceDataGridViewTextBoxColumn.Name = "dishSellingPriceDataGridViewTextBoxColumn";
+            this.dishSellingPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dishWeightDataGridViewTextBoxColumn
+            // 
+            this.dishWeightDataGridViewTextBoxColumn.DataPropertyName = "DishWeight";
+            this.dishWeightDataGridViewTextBoxColumn.HeaderText = "DishWeight";
+            this.dishWeightDataGridViewTextBoxColumn.Name = "dishWeightDataGridViewTextBoxColumn";
+            this.dishWeightDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dishProductsDataGridViewTextBoxColumn
+            // 
+            this.dishProductsDataGridViewTextBoxColumn.DataPropertyName = "DishProducts";
+            this.dishProductsDataGridViewTextBoxColumn.HeaderText = "DishProducts";
+            this.dishProductsDataGridViewTextBoxColumn.Name = "dishProductsDataGridViewTextBoxColumn";
+            this.dishProductsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // EmployeesMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 321);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.domainUpDown1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(606, 261);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "EmployeesMenu";
             this.Text = "Меню";
             this.Load += new System.EventHandler(this.EmployeesMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dishBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dishNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dishSellingPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dishWeightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dishProductsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource dishBindingSource;
     }
 }

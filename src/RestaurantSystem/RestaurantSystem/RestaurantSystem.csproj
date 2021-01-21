@@ -287,6 +287,7 @@
       <DependentUpon>ManagerTables.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RestaurantSystem.Data.Models.Dish.datasource" />
     <None Include="Properties\DataSources\RestaurantSystem.Data.Models.Employee.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

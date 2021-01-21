@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using RestaurantSystem.Data;
 namespace RestaurantSystem
 {
     public partial class EmployeesMenu : Form
@@ -16,18 +17,19 @@ namespace RestaurantSystem
             InitializeComponent();
         }
         private void LoadTheme()
-        {
-           
-            label2.ForeColor = ThemeColor.SecondaryColor;
-            label1.ForeColor = ThemeColor.PrimaryColor;
-            domainUpDown1.ForeColor = ThemeColor.SecondaryColor;
-           
-
+        {          
+            //label2.ForeColor = ThemeColor.SecondaryColor;
+            //label1.ForeColor = ThemeColor.PrimaryColor;
+            //dishCategories.ForeColor = ThemeColor.SecondaryColor;
         }
 
         private void EmployeesMenu_Load(object sender, EventArgs e)
         {
             LoadTheme();
-        }
+            using (RestaurantDbContext db = new RestaurantDbContext())
+            {
+                dishBindingSource.DataSource = db.Dishes.ToList();
+            }
+        }        
     }
 }

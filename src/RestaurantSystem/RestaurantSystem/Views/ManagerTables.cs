@@ -132,31 +132,113 @@ namespace RestaurantSystem.Views
 
         private void addItem_Click(object sender, EventArgs e)
         {
-            string product = itemsList.Text;
-            decimal quantity = numericUpDown1.Value;
-            string price = priceTxt.Text;
-            decimal priceVal = Convert.ToDecimal(price);
-            decimal itemsPrice = quantity * priceVal;
-            string priceFormat = String.Format("{0:0.00}", itemsPrice);
-            string productsString = $"{product}, к-во: {quantity}, цена: {priceFormat} лв. {Environment.NewLine}";
+            if (itemsList.Text != "" && numericUpDown1.Value != 0 && priceTxt.Text != "")
+            {
+                string product = itemsList.Text;
+                decimal quantity = numericUpDown1.Value;
+                string price = priceTxt.Text;
+                decimal priceVal = Convert.ToDecimal(price);
+                decimal itemsPrice = quantity * priceVal;
+                string priceFormat = String.Format("{0:0.00}", itemsPrice);
+                string productsString = $"{product}, к-во: {quantity}, цена: {priceFormat} лв. {Environment.NewLine}";
 
-            bill += itemsPrice;
-            string billFormat = String.Format("{0:0.00} лв.", bill);
-            billTxt.Text = billFormat;
-            
-            productsList.Text += productsString;
-            priceTxt.Text = String.Empty;
-            numericUpDown1.Text = "1";
-            itemsList.Text = String.Empty;
+                bill += itemsPrice;
+                string billFormat = String.Format("{0:0.00} лв.", bill);
+                billTxt.Text = billFormat;
+
+                
+                SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
+                SqlDataReader reader;
+
+                string sqlSelectSellingPrice = $"SELECT DishSellingPrice FROM dbo.Dishes WHERE DishName='Снежанка'";
+                SqlCommand commandSelectSellingPrice = new SqlCommand(sqlSelectSellingPrice, con);
+                object sellingPrice = 0;
+                try
+                {
+                    con.Open();
+                    reader = commandSelectSellingPrice.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        sellingPrice = reader.GetValue(0);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+                string sqlSelectMakingPrice = $"SELECT DishMakingPrice FROM dbo.Dishes WHERE DishName='Снежанка'";
+                SqlCommand commandSelectMakingPrice = new SqlCommand(sqlSelectMakingPrice, con);
+                object makingPrice = 0;
+                try
+                {
+                    con.Open();
+                    reader = commandSelectMakingPrice.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        makingPrice = reader.GetValue(0);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+                /*date
+                string day = DateTime.Now.Day.ToString();
+                string month = DateTime.Now.Month.ToString();
+                string year = DateTime.Now.Year.ToString();
+
+                if (month.Length < 2)
+                {
+                    month = "0" + month;
+                }
+
+                if (day.Length < 2)
+                {
+                    day = "0" + day;
+                }
+
+                string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
+                DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+                //end of date
+
+                string sqlInsert = $"INSERT INTO dbo.DayAccountings ( MonthAccountingId, DayExpense, DayIncome, DayProfit, Date) VALUES (1, {makingPrice}, {sellingPrice}, 0, {today});";
+                SqlCommand commandInsert = new SqlCommand(sqlInsert, con);
+                con.Open();
+                reader = commandInsert.ExecuteReader();
+                /*
+                try
+                {        
+                    con.Open();
+                    reader = commandInsert.ExecuteReader();
+                }
+                catch (Exception ex)
+                {
+                     MessageBox.Show(ex.Message);
+                }
+                */
+                con.Close();
+
+                productsList.Text += productsString;
+                priceTxt.Text = String.Empty;
+                numericUpDown1.Text = "1";
+                itemsList.Text = String.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Моля, изберете ястие и количество!");
+            }
         }
 
         private void billBtn_Click(object sender, EventArgs e)
         {
-            // заявка към базата за добавяне в DayIncome и DayExpense на DishMakingPrice и DishSellingPrice и създаване на pdf със сметката и ДАТА
-
+            // Създаване на pdf със сметката и ДАТА
+            
+            // string tableNumText = tableNum.Text.Substring(5, tableNum.Text.Length - 5); - трябва да се оправи за pdf-a и в него да се отчете за коя маса е дадената сметка             
             /*
-            string tableNumText = tableNum.Text.Substring(5, tableNum.Text.Length - 5);
-
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
             string sql = $"INSERT INTO dbo.MonthAccountings1 ( TableNum, TableName, Products, Quantity, Price, Date) VALUES ('{tableNumText}','{tableNum.Text}', '{itemsList.Text}', '{numericUpDown1.Value.ToString()}', '{String.Format("{0:0.00}", bill)}', '{dateTxt.Text}');";
             SqlCommand command = new SqlCommand(sql, con);

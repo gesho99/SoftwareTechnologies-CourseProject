@@ -49,7 +49,7 @@ namespace RestaurantSystem.Views
             new ManagerHome(controller).Show();
             this.Hide();
         }
-
+        /*
         private void browseBtn_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg" })
@@ -60,7 +60,7 @@ namespace RestaurantSystem.Views
                 }
             }
         }
-
+        */
         private void ManagerProfile_Load(object sender, EventArgs e)
         {
             LoadTheme();
