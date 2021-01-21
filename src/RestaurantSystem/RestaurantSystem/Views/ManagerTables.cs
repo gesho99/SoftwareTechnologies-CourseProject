@@ -143,7 +143,18 @@ namespace RestaurantSystem.Views
             bill += itemsPrice;
             string billFormat = String.Format("{0:0.00} лв.", bill);
             billTxt.Text = billFormat;
+            
+            productsList.Text += productsString;
+            priceTxt.Text = String.Empty;
+            numericUpDown1.Text = "1";
+            itemsList.Text = String.Empty;
+        }
 
+        private void billBtn_Click(object sender, EventArgs e)
+        {
+            // заявка към базата за добавяне в DayIncome и DayExpense на DishMakingPrice и DishSellingPrice и създаване на pdf със сметката и ДАТА
+
+            /*
             string tableNumText = tableNum.Text.Substring(5, tableNum.Text.Length - 5);
 
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
@@ -159,18 +170,7 @@ namespace RestaurantSystem.Views
             {
                 MessageBox.Show(ex.Message);
             }
-
-            productsList.Text += productsString;
-            priceTxt.Text = String.Empty;
-            numericUpDown1.Text = "1";
-            itemsList.Text = String.Empty;
-        }
-
-        private void billBtn_Click(object sender, EventArgs e)
-        {
-            //string tableName = tableNum.Text;
-            //string billText = billTxt.Text;
-            //string currentDate = dateTxt.Text;
+            */
 
             productsList.Text = String.Empty;
             billTxt.Text = "0 лв.";
@@ -251,6 +251,30 @@ namespace RestaurantSystem.Views
         private void ManagerTables_Load_1(object sender, EventArgs e)
         {
             LoadTheme();
+        }
+
+        private void itemsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string productName = itemsList.Text;
+            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
+            string sql = $"SELECT dbo.Dishes.DishSellingPrice FROM dbo.Dishes WHERE dbo.Dishes.DishName = '{productName}'";
+            SqlCommand command = new SqlCommand(sql, con);
+            SqlDataReader reader;
+            try
+            {
+                con.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    object price = reader.GetValue(0);
+                    priceTxt.Text = $"{String.Format("{0:0.00}", price)}";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
         }
     }
 }

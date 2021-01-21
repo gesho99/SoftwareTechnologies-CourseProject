@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(496, 555);
+            this.groupBox1.Size = new System.Drawing.Size(429, 555);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Избрана маса";
@@ -154,7 +154,7 @@
             this.groupBox4.Controls.Add(this.tablesCombo);
             this.groupBox4.Controls.Add(this.tablesAddBtn);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.Location = new System.Drawing.Point(538, 21);
+            this.groupBox4.Location = new System.Drawing.Point(470, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(402, 162);
             this.groupBox4.TabIndex = 11;
@@ -192,9 +192,9 @@
             this.groupBox3.Controls.Add(this.addItem);
             this.groupBox3.Controls.Add(this.itemsList);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(538, 211);
+            this.groupBox3.Location = new System.Drawing.Point(470, 194);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(402, 406);
+            this.groupBox3.Size = new System.Drawing.Size(402, 373);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Добавяне на продукт";
@@ -229,6 +229,7 @@
             this.priceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceTxt.Location = new System.Drawing.Point(191, 132);
             this.priceTxt.Name = "priceTxt";
+            this.priceTxt.ReadOnly = true;
             this.priceTxt.Size = new System.Drawing.Size(143, 29);
             this.priceTxt.TabIndex = 12;
             this.priceTxt.Text = "\r\n";
@@ -274,6 +275,7 @@
             this.itemsList.Size = new System.Drawing.Size(143, 32);
             this.itemsList.TabIndex = 0;
             this.itemsList.ValueMember = "DishCategory";
+            this.itemsList.SelectedIndexChanged += new System.EventHandler(this.itemsList_SelectedIndexChanged);
             // 
             // ManagerTables
             // 
