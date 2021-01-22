@@ -22,6 +22,7 @@ namespace RestaurantSystem.Controllers
         {
             Role admin = db.Roles.SingleOrDefault(r => r.Name == "admin");
             Role waiter = db.Roles.SingleOrDefault(r => r.Name == "waiter");
+            Role bartender = db.Roles.SingleOrDefault(r => r.Name == "bartender");
 
             if (admin == null)
             {
@@ -36,6 +37,14 @@ namespace RestaurantSystem.Controllers
                 db.Roles.Add(new Role
                 {
                     Name = "waiter"
+                });
+            }
+
+            if (bartender == null)
+            {
+                db.Roles.Add(new Role
+                {
+                    Name = "bartender"
                 });
             }
 

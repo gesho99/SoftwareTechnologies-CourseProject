@@ -15,8 +15,6 @@ namespace RestaurantSystem.Views
 {
     public partial class ManagerTables : Form
     {
-        //DBController controller;
-
         public ManagerTables(DBController controller)
         {
             InitializeComponent();
@@ -59,24 +57,15 @@ namespace RestaurantSystem.Views
                 }
             }
 
-
             label1.ForeColor = ThemeColor.SecondaryColor;
             label2.ForeColor = ThemeColor.PrimaryColor;
             label3.ForeColor = ThemeColor.SecondaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.SecondaryColor;
             label6.ForeColor = ThemeColor.PrimaryColor;
-
         }
 
         decimal bill = 0;
-        
-        private void back_Click(object sender, EventArgs e)
-        {
-            // add controller ManagerHome managerHome = new ManagerHome();
-            //managerHome.Show();
-            this.Hide();
-        }
 
         private void ManagerTables_Load(object sender, EventArgs e)
         {
@@ -132,7 +121,7 @@ namespace RestaurantSystem.Views
 
         private void addItem_Click(object sender, EventArgs e)
         {
-            if (itemsList.Text != "" && numericUpDown1.Value != 0 && priceTxt.Text != "")
+            if (itemsList.Text != "" && numericUpDown1.Value != 0 && priceTxt.Text != "" && tablesCombo.Text != "")
             {
                 string product = itemsList.Text;
                 decimal quantity = numericUpDown1.Value;
@@ -145,8 +134,7 @@ namespace RestaurantSystem.Views
                 bill += itemsPrice;
                 string billFormat = String.Format("{0:0.00} лв.", bill);
                 billTxt.Text = billFormat;
-
-                
+               
                 SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
                 SqlDataReader reader;
 
@@ -229,30 +217,13 @@ namespace RestaurantSystem.Views
             }
             else
             {
-                MessageBox.Show("Моля, изберете ястие и количество!");
+                MessageBox.Show("Моля, изберете ястие, количество и съответната маса!");
             }
         }
 
-        private void billBtn_Click(object sender, EventArgs e)
+        private void okBtn_Click(object sender, EventArgs e)
         {
-            // Създаване на pdf със сметката и ДАТА
-            
-            // string tableNumText = tableNum.Text.Substring(5, tableNum.Text.Length - 5); - трябва да се оправи за pdf-a и в него да се отчете за коя маса е дадената сметка             
-            /*
-            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
-            string sql = $"INSERT INTO dbo.MonthAccountings1 ( TableNum, TableName, Products, Quantity, Price, Date) VALUES ('{tableNumText}','{tableNum.Text}', '{itemsList.Text}', '{numericUpDown1.Value.ToString()}', '{String.Format("{0:0.00}", bill)}', '{dateTxt.Text}');";
-            SqlCommand command = new SqlCommand(sql, con);
-            SqlDataReader reader;
-            try
-            {
-                con.Open();
-                reader = command.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            */
+            // Създаване на pdf със сметката и ДАТА?
 
             productsList.Text = String.Empty;
             billTxt.Text = "0 лв.";

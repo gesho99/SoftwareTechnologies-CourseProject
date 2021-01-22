@@ -64,6 +64,7 @@ namespace RestaurantSystem.Views
         private void ManagerProfile_Load(object sender, EventArgs e)
         {
             LoadTheme();
+            FillJobPositions();
             using (RestaurantDbContext db = new RestaurantDbContext())
             {
                 employeeBindingSource.DataSource = db.Employees.ToList();
@@ -101,7 +102,7 @@ namespace RestaurantSystem.Views
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(this, "Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(this, "Наистина ли искате да премахнете този запис?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 using (RestaurantDbContext db = new RestaurantDbContext())
                 {
@@ -114,7 +115,7 @@ namespace RestaurantSystem.Views
                         }
                         db.Entry<Employee>(emp).State = EntityState.Deleted;
                         db.SaveChanges();
-                        MessageBox.Show(this, "Deleted successfully.");
+                        MessageBox.Show(this, "Успешно премахване.");
                         employeeBindingSource.RemoveCurrent();
                         panel1.Enabled = false;
                     }
@@ -135,12 +136,9 @@ namespace RestaurantSystem.Views
                     Match lastNameMatch = Regex.Match(lastName.Text, lastNameRegex);
 
                     string emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
-                    Match emailMatch = Regex.Match(emailBox.Text, emailRegex);
+                    Match emailMatch = Regex.Match(emailBox.Text, emailRegex);                
 
-                    string jobRegex = @"^([А-Я]{1})([а-я]+)(\/{0,1})([а-я]+)$";
-                    Match jobMatch = Regex.Match(jobPosition.Text, jobRegex);
-
-                    if (firstNameMatch.Success && lastNameMatch.Success && emailMatch.Success && jobMatch.Success) {
+                    if (firstNameMatch.Success && lastNameMatch.Success && emailMatch.Success) {
                         Employee emp = employeeBindingSource.Current as Employee;
                         if (emp != null)
                         {
@@ -157,7 +155,7 @@ namespace RestaurantSystem.Views
                                 db.Entry<Employee>(emp).State = EntityState.Modified;
                             }
                             db.SaveChanges();
-                            MessageBox.Show(this, "Saved successfully!");
+                            MessageBox.Show(this, "Успешно запазване!");
                             dataGridView1.Refresh();
                             panel1.Enabled = false;
                         }
@@ -172,6 +170,12 @@ namespace RestaurantSystem.Views
                     MessageBox.Show("Попълнете полетата с нужните данни.");
                 }
             }           
+        }
+        private void FillJobPositions()
+        {
+            jobPosition.Items.Add("admin");
+            jobPosition.Items.Add("waiter");
+            jobPosition.Items.Add("bartender");
         }
     }
 }

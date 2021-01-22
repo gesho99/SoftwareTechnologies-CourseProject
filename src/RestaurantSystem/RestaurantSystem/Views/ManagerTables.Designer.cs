@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.billBtn = new System.Windows.Forms.Button();
+            this.okBtn = new System.Windows.Forms.Button();
             this.billTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.productsList = new System.Windows.Forms.RichTextBox();
@@ -62,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dateTxt);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.billBtn);
+            this.groupBox1.Controls.Add(this.okBtn);
             this.groupBox1.Controls.Add(this.billTxt);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.productsList);
@@ -93,20 +93,21 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Дата:";
             // 
-            // billBtn
+            // okBtn
             // 
-            this.billBtn.Location = new System.Drawing.Point(261, 352);
-            this.billBtn.Name = "billBtn";
-            this.billBtn.Size = new System.Drawing.Size(111, 37);
-            this.billBtn.TabIndex = 10;
-            this.billBtn.Text = "Издай касов бон";
-            this.billBtn.UseVisualStyleBackColor = true;
-            this.billBtn.Click += new System.EventHandler(this.billBtn_Click);
+            this.okBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.okBtn.Location = new System.Drawing.Point(261, 351);
+            this.okBtn.Name = "okBtn";
+            this.okBtn.Size = new System.Drawing.Size(111, 37);
+            this.okBtn.TabIndex = 10;
+            this.okBtn.Text = "OK";
+            this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // billTxt
             // 
             this.billTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.billTxt.Location = new System.Drawing.Point(250, 303);
+            this.billTxt.Location = new System.Drawing.Point(261, 305);
             this.billTxt.Name = "billTxt";
             this.billTxt.Size = new System.Drawing.Size(111, 29);
             this.billTxt.TabIndex = 4;
@@ -305,7 +306,7 @@
         private System.Windows.Forms.RichTextBox productsList;
         private System.Windows.Forms.TextBox tableNum;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button billBtn;
+        private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.TextBox billTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox4;
