@@ -116,6 +116,12 @@
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\RestaurantDbContext.cs" />
     <Compile Include="Data\Models\Product.cs" />
+    <Compile Include="EmployeesTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeesTables.Designer.cs">
+      <DependentUpon>EmployeesTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202101131658193_AllMigrationsTillNow.cs" />
     <Compile Include="Migrations\202101131658193_AllMigrationsTillNow.designer.cs">
       <DependentUpon>202101131658193_AllMigrationsTillNow.cs</DependentUpon>
@@ -207,12 +213,6 @@
     <Compile Include="Views\ProductsInStockForm.Designer.cs">
       <DependentUpon>ProductsInStockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EmployeesTables.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\EmployeesTables.Designer.cs">
-      <DependentUpon>EmployeesTables.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ManagerTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +222,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\Models\YearAccountings.cs" />
+    <EmbeddedResource Include="EmployeesTables.resx">
+      <DependentUpon>EmployeesTables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101131658193_AllMigrationsTillNow.resx">
       <DependentUpon>202101131658193_AllMigrationsTillNow.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,9 +283,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\EmployeesTables.resx">
-      <DependentUpon>EmployeesTables.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ManagerTables.resx">
       <DependentUpon>ManagerTables.cs</DependentUpon>
     </EmbeddedResource>

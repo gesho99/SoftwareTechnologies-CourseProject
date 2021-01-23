@@ -12,7 +12,6 @@ using RestaurantSystem.Controllers;
 using RestaurantSystem.Data.Models;
 using RestaurantSystem.Data;
 
-
 namespace RestaurantSystem.Views
 {
     public partial class ManagerTables : Form
@@ -34,6 +33,7 @@ namespace RestaurantSystem.Views
             string date = DateTime.Now.ToString("dd/MM/yyyy");
             dateTxt.Text = date;
         }
+
         private void LoadTheme()
         {
             foreach (Control btns in groupBox1.Controls)
@@ -133,7 +133,7 @@ namespace RestaurantSystem.Views
         {
             if (itemsList.Text != "" && numericUpDown1.Value != 0 && priceTxt.Text != "" && tablesCombo.Text != "")
             {
-                string product = itemsList.Text;
+                string product = itemsList.Text; // името на продукта, чрез което се търси в таблиците в базата
                 decimal quantity = numericUpDown1.Value;
                 string price = priceTxt.Text;
                 decimal priceVal = Convert.ToDecimal(price);
@@ -184,7 +184,6 @@ namespace RestaurantSystem.Views
                 }
                 con.Close();
 
-                //date
                 string day = DateTime.Now.Day.ToString();
                 string month = DateTime.Now.Month.ToString();
                 string year = DateTime.Now.Year.ToString();
@@ -218,46 +217,10 @@ namespace RestaurantSystem.Views
                 });
                 db.SaveChanges();
 
-                /*
-            DayAccountings acc = db.DayAccountings.SingleOrDefault(a => a.Date == today, a.DayExpense == makingPriceValue);
-            acc = db.DayAccountings.SingleOrDefault(a => a.DayExpense == makingPriceValue);
-            acc = db.DayAccountings.SingleOrDefault(a => a.DayIncome == sellingPriceValue);
-            */
-
-                /*
-                if (acc == null)
-                {
-                    db.DayAccountings.Add(new DayAccountings
-                    {
-                        DayExpense = 0,
-                        DayIncome = (double)makingPrice,
-                        DayProfit = (double)sellingPrice,
-                        Date = today,
-                        MonthAccountingId = 1
-                    });
-
-                    db.SaveChanges();
-                }
-                */
-                //end of date
-                /*
-                string sqlInsert = $"INSERT INTO dbo.DayAccountings ( MonthAccountingId, DayExpense, DayIncome, DayProfit, Date) VALUES (1, {makingPrice}, {sellingPrice}, 0, {today});";
-                SqlCommand commandInsert = new SqlCommand(sqlInsert, con);
-                con.Open();
-                reader = commandInsert.ExecuteReader();
+                // decrease quntity
                 
-                try
-                {        
-                    con.Open();
-                    reader = commandInsert.ExecuteReader();
-                }
-                catch (Exception ex)
-                {
-                     MessageBox.Show(ex.Message);
-                }
-                
-                con.Close();
-                */
+                //end of decrease qunatity
+
                 productsList.Text += productsString;
                 priceTxt.Text = String.Empty;
                 numericUpDown1.Text = "1";
@@ -271,12 +234,11 @@ namespace RestaurantSystem.Views
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            // Създаване на pdf със сметката и ДАТА?
-
             productsList.Text = String.Empty;
             billTxt.Text = "0 лв.";
             bill = 0;
         }
+
         public void InsertFirstTableIntoDB()
         {
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
