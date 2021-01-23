@@ -177,7 +177,7 @@ namespace RestaurantSystem.Controllers
             string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
             DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
 
-            DayAccountings acc = db.DayAccountings.SingleOrDefault(a => a.Date == today);
+            DayAccountings acc = db.DayAccountings.FirstOrDefault(a => a.Date == today);
 
             if(acc == null)
             {

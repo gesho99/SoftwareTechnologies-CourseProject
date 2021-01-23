@@ -10,11 +10,21 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using RestaurantSystem.Controllers;
 using RestaurantSystem.Data.Models;
+using RestaurantSystem.Data;
+
 
 namespace RestaurantSystem.Views
 {
     public partial class ManagerTables : Form
     {
+        RestaurantDbContext db = new RestaurantDbContext();
+
+        public void CreateDB()
+        {
+            db = new RestaurantDbContext();
+            db.Database.CreateIfNotExists();
+        }
+
         public ManagerTables(DBController controller)
         {
             InitializeComponent();
@@ -174,7 +184,7 @@ namespace RestaurantSystem.Views
                 }
                 con.Close();
 
-                /*date
+                //date
                 string day = DateTime.Now.Day.ToString();
                 string month = DateTime.Now.Month.ToString();
                 string year = DateTime.Now.Year.ToString();
@@ -189,15 +199,53 @@ namespace RestaurantSystem.Views
                     day = "0" + day;
                 }
 
+                CreateDB();
                 string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
                 DateTime today = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
-                //end of date
 
+                double makingPriceValue = Convert.ToDouble(makingPrice);
+                double sellingPriceValue = Convert.ToDouble(sellingPrice);
+                double qunatityValue = Convert.ToDouble(quantity);
+
+                DayAccountings acc = new DayAccountings();
+                db.DayAccountings.Add(new DayAccountings
+                {
+                    DayExpense = makingPriceValue * qunatityValue,
+                    DayIncome = sellingPriceValue * qunatityValue,
+                    DayProfit = 0,
+                    Date = today,
+                    MonthAccountingId = 1
+                });
+                db.SaveChanges();
+
+                /*
+            DayAccountings acc = db.DayAccountings.SingleOrDefault(a => a.Date == today, a.DayExpense == makingPriceValue);
+            acc = db.DayAccountings.SingleOrDefault(a => a.DayExpense == makingPriceValue);
+            acc = db.DayAccountings.SingleOrDefault(a => a.DayIncome == sellingPriceValue);
+            */
+
+                /*
+                if (acc == null)
+                {
+                    db.DayAccountings.Add(new DayAccountings
+                    {
+                        DayExpense = 0,
+                        DayIncome = (double)makingPrice,
+                        DayProfit = (double)sellingPrice,
+                        Date = today,
+                        MonthAccountingId = 1
+                    });
+
+                    db.SaveChanges();
+                }
+                */
+                //end of date
+                /*
                 string sqlInsert = $"INSERT INTO dbo.DayAccountings ( MonthAccountingId, DayExpense, DayIncome, DayProfit, Date) VALUES (1, {makingPrice}, {sellingPrice}, 0, {today});";
                 SqlCommand commandInsert = new SqlCommand(sqlInsert, con);
                 con.Open();
                 reader = commandInsert.ExecuteReader();
-                /*
+                
                 try
                 {        
                     con.Open();
@@ -207,9 +255,9 @@ namespace RestaurantSystem.Views
                 {
                      MessageBox.Show(ex.Message);
                 }
-                */
+                
                 con.Close();
-
+                */
                 productsList.Text += productsString;
                 priceTxt.Text = String.Empty;
                 numericUpDown1.Text = "1";
