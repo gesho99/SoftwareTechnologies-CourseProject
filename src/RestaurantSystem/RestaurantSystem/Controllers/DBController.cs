@@ -538,6 +538,26 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public void DeleteSupplier(string supplierName)
+        {
+            Supplier supplier = db.Suppliers.SingleOrDefault(p => p.Name == supplierName);
+            ICollection<Delivery> deliveries = LoadDeliveries();
+
+            if (supplier != null)
+            {
+                foreach (var delivery in deliveries)
+                {
+                    if (delivery.SupplierId ==supplier.Id)
+                    {
+                        db.Deliveries.Remove(delivery);
+                    }
+                }
+                
+                db.Suppliers.Remove(supplier);
+                db.SaveChanges();
+            }
+        }
+
         public Supplier SelectSupplierByDay(string day)
         {
             ICollection<Supplier> suppliers = new HashSet<Supplier>();

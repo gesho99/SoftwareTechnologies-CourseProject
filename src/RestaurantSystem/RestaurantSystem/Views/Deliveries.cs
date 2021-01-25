@@ -81,6 +81,7 @@ namespace RestaurantSystem
                 String pName = productName.Text;
                 int pQuantity = int.Parse(productQuantity.Text);
                 string dSupplier = deliverySupplier.Text;
+                LabelController.ChangeLabelVisibility(ref label2, true);
 
                 if (pQuantity <= 5)
                 {                    
@@ -119,22 +120,25 @@ namespace RestaurantSystem
                 int pQuantity = int.Parse(productQuantity.Text);
                 string dSupplier = deliverySupplier.Text;
                 Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller, pName);
-                Supplier supplier = FormToDBController.SelecetSupprierByName(ref controller, dSupplier);
+                Supplier supplier = FormToDBController.SelecetSupprlierByName(ref controller, dSupplier);
 
                 if (product != null)
                 {
                     if (supplier !=null)
                     {
+                        LabelController.ChangeLabelVisibility(ref label2, false);
                         FormToDBController.AddDeliveryInDataBase(ref controller, pName, pQuantity, dSupplier);
                         LoadDeliveries();
                     }
                     else
                     {
+                        LabelController.ChangeLabelVisibility(ref label2, true);
                         LabelController.ChangeLabelText(ref label2, "Този доставчик не съществува.");
                     }
                 }
                 else
                 {
+                    LabelController.ChangeLabelVisibility(ref label2, true);
                     LabelController.ChangeLabelText(ref label2, "Този продукт не съществува.");
                 }
             }
@@ -149,21 +153,30 @@ namespace RestaurantSystem
                 string name = productName.Text;
                 int pQuantity = int.Parse(productQuantity.Text);
                 string dSupplier = deliverySupplier.Text;
+                Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller,name);
                 
-                if (!(waitingDeliveries.Text==null))
+                if (!(waitingDeliveries.SelectedIndex == -1))
                 {
                     if (!(items.First() == dSupplier))
                     {
+                        LabelController.ChangeLabelVisibility(ref label2, true);
                         LabelController.ChangeLabelText(ref label2, "Този доставчик не е за избраната поръчка.");                      
+                    }
+                    else if (product ==null)
+                    {
+                        LabelController.ChangeLabelVisibility(ref label2, true);
+                        LabelController.ChangeLabelText(ref label2, "Този продукт не съществува");
                     }
                     else
                     {
+                        LabelController.ChangeLabelVisibility(ref label2, false);
                         controller.EditDelivery(name, pQuantity, dSupplier);
                         LoadDeliveries();
                     }
                 }
                 else
                 {
+                    LabelController.ChangeLabelVisibility(ref label2, true);
                     LabelController.ChangeLabelText(ref label2, "Изберете поръчка от неодобрените");
                 }
             }
@@ -173,22 +186,25 @@ namespace RestaurantSystem
         {
             string[] items = waitingDeliveries.Text.Split(',', '-',':');
             string dSupplier = deliverySupplier.Text;
-            double dQuantity = double.Parse(items[2]);
 
-            if (items.Count() != 1)
-            {
+            if (!(waitingDeliveries.SelectedIndex == -1))
+            {               
                 if (!(items.First() == dSupplier))
                 {
+                    LabelController.ChangeLabelVisibility(ref label2, true);
                     LabelController.ChangeLabelText(ref label2, "Грешен достачик.");
                 }               
                 else
                 {
-                   FormToDBController.ApproveDeliveryInDataBase(ref controller,dSupplier,dQuantity);
-                   LoadDeliveries();
+                    double dQuantity = double.Parse(items[2]);
+                    LabelController.ChangeLabelVisibility(ref label2, false);
+                    FormToDBController.ApproveDeliveryInDataBase(ref controller,dSupplier,dQuantity);
+                    LoadDeliveries();
                 }
             }
             else
             {
+                LabelController.ChangeLabelVisibility(ref label2, true);
                 LabelController.ChangeLabelText(ref label2, "Изберете поръчка от неодобрените.");
             }
 

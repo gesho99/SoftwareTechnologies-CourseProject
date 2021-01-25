@@ -154,9 +154,14 @@ namespace RestaurantSystem.Controllers
             controller.ApproveDelivery(supplierName,dPrice);
         }
 
-        public static Supplier SelecetSupprierByName(ref DBController controller, string name)
+        public static Supplier SelecetSupprlierByName(ref DBController controller, string name)
         {
             return controller.SelectSupplierByName(name);
+        }
+
+        public static void DeleteSupplierFromDataBase(ref DBController controller, string name)
+        {
+             controller.DeleteSupplier(name);
         }
 
     }

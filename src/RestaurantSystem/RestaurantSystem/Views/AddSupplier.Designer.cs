@@ -39,6 +39,7 @@
             this.suppliersList = new System.Windows.Forms.ListBox();
             this.editSupplier = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.deleteSupplier = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +103,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(273, 250);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(277, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 7;
@@ -134,11 +136,22 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Име на доставчик/телефон/свободни дни за доставка";
             // 
+            // deleteSupplier
+            // 
+            this.deleteSupplier.Location = new System.Drawing.Point(514, 238);
+            this.deleteSupplier.Name = "deleteSupplier";
+            this.deleteSupplier.Size = new System.Drawing.Size(159, 38);
+            this.deleteSupplier.TabIndex = 12;
+            this.deleteSupplier.Text = "Премахване на доставчик";
+            this.deleteSupplier.UseVisualStyleBackColor = true;
+            this.deleteSupplier.Click += new System.EventHandler(this.deleteSupplier_Click);
+            // 
             // AddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 334);
+            this.Controls.Add(this.deleteSupplier);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.editSupplier);
             this.Controls.Add(this.suppliersList);
@@ -171,5 +184,6 @@
         private System.Windows.Forms.ListBox suppliersList;
         private System.Windows.Forms.Button editSupplier;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button deleteSupplier;
     }
 }

@@ -48,7 +48,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.addDelivery = new System.Windows.Forms.Button();
-            this.addSupplier = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,7 +77,7 @@
             this.approveDeliveryButton.Name = "approveDeliveryButton";
             this.approveDeliveryButton.Size = new System.Drawing.Size(160, 35);
             this.approveDeliveryButton.TabIndex = 2;
-            this.approveDeliveryButton.Text = "Одобри поръчка";
+            this.approveDeliveryButton.Text = "Одобри доставка";
             this.approveDeliveryButton.UseVisualStyleBackColor = true;
             this.approveDeliveryButton.Click += new System.EventHandler(this.approveDeliveryButton_Click);
             // 
@@ -130,7 +129,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Чакащи доставка:\r\n";
+            this.label5.Text = "Чакащи доставки:\r\n";
             // 
             // editDelivery
             // 
@@ -138,7 +137,7 @@
             this.editDelivery.Name = "editDelivery";
             this.editDelivery.Size = new System.Drawing.Size(160, 35);
             this.editDelivery.TabIndex = 13;
-            this.editDelivery.Text = "Промени поръчка";
+            this.editDelivery.Text = "Промени доставка";
             this.editDelivery.UseVisualStyleBackColor = true;
             this.editDelivery.Click += new System.EventHandler(this.editDelivery_Click);
             // 
@@ -226,7 +225,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.addDelivery);
-            this.groupBox3.Controls.Add(this.addSupplier);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.deliverySupplier);
@@ -252,19 +250,9 @@
             this.addDelivery.Name = "addDelivery";
             this.addDelivery.Size = new System.Drawing.Size(160, 35);
             this.addDelivery.TabIndex = 29;
-            this.addDelivery.Text = "Направи поръчка";
+            this.addDelivery.Text = "Направи доставка";
             this.addDelivery.UseVisualStyleBackColor = true;
             this.addDelivery.Click += new System.EventHandler(this.addDelivery_Click);
-            // 
-            // addSupplier
-            // 
-            this.addSupplier.Location = new System.Drawing.Point(278, 210);
-            this.addSupplier.Name = "addSupplier";
-            this.addSupplier.Size = new System.Drawing.Size(160, 35);
-            this.addSupplier.TabIndex = 28;
-            this.addSupplier.Text = "Доставчици";
-            this.addSupplier.UseVisualStyleBackColor = true;
-            this.addSupplier.Click += new System.EventHandler(this.addSupplier_Click);
             // 
             // label2
             // 
@@ -315,7 +303,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button addSupplier;
         private System.Windows.Forms.Button addDelivery;
     }
 }

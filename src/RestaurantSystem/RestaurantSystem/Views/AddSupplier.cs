@@ -57,7 +57,7 @@ namespace RestaurantSystem.Views
                     LabelController.ChangeLabelText(ref label4, "Моля въведете валидно на доставчик.");
                     return false;
                 }
-                else if (!(supplierPhone.Length == 10))
+                else if (!(supplierPhone.Length == 10 || supplierPhone.Length==9))
                 {
                     LabelController.ChangeLabelVisibility(ref label4, true);
                     LabelController.ChangeLabelText(ref label4, "Моля въведете валиден телефон");
@@ -134,17 +134,19 @@ namespace RestaurantSystem.Views
                 string spName = supplierName.Text;
                 string spPhone = supplierPhone.Text;
                 string spAvailableDays = supplierAvailableDays.Text;
+                Supplier supplier = FormToDBController.SelecetSupprlierByName(ref controller, spName);
 
-                if (suppliersList.Items.Contains(spName))
+                if (supplier == null)
+                {
+                    FormToDBController.AddSupplierInDataBase(ref controller, spName, spPhone, spAvailableDays);
+                    LoadSuppliers();
+                }
+                else
                 {
                     LabelController.ChangeLabelVisibility(ref label4, true);
                     LabelController.ChangeLabelText(ref label4, "Този доставчик вече е добавен.");
                 }
-                else
-                {
-                    FormToDBController.AddSupplierInDataBase(ref controller, spName, spPhone,spAvailableDays);
-                    ListBoxController.AddListBoxSuppliers(ref suppliersList, spName, spPhone, spAvailableDays);
-                }
+                                          
             }
         }
 
@@ -163,6 +165,7 @@ namespace RestaurantSystem.Views
                 }
                 else
                 {
+                    LabelController.ChangeLabelVisibility(ref label4, false);
                     FormToDBController.EditSupplierInDataBase(ref controller, spName, spPhone, spAvailableDays);
                     LoadSuppliers();
                 }
@@ -172,6 +175,25 @@ namespace RestaurantSystem.Views
         private void AddSupplier_Load(object sender, EventArgs e)
         {
             LoadTheme();
+        }
+
+        private void deleteSupplier_Click(object sender, EventArgs e)
+        {
+            string[] items = suppliersList.Text.Split(',', '-');
+            string spName = items.First();
+
+            if (suppliersList.SelectedIndex == -1)
+            {
+                LabelController.ChangeLabelVisibility(ref label4, true);
+                LabelController.ChangeLabelText(ref label4, "Изберете доствчик за премахване");
+            }
+            else
+            {
+                LabelController.ChangeLabelVisibility(ref label4, true);
+                LabelController.ChangeLabelText(ref label4, "Премахнаха се и доставките свъразни с достачика");
+                FormToDBController.DeleteSupplierFromDataBase(ref controller, spName);
+                LoadSuppliers();
+            }
         }
     }
 }
