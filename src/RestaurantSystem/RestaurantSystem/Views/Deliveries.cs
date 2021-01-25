@@ -43,11 +43,11 @@ namespace RestaurantSystem
                 }
                 if (dl.Approved)
                 {
-                    ListBoxController.AddListBoxDeliveries(ref approvedDeliveries,deliveryProducts,dl.DeliveryQuantity,dl.DeliveryPrice,dl.Supplier.Name);
+                    ListBoxController.AddListBoxDeliveries(ref approvedDeliveries,deliveryProducts +" дата: " +dl.DeliveryDate, dl.DeliveryQuantity,dl.DeliveryPrice,dl.Supplier.Name);
                 }
                 else
                 {
-                    ListBoxController.AddListBoxDeliveries(ref waitingDeliveries, deliveryProducts, dl.DeliveryQuantity, dl.DeliveryPrice, dl.Supplier.Name);
+                    ListBoxController.AddListBoxDeliveries(ref waitingDeliveries, deliveryProducts ,dl.DeliveryQuantity, dl.DeliveryPrice, dl.Supplier.Name);
                 }
                 deliveryProducts = null;
             }

@@ -60,7 +60,7 @@
             this.approvedDeliveries.HorizontalScrollbar = true;
             this.approvedDeliveries.Location = new System.Drawing.Point(242, 43);
             this.approvedDeliveries.Name = "approvedDeliveries";
-            this.approvedDeliveries.Size = new System.Drawing.Size(230, 251);
+            this.approvedDeliveries.Size = new System.Drawing.Size(338, 251);
             this.approvedDeliveries.TabIndex = 0;
             // 
             // label1
@@ -201,7 +201,7 @@
             this.groupBox1.Controls.Add(this.approvedDeliveries);
             this.groupBox1.Location = new System.Drawing.Point(23, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 319);
+            this.groupBox1.Size = new System.Drawing.Size(600, 319);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -241,7 +241,7 @@
             this.groupBox3.Controls.Add(this.approveDeliveryButton);
             this.groupBox3.Location = new System.Drawing.Point(22, 332);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(544, 262);
+            this.groupBox3.Size = new System.Drawing.Size(601, 262);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Одобрение/промяна на доставка";
@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 630);
+            this.ClientSize = new System.Drawing.Size(721, 630);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "Deliveries";

@@ -25,16 +25,16 @@ namespace RestaurantSystem
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
 
             controller.CreateDB();
-            //controller.CreateRoles();
-            //controller.CreateAdminEmployer();
-            //controller.CreateAdminAccount();
-            //controller.CreateSupplier();
+            controller.CreateRoles();
+            controller.CreateAdminEmployer();
+            controller.CreateAdminAccount();
+            controller.CreateSupplier();
             controller.RemoveWaitingDeliveries();
             controller.AddDeliveryBasedOnProductQuantity();
-           //controller.CreateYearAccounting();
-           //controller.CreateMonthAccounting();
-           //controller.CreateDayAccounting();
-           //controller.CreateEmployerReport();
+            //controller.CreateYearAccounting();
+            //controller.CreateMonthAccounting();
+            //controller.CreateDayAccounting();
+            //controller.CreateEmployerReport();
 
 
             Application.EnableVisualStyles();
