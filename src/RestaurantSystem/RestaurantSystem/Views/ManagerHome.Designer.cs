@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerHome));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.AddSupplier = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.accounting = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.AddSupplier = new System.Windows.Forms.Button();
+            this.Logout = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -73,6 +74,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(300, 1100);
             this.panelMenu.TabIndex = 14;
+            // 
+            // AddSupplier
+            // 
+            this.AddSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.AddSupplier.FlatAppearance.BorderSize = 0;
+            this.AddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddSupplier.ForeColor = System.Drawing.Color.Gainsboro;
+            this.AddSupplier.Image = ((System.Drawing.Image)(resources.GetObject("AddSupplier.Image")));
+            this.AddSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddSupplier.Location = new System.Drawing.Point(-1, 734);
+            this.AddSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddSupplier.Name = "AddSupplier";
+            this.AddSupplier.Size = new System.Drawing.Size(293, 119);
+            this.AddSupplier.TabIndex = 15;
+            this.AddSupplier.Text = "Добави доставчик";
+            this.AddSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AddSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddSupplier.UseVisualStyleBackColor = false;
+            this.AddSupplier.Click += new System.EventHandler(this.AddSupplier_Click);
             // 
             // panelLogo
             // 
@@ -253,6 +274,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(0)))));
+            this.panelTitleBar.Controls.Add(this.Logout);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -358,25 +380,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // AddSupplier
+            // Logout
             // 
-            this.AddSupplier.BackColor = System.Drawing.Color.Transparent;
-            this.AddSupplier.FlatAppearance.BorderSize = 0;
-            this.AddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddSupplier.ForeColor = System.Drawing.Color.Gainsboro;
-            this.AddSupplier.Image = ((System.Drawing.Image)(resources.GetObject("AddSupplier.Image")));
-            this.AddSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddSupplier.Location = new System.Drawing.Point(-1, 734);
-            this.AddSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddSupplier.Name = "AddSupplier";
-            this.AddSupplier.Size = new System.Drawing.Size(293, 119);
-            this.AddSupplier.TabIndex = 15;
-            this.AddSupplier.Text = "Добави доставчик";
-            this.AddSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AddSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddSupplier.UseVisualStyleBackColor = false;
-            this.AddSupplier.Click += new System.EventHandler(this.AddSupplier_Click);
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Logout.Location = new System.Drawing.Point(0, 0);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(90, 42);
+            this.Logout.TabIndex = 16;
+            this.Logout.Text = "Изход";
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // ManagerHome
             // 
@@ -426,5 +439,6 @@
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button AddSupplier;
+        private System.Windows.Forms.Button Logout;
     }
 }

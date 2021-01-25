@@ -254,5 +254,11 @@ namespace RestaurantSystem
         {
             OpenChildForm(new AddSupplier(controller), sender);
         }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            new Login(controller).Show();
+            this.Hide();
+        }
     }
 }

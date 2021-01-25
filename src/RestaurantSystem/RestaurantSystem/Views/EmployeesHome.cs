@@ -172,5 +172,11 @@ namespace RestaurantSystem
         {
             menu.ForeColor = Color.White;
         }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            new Login(controller).Show();
+            this.Hide();
+        }
     }
 }

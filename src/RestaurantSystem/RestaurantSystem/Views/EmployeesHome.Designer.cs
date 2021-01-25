@@ -43,6 +43,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Logout = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -155,6 +156,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(0)))));
+            this.panelTitleBar.Controls.Add(this.Logout);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -259,6 +261,17 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // Logout
+            // 
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Logout.Location = new System.Drawing.Point(0, 0);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(90, 42);
+            this.Logout.TabIndex = 17;
+            this.Logout.Text = "Изход";
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // EmployeesHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,7 +282,7 @@
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1300, 700);
             this.Name = "EmployeesHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -300,5 +313,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelDesktopPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Logout;
     }
 }
