@@ -235,6 +235,7 @@ namespace RestaurantSystem.Views
         private void okBtn_Click(object sender, EventArgs e)
         {
             productsList.Text = String.Empty;
+            tableNum.Text = String.Empty;
             billTxt.Text = "0 лв.";
             bill = 0;
         }

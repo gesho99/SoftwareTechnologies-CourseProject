@@ -49,18 +49,7 @@ namespace RestaurantSystem.Views
             new ManagerHome(controller).Show();
             this.Hide();
         }
-        /*
-        private void browseBtn_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg" })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    Employee emp = employeeBindingSource.Current as Employee;
-                }
-            }
-        }
-        */
+
         private void ManagerProfile_Load(object sender, EventArgs e)
         {
             LoadTheme();
@@ -136,9 +125,12 @@ namespace RestaurantSystem.Views
                     Match lastNameMatch = Regex.Match(lastName.Text, lastNameRegex);
 
                     string emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
-                    Match emailMatch = Regex.Match(emailBox.Text, emailRegex);                
+                    Match emailMatch = Regex.Match(emailBox.Text, emailRegex);
 
-                    if (firstNameMatch.Success && lastNameMatch.Success && emailMatch.Success) {
+                    string salaryRegex = @"([1-9]{1})([0-9]*)(.){0,1}([0-9]){2}$";
+                    Match salaryMatch = Regex.Match(salaryBox.Text, salaryRegex);
+
+                    if (firstNameMatch.Success && lastNameMatch.Success && emailMatch.Success && salaryMatch.Success) {
                         Employee emp = employeeBindingSource.Current as Employee;
                         if (emp != null)
                         {
