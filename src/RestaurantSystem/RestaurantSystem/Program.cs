@@ -23,17 +23,18 @@ namespace RestaurantSystem
             DBController controller = new DBController();            
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDbContext, Configuration>());
-            
+
             controller.CreateDB();
-            controller.CreateRoles();
-            controller.CreateAdminEmployer();
-            controller.CreateAdminAccount();
-            controller.CreateSupplier();
+            //controller.CreateRoles();
+            //controller.CreateAdminEmployer();
+            //controller.CreateAdminAccount();
+            //controller.CreateSupplier();
+            controller.RemoveWaitingDeliveries();
             controller.AddDeliveryBasedOnProductQuantity();
-            controller.CreateYearAccounting();
-            controller.CreateMonthAccounting();
-            controller.CreateDayAccounting();
-            controller.CreateEmployerReport();
+           //controller.CreateYearAccounting();
+           //controller.CreateMonthAccounting();
+           //controller.CreateDayAccounting();
+           //controller.CreateEmployerReport();
 
 
             Application.EnableVisualStyles();
@@ -41,7 +42,7 @@ namespace RestaurantSystem
             //Application.Run(new AccountingForm(controller));
             //Application.Run(new Deliveries(controller));                 
             //Application.Run(new ProductsInStockForm(controller));
-            Application.Run(new Login(controller));
+            Application.Run(new ManagerHome(controller));
             //Application.Run(new Menu(controller));
             //Application.Run(new AddUser(controller));
         }

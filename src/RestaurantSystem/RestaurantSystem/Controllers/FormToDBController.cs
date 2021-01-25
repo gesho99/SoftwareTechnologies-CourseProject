@@ -149,12 +149,15 @@ namespace RestaurantSystem.Controllers
             controller.AddDelivery(productName, productQuantity, supplierName);
         }
 
-        public static void ApproveDeliveryInDataBase(ref DBController controller,string supplierName)
+        public static void ApproveDeliveryInDataBase(ref DBController controller,string supplierName,double dPrice)
         {
-            controller.ApproveDelivery(supplierName);
+            controller.ApproveDelivery(supplierName,dPrice);
         }
 
-
+        public static Supplier SelecetSupprierByName(ref DBController controller, string name)
+        {
+            return controller.SelectSupplierByName(name);
+        }
 
     }
 }

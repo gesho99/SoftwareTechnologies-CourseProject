@@ -96,9 +96,9 @@
             this.DeliveryQuantity.AutoSize = true;
             this.DeliveryQuantity.Location = new System.Drawing.Point(287, 45);
             this.DeliveryQuantity.Name = "DeliveryQuantity";
-            this.DeliveryQuantity.Size = new System.Drawing.Size(86, 13);
+            this.DeliveryQuantity.Size = new System.Drawing.Size(135, 13);
             this.DeliveryQuantity.TabIndex = 5;
-            this.DeliveryQuantity.Text = "Количество +/-:";
+            this.DeliveryQuantity.Text = "Количество за добавяне:";
             // 
             // productQuantity
             // 
@@ -210,9 +210,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 297);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(377, 13);
+            this.label4.Size = new System.Drawing.Size(437, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "продукт - количество/количество/цена на доставката/име на доставчик";
+            this.label4.Text = "име на доставчик/количество на доставка/цена/продукт-количество след доставка";
             // 
             // groupBox2
             // 

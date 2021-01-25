@@ -169,12 +169,6 @@ namespace RestaurantSystem.Views
             }
         }
 
-        private void close_Click(object sender, EventArgs e)
-        {
-            new Deliveries(controller).Show();
-            this.Close();
-        }
-
         private void AddSupplier_Load(object sender, EventArgs e)
         {
             LoadTheme();

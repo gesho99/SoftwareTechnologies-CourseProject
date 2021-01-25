@@ -23,7 +23,7 @@ namespace RestaurantSystem.Controllers
 
         public static ListBox AddListBoxDeliveries(ref ListBox listbox,string products,double deliveryQuantity,double deliveryPrice,string supplierName)
         {
-            listbox.Items.Add(products + ", " + deliveryQuantity + ", " + deliveryQuantity + ", " + supplierName);
+            listbox.Items.Add(supplierName + "- " + deliveryQuantity + ", " + deliveryPrice + " :" + products);
             return listbox;
         }
 
