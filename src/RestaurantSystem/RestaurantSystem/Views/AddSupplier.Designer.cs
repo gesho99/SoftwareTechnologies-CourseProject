@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 19);
+            this.label1.Location = new System.Drawing.Point(424, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 0;
@@ -53,14 +53,14 @@
             // 
             // supplierName
             // 
-            this.supplierName.Location = new System.Drawing.Point(432, 12);
+            this.supplierName.Location = new System.Drawing.Point(579, 28);
             this.supplierName.Name = "supplierName";
             this.supplierName.Size = new System.Drawing.Size(162, 20);
             this.supplierName.TabIndex = 1;
             // 
             // supplierAvailableDays
             // 
-            this.supplierAvailableDays.Location = new System.Drawing.Point(432, 120);
+            this.supplierAvailableDays.Location = new System.Drawing.Point(579, 136);
             this.supplierAvailableDays.Name = "supplierAvailableDays";
             this.supplierAvailableDays.Size = new System.Drawing.Size(162, 20);
             this.supplierAvailableDays.TabIndex = 3;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(277, 127);
+            this.label2.Location = new System.Drawing.Point(424, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             // supplierPhone
             // 
-            this.supplierPhone.Location = new System.Drawing.Point(432, 66);
+            this.supplierPhone.Location = new System.Drawing.Point(579, 82);
             this.supplierPhone.Name = "supplierPhone";
             this.supplierPhone.Size = new System.Drawing.Size(162, 20);
             this.supplierPhone.TabIndex = 5;
@@ -84,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(277, 73);
+            this.label3.Location = new System.Drawing.Point(424, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // addSupplierButton
             // 
-            this.addSupplierButton.Location = new System.Drawing.Point(514, 190);
+            this.addSupplierButton.Location = new System.Drawing.Point(661, 206);
             this.addSupplierButton.Name = "addSupplierButton";
             this.addSupplierButton.Size = new System.Drawing.Size(159, 38);
             this.addSupplierButton.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(277, 161);
+            this.label4.Location = new System.Drawing.Point(424, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 7;
@@ -112,14 +112,15 @@
             // suppliersList
             // 
             this.suppliersList.FormattingEnabled = true;
+            this.suppliersList.HorizontalScrollbar = true;
             this.suppliersList.Location = new System.Drawing.Point(12, 12);
             this.suppliersList.Name = "suppliersList";
-            this.suppliersList.Size = new System.Drawing.Size(255, 264);
+            this.suppliersList.Size = new System.Drawing.Size(350, 316);
             this.suppliersList.TabIndex = 8;
             // 
             // editSupplier
             // 
-            this.editSupplier.Location = new System.Drawing.Point(280, 190);
+            this.editSupplier.Location = new System.Drawing.Point(427, 206);
             this.editSupplier.Name = "editSupplier";
             this.editSupplier.Size = new System.Drawing.Size(159, 38);
             this.editSupplier.TabIndex = 9;
@@ -130,7 +131,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 279);
+            this.label5.Location = new System.Drawing.Point(9, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(286, 13);
             this.label5.TabIndex = 11;
@@ -138,7 +139,7 @@
             // 
             // deleteSupplier
             // 
-            this.deleteSupplier.Location = new System.Drawing.Point(514, 238);
+            this.deleteSupplier.Location = new System.Drawing.Point(661, 254);
             this.deleteSupplier.Name = "deleteSupplier";
             this.deleteSupplier.Size = new System.Drawing.Size(159, 38);
             this.deleteSupplier.TabIndex = 12;
@@ -150,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 334);
+            this.ClientSize = new System.Drawing.Size(847, 447);
             this.Controls.Add(this.deleteSupplier);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.editSupplier);

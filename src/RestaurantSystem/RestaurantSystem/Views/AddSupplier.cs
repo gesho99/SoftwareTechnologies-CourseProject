@@ -43,6 +43,16 @@ namespace RestaurantSystem.Views
         }
         private bool SupplierValidation(string spName, string spPhone, string spAvailableDays)
         {
+            String[] availableDays = supplierAvailableDays.Text.Split(',', ' ');
+            String[] daysOfWeek = new[] {
+                        "понеделник",
+                        "вторник",
+                        "сряда",
+                        "четвъртък",
+                        "петък",
+                        "събота",
+                        "неделя" };
+
             try
             {
                 LabelController.ChangeLabelVisibility(ref label4, false);
@@ -66,35 +76,34 @@ namespace RestaurantSystem.Views
                 else if (supplierAvailableDays.Length < 5)
                 {
                     LabelController.ChangeLabelVisibility(ref label4, true);
-                    LabelController.ChangeLabelText(ref label4, "Моля въведете валидни дни от седмицата");
+                    LabelController.ChangeLabelText(ref label4, "Моля въведете валидни дни от седмицата");                    
                     return false;
                 }
-                else if (supplierAvailableDays.Length > 5)
+                else if (!daysOfWeek.Contains(availableDays[0]))
                 {
-                    String[] daysOfWeek = new[] {
-                        "понеделник",
-                        "вторник",
-                        "сряда",
-                        "четвъртък",
-                        "петък",
-                        "събота",
-                        "неделя" };
-
-                    String[] availableDays = supplierAvailableDays.Split(',');
+                    bool check = false;
                     foreach (var day in availableDays)
                     {
-                        for (int i = 0; i < daysOfWeek.Length; i++)
-                        {
-                            if (!(daysOfWeek.Contains(day)))
+                        if (day.Length >= 5)
+                        {                           
+                            if (!daysOfWeek.Contains(day))
                             {
-                                LabelController.ChangeLabelVisibility(ref label4, true);
-                                LabelController.ChangeLabelText(ref label4, "Моля въведете валидни дни от седмицата");
-                                return false;
-                            }                          
+                                check = false;
+                            }
+                            else
+                            {
+                                check = true;
+                            }
                         }
                     }
 
-                    return true;
+                    if (!check)
+                    {
+                        LabelController.ChangeLabelVisibility(ref label4, true);
+                        LabelController.ChangeLabelText(ref label4, "Моля въведете валидни дни от седмицата");
+                    }
+
+                    return check;
                 }           
                 else
                 {

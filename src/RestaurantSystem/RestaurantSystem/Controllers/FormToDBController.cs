@@ -154,6 +154,11 @@ namespace RestaurantSystem.Controllers
             controller.ApproveDelivery(supplierName,dPrice);
         }
 
+        public static void EditDeliveryInDataBase(ref DBController controller, string productName, int productQuantity, string supplierName)
+        {           
+            controller.EditDelivery(productName,productQuantity,supplierName);
+        }
+
         public static Supplier SelecetSupprlierByName(ref DBController controller, string name)
         {
             return controller.SelectSupplierByName(name);

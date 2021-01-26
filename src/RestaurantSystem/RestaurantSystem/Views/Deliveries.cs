@@ -150,10 +150,10 @@ namespace RestaurantSystem
             {
 
                 string[] items = waitingDeliveries.Text.Split(',', '-',':');
-                string name = productName.Text;
+                string pName = productName.Text;
                 int pQuantity = int.Parse(productQuantity.Text);
                 string dSupplier = deliverySupplier.Text;
-                Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller,name);
+                Product product = FormToDBController.SelectProductByNameFromDataBase(ref controller,pName);
                 
                 if (!(waitingDeliveries.SelectedIndex == -1))
                 {
@@ -170,7 +170,7 @@ namespace RestaurantSystem
                     else
                     {
                         LabelController.ChangeLabelVisibility(ref label2, false);
-                        controller.EditDelivery(name, pQuantity, dSupplier);
+                        FormToDBController.EditDeliveryInDataBase(ref controller, pName, pQuantity, dSupplier);                       
                         LoadDeliveries();
                     }
                 }
