@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using RestaurantSystem.Controllers;
-using RestaurantSystem.Data.Models;
+﻿using RestaurantSystem.Controllers;
 using RestaurantSystem.Data;
+using RestaurantSystem.Data.Models;
+using System;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace RestaurantSystem.Views
 {
@@ -121,7 +115,6 @@ namespace RestaurantSystem.Views
                     string price = reader.GetString(0);
                     priceTxt.Text = price.ToString();
                 }
-
             }
             catch (Exception ex)
             {
@@ -129,11 +122,154 @@ namespace RestaurantSystem.Views
             }
         }
 
+        private int SelectDishId()
+        {
+            string product = itemsList.Text;
+            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
+            SqlDataReader reader;
+
+            string sqlSelectId = $"SELECT Id FROM dbo.Dishes WHERE DishName='{product}'";
+            SqlCommand commandSelectId = new SqlCommand(sqlSelectId, con);
+
+            object id = 0;
+
+            try
+            {
+                con.Open();
+                reader = commandSelectId.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = reader.GetValue(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+            int idValue = Convert.ToInt32(id);
+            
+            return idValue;
+        }
+
+        private int[] SelectproductsQuantities()
+        {
+            string product = itemsList.Text;
+            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
+            SqlDataReader reader;
+
+            string sqlSelectProducts = $"SELECT ProductsQuantity FROM dbo.Dishes WHERE DishName='{product}'";
+            SqlCommand commandSelectProducts = new SqlCommand(sqlSelectProducts, con);
+
+            object quantity = 0;
+            try
+            {
+                con.Open();
+                reader = commandSelectProducts.ExecuteReader();
+                while (reader.Read())
+                {
+                    quantity = reader.GetValue(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+            string quantitiStr = quantity.ToString();
+            string[] quantityVals = quantitiStr.Split(' ');
+            int[] quantityArr = new int[quantityVals.Length];
+
+            for (int i = 0; i < quantityVals.Length; i++)
+            {
+                int currentVal = Int32.Parse(quantityVals[i]);
+                quantityArr[i] = currentVal;
+            }
+
+            return quantityArr;
+        }
+
+        private string SelectDishProducts(int dishId)
+        {
+            int id = dishId;
+            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
+            SqlDataReader reader;
+
+            string sqlProductId = $"SELECT ProductId FROM dbo.DishProducts WHERE DishId='{id}'";
+            SqlCommand commandSelectSellingPrice = new SqlCommand(sqlProductId, con);
+            object currentId = 0;
+            string idString = "";
+            try
+            {
+                con.Open();
+                reader = commandSelectSellingPrice.ExecuteReader();
+                while (reader.Read())
+                {
+                    currentId = reader.GetValue(0);
+                    string idValue = currentId.ToString();
+                    idString += idValue + ",";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+
+            return idString;
+        }
+
+        private void DecreaseQuantity(int[] idList, int[] quantitiesList)
+        {
+            int[] ids = idList;
+            int[] qList = quantitiesList;
+            decimal q = numericUpDown1.Value;
+            SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
+            SqlDataReader reader;
+            for (int i = 0; i < idList.Length - 1; i++)
+            {
+                string sqlProductId = $"SELECT Quantity FROM dbo.Products WHERE Id='{idList[i]}'";
+                SqlCommand commandSelectId = new SqlCommand(sqlProductId, con);
+                object quantity = 0;
+                int quantityValue = 0;
+                try
+                {
+                    con.Open();
+                    reader = commandSelectId.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        quantity = reader.GetValue(0);
+                        quantityValue = Convert.ToInt32(quantity);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+                decimal quantityToDecrease = qList[i] * q;
+                string sqlUpdate = $"UPDATE dbo.Products SET Quantity={quantityValue - quantityToDecrease} WHERE Id='{idList[i]}'";
+                SqlCommand commandUpdate = new SqlCommand(sqlUpdate, con);
+                try
+                {
+                    con.Open();
+                    reader = commandUpdate.ExecuteReader();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();                           
+            }
+        }
+
         private void addItem_Click(object sender, EventArgs e)
         {
             if (itemsList.Text != "" && numericUpDown1.Value != 0 && priceTxt.Text != "" && tablesCombo.Text != "")
             {
-                string product = itemsList.Text; // името на продукта, чрез което се търси в таблиците в базата
+                string product = itemsList.Text; 
                 decimal quantity = numericUpDown1.Value;
                 string price = priceTxt.Text;
                 decimal priceVal = Convert.ToDecimal(price);
@@ -148,7 +284,7 @@ namespace RestaurantSystem.Views
                 SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
                 SqlDataReader reader;
 
-                string sqlSelectSellingPrice = $"SELECT DishSellingPrice FROM dbo.Dishes WHERE DishName='Снежанка'";
+                string sqlSelectSellingPrice = $"SELECT DishSellingPrice FROM dbo.Dishes WHERE DishName='{product}'";
                 SqlCommand commandSelectSellingPrice = new SqlCommand(sqlSelectSellingPrice, con);
                 object sellingPrice = 0;
                 try
@@ -166,7 +302,7 @@ namespace RestaurantSystem.Views
                 }
                 con.Close();
 
-                string sqlSelectMakingPrice = $"SELECT DishMakingPrice FROM dbo.Dishes WHERE DishName='Снежанка'";
+                string sqlSelectMakingPrice = $"SELECT DishMakingPrice FROM dbo.Dishes WHERE DishName='{product}'";
                 SqlCommand commandSelectMakingPrice = new SqlCommand(sqlSelectMakingPrice, con);
                 object makingPrice = 0;
                 try
@@ -217,9 +353,19 @@ namespace RestaurantSystem.Views
                 });
                 db.SaveChanges();
 
-                // decrease quntity
+                int dishId = SelectDishId();
+                int[] prodQuantities = SelectproductsQuantities(); 
+                string productsInDish = SelectDishProducts(dishId);
+                string[] idsList = productsInDish.Split(',');
+                int[] idsValuesList = new int[idsList.Length];
                 
-                //end of decrease qunatity
+                for (int i = 0; i < idsList.Length - 1; i++)
+                {
+                    string id = idsList[i];
+                    int idValue = Int32.Parse(id);
+                    idsValuesList[i] = idValue;
+                }
+                DecreaseQuantity(idsValuesList, prodQuantities);
 
                 productsList.Text += productsString;
                 priceTxt.Text = String.Empty;
@@ -243,21 +389,43 @@ namespace RestaurantSystem.Views
         public void InsertFirstTableIntoDB()
         {
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
-
-            string sqlInsert = $"INSERT INTO dbo.Tables (Number) VALUES ({1});";
-            SqlCommand commandInsert = new SqlCommand(sqlInsert, con);
             SqlDataReader reader;
+
+            string sqlSelect = $"SELECT * FROM dbo.Tables WHERE dbo.Tables.Number = '1'";
+            SqlCommand commandSelect = new SqlCommand(sqlSelect, con);
+            object obj = null;
             try
             {
                 con.Open();
-                reader = commandInsert.ExecuteReader();
+                reader = commandSelect.ExecuteReader();
+                while (reader.Read())
+                {
+                    obj = reader.GetValue(0);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             con.Close();
+
+            if (obj == null)
+            {
+                string sqlInsert = $"INSERT INTO dbo.Tables (Number) VALUES ({1});";
+                SqlCommand commandInsert = new SqlCommand(sqlInsert, con);
+                try
+                {
+                    con.Open();
+                    reader = commandInsert.ExecuteReader();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+            }
         }
+
         public void FillTablesList()
         {
             SqlConnection con = new SqlConnection("data source=localhost; initial catalog=RestaurantDataBase; integrated security=true");
