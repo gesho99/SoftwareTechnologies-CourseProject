@@ -204,5 +204,25 @@ namespace RestaurantSystem.Views
                 LoadSuppliers();
             }
         }
+
+        private void suppliersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nameOfSupplier = "";
+            
+            foreach(char c in suppliersList.SelectedItem.ToString())
+            {
+                if(c == ',')
+                {
+                    break;
+                }
+                nameOfSupplier += c;
+            }
+
+            Supplier supplier = FormToDBController.SelecetSupprlierByName(ref controller, nameOfSupplier);
+
+            supplierName.Text = supplier.Name;
+            supplierAvailableDays.Text = supplier.AvailableDays;
+            supplierPhone.Text = supplier.PhoneNumber;
+        }
     }
 }

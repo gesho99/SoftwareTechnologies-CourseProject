@@ -117,6 +117,7 @@
             this.suppliersList.Name = "suppliersList";
             this.suppliersList.Size = new System.Drawing.Size(350, 316);
             this.suppliersList.TabIndex = 8;
+            this.suppliersList.SelectedIndexChanged += new System.EventHandler(this.suppliersList_SelectedIndexChanged);
             // 
             // editSupplier
             // 
