@@ -250,18 +250,24 @@ namespace RestaurantSystem.Views
                 con.Close();
 
                 decimal quantityToDecrease = qList[i] * q;
-                string sqlUpdate = $"UPDATE dbo.Products SET Quantity={quantityValue - quantityToDecrease} WHERE Id='{idList[i]}'";
-                SqlCommand commandUpdate = new SqlCommand(sqlUpdate, con);
-                try
-                {
-                    con.Open();
-                    reader = commandUpdate.ExecuteReader();
+                if (quantityValue - quantityToDecrease >= qList[i]) {
+                    string sqlUpdate = $"UPDATE dbo.Products SET Quantity={quantityValue - quantityToDecrease} WHERE Id='{idList[i]}'";
+                    SqlCommand commandUpdate = new SqlCommand(sqlUpdate, con);
+                    try
+                    {
+                        con.Open();
+                        reader = commandUpdate.ExecuteReader();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    con.Close();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Недостатъчно количество!");
                 }
-                con.Close();                           
             }
         }
 
