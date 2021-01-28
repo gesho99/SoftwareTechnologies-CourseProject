@@ -1,4 +1,5 @@
 ﻿using RestaurantSystem.Controllers;
+using RestaurantSystem.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace RestaurantSystem
     public partial class Employees : Form
     {
         DBController controller;
-        public Employees(DBController controller)
+        string username;
+        public Employees(DBController controller, string username)
         {
             this.controller = controller;
+            this.username = username;
             InitializeComponent();
         }
         private void LoadTheme()
@@ -41,6 +44,12 @@ namespace RestaurantSystem
         private void Employees_Load(object sender, EventArgs e)
         {
             LoadTheme();
+            Employee employer = FormToDBController.GetEmployerByUserName(ref controller, username);
+            textBox1.Text = employer.FirstName;
+            textBox2.Text = employer.LastName;
+            textBox3.Text = employer.Email;
+            textBox4.Text = employer.JobPosition;
+            textBox5.Text = employer.Salary.ToString();
         }
 
         private void label5_Click(object sender, EventArgs e)

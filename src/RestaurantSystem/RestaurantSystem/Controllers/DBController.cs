@@ -290,6 +290,14 @@ namespace RestaurantSystem.Controllers
             }
         }
 
+        public Employee GetEmployerByUserName(string username)
+        {
+            User user = db.Users.SingleOrDefault(u => u.Username == username);
+            Employee employee = db.Employees.SingleOrDefault(e => e.EmpId == user.EmployeеId);
+
+            return employee;
+        }
+
         public void AddUserToDataBase(string username, string password, string roleName, string firstName, string lastName)
         {
             Employee employer = db.Employees.SingleOrDefault(e => e.FirstName == firstName && e.LastName == lastName);

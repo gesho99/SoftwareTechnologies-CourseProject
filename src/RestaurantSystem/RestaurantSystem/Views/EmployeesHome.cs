@@ -19,15 +19,16 @@ namespace RestaurantSystem
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        private string username;
 
       
-        public EmployeesHome(DBController controller)
+        public EmployeesHome(DBController controller, string username)
         {
             this.controller = controller;
             InitializeComponent();
             random = new Random();
             btnCloseChildForm.Visible = false;
-
+            this.username = username;
         }
         private Color SelectThemeColor()
         {
@@ -90,7 +91,7 @@ namespace RestaurantSystem
 
         private void ProfileBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Employees(controller), sender);
+            OpenChildForm(new Employees(controller, username), sender);
         }
 
         private void Table_Click(object sender, EventArgs e)

@@ -126,43 +126,29 @@ namespace RestaurantSystem.Views
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
-            //new ManagerHome(controller).Show();
-            //this.Hide();
-           // new EmployeesHome(controller).Show();
-            //this.Hide();
-
-
-              con.Open();
-              com.Connection = con;
-              //com.CommandText = "select * from Users";
-              com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
+            con.Open();
+            com.Connection = con;             
+            com.CommandText = "select * from Users Where Username='"+Username.Text+"' AND Password='"+Password.Text+"' ";
             SqlDataReader dr = com.ExecuteReader();
-              if (dr.Read())
-              {
-                  if ( dr["RoleId"].Equals(1))
-                  {
-                      new ManagerHome(controller).Show();
-                     this.Hide();
-                  }
-
-                else 
-
+            if (dr.Read())
+            {
+                if ( dr["RoleId"].Equals(1))
                 {
-
-                    new EmployeesHome(controller).Show();
+                    new ManagerHome(controller).Show();
                     this.Hide();
                 }
-         
+
+                else 
+                {
+                    new EmployeesHome(controller, Username.Text).Show();
+                    this.Hide();
+                }
             }
             else
             {
                 MessageBox.Show("Грешна парола или потребителско име");
             }
-    
-
-            con.Close();
-          
+            con.Close();  
         }
 
         private void Password_Enter(object sender, EventArgs e)

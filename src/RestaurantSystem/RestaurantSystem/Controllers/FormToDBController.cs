@@ -34,6 +34,11 @@ namespace RestaurantSystem.Controllers
             return controller.GetEmployers();
         }
 
+        public static Employee GetEmployerByUserName(ref DBController controller, string username)
+        {
+            return controller.GetEmployerByUserName(username);
+        }
+
         public static String GetEmployerJobPosition(ref DBController controller, string firstName, string lastName)
         {
             return controller.GetEmployerJobPosition(firstName, lastName);
