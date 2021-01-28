@@ -1048,5 +1048,11 @@ namespace RestaurantSystem.Controllers
                 }
             }
         }
+
+        public List<DayAccountings> GetDayAccountings(string dateString)
+        {
+            DateTime day = DateTime.ParseExact(dateString, "yyyyMMddTHH:mm:ssZ", System.Globalization.CultureInfo.InvariantCulture);
+            return db.DayAccountings.Where(d => d.Date == day).ToList();
+        }
     }
 }

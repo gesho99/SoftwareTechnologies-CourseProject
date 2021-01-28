@@ -353,7 +353,7 @@ namespace RestaurantSystem.Views
                 {
                     DayExpense = makingPriceValue * qunatityValue,
                     DayIncome = sellingPriceValue * qunatityValue,
-                    DayProfit = 0,
+                    DayProfit = (sellingPriceValue * qunatityValue) - (makingPriceValue * qunatityValue),
                     Date = today,
                     MonthAccountingId = 1
                 });

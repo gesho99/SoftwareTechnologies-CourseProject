@@ -305,15 +305,24 @@ namespace RestaurantSystem
             }
 
             string dateString = year.ToString() + month.ToString() + day.ToString() + "T00:00:00Z";
+            //MessageBox.Show(dateString);
 
-            double expenses = FormToDBController.GetDayReportExpensesFromDataBase(ref controller, dateString);
-            double incomes = FormToDBController.GetDayReportIncomesFromDataBase(ref controller, dateString);
+            //double expenses = FormToDBController.GetDayReportExpensesFromDataBase(ref controller, dateString);
+            //double incomes = FormToDBController.GetDayReportIncomesFromDataBase(ref controller, dateString);
+
+            List<DayAccountings> dayAccountings = controller.GetDayAccountings(dateString);
+
+            double expenses = 0, incomes = 0, profit = 0;
+
+            foreach(DayAccountings accounting in dayAccountings)
+            {
+                expenses += accounting.DayExpense;
+                incomes += accounting.DayIncome;
+                profit += accounting.DayProfit;
+            }
 
             TextBoxController.ChangeTextBoxText(ref dayExpenses, expenses.ToString());
             TextBoxController.ChangeTextBoxText(ref dayIncomes, incomes.ToString());
-
-            double profit = CalculateProfit(incomes, expenses);
-
             TextBoxController.ChangeTextBoxText(ref dayProfit, profit.ToString());
         }
 
