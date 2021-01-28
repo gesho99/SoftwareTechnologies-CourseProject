@@ -578,7 +578,7 @@ namespace RestaurantSystem.Controllers
 
             foreach (Supplier supplier in suppliers)
             {
-                if (supplier.AvailableDays.Split(',').ToArray().Contains(today))
+                if (supplier.AvailableDays.Split(',',' ').ToArray().Contains(today))
                 {
                     return supplier;
                 }

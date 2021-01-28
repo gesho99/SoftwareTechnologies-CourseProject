@@ -22,7 +22,10 @@ namespace RestaurantSystem
         {
             this.controller = controller;
             InitializeComponent();
+            controller.RemoveWaitingDeliveries();
+            controller.AddDeliveryBasedOnProductQuantity();
             LoadDeliveries();
+            
         }
 
         public void LoadDeliveries()
